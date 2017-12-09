@@ -9,7 +9,7 @@ use App\Models\Role;
 
 class UserController extends Controller
 {
-    public function new() {
+    public function _new() {
       $userTypes = User::$types;
       $roles = Role::$list;
       $genders = User::$genders;

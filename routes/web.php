@@ -28,7 +28,7 @@ Route::prefix('admin')->group(function () {
 		Route::get('/profile', function () {
 			return view("ad.user.profile");
 		});
-    Route::get('/create', 'UserController@new');
+    Route::get('/create', 'UserController@_new');
 	});
 
 	Route::prefix('/files')->group(function () {
