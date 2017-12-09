@@ -20,10 +20,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('fb_id')->unique();
             $table->string('password');
+            $table->string('website');
             $table->rememberToken();
             $table->string('phone');
             $table->enum('gender', ['male', 'female', 'other']);
-            $table->enum('group', ['admin', 'parter', 'post', 'student'])->default('student');
+            $table->enum('group', ['student', 'post', 'parter', 'admin'])->default('student');
             $table->date('birth');
             $table->timestamps();
         });

@@ -11,10 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', 'test_controller@test');
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/blog/categories/a/1', function () {
     return view('bbbbb');
 });
@@ -29,6 +28,7 @@ Route::prefix('admin')->group(function () {
 		Route::get('/profile', function () {
 			return view("ad.user.profile");
 		});
+    Route::get('/create', 'UserController@new');
 	});
 
 	Route::prefix('/files')->group(function () {

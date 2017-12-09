@@ -8,6 +8,23 @@ class Role extends Model
 {
   protected $table = 'roles';
 
+  public static $list = [
+      'create_role', 'create_user', 'update_user', 'destroy_user', 'view_user', 'login',
+      'create_profile', 'update_profile', 'destroy_profile', 'view_profile',
+      'create_page', 'update_page', 'destroy_page', 'view_page',
+      'create_post', 'update_post', 'destroy_post', 'view_post',
+      'create_comment', 'update_comment', 'destroy_comment', 'view_comment',
+      'create_course', 'update_course', 'destroy_course', 'view_course',
+      'create_log', 'update_log', 'destroy_log', 'view_log',
+      'create_menu', 'update_menu', 'destroy_menu', 'view_menu',
+      'create_banner', 'update_banner', 'destroy_banner', 'view_banner',
+      'create_footer', 'update_footer', 'destroy_footer', 'view_footer',
+      'create_order', 'update_order', 'destroy_order', 'view_order', 'send_order',
+      'create_resource', 'update_resource', 'destroy_resource', 'view_resource',
+      'create_notification', 'update_notification', 'destroy_notification', 'view_notification',
+      'send_mail', 'view_mail'
+    ];
+
   public function user()
   {
     return $this->belongsTo('App\User');

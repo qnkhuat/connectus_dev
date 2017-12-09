@@ -27,6 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public static $types = ['student', 'post', 'parter', 'admin'];
+    public static $genders = ['male', 'female', 'other'];
+
     public function pages()
   	{
   		return $this->hasMany('App\Models\Page');
@@ -65,5 +68,10 @@ class User extends Authenticatable
     public function orders()
   	{
   		return $this->hasMany('App\Models\Order');
+  	}
+
+    public function partnerInfo()
+  	{
+  		return $this->hasMany('App\Models\PartnerInfo');
   	}
 }

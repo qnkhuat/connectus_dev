@@ -19,7 +19,7 @@
     </head>
     <body class="fixed-left">
         <!-- Loader -->
-        <div id="preloader">
+        <!-- <div id="preloader">
             <div id="status">
                 <div class="spinner">
                     <div class="spinner-wrapper">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- //Loader -->
 
         <!-- Begin page -->
@@ -147,6 +147,15 @@
                             <li class="text-muted menu-title">Navigation</li>
                             <li class="has_sub">
                                 <a href="/admin" class="waves-effect"><i class="fa fa-home"></i><span class="badge badge-success pull-right">3</span><span> Dashboard </span></a>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> Users </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="/admin/users">List</a></li>
+                                    <li><a href="/admin/users/profile">Profile</a></li>
+                                    <li><a href="/admin/users/create">Create</a></li>
+                                </ul>
                             </li>
 
                             <li class="has_sub">
