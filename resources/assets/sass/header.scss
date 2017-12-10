@@ -1,0 +1,125 @@
+$red:#d61e2a;
+$buttonColor: black;
+a{
+  text-decoration: none !important;
+}
+
+
+html,body{
+  height: 100%;
+  background: 100%;
+  font-family: "Roboto",sans-serif;
+}
+#menu{
+  .navbar{
+    height: 50px;
+    color: white;
+    background:$red;
+    border: none;
+    border-radius: 0;
+    a{
+      color: white;
+    }
+    .container-fluid{
+      .navbar-header{
+        a.navbar-brand{
+          padding: 0;
+          margin-left: 20px;
+          border: none;
+          img.logo{
+            height: 100%;
+          }
+        }//a.navbar-brand
+      }//.navbar-header
+      .navbar-collapse{
+        ul{
+          li{
+            a.login{
+              border-radius: 3px;
+              height: 40px;
+              margin-top: 5px;
+              padding-top: 10px;
+              background: #f2f3f5;
+              color: #686f7a;
+              text-transform: uppercase;
+            }
+            a.cart{
+              font-size: 23px;
+            }
+          }
+        }
+      }//navbar-collapse
+    }//.container-fluid
+  }//.navbar
+}//#menu
+
+
+#menu{
+  height: 50px;
+  background: $red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding:0 30px;
+  overflow: hidden;
+  #menuLeft{
+    height: 50px;
+    width: 42%;
+    a.blog{
+      color: white;
+      height: 100%;
+      width: 60px;
+      padding: 14px;
+      display: block;
+      text-align: center;
+      font-size: 16px;
+      box-shadow: black 0px 0px 6px 0px;
+      background: black;
+    }
+  }//#menuLeft
+  #middle{
+    width: 15%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    .logoBrand{
+      img{
+        height: 100%;
+      }
+    }
+  }//#middle
+  #menuRight{
+    width: 42%;
+
+    a.login{
+      float: right;
+      border-radius: 3px;
+      height: 40px;
+      margin-top: 5px;
+      padding:10px ;
+      background: #f2f3f5;
+      color: #686f7a;
+      text-transform: uppercase;
+    }
+    #cart{
+      a.cart{
+        color: white;
+        float: right;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 50%;
+        margin-top: 5px;
+        font-size: 20px;
+        width:40px;
+        padding-top: 10px;
+        background: transparent;
+        text-align: center;
+        transition: 0.3s all;
+      }
+      a.cart:hover{
+        background: white;
+        color: $red;
+      }
+    }
+  }
+}//#menu

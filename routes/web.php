@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.main');
 });
 Route::get('/blog/categories/a/1', function () {
     return view('bbbbb');
