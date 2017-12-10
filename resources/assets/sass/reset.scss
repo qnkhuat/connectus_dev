@@ -1,0 +1,14 @@
+$red:#d61e2a;
+$blue:#164675;//facebook
+$buttonColor: black;
+$bradius:3px;
+
+input{
+  border: 1px solid #cacbcc !important;
+  padding: 10px;
+  border-radius: 2px
+}
+input:focus{
+  border-color: $red !important;
+  outline: transparent;
+}
