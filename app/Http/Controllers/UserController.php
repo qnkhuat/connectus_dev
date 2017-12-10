@@ -12,7 +12,7 @@ use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
-    public function list() {
+    public function _list() {
       return view("ad.user.list");
     }
 

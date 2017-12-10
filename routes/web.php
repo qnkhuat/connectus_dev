@@ -29,7 +29,7 @@ Route::prefix('admin')->group(function () {
 		Route::get('/profile', function () {
 			return view("ad.user.profile");
 		});
-    Route::get('/', 'UserController@list');
+    Route::get('/', 'UserController@_list');
     Route::get('/create', 'UserController@_new');
     Route::post('/create', 'UserController@create');
 	});

@@ -24,10 +24,6 @@
   <body>
 
     <!-- #menu -->
-
-    <!-- //#menu -->
-
-
     <div id="menu">
       <div id="menuLeft">
         <a href="" class="blog">Blog</a>
@@ -43,11 +39,9 @@
         <div id="cart">
           <a href="" class="fa fa-heart-o cart"></a>
         </div>
-
-
       </div>
     </div>
-
+    <!-- //#menu -->
     <script src="/backend/assets/js/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
