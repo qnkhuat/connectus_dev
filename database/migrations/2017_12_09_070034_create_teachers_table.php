@@ -17,12 +17,12 @@ class CreateTeachersTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->char('avatar', 255);
+            $table->char('avatar', 255)->nullable();
             $table->char('name', 255);
             $table->string('email');
-            $table->string('facebook');
-            $table->string('phone');
-            $table->string('description', 511);
+            $table->string('facebook')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('description', 511)->nullable();
             $table->text('content');
             $table->timestamps();
         });

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Role extends Model
 {
@@ -57,6 +58,19 @@ class Role extends Model
       'send_mail', 'view_mail'
     ]
   }";
+
+  public static function setRole($userId, $newRoles) {
+    // if($user = User.find($userId))
+    // {
+      $this->user_id = $userId;
+      // foreach($newRole as $r)
+      // {
+      //   if(in_array($r, $this::$list))
+      //     $this[$r] = true;
+      // }
+      $this->save();
+    // }
+  }
 
   public function user()
   {
