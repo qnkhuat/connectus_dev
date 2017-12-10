@@ -19,12 +19,12 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')->references('id')->on('courses');
-            $table->float('price');
-            $table->float('sale');
-            $table->date('opening');
-            $table->string('gift', 511);
-            $table->string('message', 511);
-            $table->string('description', 511);
+            $table->float('price')->nullable();
+            $table->float('sale')->nullable();
+            $table->date('opening')->nullable();
+            $table->string('gift', 511)->nullable();
+            $table->string('message', 511)->nullable();
+            $table->string('description', 511)->nullable();
             $table->enum('status', ['not_seen', 'seen', 'sent', 'received_success', 'received_fail']);
             $table->timestamps();
         });

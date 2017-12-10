@@ -15,7 +15,7 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->unique();
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->boolean('create_role')->default(false);
@@ -88,6 +88,8 @@ class CreateRolesTable extends Migration
 
             $table->boolean('send_mail')->default(false);
             $table->boolean('view_mail')->default(false);
+
+            $table->timestamps();
         });
     }
 

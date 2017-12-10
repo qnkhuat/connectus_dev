@@ -21,9 +21,9 @@ form {width: 100%;}
 
 @section('breadcrumb')
 <ol class="breadcrumb pull-right mb-0">
-    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-    <li class="breadcrumb-item active">Users</li>
-    <li class="breadcrumb-item active">Create</li>
+    <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+    <li class="breadcrumb-item active"><a href="/admin/users">Users</a></li>
+    <li class="breadcrumb-item active"><a href="/admin/users/create">Create</a></li>
 </ol>
 @endsection
 
@@ -33,16 +33,30 @@ form {width: 100%;}
 
 @section('content')
 <div class="row">
-  <form action="">
+  <form action="/admin/users/create" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="_token" value="{{csrf_token()}}">
   <div class="col-md-12">
       <div class="card m-b-20">
           <!-- card-block -->
           <div class="card-block">
+
+            <div class="row">
+              @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+            </div>
             <div class="row">
               <div class="col-md-12 col-ls-12 col-sm-12">
                 <p class="mr-t-10"><strong>User type: <span class="color-red">*</span></strong></p>
                 <div class="input-group w-300">
-                  <select name="group" class="selectpicker m-b-0" data-style="btn-success btn-custom">
+                  <select name="group" id="select-group" class="selectpicker m-b-0" data-style="btn-success btn-custom">
                       @foreach ($userTypes as $type)
                       <option value="{{$type}}"><span class="md md-check"></span>&nbsp;{{$type}}</option>
                       @endforeach
@@ -120,7 +134,7 @@ form {width: 100%;}
                 <p class="mr-t-10"><strong>Birth day: <span class="color-red">*</span></strong></p>
                 <div class="input-group">
                     <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
-                    <input type="text" name="birth" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose">
+                    <input type="date" name="birth" placeholder="dd/mm/yyyy">
                 </div>
               </div>
             </div>
@@ -141,7 +155,7 @@ form {width: 100%;}
                   <div class="row">
                     @foreach ($roles as $role)
                       <div class="col-md-3">
-                        <input type="checkbox" value="{{$role}}" id="role_{{$role}}" name="role" data-plugin="switchery" data-color="#1AB394" data-secondary-color="#ED5565" />
+                        <input type="checkbox" value="{{$role}}" class="role-user-group" id="role_{{$role}}" name="roles[]" data-plugin="switchery" data-color="#1AB394" data-secondary-color="#ED5565" />
                         <label for="role_{{$role}}" class="pointer">{{$role}}</label>
                       </div>
                     @endforeach
@@ -195,10 +209,28 @@ form {width: 100%;}
 
 
 <script>
-  $(document).ready(function(){
-    $(".more-address").click(function(){
+  var defaultGroupRole = {!!$defaultGroupRole!!}
+  var userGroup = "student"
+  $(document).ready(function() {
+    $(".more-address").click(function() {
       $('#more-address').append('<div class="mr-t-10"><textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea></div>')
     })
+
+    // selected role if user group changing
+    setRolesChecked()
+    $("#select-group").change(function() {
+      setRolesChecked($(this).val())
+    })
   })
+
+  function setRolesChecked(userGroup = 'student') {
+    $(".role-user-group").prop('checked', false)
+    let roles = defaultGroupRole[userGroup]
+    roles.forEach(function(value) {
+      $("#role_" + value).prop('checked', true)
+    })
+  }
 </script>
 @endsection
+
+<!-- php artisan make:migration create_articles_table --create="articles" -->
