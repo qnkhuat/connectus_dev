@@ -13,6 +13,9 @@ class UserController extends Controller
       $userTypes = User::$types;
       $roles = Role::$list;
       $genders = User::$genders;
-      return view("ad.user.create", ['userTypes' => $userTypes, 'roles' => $roles, 'genders' => $genders]);
+      $defaultGroupRole = Role::$defaultGroupRole;
+      return view("ad.user.create", ['userTypes' => $userTypes, 'roles' => $roles, 'genders' => $genders,
+          'defaultGroupRole' => $defaultGroupRole
+        ]);
     }
 }

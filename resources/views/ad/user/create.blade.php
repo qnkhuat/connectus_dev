@@ -42,7 +42,7 @@ form {width: 100%;}
               <div class="col-md-12 col-ls-12 col-sm-12">
                 <p class="mr-t-10"><strong>User type: <span class="color-red">*</span></strong></p>
                 <div class="input-group w-300">
-                  <select name="group" class="selectpicker m-b-0" data-style="btn-success btn-custom">
+                  <select name="group" id="select-group" class="selectpicker m-b-0" data-style="btn-success btn-custom">
                       @foreach ($userTypes as $type)
                       <option value="{{$type}}"><span class="md md-check"></span>&nbsp;{{$type}}</option>
                       @endforeach
@@ -141,7 +141,7 @@ form {width: 100%;}
                   <div class="row">
                     @foreach ($roles as $role)
                       <div class="col-md-3">
-                        <input type="checkbox" value="{{$role}}" id="role_{{$role}}" name="role" data-plugin="switchery" data-color="#1AB394" data-secondary-color="#ED5565" />
+                        <input type="checkbox" value="{{$role}}" class="role-user-group" id="role_{{$role}}" name="role" data-plugin="switchery" data-color="#1AB394" data-secondary-color="#ED5565" />
                         <label for="role_{{$role}}" class="pointer">{{$role}}</label>
                       </div>
                     @endforeach
@@ -195,10 +195,28 @@ form {width: 100%;}
 
 
 <script>
-  $(document).ready(function(){
-    $(".more-address").click(function(){
+  var defaultGroupRole = {!!$defaultGroupRole!!}
+  var userGroup = "student"
+  $(document).ready(function() {
+    $(".more-address").click(function() {
       $('#more-address').append('<div class="mr-t-10"><textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea></div>')
     })
+
+    // selected role if user group changing
+    setRolesChecked()
+    $("#select-group").change(function() {
+      setRolesChecked($(this).val())
+    })
   })
+
+  function setRolesChecked(userGroup = 'student') {
+    $(".role-user-group").prop('checked', false)
+    let roles = defaultGroupRole[userGroup]
+    roles.forEach(function(value) {
+      $("#role_" + value).prop('checked', true)
+    })
+  }
 </script>
 @endsection
+
+<!-- php artisan make:migration create_articles_table --create="articles" -->
