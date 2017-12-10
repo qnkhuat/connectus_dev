@@ -41,6 +41,7 @@ class UserController extends Controller
 
       if($user->save())
       {
+        Role::setRole($user->id, $request->roles);
         if($request->hasFile('avatar'))
         {
           $path = "img/avatar/";
@@ -48,16 +49,10 @@ class UserController extends Controller
           $avatarName = $user->id.".".$avatar->getClientOriginalExtension();
           $avatar->move($path, $avatarName);
           Image::make(sprintf($path."%s", $avatarName))->resize(300, 300)->save();
-
-          $roles = Role::$list;
-          $newRoles = $request->roles;
-          $user->roles()->delete();
-          Role::setRole($user->id, $newRoles);
-          $user->roles()->save();
+          $user->save();
         }
         return redirect("/admin/users")->with(["messages" => ["type" => "success", "content" => "User created!"]]);
-      } else {
+      } else
         return redirect("/admin/users/create")->with(["result" => "save fail"]);
-      }
     }
 }

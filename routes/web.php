@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/', 'test_controller@test');
 Route::get('/blog/categories/a/1', function () {
     return view('bbbbb');
 });
