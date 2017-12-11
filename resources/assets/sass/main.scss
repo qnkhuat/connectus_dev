@@ -1,0 +1,71 @@
+$red:#d61e2a;
+$blue:#164675;//facebook
+$buttonColor: black;
+$bradius:3px;
+$transition-time:0.3s ;
+#banner{
+  background: url("/images/header/banner2.jpg");
+  margin-top: 50px;
+  height: 580px;
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  z-index: 100;
+  .category{
+    position: absolute;
+    right: 70px;
+    .catigories{
+      position: relative;
+      width: 202px;
+      height: 102px;
+      border: 1px solid white;
+      color: white;
+      text-align: center;
+      font-size: 35px;
+      background: rgba(255, 255, 255, 0.23921568627450981);
+      margin: 35px 0;
+
+      i{
+        color: white;
+      }
+      p{
+        font-size: 20px;
+      }
+    }
+    .catigories:hover:before{
+      opacity: 1;
+    }
+    .catigories:hover{
+      box-shadow: 0 2px 8px 2px rgba(153, 198, 243, 0.45);
+    }
+    .catigories:before{
+      content: "COMING SOON";
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #ff5850;
+      transition: $transition-time all;
+      font-size: 20px;
+      line-height: 100px;
+      opacity: 0;
+      transform-origin: 50% 0;
+      transition-timing-function: ease-out;
+    }
+    .language:before{
+      content: "";
+      z-index: -1;
+      background: red;
+    }
+    a{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 3;
+    }
+  }
+}

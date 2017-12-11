@@ -1,0 +1,9 @@
+@media only screen and (max-width: 900px) {}
+@media only screen and (max-width: 600px) {
+  #menu-desktop{
+    display: none;
+  }//#menu-desktop
+  #menu-mobile{
+    display: initial;
+  }//#menu-mobile
+}

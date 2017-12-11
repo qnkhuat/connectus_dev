@@ -2,242 +2,241 @@ $red:#d61e2a;
 $blue:#164675;//facebook
 $buttonColor: black;
 $bradius:3px;
+$transition-time:0.3s ;
 a{
   text-decoration: none !important;
 }
 
 html,body{
+  background: #f7f8fa !important;
+  width: 100%;
   height: 2000px;
   background: 100%;
   font-family: "Roboto",sans-serif;
 }
-
 #menu{
-  height: 50px;
-  background: $red;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  overflow: hidden;
-  box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
-  .menu-left{
+  z-index: 99999;
+  position: relative;
+  #menu-desktop{
+    width: 100%;
     height: 50px;
-    width: 42%;
-    a.blog{
-      color: white;
-      height: 100%;
-      width: 60px;
-      padding: 14px;
-      display: block;
-      text-align: center;
-      font-size: 16px;
-      background: black;
-    }
-  }//#menuLeft
-  .middle{
-    width: 15%;
-    width: 50px;
-    text-align: center;
-    .logoBrand{
-      img{
+    background: $red;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+    .menu-left{
+      height: 50px;
+      width: 42%;
+      a.blog{
+        color: white;
         height: 100%;
+        width: 60px;
+        padding: 14px;
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        background: black;
+      }
+    }//#menuLeft
+    .middle{
+      width: 15%;
+      width: 50px;
+      text-align: center;
+      .logoBrand{
+        img{
+          height: 100%;
+        }
+      }
+    }//.middle
+    .menu-right{
+      width: 42%;
+      p.login-button{
+        float: right;
+        cursor: pointer;
+        border-radius: $bradius;
+        height: 80%;
+        margin-top: 5px;
+        padding:10px ;
+        background: white;
+        color: #686f7a;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .cart{
+        float: right;
+        margin-right: 10px;
+        color: white;
+        margin-top: 5px;
+        border-radius: $bradius;
+        width: auto;
+        padding: 0 11px;
+        transition: $transition-time all;
+        a.cart-icon{
+
+          background: transparent;
+          transition: $transition-time all;
+        }
+      }//.cart
+
+    }//.menu-right
+
+  }//#menu
+  #login-popup{
+    left: 0;
+    transition: $transition-time;
+    z-index: -1;
+    opacity: 0;
+    display: none;
+    .modal-background{
+      background: rgba(0, 0, 0, 0.45);
+      position: absolute;
+      z-index: -1;
+    }
+    .modal-dialogs{
+      position: static;
+      margin: 50px auto;
+      top: 50px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: $bradius;
+      background: white;
+      padding: 30px 15px;
+      width: 400px;
+      z-index: 3;
+      .login-tab{
+        .login-tab-button{
+          box-shadow: 0 2px 2px 0 rgba(41,48,59,.24), 0 0 2px 0 rgba(41,48,59,.12);
+          width: 100%;
+          border-radius: 3px;
+          overflow: hidden;
+          .df{
+            flex-direction: row;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+            i.fa{
+              padding: 11px 0 11px 5px;
+              font-size: 20px;
+              text-align: center;
+              width: 50px;
+            }
+          }
+        }//.login-tab-button
+        .login-facebook{
+          .df{
+            background: $blue;
+          }
+        }
+        .signup-button{
+          margin-top: 10px;
+          cursor: pointer;
+          .df{
+            background: $red;
+            margin-bottom: 0;
+          }
+        }
+        .user-infomations{
+          display: flex;
+          flex-wrap: wrap;
+          .input-user-infomations{
+            position: relative;
+            width: 100%;
+            margin-bottom: 10px;
+            input{
+              width: 100%;
+              box-shadow: none;
+              padding: 10px 10px 10px 40px;
+            }
+          }
+          .submit{
+            width: 100%;
+            input{
+              width: 100%;
+              padding:10px;
+              font-weight: 500;
+
+            }
+          }
+          .signup-submit{
+            display: none;
+          }
+          .forget-password{
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            a{
+              color: $blue;
+              font-weight: 500;
+            }
+          }
+          .input-user-infomations:before{
+            font:normal normal normal 14px/1 FontAwesome;
+            color: #dedfe0;
+            font-size: 20px;
+            left: 10px;
+            line-height: 1;
+            margin-top: 10px;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 20px;
+            z-index: 2;
+          }
+          hr{
+            width: 100%;
+            margin:10px 0 20px 0;
+            padding: 0;
+          }
+          .username{
+            display: none;
+          }
+          .email:before{
+            content:'\f0e0';
+          }
+          .password:before{
+            content:"\f023";
+          }
+          .username:before{
+            content: '\f2c0';
+          }
+        }//.user-infomations
+      }//.login-tap
+    }//.modal-dialog
+    .separate{
+      padding: 5px 0;
+      hr{
+        flex: 1 0 auto;
+      }
+      p{
+        padding: 0 5px;
+        transform: translate(0,9px);
       }
     }
-  }//.middle
-  .menu-right{
-    width: 42%;
-    p.login-button{
-      float: right;
-      cursor: pointer;
-      border-radius: $bradius;
-      height: 80%;
-      margin-top: 5px;
-      padding:10px ;
-      background: #f2f3f5;
-      color: #686f7a;
-      text-transform: uppercase;
-    }
+  }//#login-popup
 
+  #menu-mobile{
+    display: none;
+    .menu-logo{
+      overflow: hidden;
+      width: 100%;
+      justify-content: center;
+      img{
+        cursor: pointer;
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
     .cart{
-      float: right;
-      margin-right: 10px;
-      color: white;
-      margin-top: 5px;
-      a.cart-icon{
-        background: transparent;
-        transition: 0.3s all;
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      background: $red;
+      a{
         color: white;
       }
-    }//.cart
-    .cart:hover{
-      background: white;
-      a{
-        color:$red;
-      }
     }
 
-  }//.menu-right
-
-}//#menu
-#login-popup{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  transition: 0.3s;
-  z-index: -1;
-  opacity: 0;
-  .modal-background{
-    background: rgba(0, 0, 0, 0.45);
-    width: 100%;
-    position: absolute;
-    height: 100%;
-    z-index: -1;
-  }
-  .modal-dialogs{
-    position: static;
-    margin: 50px auto;
-    top: 50px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: $bradius;
-    background: white;
-    padding: 30px 15px;
-    width: 400px;
-    z-index: 3;
-    .login-tab{
-      .login-tab-button{
-        box-shadow: 0 2px 2px 0 rgba(41,48,59,.24), 0 0 2px 0 rgba(41,48,59,.12);
-        width: 100%;
-        border-radius: 3px;
-        overflow: hidden;
-        .df{
-          flex-direction: row;
-          align-items: center;
-          color: white;
-          font-size: 16px;
-          i.fa{
-            padding: 11px 0 11px 5px;
-            font-size: 20px;
-            text-align: center;
-            width: 50px;
-          }
-        }
-      }//.login-tab-button
-      .login-facebook{
-        .df{
-          background: $blue;
-        }
-      }
-      .signup-button{
-        margin-top: 10px;
-        cursor: pointer;
-        .df{
-          background: $red;
-          margin-bottom: 0;
-        }
-      }
-      .user-infomations{
-        display: flex;
-        flex-wrap: wrap;
-        .input-user-infomations{
-          position: relative;
-          width: 100%;
-          margin-bottom: 10px;
-          input{
-            width: 100%;
-            box-shadow: none;
-            padding: 10px 10px 10px 40px;
-          }
-        }
-        .submit{
-          width: 100%;
-          input{
-            width: 100%;
-            padding:10px;
-            font-weight: 500;
-
-          }
-        }
-        .signup-submit{
-          display: none;
-        }
-        .forget-password{
-          width: 100%;
-          text-align: center;
-          margin-top: 10px;
-          a{
-            color: $blue;
-            font-weight: 500;
-          }
-        }
-        .input-user-infomations:before{
-          font:normal normal normal 14px/1 FontAwesome;
-          color: #dedfe0;
-          font-size: 20px;
-          left: 10px;
-          line-height: 1;
-          margin-top: 10px;
-          position: absolute;
-          text-align: center;
-          top: 0;
-          width: 20px;
-          z-index: 2;
-        }
-        hr{
-          width: 100%;
-          margin:10px 0 20px 0;
-          padding: 0;
-        }
-        .username{
-          display: none;
-        }
-        .email:before{
-          content:'\f0e0';
-        }
-        .password:before{
-          content:"\f023";
-        }
-        .username:before{
-          content: '\f2c0';
-        }
-      }//.user-infomations
-    }//.login-tap
-  }//.modal-dialog
-  .separate{
-    padding: 5px 0;
-    hr{
-      flex: 1 0 auto;
-    }
-    p{
-      padding: 0 5px;
-      transform: translate(0,9px);
-    }
-  }
-}//#login-popup
-
-#menu-mobile{
-  display: none;
-  .menu-logo{
-    position: fixed;
-    overflow: hidden;
-    bottom: 0;
-    width: 100%;
-    justify-content: center;
-    img{
-      cursor: pointer;
-      width: 50px;
-      border-radius: 50%;
-    }
-  }
-  .cart{
-    position: fixed;
-    right: 15px;
-    top: 15px;
-    a{
-      color: white;
-    }
-  }
-
-}//#menu-mobile
+  }//#menu-mobile
+}
