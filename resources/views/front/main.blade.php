@@ -157,18 +157,18 @@
     <!-- #courses -->
     <div id="courses" class="padding-0-15">
       <div class="course-ielts courses-row">
-        <h3 class="courses-row-title">Khoá học được IELTS</h3>
+        <h3 class="courses-row-title">Khoá học IELTS</h3>
         <div class="courses-group">
 
-          <div class="courses-item-box" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">
+          <div class="courses-item-box" title=".course-popup">
             <div class="course-item-content">
               <div class="course-image-box">
                 <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
               </div>
               <div class="course-info-box">
-                <div class="course-info-title">
+                <a class="course-info-title title-blue">
                   IELTS 8.5
-                </div>
+                </a>
 
                 <div class="course-info-centre">
                   KOS
@@ -182,12 +182,533 @@
 
               <div class="course-popup">
                 <div class="course-info-start">Khai giảng : 3/2/2017</div>
-                <div class="course-info-title">IELTS 8.5</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
 
               </div>
             </div>
           </div><!-- //item -->
 
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 2.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 3.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 4.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 5.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 6.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 7.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
 
 
 
@@ -197,15 +718,579 @@
         <div class="prev-button pagination-button"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
       </div><!-- //.courses-row -->
 
+      <div class="course-ielts courses-row">
+        <h3 class="courses-row-title">Khoá học IELTS</h3>
+        <div class="courses-group">
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 7.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 6.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 5.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 3.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 5.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 6.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 7.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+          <div class="courses-item-box" title=".course-popup">
+            <div class="course-item-content">
+              <div class="course-image-box">
+                <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
+              </div>
+              <div class="course-info-box">
+                <a class="course-info-title title-blue">
+                  IELTS 8.5
+                </a>
+
+                <div class="course-info-centre">
+                  KOS
+                </div>
+
+                <div class="course-price-box">
+                  <span class="course-price-origin">5.000.000</span>
+                  <span class="course-price-sale">4.000.000</span>
+                </div>
+              </div>
+
+              <div class="course-popup">
+                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <a class="course-info-title" href="">IELTS 8.5</a>
+
+                <div class="course-info-category">
+                  <div class="best-seller-tag"></div>
+                  in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+                </div>
+
+                <div class="course-info-short">
+                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+                </div>
+
+                <div class="course-info-intro">
+                  <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                  <ul class="course-info-intro-features">
+                    <li>Học là auto đẹp trai</li>
+                    <li>Không học làm chó</li>
+                    <li>Học một khoá là muốn học lại</li>
+                  </ul>
+                </div>
+
+                <div class="addcart-box"><a href="" class="addcart-button">Đăng ký</a></div>
+
+              </div>
+            </div>
+          </div><!-- //item -->
+
+
+
+
+        </div><!-- //.courses-group -->
+        <div class="next-button pagination-button"> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+        <div class="prev-button pagination-button"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+      </div><!-- //.courses-row -->
+
+
+
     </div>
     <!-- //#courses -->
 
 
     <script src="/backend/assets/js/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="/js/drooltip.js"></script>
 
     <script src="js/header.js"></script>
+    <script src="/js/drooltip.src.js"></script>
     <script src="js/popup-item.js"></script>
     <script src="js/courses.js"></script>
 </body>

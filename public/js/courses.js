@@ -44,36 +44,36 @@ jQuery(document).ready(function($) {
         }
       }
     }else if($(this).hasClass('next-button')){
-        if(ratioOfAItems==4){
-          if(currentCourses+4==numberOfCourses){
-            //do nothing
-          }else if(currentCourses+6<numberOfCourses){
-            currentTransform=currentTransform-50;
-            value="translate("+currentTransform+"%)";
-            group.css('transform', value);
-            currentCourses+=2;
-          }else{//move 1 course
-            currentTransform=currentTransform-25;
-            value="translate("+currentTransform+"%)";
-            group.css('transform', value);
-            currentCourses+=1;
+      if(ratioOfAItems==4){
+        if(currentCourses+4==numberOfCourses){
+          //do nothing
+        }else if(currentCourses+6<numberOfCourses){
+          currentTransform=currentTransform-50;
+          value="translate("+currentTransform+"%)";
+          group.css('transform', value);
+          currentCourses+=2;
+        }else{//move 1 course
+          currentTransform=currentTransform-25;
+          value="translate("+currentTransform+"%)";
+          group.css('transform', value);
+          currentCourses+=1;
 
-          }
-        }else if(ratioOfAItems==3){
-          if(currentCourses+3==numberOfCourses){
-            //do nothing
-          }else if(currentCourses+5<numberOfCourses){
-            currentTransform=currentTransform-200/3;
-            value="translate("+currentTransform+"%)";
-            group.css('transform', value);
-            currentCourses+=2;
-          }else{//move 1 course
-            currentTransform=currentTransform-100/3;
-            value="translate("+currentTransform+"%)";
-            group.css('transform', value);
-            currentCourses+=1;
-          }
         }
+      }else if(ratioOfAItems==3){
+        if(currentCourses+3==numberOfCourses){
+          //do nothing
+        }else if(currentCourses+5<numberOfCourses){
+          currentTransform=currentTransform-200/3;
+          value="translate("+currentTransform+"%)";
+          group.css('transform', value);
+          currentCourses+=2;
+        }else{//move 1 course
+          currentTransform=currentTransform-100/3;
+          value="translate("+currentTransform+"%)";
+          group.css('transform', value);
+          currentCourses+=1;
+        }
+      }
     }
 
   });

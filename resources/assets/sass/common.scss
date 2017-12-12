@@ -3,6 +3,9 @@ $blue:#164675;//facebook
 $buttonColor: black;
 $bradius:3px;
 $transition-time:0.3s ;
+$itemwidth:23%;
+$titleBlue:#017691;
+
 .padding-0-30{
   padding: 0 30px;
 }
@@ -21,7 +24,9 @@ $transition-time:0.3s ;
   position: fixed;
   bottom: 0;
 }
-
+.title-blue{
+  color: $titleBlue;
+}
 
 .df{
   display: flex;

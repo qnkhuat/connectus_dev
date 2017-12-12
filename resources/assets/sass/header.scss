@@ -1,16 +1,18 @@
 $red:#d61e2a;
+$reda:#d61e2a;
 $blue:#164675;//facebook
 $buttonColor: black;
 $bradius:3px;
 $transition-time:0.3s ;
 a{
   text-decoration: none !important;
+  color: $reda;
 }
 
 html,body{
   background: #f7f8fa !important;
   width: 100%;
-  height: 2000px;
+  height: 100%;
   background: 100%;
   font-family: "Roboto",sans-serif;
 }
