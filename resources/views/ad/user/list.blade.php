@@ -11,10 +11,22 @@
 <link href="/backend/assets/plugins/bootstrap-table/css/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
 <style>
 form {width: 100%;}
+.width-60 {width: 60px;}
 .mr-t-10 {margin-top: 10px;}
 .btn-group {width: 300px;}
 .pointer {cursor: pointer;}
 .float-right {float: right;}
+ul.pagination li {
+  padding: 7px;
+  margin: 1px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+ul.pagination li.active {
+  background: #2bbbad;
+  border-color: #2bbbad;
+}
+ul.pagination li.active span {background: transparent; color: #fff;}
 </style>
 @endsection
 
@@ -44,173 +56,144 @@ form {width: 100%;}
     	</div>
     @endif
   </div>
+  <?php
+    $perpage = Request::get("perpage");
+    $group = Request::get("group");
+    $gender = Request::get("gender");
+    $email = Request::get("email");
+    $phone = Request::get("phone");
+  ?>
   <div class="col-sm-12">
-      <div class="card-box">
-          <button id="demo-delete-row" class="btn btn-danger" disabled><i class="fa fa-times m-r-5"></i>Delete</button>
-          <table id="demo-custom-toolbar"  data-toggle="table"
-                 data-toolbar="#demo-delete-row"
-                 data-search="true"
-                 data-show-refresh="true"
-                 data-show-toggle="true"
-                 data-show-columns="true"
-                 data-sort-name="id"
-                 data-page-list="[5, 10, 20, 50, 100]"
-                 data-page-size="5"
-                 data-pagination="true" data-show-pagination-switch="true" class="table-bordered ">
-              <thead>
-              <tr>
-                  <th data-field="state" data-checkbox="true"></th>
-                  <th data-field="id" data-sortable="true" data-formatter="invoiceFormatter">Order ID</th>
-                  <th data-field="name" data-sortable="true">Name</th>
-                  <th data-field="date" data-sortable="true" data-formatter="dateFormatter">Order Date</th>
-                  <th data-field="amount" data-align="center" data-sortable="true" data-sorter="priceSorter">Price</th>
-                  <th data-field="status" data-align="center" data-sortable="true" data-formatter="statusFormatter">Status</th>
-              </tr>
-              </thead>
-
-              <tbody>
-              <tr>
-                  <td></td>
-                  <td>UB-1609</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Unpaid</td>
-              </tr>
-              <tr>
-                  <td></td>
-                  <td>UB-1610</td>
-                  <td>Woldt</td>
-                  <td>24 Jun 2015</td>
-                  <td>$ 15.00</td>
-                  <td>Paid</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1611</td>
-                  <td>Leonardo</td>
-                  <td>25 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Shipped</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1612</td>
-                  <td>Halladay</td>
-                  <td>27 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Refunded</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1613</td>
-                  <td>Badgett</td>
-                  <td>28 Jun 2015</td>
-                  <td>$ 95.00</td>
-                  <td>Unpaid</td>
-              </tr>
-              <tr>
-                  <td></td>
-                  <td>UB-1614</td>
-                  <td>Boudreaux</td>
-                  <td>29 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Paid</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1615</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Shipped</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1616</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Refunded</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1617</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Unpaid</td>
-              </tr>
-              <tr>
-                  <td></td>
-                  <td>UB-1618</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Paid</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1619</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Shipped</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1620</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Refunded</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1621</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Unpaid</td>
-              </tr>
-              <tr>
-                  <td></td>
-                  <td>UB-1622</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Paid</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1623</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Shipped</td>
-              </tr>
-
-              <tr>
-                  <td></td>
-                  <td>UB-1624</td>
-                  <td>Boudreaux</td>
-                  <td>22 Jun 2015</td>
-                  <td>$ 35.00</td>
-                  <td>Refunded</td>
-              </tr>
-              </tbody>
-          </table>
+    <form action="" method="get">
+      <div class="row">
+      <div class="col-sm-2">
+        <span>Record</span>
+        <select name="perpage" class="selectpicker" data-style="btn-default btn-custom">
+            <option value="5" {{ $perpage == "5" ? "selected" : "" }}>5 record per page</option>
+            <option value="10" {{ $perpage == "10" ? "selected" : "" }}>10 record per page</option>
+            <option value="20" {{ $perpage == "20" ? "selected" : "" }}>20 record per page</option>
+            <option value="50" {{ $perpage == "50" ? "selected" : "" }}>50 record per page</option>
+        </select>
       </div>
+
+      <div class="col-sm-2">
+        <span>Group</span>
+        <select name="group" class="selectpicker" data-style="btn-default btn-custom">
+            <option value=""></option>
+            <option value="student" {{ $group == "student" ? "selected" : "" }}>student</option>
+            <option value="post" {{ $group == "post" ? "selected" : "" }}>post</option>
+            <option value="partner" {{ $group == "partner" ? "selected" : "" }}>partner</option>
+            <option value="admin" {{ $group == "admin" ? "selected" : "" }}>admin</option>
+        </select>
+      </div>
+
+      <div class="col-sm-2">
+        <span>Gender</span>
+        <select name="gender" class="selectpicker" data-style="btn-default btn-custom">
+            <option value=""></option>
+            <option value="male" {{ $gender == "male" ? "selected" : "" }}>male</option>
+            <option value="female" {{ $gender == "female" ? "selected" : "" }}>female</option>
+            <option value="other" {{ $gender == "other" ? "selected" : "" }}>other</option>
+        </select>
+      </div>
+
+      <div class="col-sm-2">
+        <span>Email</span>
+        <input name="email" type="text" class="form-control" value="{{$email}}">
+      </div>
+
+      <div class="col-sm-2">
+        <span>Phone</span>
+        <input name="phone" type="number" class="form-control" value="{{$phone}}">
+      </div>
+
+      <div class="col-sm-2">
+        <div style="margin-top: 22px;"></div>
+        <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
+        <a href="/admin/users">Reset</a>
+      </div>
+    </div>
+    </form>
+  </div>
+  <div class="col-sm-12">
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered">
+        <tr class="text-center">
+          <th>#</th>
+          <th>Avatar</th>
+          <th>Name</th>
+          <th>Group</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>website</th>
+          <th>Roles</th>
+          <th>Adress</th>
+          <th>Manage</th>
+        </tr>
+
+        @foreach ($users as $key => $user)
+        <tr>
+          <td>{{ $key + 1 }}</td>
+          <td>
+            <img src="/img/avatar/{{ $user->avatar }}" alt="" class="width-60">
+          </td>
+          <td>{{ $user->name }}</td>
+          <td>
+            {!!
+              $user->group == "admin" ? '<span class="label label-table label-success">admin</span>' :
+              (
+                $user->group == "partner" ? '<span class="label label-table label-warning">partner</span>' :
+                  $user->group == "post" ? '<span class="label label-table label-danger">post</span>' :
+                    '<span class="label label-table label-inverse">student</span>'
+              )
+            !!}
+          </td>
+          <td>
+            {!!
+              $user->gender == "male" ? '<span class="label label-table label-success">male</span>' :
+              (
+                $user->gender == "female" ? '<span class="label label-table label-warning">female</span>' :
+                  '<span class="label label-table label-danger">other</span>'
+              )
+            !!}
+          </td>
+          <td>{{ $user->email }}</td>
+          <td>{{ $user->phone }}</td>
+          <td>{{ $user->website }}</td>
+          <td>
+            $user->role
+          </td>
+          <td>
+            <?php
+              $add = json_decode($user->address);
+            ?>
+            @foreach ($add as $a)
+              <span class="label label-table label-info">{{$a}}</span>
+            @endforeach
+          </td>
+          <td>
+            <a href="/admin/users/profile/{{$user->id}}">
+              <button type="button" class="btn btn-xs btn-default btn-rounded waves-effect waves-light">Profile</button>
+            </a>
+            <a href="/admin/users/edit/{{$user->id}}">
+              <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
+            </a>
+            <button type="button" onclick="deleteUser({{$user->id}}, '{{$user->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
+          </td>
+        </tr>
+        @endforeach
+      </table>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    {{$users->appends([
+      'perpage' => $perpage,
+      'group' => $group,
+      'gender' => $gender,
+      'email' => $email,
+      'phone' => $phone
+    ])->links()}}
   </div>
 </div>
 @endsection
@@ -234,4 +217,30 @@ form {width: 100%;}
 <!-- Bootsrap table js -->
 <script src="/backend/assets/plugins/bootstrap-table/js/bootstrap-table.js"></script>
 <script src="/backend/assets/pages/jquery.bs-table.js"></script>
+
+<script>
+
+  $.ajaxSetup({
+    headers: { 'X-CSRF-Token' : '{{csrf_token()}}' }
+  });
+  function deleteUser(user_id, name) {
+    let deleteConfirm = confirm("Do you want delete " + name + "?")
+    if(deleteConfirm) {
+      $.ajax({
+        url : "{{ url('/admin/users/detroy') }}/" + user_id,
+        type : "post",
+        dataType:"text",
+        data : {
+          id: user_id
+        },
+        success : function (result){
+          location.reload()
+        },
+          error: function(result) {
+              alert("Có lỗi xảy ra!");
+          }
+      });
+    }
+  }
+</script>
 @endsection

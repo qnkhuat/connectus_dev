@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+// use Laravel\Scout\Searchable;
 use App\User;
 use App\Models\Role;
 use File, Image, Hash;
@@ -12,8 +13,42 @@ use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
-    public function _list() {
-      return view("ad.user.list");
+    // use Searchable;
+    public function _list(Request $request) {
+      $perpage = (int) $request->perpage;
+      $perpage < 5 ? $perpage = 5 : $perpage;
+      $perpage > 50 ? $perpage = 50 : $perpage;
+      $group = $request->group;
+      $gender = $request->gender;
+      $email = $request->email;
+      $phone = $request->phone;
+
+      if($group != "" && $gender != "")
+        $users = User::with('role')
+          ->where('group', $group)
+          ->where('gender', $gender)
+          ->where('email',"LIKE" , "%$email%")
+          ->where('phone',"LIKE" , "%$phone%")
+          // ->searchable()
+          ->paginate($perpage);
+      else if($group != "")
+        $users = User::with('role')
+          ->where('group', $group)
+          ->where('email',"LIKE" , "%$email%")
+          ->where('phone',"LIKE" , "%$phone%")
+          ->paginate($perpage);
+      else if($gender != "")
+        $users = User::with('role')
+          ->where('gender', $gender)
+          ->where('email',"LIKE" , "%$email%")
+          ->where('phone',"LIKE" , "%$phone%")
+          ->paginate($perpage);
+      else
+        $users = User::with('role')
+          ->where('email',"LIKE" , "%$email%")
+          ->where('phone',"LIKE" , "%$phone%")
+          ->paginate($perpage);
+      return view("ad.user.list", ["users" => $users]);
     }
 
     public function _new() {
@@ -49,6 +84,7 @@ class UserController extends Controller
           $avatarName = $user->id.".".$avatar->getClientOriginalExtension();
           $avatar->move($path, $avatarName);
           Image::make(sprintf($path."%s", $avatarName))->resize(300, 300)->save();
+          $user->avatar = $avatarName;
           $user->save();
         }
         return redirect("/admin/users")->with(["messages" => ["type" => "success", "content" => "User created!"]]);

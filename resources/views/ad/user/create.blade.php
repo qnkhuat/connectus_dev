@@ -42,16 +42,16 @@ form {width: 100%;}
 
             <div class="row">
               @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
             </div>
+
             <div class="row">
               <div class="col-md-12 col-ls-12 col-sm-12">
                 <p class="mr-t-10"><strong>User type: <span class="color-red">*</span></strong></p>
