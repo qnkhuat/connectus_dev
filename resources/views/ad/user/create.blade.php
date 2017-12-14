@@ -134,7 +134,7 @@ form {width: 100%;}
                 <p class="mr-t-10"><strong>Birth day: <span class="color-red">*</span></strong></p>
                 <div class="input-group">
                     <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
-                    <input type="date" name="birth" placeholder="dd/mm/yyyy">
+                    <input type="date" name="birth" placeholder="dd/mm/yyyy" required>
                 </div>
               </div>
             </div>
