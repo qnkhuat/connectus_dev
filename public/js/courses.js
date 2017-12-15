@@ -75,6 +75,30 @@ jQuery(document).ready(function($) {
         }
       }
     }
+  });
+
+
+  //load more course in mobile mode
+  $('.more-course-button').click(function() {
+    var count =0,current=0;
+    var steps=3;
+    var lengthOfCourses=$(this).parent().find('.courses-group > div').length;
+    for(i =1;i<=lengthOfCourses;i++){
+      var name = $(this).parent().find('.courses-group .courses-item-box:nth-child('+i+')');
+      if(name.css('display')=='none' && count <steps){
+        name.css('display', 'inline-block');
+        count++;
+        current=i;
+      }
+
+    }
+    if(count<steps || current ==lengthOfCourses){//keep track to hide the more button
+      $(this).css('display', 'none');
+    }
 
   });
+
+
+
+
 });

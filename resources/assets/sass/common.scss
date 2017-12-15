@@ -1,11 +1,13 @@
 $red:#d61e2a;
+$pink:#e55e8d;
+$violet:#828bcc;
+$reda:#d61e2a;
 $blue:#164675;//facebook
 $buttonColor: black;
 $bradius:3px;
 $transition-time:0.3s ;
-$itemwidth:23%;
 $titleBlue:#017691;
-
+$padding:13px;
 .padding-0-30{
   padding: 0 30px;
 }
@@ -20,7 +22,7 @@ $titleBlue:#017691;
   position: fixed;
   top: 0;
 }
-.fixed-bototm{
+.fixed-bottom{
   position: fixed;
   bottom: 0;
 }
@@ -43,10 +45,10 @@ $titleBlue:#017691;
   transition: 0.3s all;
   background: white;
   a{
-    color:$red;
+    color:$pink;
   }
   .cart-count{
-    color: $red;
+    color: $pink;
   }
 
 }
@@ -59,4 +61,11 @@ $titleBlue:#017691;
 
 .button:hover{
   box-shadow: 4px 4px 14px 2px rgba(0,0,0,0.1)
+}
+
+@media only screen and (max-width: 600px) {
+  .padding-0-15{
+    padding: 0 5px;
+  }
+
 }

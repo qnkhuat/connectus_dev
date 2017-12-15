@@ -1,15 +1,19 @@
 $red:#d61e2a;
+$pink:#e55e8d;
+$violet:#828bcc;
+$reda:#d61e2a;
 $blue:#164675;//facebook
 $buttonColor: black;
 $bradius:3px;
 $transition-time:0.3s ;
-
+$titleBlue:#017691;
+$padding:13px;
 input{
   border: 1px solid #cacbcc !important;
   padding: 10px;
   border-radius: 2px
 }
 input:focus{
-  border-color: $red !important;
+  border-color: $violet !important;
   outline: transparent;
 }

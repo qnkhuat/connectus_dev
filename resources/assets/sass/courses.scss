@@ -1,16 +1,27 @@
 $red:#d61e2a;
+$pink:#e55e8d;
+$violet:#828bcc;
+$reda:#d61e2a;
 $blue:#164675;//facebook
 $buttonColor: black;
 $bradius:3px;
 $transition-time:0.3s ;
-$itemwidth:23%;
 $titleBlue:#017691;
-
+$itemwidth:23%;
+$padding:13px;
+#courses{
+  padding: 30px 0;
+}
 .courses-row{
   overflow-x: hidden;
   padding-bottom: 5px;
   position: relative;
+  h3.courses-row-title{
+    margin: 0;
+    margin-bottom: 10px;
+  }
   .courses-group{
+    position: relative;
     font-size: 0;
     white-space: nowrap;
     transition: 0.3s all;
@@ -54,7 +65,7 @@ $titleBlue:#017691;
         }
         .course-price-sale{
           font-size: 18px;
-          color: $red;
+          color: $violet;
         }
       }
     }//..course-info-box
@@ -75,7 +86,7 @@ $titleBlue:#017691;
 
 .pagination-button{
   box-shadow: 0px 2px 6px 2px rgba(20, 23, 28, 0.15);
-  color: $red;
+  color: $violet;
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -129,11 +140,18 @@ $titleBlue:#017691;
       }
     }
   }
-  .addcart-box{
+  .details-box{
     text-align: center;
-    background: #ec5252;
+    background: $pink;
+    position: relative;
+    height: 50px;
     a{
       color: white;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
       line-height: 50px;
     }
   }
@@ -143,5 +161,138 @@ $titleBlue:#017691;
 @media only screen and (max-width: 768px) {
   .courses-item-box{
     width: calc(94%/3);
+  }
+}
+@media only screen and (max-width: 600px) {
+  $padding:5px;
+  .course-popup{
+    display: none;
+  }
+  #course-popup-mobile{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: $padding;
+    height: auto;
+    color: white;
+    background: black;
+    z-index: 1000000;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.37);
+    transition: $transition-time all;
+    transform: translate(0,-100%);
+    .course-popup-mobile-wrap-short{
+      .course-info-title{
+        color: $red;
+      }
+      .course-price-box{
+        .course-price-origin{
+          font-size: 12px;
+          text-decoration: line-through;
+        }
+      }
+    }//.course-popup-mobile-wrap-short
+    .course-popup-mobile-wrap-detail{
+      .course-info-short{
+        .course-info-total-hours,.course-info-total-periods,.course-info-day{
+          padding-right: 5px;
+        }
+      }
+    }//.course-popup-mobile-wrap-detail
+    .wrapup-button{
+      text-align: center;
+      position: absolute;
+      right: 50%;
+      color: red;
+      height: 30px;
+      width: 30px;
+      background: black;
+      line-height: 30px;
+      transform: translateY(-15px);
+      border-radius: 50%;
+      .wrapup-button-down{
+        display: none;
+      }
+    }
+
+  }//#course-popup-mobile
+  .details-box{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 1000001;
+    .details-button{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: $red;
+      color: white;
+    }
+  }
+
+  #course-popup-mobile{
+    .course-price-origin{
+      font-size: 12px;
+      text-decoration: line-through;
+    }
+    .course-info-category{
+      display: none;
+    }
+    .course-info-intro-features{
+      margin-bottom: 0;
+    }
+  }
+  .courses-row{
+    padding: 0 $padding;
+    h3.courses-row-title{
+      padding-left: 0;
+    }
+    .more-course-button{
+      text-align: center;
+      line-height: 30px;
+      border: 1px solid $violet;
+      border-radius: $bradius;
+      color: $violet;
+      background: white;
+      cursor: pointer;
+    }
+    .pagination-button{
+      display: none;
+    }
+    .courses-group{
+      white-space: normal;
+      .courses-item-box{
+        margin: 0;
+        width: 100%;
+        display: none;
+        margin-bottom: 10px;
+        .course-item-content{
+          display: flex;
+          .course-image-box{
+            width: 150px;
+            height: 100px;
+          }
+          .course-info-box{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .course-price-box{
+              margin-top: 0;
+            }
+          }
+        }
+      }
+      .courses-item-box:first-child,.courses-item-box:nth-child(2),.courses-item-box:nth-child(2),.courses-item-box:nth-child(3){
+        display: inline-block;
+      }
+    }
   }
 }
