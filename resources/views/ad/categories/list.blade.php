@@ -32,12 +32,12 @@ ul.pagination li.active span {background: transparent; color: #fff;}
 @section('breadcrumb')
 <ol class="breadcrumb pull-right mb-0">
     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-    <li class="breadcrumb-item active">Users</li>
+    <li class="breadcrumb-item active">Categories</li>
 </ol>
 @endsection
 
 @section('page_name')
-<h4 class="page-title">List user</h4>
+<h4 class="page-title">Categories</h4>
 @endsection
 
 @section('content')
@@ -54,15 +54,13 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   </div>
   <?php
     $perpage = Request::get("perpage");
-    $group = Request::get("group");
-    $gender = Request::get("gender");
-    $email = Request::get("email");
-    $phone = Request::get("phone");
+    $name = Request::get("name");
+    $publish = Request::get("publish");
   ?>
   <div class="col-sm-12">
     <form action="" method="get">
       <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <span>Record</span>
         <select name="perpage" class="selectpicker" data-style="btn-default btn-custom">
             <option value="5" {{ $perpage == "5" ? "selected" : "" }}>5 record per page</option>
@@ -72,41 +70,24 @@ ul.pagination li.active span {background: transparent; color: #fff;}
         </select>
       </div>
 
-      <div class="col-sm-2">
-        <span>Group</span>
-        <select name="group" class="selectpicker" data-style="btn-default btn-custom">
-            <option value=""></option>
-            <option value="student" {{ $group == "student" ? "selected" : "" }}>student</option>
-            <option value="post" {{ $group == "post" ? "selected" : "" }}>post</option>
-            <option value="partner" {{ $group == "partner" ? "selected" : "" }}>partner</option>
-            <option value="admin" {{ $group == "admin" ? "selected" : "" }}>admin</option>
+      <div class="col-sm-3">
+        <span>Name</span>
+        <input name="name" type="text" class="form-control" value="{{$name}}">
+      </div>
+
+      <div class="col-sm-3">
+        <span>Publish</span>
+        <select name="publish" class="selectpicker" data-style="btn-default btn-custom">
+          <option value=""></option>
+          <option value="1" {{ $publish == "1" ? "selected" : "" }}>yes</option>
+          <option value="0" {{ $publish == "0" ? "selected" : "" }}>no</option>
         </select>
       </div>
 
-      <div class="col-sm-2">
-        <span>Gender</span>
-        <select name="gender" class="selectpicker" data-style="btn-default btn-custom">
-            <option value=""></option>
-            <option value="male" {{ $gender == "male" ? "selected" : "" }}>male</option>
-            <option value="female" {{ $gender == "female" ? "selected" : "" }}>female</option>
-            <option value="other" {{ $gender == "other" ? "selected" : "" }}>other</option>
-        </select>
-      </div>
-
-      <div class="col-sm-2">
-        <span>Email</span>
-        <input name="email" type="text" class="form-control" value="{{$email}}">
-      </div>
-
-      <div class="col-sm-2">
-        <span>Phone</span>
-        <input name="phone" type="number" class="form-control" value="{{$phone}}">
-      </div>
-
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/users">Reset</a>
+        <a href="/admin/categories">Reset</a>
       </div>
     </div>
     </form>
@@ -116,64 +97,35 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <table class="table table-hover table-bordered">
         <tr class="text-center">
           <th>#</th>
-          <th>Avatar</th>
+          <th>User</th>
           <th>Name</th>
-          <th>Group</th>
-          <th>Gender</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>website</th>
-          <th>Facebook page</th>
-          <th>Adress</th>
+          <th>Description</th>
+          <th>Publish</th>
+          <th>Created at</th>
+          <th>Updated at</th>
           <th>Manage</th>
         </tr>
 
-        @foreach ($users as $key => $user)
+        @foreach ($categories as $key => $category)
         <tr>
           <td>{{ $key + 1 }}</td>
           <td>
-            <img src="/img/avatar/{{ $user->avatar }}" alt="" class="width-60">
-          </td>
-          <td>{{ $user->name }}</td>
-          <td>
-            {!!
-              $user->group == "admin" ? '<span class="label label-table label-success">admin</span>' :
-              (
-                $user->group == "partner" ? '<span class="label label-table label-warning">partner</span>' :
-                  $user->group == "post" ? '<span class="label label-table label-danger">post</span>' :
-                    '<span class="label label-table label-inverse">student</span>'
-              )
-            !!}
-          </td>
-          <td>
-            {!!
-              $user->gender == "male" ? '<span class="label label-table label-success">male</span>' :
-              (
-                $user->gender == "female" ? '<span class="label label-table label-warning">female</span>' :
-                  '<span class="label label-table label-danger">other</span>'
-              )
-            !!}
-          </td>
-          <td>{{ $user->email }}</td>
-          <td>{{ $user->phone }}</td>
-          <td>{{ $user->website }}</td>
-          <td>{{$user->fb_page}}</td>
-          <td>
-            <?php
-              $add = json_decode($user->address);
-            ?>
-            @foreach ($add as $a)
-              <span class="label label-table label-info">{{$a}}</span>
-            @endforeach
-          </td>
-          <td>
-            <a href="/admin/users/profile/{{$user->id}}">
-              <button type="button" class="btn btn-xs btn-default btn-rounded waves-effect waves-light">Profile</button>
+            <a href="/admin/users/profile/{{$category->user_id}}">
+              {{$category->user->name}}
             </a>
-            <a href="/admin/users/edit/{{$user->id}}">
+          </td>
+          <td>{{$category->name}}</td>
+          <td>{{$category->description}}</td>
+          <td>
+            {!! $category->publish ? "<span class='label label-table label-success'>yes</span>" : "<span class='label label-table label-inverse'>no</span>" !!}
+          </td>
+          <td>{{$category->created_at}}</td>
+          <td>{{$category->updated_at}}</td>
+          <td>
+            <a href="/admin/categories/edit/{{$category->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
-            <button type="button" onclick="destroyUser({{$user->id}}, '{{$user->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
+            <button type="button" onclick="destroyUser({{$category->id}}, '{{$category->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
           </td>
         </tr>
         @endforeach
@@ -183,16 +135,13 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   <div class="col-sm-12">
     <div class="row">
       <div class="col-md-8">
-        {{$users->appends([
+        {{$categories->appends([
           'perpage' => $perpage,
-          'group' => $group,
-          'gender' => $gender,
-          'email' => $email,
-          'phone' => $phone
+          'name' => $name
         ])->links()}}
       </div>
       <div class="col-md-4">
-        User total: {{$users->total()}}
+        Categories total: {{$categories->total()}}
       </div>
     </div>
 
@@ -225,15 +174,15 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   $.ajaxSetup({
     headers: { 'X-CSRF-Token' : '{{csrf_token()}}' }
   });
-  function destroyUser(user_id, name) {
+  function destroyUser(category_id, name) {
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
-        url : "{{ url('/admin/users/destroy') }}",
+        url : "{{ url('/admin/categories/destroy') }}",
         type : "post",
         dataType:"text",
         data : {
-          id: user_id
+          id: category_id
         },
         success : function (result){
           location.reload()

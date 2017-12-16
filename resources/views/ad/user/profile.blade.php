@@ -4,6 +4,10 @@
 @endsection
 
 @section('css')
+<style>
+.content-toggle-wrap {display: none;}
+.toggle-course {cursor: pointer;}
+</style>
 @endsection
 
 @section('breadcrumb')
@@ -34,7 +38,9 @@
                         <p class="text-muted">Bài đăng</p>
                     </li>
                 </ul>
-                <button type="button" class="btn btn-success waves-effect waves-light">Chỉnh sửa hồ sơ</button>
+                <a href="/admin/users/edit/{{$user->id}}">
+                  <button type="button" class="btn btn-success waves-effect waves-light">Chỉnh sửa hồ sơ</button>
+                </a>
                 <hr>
                 <h4 class="text-uppercase font-18 font-600">About Me</h4>
                 <p class="text-muted font-13 m-b-30">{{$user->description}}</p>
@@ -124,38 +130,51 @@
     </div>
 
     <div class="col-lg-9 col-md-8">
-        <div class="card-box">
-            <div class="comment">
-                <img src="/img/avatar/{{$user->avatar}}" alt="" class="comment-avatar">
-                <div class="comment-body">
-                    <div class="comment-text">
-                        <div class="comment-header">
-                            <a href="#" title="">{{$user->name}}</a><span>(đã đăng ký 2 tháng trước)</span>
-                        </div>
-                        @foreach($address as $a)
-                        <p>{{$a}}</p>
+      <div class="card-box">
+          <div class="comment">
+              <img src="/img/avatar/{{$user->avatar}}" alt="" class="comment-avatar">
+              <div class="comment-body">
+                  <div class="comment-text">
+                      <div class="comment-header">
+                          <a href="#" title="">{{$user->name}}</a><span>(đã đăng ký 2 tháng trước)</span>
+                      </div>
+                      @foreach($address as $a)
+                      <p>{{$a}}</p>
+                      @endforeach
+                  </div>
+              </div>
+
+              <div class="comment-body">
+                  <div class="comment-text">
+                      <div class="comment-header">
+                          <a href="#" title="">Roles</a>
+                      </div>
+                      <div>
+                        @foreach($role["original"] as $key => $r)
+                          @if($r == 1 && $key != "id" && $key != "user_id" && $key != "created_at" && $key != "updated_at")
+                          <span class="label label-table label-success">{{$key}}</span>
+                          @endif
                         @endforeach
-                    </div>
-                </div>
-
-                <div class="comment-body">
-                    <div class="comment-text">
-                        <div class="comment-header">
-                            <a href="#" title="">Roles</a>
-                        </div>
-                        <div>
-                          @foreach($role["original"] as $key => $r)
-                            @if($r == 1 && $key != "id" && $key != "user_id" && $key != "created_at" && $key != "updated_at")
-                            <span class="label label-table label-success">{{$key}}</span>
-                            @endif
-                          @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-box">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <ul class="nav nav-tabs tabs">
+          <li class="tab">
+              <a href="#tab-courses" data-toggle="tab" aria-expanded="false">
+                  Courses
+              </a>
+          </li>
+          <li class="tab">
+              <a href="#tab-posts" data-toggle="tab" aria-expanded="false">
+                  Posts
+              </a>
+          </li>
+      </ul>
+      <div class="tab-content">
+          <div class="tab-pane active" id="tab-courses">
+            <!-- item -->
             <div class="comment">
                 <img src="/img/avatar/{{$user->avatar}}" alt="" class="comment-avatar">
                 <div class="comment-body">
@@ -172,35 +191,50 @@
                         <div class="comment-header">
                             <a href="#" title="">Khóa abc</a><span>(đã đăng 1 ngày trước)</span>
                         </div>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-6">
-                            <p>Danh mục: <a href="#">Ai eo</a> | Tiếng Nhật Bổn cải tiến</p>
-                            <p>Giá: 4000 000</p>
-                            <p>Khuyển mãi: ahihi</p>
-                            <p>Giảm giá: 10 000 000</p>
-                            <p>Thời lượng: 80 giờ, 40 buổi, thứ 2 3 4</p>
-                            <p>Khai giảng: 1/1/2018</p>
-                            <p>Giáo viên: <a href="#">Trung Hồ Ngọc</a></p>
-                            <p>Tình trạng:
-                              <span class="label label-table label-warning">đã mở lớp</span>
-                               / <span class="label label-table label-info">đang chiêu sinh</span>
-                            </p>
-                          </div>
-                          <div class="col-lg-6 col-md-6">
-                            <p>Số học viên còn thiếu: 69</p>
-                            <p>Số học viên đã cung cấp tháng này: 69</p>
-                            <p>Số học viên đã cung cấp tháng trước: 69</p>
-                            <p>Số học viên đã cung cấp 3 tháng trước: 69</p>
-                            <p>Số học viên đã cung cấp năm ngoái: 69</p>
-                            <p>Tổng số học viên đã cung cấp năm ngoái: 69</p>
-                          </div>
+                        <div class="content-toggle-wrap">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                  <p>Danh mục: <a href="#">Ai eo</a> | Tiếng Nhật Bổn cải tiến</p>
+                                  <p>Giá: 4000 000</p>
+                                  <p>Khuyển mãi: ahihi</p>
+                                  <p>Giảm giá: 10 000 000</p>
+                                  <p>Thời lượng: 80 giờ, 40 buổi, thứ 2 3 4</p>
+                                  <p>Khai giảng: 1/1/2018</p>
+                                  <p>Giáo viên: <a href="#">Trung Hồ Ngọc</a></p>
+                                  <p>Tình trạng:
+                                    <span class="label label-table label-warning">đã mở lớp</span>
+                                     / <span class="label label-table label-info">đang chiêu sinh</span>
+                                  </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                  <p>Số học viên còn thiếu: 69</p>
+                                  <p>Số học viên đã cung cấp tháng này: 69</p>
+                                  <p>Số học viên đã cung cấp tháng trước: 69</p>
+                                  <p>Số học viên đã cung cấp 3 tháng trước: 69</p>
+                                  <p>Số học viên đã cung cấp năm ngoái: 69</p>
+                                  <p>Tổng số học viên đã cung cấp: 69</p>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="comment-footer">
+                        <div class="pull-left">
+                          <a href="#"><span class="label label-info">View</span></a>
+                          <a href="#"><span class="label label-warning">Edit</span></a>
+                          <a href="#"><span class="label label-danger">Delete</span></a>
+                        </div>
+                        <div class="pull-right">
+                          <span class="label label-success toggle-course">Toggle</span>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="card-box">
+            <!-- /item -->
+          </div>
+          <div class="tab-pane" id="tab-posts">
+            <!-- item -->
             <div class="comment">
                 <img src="/img/avatar/{{$user->avatar}}" alt="" class="comment-avatar">
                 <div class="comment-body">
@@ -217,13 +251,27 @@
                         <div class="comment-header">
                             <a href="#" title="">học ai eo với chuyên gia Lào</a><span>(đã đăng 1 ngày trước)</span>
                         </div>
-                        <div>
+                        <div class="content-toggle-wrap">
                           đoạn mô tả ))
                         </div>
                     </div>
+
+                    <div class="comment-footer">
+                        <div class="pull-left">
+                          <a href="#"><span class="label label-info">View</span></a>
+                          <a href="#"><span class="label label-warning">Edit</span></a>
+                          <a href="#"><span class="label label-danger">Delete</span></a>
+                        </div>
+                        <div class="pull-right">
+                          <span class="label label-success toggle-course">Toggle</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <!-- /item -->
+          </div>
+      </div>
     </div>
 </div>
 @endsection
@@ -231,4 +279,11 @@
 @section('js')
 <script src="/backend/assets/js/jquery.core.js"></script>
 <script src="/backend/assets/js/jquery.app.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".toggle-course").click(function(){
+      $(this).closest(".comment-body").find(".content-toggle-wrap").slideToggle()
+    })
+  })
+</script>
 @endsection

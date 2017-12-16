@@ -128,10 +128,10 @@ form {width: 100%;}
 
             <div class="row">
               <div class="col-md-12">
-                <p class="mr-t-10"><strong>Birth day: <span class="color-red">*</span></strong></p>
+                <p class="mr-t-10"><strong>Birth day:<span class="color-red">*</span></strong></p>
                 <div class="input-group">
                     <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
-                    <input type="date" name="birth" placeholder="dd/mm/yyyy" required>
+                    <input type="date" required name="birth" placeholder="dd/mm/yyyy">
                 </div>
               </div>
             </div>

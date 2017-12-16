@@ -11,6 +11,7 @@ use File, Image, Hash;
 
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserUpdateRequest;
+use App\Http\Requests\UserIdRequest;
 
 class UserController extends Controller
 {
@@ -26,6 +27,7 @@ class UserController extends Controller
 
       if($group != "" && $gender != "")
         $users = User::with('role')
+          ->where('deleted', false)
           ->where('group', $group)
           ->where('gender', $gender)
           ->where('email',"LIKE" , "%$email%")
@@ -34,18 +36,21 @@ class UserController extends Controller
           ->paginate($perpage);
       else if($group != "")
         $users = User::with('role')
+          ->where('deleted', false)
           ->where('group', $group)
           ->where('email',"LIKE" , "%$email%")
           ->where('phone',"LIKE" , "%$phone%")
           ->paginate($perpage);
       else if($gender != "")
         $users = User::with('role')
+          ->where('deleted', false)
           ->where('gender', $gender)
           ->where('email',"LIKE" , "%$email%")
           ->where('phone',"LIKE" , "%$phone%")
           ->paginate($perpage);
       else
         $users = User::with('role')
+          ->where('deleted', false)
           ->where('email',"LIKE" , "%$email%")
           ->where('phone',"LIKE" , "%$phone%")
           ->paginate($perpage);
@@ -146,10 +151,24 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function profile() {
+    public function myProfile() {
       $user = User::first();
       $address = json_decode($user->address);
       $role = $user->role()->first();
       return view("ad.user.profile", ["user" => $user, "address" => $address, "role" => $role]);
+    }
+
+    public function profile($id) {
+      $user = User::find($id);
+      if($user) {
+        $address = json_decode($user->address);
+        $role = $user->role()->first();
+        return view("ad.user.profile", ["user" => $user, "address" => $address, "role" => $role]);
+      } else
+        return redirect()->back();
+    }
+
+    public function destroy(UserIdRequest $request) {
+      User::destroyNow($request->id);
     }
 }

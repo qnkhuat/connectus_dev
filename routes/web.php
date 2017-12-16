@@ -34,8 +34,19 @@ Route::prefix('admin')->group(function () {
     Route::post('/create', 'UserController@create');
     Route::get('/edit/{id}', 'UserController@edit');
     Route::post('/update', 'UserController@update');
-    Route::get('/profile', 'UserController@profile');
+    Route::get('/profile', 'UserController@myProfile');
+    Route::get('/profile/{id}', 'UserController@profile');
+    Route::post('/destroy', 'UserController@destroy');
 	});
+
+  Route::prefix('/categories')->group(function () {
+    Route::get('/', 'CategoriesController@_list');
+    Route::get('/create', 'CategoriesController@_new');
+    Route::post('/create', 'CategoriesController@create');
+    Route::get('/edit/{id}', 'CategoriesController@edit');
+    Route::post('/update', 'CategoriesController@update');
+    Route::post('/destroy', 'CategoriesController@destroy');
+  });
 
 	Route::prefix('/files')->group(function () {
 		Route::get('/', function () {
