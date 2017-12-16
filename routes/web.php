@@ -36,6 +36,15 @@ Route::prefix('admin')->group(function () {
     Route::post('/destroy', 'UserController@destroy');
 	});
 
+  Route::prefix('/categories')->group(function () {
+    Route::get('/', 'CategoriesController@_list');
+    Route::get('/create', 'CategoriesController@_new');
+    Route::post('/create', 'CategoriesController@create');
+    Route::get('/edit/{id}', 'CategoriesController@edit');
+    Route::post('/update', 'CategoriesController@update');
+    Route::post('/destroy', 'CategoriesController@destroy');
+  });
+
 	Route::prefix('/files')->group(function () {
 		Route::get('/', function () {
 			return view("ad.files.list");

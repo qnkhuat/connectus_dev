@@ -18,7 +18,9 @@ class CreateCategoriesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->char('name', 255);
+            $table->string('description', 512);
             $table->boolean('publish')->default(false);
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

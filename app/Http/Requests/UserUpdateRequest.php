@@ -32,7 +32,7 @@ class UserUpdateRequest extends FormRequest
           "phone" => "required|min:1|max:191",
           "gender" => "required",
           "group" => "required",
-          "birth" => "date",
+          "birth" => "required|date",
           "address" => "max:65535",
           "role" => "array",
           "description" => "max:512",
