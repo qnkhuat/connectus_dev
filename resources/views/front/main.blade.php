@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="css/responsive.css" media="screen" >
   </head>
   <body>
-
     <!-- #login-popup -->
     <div id="menu">
       <div id="login-popup" class="fixed-top full">
@@ -108,6 +107,7 @@
 
       <!-- #menu-mobile -->
       <div id="menu-mobile">
+
         <div class="menu-logo df fixed-bottom">
           <img src="/images/header/logo_small.png" alt="logo" class="full menu-logo-button" title=".menu-mobile-popup">
           <div id="menu-mobile-popup" class="menu-mobile-popup text-center">
@@ -170,7 +170,7 @@
         </div>
         <div class="cart">
           <a href="" class="fa fa-shopping-cart cart-icon "></a>
-          <span class="cart-count"><span class="cart-count-items">1</span></span>
+          <h1 class="cart-count"><p class="cart-count-items">1</p></h1>
         </div>
       </div><!-- #menu-mobile -->
 
@@ -218,21 +218,19 @@
       <div class="course-ielts courses-row">
         <h3 class="courses-row-title padding-0-15">Khoá học IELTS</h3>
         <div class="courses-group">
-          <?php for($i = 1; $i <= 8; $i ++) { ?>
+          <?php for($i = 1; $i <= 7; $i ++) { ?>
           <div class="courses-item-box" title=".course-popup" onclick='coursePopup("/khoahoc/{{$i}}", $(this).find(".course-popup").html())'>
             <div class="course-item-content">
               <div class="course-image-box">
-                <img src="/images/courses/english/English-courses 1.png" class="course-image full" alt="">
+                <img src="/images/courses/english/English-courses {{$i}}.png" class="course-image full" alt="">
               </div>
               <div class="course-info-box">
-                <a class="course-info-title title-blue">
+                <a class="course-info-title title-blue one-line-text">
                   IELTS 8.5 ({{$i}})
                 </a>
 
-                <div class="course-info-centre">
-                  KOS
-                </div>
-
+                <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">KOS</span></p>
+                <div class="best-seller-tag"><span>Best seller</span></div>
                 <div class="course-price-box">
                   <span class="course-price-origin">5.000.000</span>
                   <span class="course-price-sale">4.000.000</span>
@@ -240,10 +238,7 @@
               </div>
 
               <div class="course-popup">
-                <div class="">
-                  <strong>Khoa {{$i}}</strong>
-                </div>
-                <div class="course-info-start">Khai giảng : 3/2/2017</div>
+                <p class="course-info-start">Khai giảng : <span class="course-info-start-day">3/2/2017</span></p>
 
                 <div class="course-price-box">
                   <span class="course-price-origin">5.000.000</span>
@@ -253,9 +248,7 @@
                 <div class="course-popup-detail">
                   <a class="course-info-title" href="">IELTS 8.5</a>
 
-
                   <div class="course-info-category">
-                    <div class="best-seller-tag"></div>
                     in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
                   </div>
 
@@ -265,9 +258,8 @@
                     <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
                   </div>
 
-
                   <div class="course-info-intro">
-                    <div class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</div>
+                    <p class="course-info-intro-summary">Không học thì quên mẹ nó đời đi còn gì nữa:))</p>
                     <ul class="course-info-intro-features">
                       <li>Học là auto đẹp trai</li>
                       <li>Không học làm chó</li>
@@ -275,8 +267,6 @@
                     </ul>
                   </div>
                 </div>
-
-
 
                 <div class="details-box"><a href="" class="details-button">Chi tiết</a></div>
 

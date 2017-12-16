@@ -18,6 +18,12 @@ $padding:13px;
   padding: 0 15px;
 }
 
+.one-line-text{
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
 .fixed-top{
   position: fixed;
   top: 0;
@@ -45,19 +51,52 @@ $padding:13px;
   transition: 0.3s all;
   background: white;
   a{
-    color:$pink;
+    color:$red;
   }
   .cart-count{
-    color: $pink;
+    color: $red;
   }
-
 }
+.addcart-box{
+  .addcart-button{
 
+  }
+}
+.details-box,.addcart-box{
+  text-align: center;
+  background: $red;
+  position: relative;
+  height: 50px;
+  border-radius: $bradius;
+  a,.addcart-button{
+    color: white;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    line-height: 50px;
+  }
+}
+.course-price-box{
+  text-align: right;
+  margin-top: 20px;
+  .course-price-origin{
+    font-size: 12px;
+    text-decoration: line-through;
+  }
+  .course-price-sale{
+    font-size: 18px;
+    color: $red;
+  }
+}
 .full{
   height: 100%;
   width: 100%;
 }
-
+.stars{
+  color: #f4c150;
+}
 
 .button:hover{
   box-shadow: 4px 4px 14px 2px rgba(0,0,0,0.1)

@@ -9,15 +9,24 @@ $transition-time:0.3s ;
 $titleBlue:#017691;
 a{
   text-decoration: none !important;
-  color: $violet;
+  color: $red;
 }
-
+.layer{
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
 html,body{
-  background: #f7f8fa !important;
+  background: #f7f8fa;
   width: 100%;
   height: 100%;
   background: 100%;
   font-family: "Roboto",sans-serif;
+  color: #505763;
 }
 .separate{
   padding: 5px 0;
@@ -57,7 +66,7 @@ html,body{
     margin-top: 10px;
     cursor: pointer;
     .df{
-      background: $violet;
+      background: $red;
       margin-bottom: 0;
     }
   }
@@ -133,7 +142,8 @@ html,body{
   #menu-desktop{
     width: 100%;
     height: 50px;
-    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 100%);
+    // background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 100%);
+    background: $red;
     flex-wrap: wrap;
     justify-content: space-between;
     overflow: hidden;
@@ -246,7 +256,7 @@ html,body{
           margin-top: 10px;
           cursor: pointer;
           .df{
-            background: $pink;
+            background: $red;
             margin-bottom: 0;
           }
         }
@@ -321,6 +331,7 @@ html,body{
 
   #menu-mobile{
     display: none;
+
     .menu-logo{
       // overflow: hidden;
       width: 100%;
@@ -337,9 +348,9 @@ html,body{
       right: 15px;
       top: 15px;
       background: $red;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
       a{
         color: white;
         padding-right: 2px;
@@ -347,8 +358,23 @@ html,body{
       .cart-count{
         position: absolute;
         top: 0;
-        right: 0;
+        left: 0;
         color: white;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        .cart-count-items{
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 15px;
+          width: 15px;
+          background: black;
+          color: white;
+          font-size: 12px;
+          line-height: 15px;
+          border-radius: 50%;
+        }
       }
     }//.cart
 
@@ -373,12 +399,9 @@ html,body{
 #course-popup-mobile{
   display: none;
 }
-@media only screen and (max-width: 900px) {}
-@media only screen and (max-width: 768px) {}
+
 @media only screen and (max-width: 600px) {
-  .banner-slogan{
-    display: none;
-  }
+
   #menu{
     #menu-desktop{
       display: none;
@@ -388,15 +411,29 @@ html,body{
 
     }//#menu-mobile
   }//#menu
+  .menu-mobile-popup::before{
+    content:'';
+    height:0;
+    position:absolute;
+    width:0;
+    border:6px solid transparent;
+    border-top-color:inherit;
+    z-index:2;
+    bottom:-12px;
+    left: 50%;
+    transform:translateX(-50%);
+    opacity:1;
+    transition: 0.2s ease-in-out;
+  }
   .menu-mobile-popup{
     overflow: hidden;
     position: absolute;
     bottom: 56px;
     background: white;
-    width: 85%;
+    width: 65%;
     border-radius: $bradius;
     display: none;
-    background: #2c3e50;
+    background: black;
     .menu-mobile-popup-wrap{
       font-size: 0;
       white-space: nowrap;
@@ -408,13 +445,14 @@ html,body{
       }
       .menu-mobile-popup-first-sence{
         a{
-          height: 30px;
+          height: 40px;
           width: 100%;
-          background:$red;
+          border: 1px solid white;
+          background: transparent;
           color:white;
           display: block;
           margin-top: 10px;
-          line-height: 30px;
+          line-height: 40px;
           border-radius: $bradius;
         }
         a:first-child{
@@ -425,11 +463,12 @@ html,body{
         display: none;
       }
       .menu-mobile-popup-account,.menu-mobile-popup-login{
-        height: 30px;
+        height: 40px;
         width: 100%;
-        background:black;
+        background:transparent;
+        border: 1px solid white;
         color: white;
-        line-height: 30px;
+        line-height: 40px;
         margin-top: 10px;
         border-radius: $bradius;
       }
