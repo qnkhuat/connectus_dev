@@ -10,6 +10,7 @@ use App\Models\Role;
 use File, Image, Hash;
 
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserUpdateRequest;
 
 class UserController extends Controller
 {
@@ -90,5 +91,53 @@ class UserController extends Controller
         return redirect("/admin/users")->with(["messages" => ["type" => "success", "content" => "User created!"]]);
       } else
         return redirect("/admin/users/create")->with(["result" => "save fail"]);
+    }
+
+    public function edit($id) {
+      $user = User::find($id);
+
+      if($user) {
+        $userRole = $user->role()->first()->toArray();
+        $userRoleJSON = json_encode($user->role(), JSON_UNESCAPED_UNICODE);
+        $userTypes = User::$types;
+        $roles = Role::$list;
+        $rolesJSON = json_encode(Role::$list, JSON_UNESCAPED_UNICODE);
+        $genders = User::$genders;
+        $defaultGroupRole = Role::$defaultGroupRole;
+        $address = json_decode($user->address);
+        return view("ad.user.edit", ["user" => $user, "userRole" => $userRole, 'userTypes' => $userTypes,
+          'roles' => $roles, 'genders' => $genders, 'defaultGroupRole' => $defaultGroupRole, 'rolesJSON' => $rolesJSON,
+          'userRoleJSON' => $userRoleJSON, "address" => $address
+        ]);
+      } else {
+        return redirect()->back();
+      }
+    }
+
+    public function update(UserUpdateRequest $request) {
+      $id = (int) $request->id;
+      $user = User::find($id);
+      if($user) {
+        $user->name = $request->name;
+        $user->website = $request->website;
+        $user->phone = $request->phone;
+        $user->gender = $request->gender;
+        $user->group = $request->group;
+        $user->birth = $request->birth;
+        $user->address = json_encode($request->address, JSON_UNESCAPED_UNICODE);
+        Role::setRole($user->id, $request->roles);
+        if($request->hasFile('avatar'))
+        {
+          $path = "img/avatar/";
+          $avatar = $request->file('avatar');
+          $avatarName = $user->id.".".$avatar->getClientOriginalExtension();
+          $avatar->move($path, $avatarName);
+          Image::make(sprintf($path."%s", $avatarName))->resize(300, 300)->save();
+          $user->avatar = $avatarName;
+          $user->save();
+        }
+        return redirect("/admin/users")->with(["messages" => ["type" => "success", "content" => "User updated!"]]);
+      } else
+        return redirect()->back();
     }
 }

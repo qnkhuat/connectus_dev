@@ -32,6 +32,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/', 'UserController@_list');
     Route::get('/create', 'UserController@_new');
     Route::post('/create', 'UserController@create');
+    Route::get('/edit/{id}', 'UserController@edit');
+    Route::post('/update', 'UserController@update');
 	});
 
 	Route::prefix('/files')->group(function () {

@@ -1,9 +1,12 @@
 @extends('ad.layouts.master')
 
 @section('top_css')
+<link href="/backend/assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
 <!-- Plugins css-->
 <link href="/backend/assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
-<link href="/backend/assets/plugins/bootstrap-table/css/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
+<!-- <link href="/backend/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
+<link href="/backend/assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" />
+<link href="/backend/assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" /> -->
 <style>
 form {width: 100%;}
 .mr-t-10 {margin-top: 10px;}
@@ -20,18 +23,19 @@ form {width: 100%;}
 <ol class="breadcrumb pull-right mb-0">
     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
     <li class="breadcrumb-item active"><a href="/admin/users">Users</a></li>
-    <li class="breadcrumb-item active"><a href="/admin/users/create">Create</a></li>
+    <li class="breadcrumb-item active"><a href="/admin/users/create">Update</a></li>
 </ol>
 @endsection
 
 @section('page_name')
-<h4 class="page-title">Create user</h4>
+<h4 class="page-title">Update user</h4>
 @endsection
 
 @section('content')
 <div class="row">
-  <form action="/admin/users/create" method="post" enctype="multipart/form-data">
+  <form action="/admin/users/update" method="post" enctype="multipart/form-data">
   <input type="hidden" name="_token" value="{{csrf_token()}}">
+  <input type="hidden" name="id" value="{{$user->id}}">
   <div class="col-md-12">
       <div class="card m-b-20">
           <!-- card-block -->
@@ -55,7 +59,7 @@ form {width: 100%;}
                 <div class="input-group w-300">
                   <select name="group" id="select-group" class="selectpicker m-b-0" data-style="btn-success btn-custom">
                       @foreach ($userTypes as $type)
-                      <option value="{{$type}}"><span class="md md-check"></span>&nbsp;{{$type}}</option>
+                      <option value="{{$type}}" {{ $type == $user->group ? "selected" : "" }}><span class="md md-check"></span>&nbsp;{{$type}}</option>
                       @endforeach
                   </select>
                 </div>
@@ -80,21 +84,21 @@ form {width: 100%;}
                             <i class="md md-mode-edit" aria-hidden="true"></i>
                         </button>
                     </span>
-                    <input type="text" name="name" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length" required=""  data-parsley-length="[1,255]">
+                    <input type="text" name="name" value="{{$user->name}}" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length" required=""  data-parsley-length="[1,255]">
                 </div>
               </div>
             </div>
 
             <div class="row">
               <div class="col-md-12">
-                <p class="mr-t-10"><strong>Email: <span class="color-red">*</span></strong></p>
+                <p class="mr-t-10"><strong>Email:</strong></p>
                 <div class="input-group">
                     <span class="input-group-btn" id="copy-link-file-to-clipboard">
                         <button type="button" class="btn waves-effect waves-light btn-success">
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                         </button>
                     </span>
-                    <input type="email" name="email" id="input-name-page" class="form-control" placeholder="Email between 1 - 255 chars length" required=""  data-parsley-length="[1,255]">
+                    <input type="email" value="{{$user->email}}" id="input-name-page" class="form-control" placeholder="Email between 1 - 255 chars length"  data-parsley-length="[1,255]" disabled>
                 </div>
               </div>
             </div>
@@ -108,7 +112,7 @@ form {width: 100%;}
                             <i class="fa fa-phone" aria-hidden="true"></i>
                         </button>
                     </span>
-                    <input type="number" name="phone" id="input-name-page" class="form-control" placeholder="Phone number between 1 - 255 chars length" required=""  data-parsley-length="[1,255]">
+                    <input type="number" name="phone" value="{{$user->phone}}" id="input-name-page" class="form-control" placeholder="Phone number between 1 - 255 chars length" required=""  data-parsley-length="[1,255]">
                 </div>
               </div>
             </div>
@@ -119,7 +123,7 @@ form {width: 100%;}
                 <div class="input-group w-300">
                   <select name="gender" class="selectpicker m-b-0" data-style="btn-success btn-custom">
                       @foreach($genders as $gender)
-                      <option value="{{$gender}}"><span class="md md-check"></span>&nbsp;{{$gender}}</option>
+                      <option value="{{$gender}}" {{ $gender == $user->gender ? "selected" : "" }}><span class="md md-check"></span>&nbsp;{{$gender}}</option>
                       @endforeach
                   </select>
                 </div>
@@ -131,7 +135,7 @@ form {width: 100%;}
                 <p class="mr-t-10"><strong>Birth day: <span class="color-red">*</span></strong></p>
                 <div class="input-group">
                     <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
-                    <input type="date" name="birth" placeholder="dd/mm/yyyy" required>
+                    <input type="date" name="birth" value="{{$user->birth}}" placeholder="dd/mm/yyyy" required>
                 </div>
               </div>
             </div>
@@ -141,7 +145,7 @@ form {width: 100%;}
                 <p class="mr-t-10"><strong>Website:</strong></p>
                 <div class="input-group">
                     <span class="input-group-addon bg-custom b-0"><i class="fa fa-globe" style="color: #fff;"></i></span>
-                    <input type="text" name="website" class="form-control" placeholder="website">
+                    <input type="text" name="website" value="{{$user->website}}" class="form-control" placeholder="website">
                 </div>
               </div>
             </div>
@@ -152,7 +156,9 @@ form {width: 100%;}
                   <div class="row">
                     @foreach ($roles as $role)
                       <div class="col-md-3">
-                        <input type="checkbox" value="{{$role}}" class="role-user-group" id="role_{{$role}}" name="roles[]" data-plugin="switchery" data-color="#1AB394" data-secondary-color="#ED5565" />
+                        <input type="checkbox" value="{{$role}}" class="role-user-group" id="role_{{$role}}" name="roles[]" data-plugin="switchery" data-color="#1AB394" data-secondary-color="#ED5565"
+                          {{ $userRole[$role] ? "checked" : "" }}
+                        />
                         <label for="role_{{$role}}" class="pointer">{{$role}}</label>
                       </div>
                     @endforeach
@@ -163,7 +169,11 @@ form {width: 100%;}
             <div class="row">
               <div class="col-md-12">
                 <p class="mr-t-10"><strong>address:</strong></p>
-                <textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea>
+                @foreach($address as $a)
+                <div class="mr-t-10">
+                  <textarea name="address[]" id="" cols="30" rows="10" class="form-control">{{$a}}</textarea>
+                </div>
+                @endforeach
                 <div id="more-address"></div>
                 <div class="mr-t-10">
                   <button type="button" class="btn btn-info btn-rounded waves-effect waves-light float-right more-address">more</button>
@@ -207,14 +217,15 @@ form {width: 100%;}
 
 <script>
   var defaultGroupRole = {!!$defaultGroupRole!!}
+  var allRoles = {!!$rolesJSON!!}
   var userGroup = "student"
+  var userRole = {!!$userRoleJSON!!}
   $(document).ready(function() {
     $(".more-address").click(function() {
       $('#more-address').append('<div class="mr-t-10"><textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea></div>')
     })
 
     // selected role if user group changing
-    setRolesChecked()
     $("#select-group").change(function() {
       setRolesChecked($(this).val())
     })

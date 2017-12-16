@@ -1,13 +1,8 @@
 @extends('ad.layouts.master')
 
 @section('top_css')
-<link href="/backend/assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
 <!-- Plugins css-->
 <link href="/backend/assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
-<!-- <link href="/backend/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
-<link href="/backend/assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" />
-<link href="/backend/assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" /> -->
-<!-- Bootsrap tables -->
 <link href="/backend/assets/plugins/bootstrap-table/css/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
 <style>
 form {width: 100%;}

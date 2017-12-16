@@ -60,6 +60,8 @@ class Role extends Model
   }";
 
   public static function setRole($userId, $newRoles) {
+      $user = User::find($userId);
+      $user->role()->delete();
       $role = new self;
       $role->user_id = $userId;
       foreach($newRoles as $r)
