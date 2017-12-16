@@ -30,6 +30,18 @@ class User extends Authenticatable
     public static $types = ['student', 'post', 'parter', 'admin'];
     public static $genders = ['male', 'female', 'other'];
 
+    public static function destroyNow($id) {
+      $user = User::find($id);
+      $user->deleted = true;
+      $user->save();
+      // $user->role()->delete();
+      // $user->pages()->delete();
+      // $user->posts()->delete();
+      // $user->courses()->delete();
+      // $user->teachers()->delete();
+      // $user->rattings()->delete();
+    }
+
     public function pages()
   	{
   		return $this->hasMany('App\Models\Page');

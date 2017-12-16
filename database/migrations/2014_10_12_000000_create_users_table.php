@@ -25,8 +25,11 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->enum('gender', ['male', 'female', 'other']);
             $table->enum('group', ['student', 'post', 'parter', 'admin'])->default('student');
-            $table->date('birth');
+            $table->date('birth')->nullable();
             $table->text('address')->nullable();
+            $table->string('description', 512)->nullable();
+            $table->string('fb_page', 512)->nullable();
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

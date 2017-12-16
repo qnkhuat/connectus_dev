@@ -22,6 +22,7 @@ ul.pagination li.active {
   border-color: #2bbbad;
 }
 ul.pagination li.active span {background: transparent; color: #fff;}
+.min-height-250 {min-height: 250px;}
 </style>
 @endsection
 
@@ -111,7 +112,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     </form>
   </div>
   <div class="col-sm-12">
-    <div class="table-responsive">
+    <div class="table-responsive min-height-250">
       <table class="table table-hover table-bordered">
         <tr class="text-center">
           <th>#</th>
@@ -172,7 +173,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <a href="/admin/users/edit/{{$user->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
-            <button type="button" onclick="deleteUser({{$user->id}}, '{{$user->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
+            <button type="button" onclick="destroyUser({{$user->id}}, '{{$user->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
           </td>
         </tr>
         @endforeach
@@ -180,13 +181,21 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     </div>
   </div>
   <div class="col-sm-12">
-    {{$users->appends([
-      'perpage' => $perpage,
-      'group' => $group,
-      'gender' => $gender,
-      'email' => $email,
-      'phone' => $phone
-    ])->links()}}
+    <div class="row">
+      <div class="col-md-8">
+        {{$users->appends([
+          'perpage' => $perpage,
+          'group' => $group,
+          'gender' => $gender,
+          'email' => $email,
+          'phone' => $phone
+        ])->links()}}
+      </div>
+      <div class="col-md-4">
+        User total: {{$users->total()}}
+      </div>
+    </div>
+
   </div>
 </div>
 @endsection
@@ -216,11 +225,11 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   $.ajaxSetup({
     headers: { 'X-CSRF-Token' : '{{csrf_token()}}' }
   });
-  function deleteUser(user_id, name) {
+  function destroyUser(user_id, name) {
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
-        url : "{{ url('/admin/users/detroy') }}/" + user_id,
+        url : "{{ url('/admin/users/destroy') }}",
         type : "post",
         dataType:"text",
         data : {
