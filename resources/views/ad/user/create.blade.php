@@ -162,6 +162,20 @@ form {width: 100%;}
 
             <div class="row">
               <div class="col-md-12">
+                <p class="mr-t-10"><strong>description:</strong></p>
+                <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <p class="mr-t-10"><strong>facebook page:</strong></p>
+                <input type="text" name="fb_page" class="form-control" placeholder="facebook page">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
                 <p class="mr-t-10"><strong>address:</strong></p>
                 <textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea>
                 <div id="more-address"></div>

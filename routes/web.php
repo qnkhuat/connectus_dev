@@ -26,14 +26,12 @@ Route::prefix('admin')->group(function () {
 		return view("ad.dashboard.dashboard");
 	});
 	Route::prefix('/users')->group(function () {
-		Route::get('/profile', function () {
-			return view("ad.user.profile");
-		});
     Route::get('/', 'UserController@_list');
     Route::get('/create', 'UserController@_new');
     Route::post('/create', 'UserController@create');
     Route::get('/edit/{id}', 'UserController@edit');
     Route::post('/update', 'UserController@update');
+    Route::get('/profile', 'UserController@profile');
 	});
 
 	Route::prefix('/files')->group(function () {

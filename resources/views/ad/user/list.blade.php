@@ -122,7 +122,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <th>Email</th>
           <th>Phone</th>
           <th>website</th>
-          <th>Roles</th>
+          <th>Facebook page</th>
           <th>Adress</th>
           <th>Manage</th>
         </tr>
@@ -156,9 +156,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <td>{{ $user->email }}</td>
           <td>{{ $user->phone }}</td>
           <td>{{ $user->website }}</td>
-          <td>
-            $user->role
-          </td>
+          <td>{{$user->fb_page}}</td>
           <td>
             <?php
               $add = json_decode($user->address);

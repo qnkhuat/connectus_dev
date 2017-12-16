@@ -73,6 +73,8 @@ class UserController extends Controller
       $user->gender = $request->gender;
       $user->group = $request->group;
       $user->birth = $request->birth;
+      $user->description = $request->description;
+      $user->fb_page = $request->fb_page;
       $user->address = json_encode($request->address, JSON_UNESCAPED_UNICODE);
 
       if($user->save())
@@ -124,7 +126,10 @@ class UserController extends Controller
         $user->gender = $request->gender;
         $user->group = $request->group;
         $user->birth = $request->birth;
+        $user->description = $request->description;
+        $user->fb_page = $request->fb_page;
         $user->address = json_encode($request->address, JSON_UNESCAPED_UNICODE);
+        $user->save();
         Role::setRole($user->id, $request->roles);
         if($request->hasFile('avatar'))
         {
@@ -139,5 +144,12 @@ class UserController extends Controller
         return redirect("/admin/users")->with(["messages" => ["type" => "success", "content" => "User updated!"]]);
       } else
         return redirect()->back();
+    }
+
+    public function profile() {
+      $user = User::first();
+      $address = json_decode($user->address);
+      $role = $user->role()->first();
+      return view("ad.user.profile", ["user" => $user, "address" => $address, "role" => $role]);
     }
 }

@@ -168,6 +168,20 @@ form {width: 100%;}
 
             <div class="row">
               <div class="col-md-12">
+                <p class="mr-t-10"><strong>description:</strong></p>
+                <textarea name="description" id="" cols="30" rows="10" class="form-control">{{$user->description}}</textarea>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <p class="mr-t-10"><strong>facebook page:</strong></p>
+                <input type="text" name="fb_page" class="form-control" placeholder="facebook page" value="{{$user->fb_page}}">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
                 <p class="mr-t-10"><strong>address:</strong></p>
                 @foreach($address as $a)
                 <div class="mr-t-10">

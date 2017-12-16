@@ -8,8 +8,9 @@
 
 @section('breadcrumb')
 <ol class="breadcrumb pull-right mb-0">
-    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-    <li class="breadcrumb-item active">hồ sơ cá nhân</li>
+    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="#">Users</a></li>
+    <li class="breadcrumb-item"><a href="#">Profile</a></li>
 </ol>
 @endsection
 
@@ -22,46 +23,57 @@
     <div class="col-md-4 col-lg-3">
         <div class="profile-detail card-box">
             <div>
-                <img src="/backend/assets/images/users/avatar-2.jpg" class="rounded-circle bx-shadow" alt="profile-image">
+                <img src="/img/avatar/{{$user->avatar}}" class="rounded-circle bx-shadow" alt="profile-image">
                 <ul class="list-inline status-list m-t-20">
                     <li class="list-inline-item">
                         <h3 class="text-primary m-b-5">456</h3>
-                        <p class="text-muted">Followings</p>
+                        <p class="text-muted">Khóa học</p>
                     </li>
                     <li class="list-inline-item">
                         <h3 class="text-success m-b-5">5864</h3>
-                        <p class="text-muted">Followers</p>
+                        <p class="text-muted">Bài đăng</p>
                     </li>
                 </ul>
-                <button type="button" class="btn btn-success waves-effect waves-light">Follow</button>
+                <button type="button" class="btn btn-success waves-effect waves-light">Chỉnh sửa hồ sơ</button>
                 <hr>
                 <h4 class="text-uppercase font-18 font-600">About Me</h4>
-                <p class="text-muted font-13 m-b-30">
-                    Hi I'm Johnathn Deo,has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
-                </p>
+                <p class="text-muted font-13 m-b-30">{{$user->description}}</p>
                 <div class="text-left">
-                    <p class="text-muted font-13"><strong>Full Name :</strong> <span class="m-l-15">Johnathan Deo</span></p>
-                    <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">(123) 123 1234</span></p>
-                    <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">coderthemes@gmail.com</span></p>
-                    <p class="text-muted font-13"><strong>Location :</strong> <span class="m-l-15">USA</span></p>
+                    <p class="text-muted font-13"><strong>Full Name :</strong> <span class="m-l-15">{{$user->name}}</span></p>
+                    <p class="text-muted font-13"><strong>Gender :</strong> <span class="m-l-15">{{$user->gender}}</span></p>
+                    <p class="text-muted font-13"><strong>Birth day :</strong> <span class="m-l-15">{{$user->birth}}</span></p>
+                    <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">{{$user->phone}}</span></p>
+                    <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">{{$user->email}}</span></p>
+                    <p class="text-muted font-13"><strong>Facebook :</strong> <span class="m-l-15">
+                      <a href="{{$user->fb_page}}">{{$user->fb_page}}</a>
+                    </span></p>
+                    <p class="text-muted font-13"><strong>Website :</strong> <span class="m-l-15">
+                      <a href="{{$user->website}}">{{$user->website}}</a>
+                    </span></p>
+                    <!-- <p class="text-muted font-13"><strong>Location :</strong> <span class="m-l-15">USA</span></p> -->
                 </div>
                 <div class="button-list m-t-20">
-                    <button type="button" class="btn btn-facebook waves-effect waves-light">
-                    <i class="fa fa-facebook"></i>
-                    </button>
+                    <a href="{{$user->fb_page}}">
+                      <button type="button" class="btn btn-facebook waves-effect waves-light">
+                      <i class="fa fa-facebook"></i>
+                      </button>
+                    </a>
+
                     <button type="button" class="btn btn-twitter waves-effect waves-light">
                     <i class="fa fa-twitter"></i>
                     </button>
                     <button type="button" class="btn btn-linkedin waves-effect waves-light">
                     <i class="fa fa-linkedin"></i>
                     </button>
-                    <button type="button" class="btn btn-dribbble waves-effect waves-light">
-                    <i class="fa fa-dribbble"></i>
-                    </button>
+                    <a href="{{$user->website}}">
+                      <button type="button" class="btn btn-dribbble waves-effect waves-light">
+                      <i class="fa fa-dribbble"></i>
+                      </button>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="card-box">
+        <!-- <div class="card-box">
             <h4 class="m-t-0 m-b-20 header-title"><b>Friends <span class="text-muted">(154)</span></b></h4>
             <div class="friend-list">
                 <a href="#">
@@ -89,190 +101,127 @@
                 <span class="extra-number">+89</span>
                 </a>
             </div>
+        </div> -->
+        <div class="card-box">
+          <div class="text-left">
+              <h4 class="text-uppercase font-18 font-600">Số học viên đã cung cấp</h4>
+              <p class="text-muted font-13"><strong>Tháng trước :</strong> <span class="m-l-15">69</span></p>
+              <p class="text-muted font-13"><strong>3 tháng trước :</strong> <span class="m-l-15">69</span></p>
+              <p class="text-muted font-13"><strong>Năm ngoái:</strong> <span class="m-l-15">69</span></p>
+              <p class="text-muted font-13"><strong>Tất cả:</strong> <span class="m-l-15">69</span></p>
+          </div>
+        </div>
+
+        <div class="card-box">
+          <div class="text-left">
+              <h4 class="text-uppercase font-18 font-600">Doanh thu</h4>
+              <p class="text-muted font-13"><strong>Tháng trước :</strong> <span class="m-l-15">69 000 đ</span></p>
+              <p class="text-muted font-13"><strong>3 tháng trước :</strong> <span class="m-l-15">69 000 đ</span></p>
+              <p class="text-muted font-13"><strong>Năm ngoái:</strong> <span class="m-l-15">69 000 đ</span></p>
+              <p class="text-muted font-13"><strong>Tất cả:</strong> <span class="m-l-15">69 000 đ</span></p>
+          </div>
         </div>
     </div>
+
     <div class="col-lg-9 col-md-8">
-        <form method="post" class="card-box">
-            <div class="form-group-custom mb-0">
-                <textarea required="required" id="post-msg" rows="5"></textarea>
-                <label class="control-label" for="post-msg">Post a new Message</label><i class="bar"></i>
-            </div>
-            <div class="p-t-10 pull-right">
-                <a class="btn btn-sm btn-primary waves-effect waves-light">Send</a>
-            </div>
-            <ul class="nav nav-pills profile-pills m-t-10">
-                <li>
-                    <a href="#"><i class="fa fa-user"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-location-arrow"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class=" fa fa-camera"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-smile-o"></i></a>
-                </li>
-            </ul>
-        </form>
         <div class="card-box">
             <div class="comment">
-                <img src="/backend/assets/images/users/avatar-1.jpg" alt="" class="comment-avatar">
+                <img src="/img/avatar/{{$user->avatar}}" alt="" class="comment-avatar">
                 <div class="comment-body">
                     <div class="comment-text">
                         <div class="comment-header">
-                            <a href="#" title="">Adam Jansen</a><span>about 2 minuts ago</span>
+                            <a href="#" title="">{{$user->name}}</a><span>(đã đăng ký 2 tháng trước)</span>
                         </div>
-                        Story based around the idea of time lapse, animation to post soon!
-                        <div class="m-t-15">
-                            <a href="#">
-                            <img src="/backend/assets/images/small/img1.jpg" class="thumb-md">
-                            </a>
-                            <a href="#">
-                            <img src="/backend/assets/images/small/img2.jpg" class="thumb-md">
-                            </a>
-                            <a href="#">
-                            <img src="/backend/assets/images/small/img3.jpg" class="thumb-md">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="comment-footer">
-                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-                        <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
-                        <a href="#">Reply</a>
+                        @foreach($address as $a)
+                        <p>{{$a}}</p>
+                        @endforeach
                     </div>
                 </div>
-                <div class="comment">
-                    <img src="/backend/assets/images/users/avatar-2.jpg" alt="" class="comment-avatar">
-                    <div class="comment-body">
-                        <div class="comment-text">
-                            <div class="comment-header">
-                                <a href="#" title="">John Smith</a><span>about 1 hour ago</span>
-                            </div>
-                            Wow impressive!
+
+                <div class="comment-body">
+                    <div class="comment-text">
+                        <div class="comment-header">
+                            <a href="#" title="">Roles</a>
                         </div>
-                        <div class="comment-footer">
-                            <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-                            <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
-                            <a href="#">Reply</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="comment">
-                    <img src="/backend/assets/images/users/avatar-3.jpg" alt=""
-                        class="comment-avatar">
-                    <div class="comment-body">
-                        <div class="comment-text">
-                            <div class="comment-header">
-                                <a href="#" title="">Matt
-                                Cheuvront</a><span>about 2 hours ago</span>
-                            </div>
-                            Wow, that is really nice.
-                        </div>
-                        <div class="comment-footer">
-                            <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-                            <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
-                            <a href="#">Reply</a>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <img src="/backend/assets/images/users/avatar-4.jpg" alt=""
-                            class="comment-avatar">
-                        <div class="comment-body">
-                            <div class="comment-text">
-                                <div class="comment-header">
-                                    <a href="#" title="">Stephanie
-                                    Walter</a><span>3 hours ago</span>
-                                </div>
-                                Nice work, makes me think of The Money Pit.
-                            </div>
-                            <div class="comment-footer">
-                                <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-                                <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
-                                <a href="#">Reply</a>
-                            </div>
+                        <div>
+                          @foreach($role["original"] as $key => $r)
+                            @if($r == 1 && $key != "id" && $key != "user_id" && $key != "created_at" && $key != "updated_at")
+                            <span class="label label-table label-success">{{$key}}</span>
+                            @endif
+                          @endforeach
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="card-box">
             <div class="comment">
-                <img src="/backend/assets/images/users/avatar-1.jpg" alt="" class="comment-avatar">
+                <img src="/img/avatar/{{$user->avatar}}" alt="" class="comment-avatar">
                 <div class="comment-body">
                     <div class="comment-text">
                         <div class="comment-header">
-                            <a href="#" title="">Kim Ryder</a><span>about 4 hours ago</span>
+                            <a href="#" title="">Các khóa học</a><span></span>
                         </div>
-                        i'm in the middle of a timelapse animation myself! (Very different
-                        though.) Awesome stuff.
+                        Hiển thị tất cả các khóa học trên hệ thống
                     </div>
-                    <div class="comment-footer">
-                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-                        <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
-                        <a href="#">Reply</a>
+                </div>
+
+                <div class="comment-body">
+                    <div class="comment-text">
+                        <div class="comment-header">
+                            <a href="#" title="">Khóa abc</a><span>(đã đăng 1 ngày trước)</span>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6">
+                            <p>Danh mục: <a href="#">Ai eo</a> | Tiếng Nhật Bổn cải tiến</p>
+                            <p>Giá: 4000 000</p>
+                            <p>Khuyển mãi: ahihi</p>
+                            <p>Giảm giá: 10 000 000</p>
+                            <p>Thời lượng: 80 giờ, 40 buổi, thứ 2 3 4</p>
+                            <p>Khai giảng: 1/1/2018</p>
+                            <p>Giáo viên: <a href="#">Trung Hồ Ngọc</a></p>
+                            <p>Tình trạng:
+                              <span class="label label-table label-warning">đã mở lớp</span>
+                               / <span class="label label-table label-info">đang chiêu sinh</span>
+                            </p>
+                          </div>
+                          <div class="col-lg-6 col-md-6">
+                            <p>Số học viên còn thiếu: 69</p>
+                            <p>Số học viên đã cung cấp tháng này: 69</p>
+                            <p>Số học viên đã cung cấp tháng trước: 69</p>
+                            <p>Số học viên đã cung cấp 3 tháng trước: 69</p>
+                            <p>Số học viên đã cung cấp năm ngoái: 69</p>
+                            <p>Tổng số học viên đã cung cấp năm ngoái: 69</p>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="card-box">
             <div class="comment">
-                <img src="/backend/assets/images/users/avatar-7.jpg" alt="" class="comment-avatar">
+                <img src="/img/avatar/{{$user->avatar}}" alt="" class="comment-avatar">
                 <div class="comment-body">
                     <div class="comment-text">
                         <div class="comment-header">
-                            <a href="#" title="">Nicolai Larson</a><span>10 hours ago</span>
+                            <a href="#" title="">Các bài viết</a><span></span>
                         </div>
-                        the parallax is a little odd but O.o that house build is awesome!!
-                    </div>
-                    <div class="comment-footer">
-                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-                        <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
-                        <a href="#">Reply</a>
+                        Hiển thị tất cả các bài viết đã đăng trên hệ thống
                     </div>
                 </div>
-            </div>
-            <div class="comment">
-                <img src="/backend/assets/images/users/avatar-1.jpg" alt="" class="comment-avatar">
+
                 <div class="comment-body">
                     <div class="comment-text">
                         <div class="comment-header">
-                            <a href="#" title="">Adam Jansen</a><span>about 2 minuts ago</span>
+                            <a href="#" title="">học ai eo với chuyên gia Lào</a><span>(đã đăng 1 ngày trước)</span>
                         </div>
-                        Story based around the idea of time lapse, animation to post soon!
-                        <div class="m-t-15">
-                            <a href="#">
-                            <img src="/backend/assets/images/small/img1.jpg" class="thumb-md">
-                            </a>
-                            <a href="#">
-                            <img src="/backend/assets/images/small/img2.jpg" class="thumb-md">
-                            </a>
-                            <a href="#">
-                            <img src="/backend/assets/images/small/img3.jpg" class="thumb-md">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="comment-footer">
-                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-                        <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
-                        <a href="#">Reply</a>
-                    </div>
-                </div>
-                <div class="comment">
-                    <img src="/backend/assets/images/users/avatar-2.jpg" alt="" class="comment-avatar">
-                    <div class="comment-body">
-                        <div class="comment-text">
-                            <div class="comment-header">
-                                <a href="#" title="">John Smith</a><span>about 1 hour ago</span>
-                            </div>
-                            Wow impressive!
-                        </div>
-                        <div class="comment-footer">
-                            <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-                            <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
-                            <a href="#">Reply</a>
+                        <div>
+                          đoạn mô tả ))
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="m-t-30 text-center">
-                <a href="#" class="btn btn-default waves-effect waves-light btn-sm">Load More...</a>
             </div>
         </div>
     </div>
