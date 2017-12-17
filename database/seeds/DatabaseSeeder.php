@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $gender = ['male', 'female', 'other'];
         $group = ['student', 'post', 'parter', 'admin'];
-        for($i = 0; $i < 32; $i ++) {
+        for($i = 0; $i < 10; $i ++) {
           $randNumber = rand(0, 2);
           $randGroup = rand(0, 3);
 
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
         $category2->publish = false;
         $category2->save();
 
-        for($i = 0; $i < 32; $i ++) {
+        for($i = 0; $i < 10; $i ++) {
           $randNumber = rand(1, 9);
           $category3 = new Category;
           $category3->user_id = $randNumber;

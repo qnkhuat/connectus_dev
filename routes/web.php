@@ -22,7 +22,15 @@ Route::get('/blog/categories/a/1', function () {
     return view('bbbbb');
 });
 
-
+Route::get('/redirect/{social}', 'SocialAuthController@redirect');
+Route::get('/callback/{social}', 'SocialAuthController@callback');
+Route::get('/test', function(){
+  return view('test');
+});
+Route::get('/logout', function(){
+  auth()->logout();
+  return redirect("/test");
+});
 
 Route::prefix('admin')->group(function () {
 	Route::get('/', function () {
@@ -46,6 +54,15 @@ Route::prefix('admin')->group(function () {
     Route::get('/edit/{id}', 'CategoriesController@edit');
     Route::post('/update', 'CategoriesController@update');
     Route::post('/destroy', 'CategoriesController@destroy');
+  });
+
+  Route::prefix('/courses')->group(function () {
+    Route::get('/', 'CoursesController@_list');
+    Route::get('/create', 'CoursesController@_new');
+    Route::post('/create', 'CoursesController@create');
+    Route::get('/edit/{id}', 'CoursesController@edit');
+    Route::post('/update', 'CoursesController@update');
+    Route::post('/destroy', 'CoursesController@destroy');
   });
 
 	Route::prefix('/files')->group(function () {

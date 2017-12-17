@@ -42,6 +42,10 @@ class User extends Authenticatable
       // $user->rattings()->delete();
     }
 
+    public function SocialAccounts() {
+      return $this->hasMany('App\Models\SocialAccount');
+    }
+
     public function pages()
   	{
   		return $this->hasMany('App\Models\Page');
