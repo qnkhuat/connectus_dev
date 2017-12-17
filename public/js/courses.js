@@ -103,28 +103,26 @@ jQuery(document).ready(function($) {
     //scroll in single courses
     var w = $(document).width();
 
-    function coursePopup(link , content){
-      if(w>600){
-        var topPosition=$('.course-details-info-right-content').offset().top -50;//-50 of the fixed menu
-        console.log(topPosition);
-        var leftPosition=$('.course-details-info-right').offset().left +6;//+6 of padding
-        var widthOfBox= $('.course-details-info-right').width();
-        $(window).scroll(function (event) {
-          console.log($(document).scrollTop());
-          if($(window).scrollTop()>=topPosition){
-            $('.course-details-info-right').addClass('scroll');
-            $('.course-details-info-right').css('width',widthOfBox);
-            $('.course-details-info-right').css('left',leftPosition);
-          }else{
-            $('.course-details-info-right').removeClass('scroll');
-            $('.course-details-info-right').css('left','auto');
+    if(w>600){
+      var topPosition=$('.course-details-info-right-content').offset().top -60;//-50 of the fixed menu
+      console.log(topPosition);
+      var leftPosition=$('.course-details-info-right').offset().left +6;//+6 of padding
+      var widthOfBox= $('.course-details-info-right').width();
+      $(window).scroll(function (event) {
+        console.log($(document).scrollTop());
+        if($(window).scrollTop()>=topPosition){
+          $('.course-details-info-right').addClass('scroll');
+          $('.course-details-info-right').css('width',widthOfBox);
+          $('.course-details-info-right').css('left',leftPosition);
+        }else{
+          $('.course-details-info-right').removeClass('scroll');
+          $('.course-details-info-right').css('left','auto');
+        }
+      });
+    }else{
 
-          }
-        });
-      }else{
-        
-      }
     }
+
 
 
 

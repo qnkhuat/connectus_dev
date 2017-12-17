@@ -17,3 +17,10 @@ input:focus{
   border-color: $violet !important;
   outline: transparent;
 }
+a{
+  text-decoration: none !important;
+  color: $red;
+}
+img{
+  object-fit: cover;
+}
