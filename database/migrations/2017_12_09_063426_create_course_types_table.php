@@ -18,7 +18,9 @@ class CreateCourseTypesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->char('name', 255);
+            $table->char('slug', 191)->unique();
             $table->boolean('publish')->default(false);
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

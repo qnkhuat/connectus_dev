@@ -13,16 +13,17 @@
 @section('breadcrumb')
 <ol class="breadcrumb pull-right mb-0">
     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="#">Categories</a></li>
+    <li class="breadcrumb-item"><a href="#">Course types</a></li>
     <li class="breadcrumb-item"><a href="#">Create</a></li>
 </ol>
 @endsection
 
 @section('page_name')
-<h4 class="page-title">Categories</h4>
+<h4 class="page-title">Course types</h4>
 @endsection
 
 @section('content')
+
 <div class="row">
   <div class="col-md-12">
     @if (Session::has('messages'))
@@ -50,9 +51,8 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/categories/update" method="post">
+      <form action="/admin/course-types/create" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
-        <input type="hidden" name="id" value="{{$category->id}}">
 
         <div class="row">
           <div class="col-md-12">
@@ -63,15 +63,8 @@
                         <i class="md md-mode-edit" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="text" name="name" value="{{$category->name}}" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length" required  data-parsley-length="[1,255]">
+                <input type="text" name="name" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length" required  data-parsley-length="[1,255]">
             </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <p class="mr-t-10"><strong>description:</strong></p>
-            <textarea name="description" id="" cols="30" rows="10" class="form-control" placeholder="Description between 1 - 512 chars length">{{$category->description}}</textarea>
           </div>
         </div>
 
@@ -79,11 +72,11 @@
           <div class="col-md-12">
             <p class="mr-t-10"><strong>Publish:</strong></p>
             <div class="radio radio-info form-check-inline">
-                <input type="radio" id="inlineRadio1" value="1" name="publish" {{$category->publish ? "checked" : ""}}>
+                <input type="radio" id="inlineRadio1" value="1" name="publish">
                 <label for="inlineRadio1"> Yes </label>
             </div>
             <div class="radio form-check-inline">
-                <input type="radio" id="inlineRadio2" value="0" name="publish" {{!$category->publish ? "checked" : ""}}>
+                <input type="radio" id="inlineRadio2" value="0" name="publish" checked>
                 <label for="inlineRadio2"> No </label>
             </div>
           </div>
