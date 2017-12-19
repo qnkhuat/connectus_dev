@@ -24,6 +24,19 @@
 
 @section('content')
 <div class="row">
+  <div class="col-md-12">
+    @if (Session::has('messages'))
+    	<div class="alert alert-{{ Session::get('messages')["type"] }}">
+    		<div class="container">
+    			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    			<strong>{{ Session::get('messages')["content"] }}</strong>
+    		</div>
+    	</div>
+    @endif
+  </div>
+</div>
+
+<div class="row">
   @if ($errors->any())
       <div class="alert alert-danger">
           <ul>

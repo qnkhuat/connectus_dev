@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
           $user->name = str_random(10);
           $user->group = $group[$randGroup];
           $user->email = str_random(10).'@gmail.com';
-          $user->password = bcrypt('secret');
+          $user->password = bcrypt('password');
           $user->avatar = '1.jpg';
           $user->website = 'https://www.youtube.com/' . str_random(10);
           $user->phone = '0969540038';
@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
           $role = new Role;
           $role->user_id = $user->id;
           $role->create_role = rand(0, 1);
+          $role->login = rand(0, 1);
           $role->create_user = rand(0, 1);
           $role->destroy_user = rand(0, 1);
           $role->update_course = rand(0, 1);

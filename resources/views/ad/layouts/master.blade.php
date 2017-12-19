@@ -167,6 +167,14 @@
                             </li>
 
                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-list-ul"></i> <span> Course types </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="/admin/course-types">List</a></li>
+                                    <li><a href="/admin/course-types/create">Create</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-graduation-cap"></i> <span> Courses </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="/admin/courses">List</a></li>

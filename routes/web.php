@@ -10,10 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Middleware\AllowGoToAdmin;
 
 Route::get('/', function () {
     return view('front.main');
 });
+Route::prefix('/login')->group(function () {
+  Route::get('/', 'LoginController@login');
+  Route::post('/', 'LoginController@postLogin');
+  Route::get('/logout', 'LoginController@logout');
+  Route::get('/forgot', 'LoginController@forgot');
+});
+Route::get('/logout', 'LoginController@logout');
+
 Route::get('/khoahoc', function () {
     return view('front.single');
 });
@@ -27,12 +36,8 @@ Route::get('/callback/{social}', 'SocialAuthController@callback');
 Route::get('/test', function(){
   return view('test');
 });
-Route::get('/logout', function(){
-  auth()->logout();
-  return redirect("/test");
-});
 
-Route::prefix('admin')->group(function () {
+Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function () {
 	Route::get('/', function () {
 		return view("ad.dashboard.dashboard");
 	});
@@ -54,6 +59,15 @@ Route::prefix('admin')->group(function () {
     Route::get('/edit/{id}', 'CategoriesController@edit');
     Route::post('/update', 'CategoriesController@update');
     Route::post('/destroy', 'CategoriesController@destroy');
+  });
+
+  Route::prefix('/course-types')->group(function () {
+    Route::get('/', 'CoursesTypeController@_list');
+    Route::get('/create', 'CoursesTypeController@_new');
+    Route::post('/create', 'CoursesTypeController@create');
+    Route::get('/edit/{id}', 'CoursesTypeController@edit');
+    Route::post('/update', 'CoursesTypeController@update');
+    Route::post('/destroy', 'CoursesTypeController@destroy');
   });
 
   Route::prefix('/courses')->group(function () {
