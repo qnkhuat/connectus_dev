@@ -1,3 +1,4 @@
+
 $red:#d61e2a;
 $pink:#e55e8d;
 $violet:#828bcc;
@@ -7,7 +8,9 @@ $buttonColor: black;
 $bradius:3px;
 $transition-time:0.3s ;
 $titleBlue:#017691;
+$itemwidth:23%;
 $padding:13px;
+$borderColor:$red;
 .padding-0-30{
   padding: 0 30px;
 }
@@ -121,9 +124,25 @@ $padding:13px;
     }
   }
 }//.stars-rating-static
+
 @media only screen and (max-width: 600px) {
   .padding-0-15{
     padding: 0 5px;
+  }
+
+  .more-item-box{
+    display: none;
+  }
+  .more-button{
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid $red;
+    border-radius: $bradius;
+    color: $red;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
   }
 
 }

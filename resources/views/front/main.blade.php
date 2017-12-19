@@ -20,13 +20,15 @@
 
     <!------------CSS -->
     <link rel="stylesheet" href="css/reset.css" media="screen" >
-    <link rel="stylesheet" href="css/common.css" media="screen" >
+
     <link rel="stylesheet" href="css/variables.css" media="screen" >
     <link rel="stylesheet" href="css/header.css" media="screen" >
     <link rel="stylesheet" href="css/courses.css" media="screen" >
     <link rel="stylesheet" href="css/main.css" media="screen" >
     <link rel="stylesheet" href="css/footer.css" media="screen" >
+    <link rel="stylesheet" href="css/common.css" media="screen" >
     <link rel="stylesheet" href="css/responsive.css" media="screen" >
+
   </head>
   <body>
     <!-- #login-popup -->
@@ -217,9 +219,9 @@
 
       <div class="course-ielts courses-row">
         <h3 class="courses-row-title padding-0-15">Khoá học IELTS</h3>
-        <div class="courses-group">
+        <div class="courses-group more-group">
           <?php for($i = 1; $i <= 7; $i ++) { ?>
-          <div class="courses-item-box" title=".course-popup" onclick='coursePopup("/khoahoc/{{$i}}", $(this).find(".course-popup").html())'>
+          <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup("/khoahoc/{{$i}}", $(this).find(".course-popup").html())'>
             <div class="course-item-content">
               <div class="course-image-box">
                 <img src="/images/courses/english/English-courses {{$i}}.png" class="course-image full" alt="">
@@ -238,6 +240,7 @@
               </div>
 
               <div class="course-popup">
+                <a class="course-info-title" href="">IELTS 8.5</a>
                 <p class="course-info-start">Khai giảng : <span class="course-info-start-day">3/2/2017</span></p>
 
                 <div class="course-price-box">
@@ -246,7 +249,7 @@
                 </div>
 
                 <div class="course-popup-detail">
-                  <a class="course-info-title" href="">IELTS 8.5</a>
+
 
                   <div class="course-info-category">
                     in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
@@ -274,23 +277,23 @@
             </div>
           </div><!-- //item -->
           <?php } ?>
-
+          <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
         </div><!-- //.courses-group -->
-        <div class="more-course-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+
         <div class="next-button pagination-button"> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
         <div class="prev-button pagination-button"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
       </div><!-- //.courses-row -->
+      <div id="course-popup-mobile">
+        <div class="course-popup-mobile-content"></div>
+        <div class="wrapup-button">
+          <i class="fa fa-chevron-up wrapup-button-up" aria-hidden="true"></i>
+          <i class="fa fa-chevron-down wrapup-button-down" aria-hidden="true"></i>
+        </div>
 
-    </div>
-
-    <div id="course-popup-mobile">
-      <div class="course-popup-mobile-content"></div>
-      <div class="wrapup-button">
-        <i class="fa fa-chevron-up wrapup-button-up" aria-hidden="true"></i>
-        <i class="fa fa-chevron-down wrapup-button-down" aria-hidden="true"></i>
       </div>
-
     </div>
+
+
     <!-- //#courses -->
 
     <!-- #partners -->
