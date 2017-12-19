@@ -259,6 +259,31 @@
       </div>
       <!-- //.course-details-main -->
 
+      <!-- .course-details-comment -->
+      <div class="course-detials-comment-box">
+        <div class="course-details-comment-input">
+
+        </div>
+
+        <div class="course-details-comments-list">
+          <div class="course-details-comment">
+            <div class="course-details-comment-left">
+              <div class="course-details-comment-avatar"></div>
+              <div class="course-details-comment-username"></div>
+            </div>
+            <div class="course-details-comment-right">
+              <div class="course-details-comment-stars">
+
+              </div>
+              <div class="course-details-comment-content">
+                <p>>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ullam odio iusto doloremque tempore eum. Expedita voluptate corporis exercitationem beatae quas inventore eveniet iusto sint. Obcaecati rem quia natus accusamus.</p
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //.course-details-comment -->
+
     </div>
     <!-- //#course-details -->
 
