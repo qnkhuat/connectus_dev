@@ -11,7 +11,7 @@
 
     <?php
     if (Auth::check()) {
-        $user = $user = auth()->user();
+        $user = auth()->user();
     ?>
     <img src="{{$user->avatar}}" alt="" style="width: 100px;">
     <p>{{$user->name}}</p>

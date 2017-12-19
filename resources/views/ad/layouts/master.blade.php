@@ -17,6 +17,10 @@
         </style>
         <script src="/backend/assets/js/modernizr.min.js"></script>
     </head>
+    <?php
+      $currenUser = auth()->user();
+      $currenUserRoles = $currenUser->role;
+    ?>
     <body class="fixed-left">
         <!-- Loader -->
         <!-- <div id="preloader">
@@ -96,12 +100,12 @@
                         <li class="list-inline-item dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                            <img src="/backend/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                            <img src="/img/avatar/{{$currenUser->avatar}}" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Welcome ! Trung Ho Ngoc</small> </h5>
+                                    <h5 class="text-overflow"><small>Welcome ! {{$currenUser->name}}</small> </h5>
                                 </div>
                                 <!-- item-->
                                 <a href="/admin/users/profile" class="dropdown-item notify-item">
@@ -152,34 +156,66 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> Users </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
+                                    @if($currenUserRoles->view_user)
                                     <li><a href="/admin/users">List</a></li>
+                                    @endif
                                     <li><a href="/admin/users/profile">Profile</a></li>
+                                    @if($currenUserRoles->create_user)
                                     <li><a href="/admin/users/create">Create</a></li>
+                                    @endif
                                 </ul>
                             </li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-list-ol"></i> <span> Categories </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
+                                    @if($currenUserRoles->view_category)
                                     <li><a href="/admin/categories">List</a></li>
+                                    @endif
+
+                                    @if($currenUserRoles->create_category)
                                     <li><a href="/admin/categories/create">Create</a></li>
+                                    @endif
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> Teachers </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    @if($currenUserRoles->view_all_teacher)
+                                    <li><a href="/admin/teachers/all">List all</a></li>
+                                    @endif
+                                    @if($currenUserRoles->view_teacher)
+                                    <li><a href="/admin/teachers">List</a></li>
+                                    @endif
+                                    @if($currenUserRoles->create_course_type)
+                                    <li><a href="/admin/teachers/create_teacher">Create</a></li>
+                                    @endif
                                 </ul>
                             </li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-list-ul"></i> <span> Course types </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
+                                    @if($currenUserRoles->create_course_type)
                                     <li><a href="/admin/course-types">List</a></li>
+                                    @endif
+                                    @if($currenUserRoles->create_course_type)
                                     <li><a href="/admin/course-types/create">Create</a></li>
+                                    @endif
                                 </ul>
                             </li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-graduation-cap"></i> <span> Courses </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
+                                    @if($currenUserRoles->view_course)
                                     <li><a href="/admin/courses">List</a></li>
-                                    <!-- <li><a href="/admin/courses/detail">Profile</a></li> -->
+                                    @endif
+                                    <li><a href="/admin/courses/detail">My courses</a></li>
+                                    @if($currenUserRoles->create_course)
                                     <li><a href="/admin/courses/create">Create</a></li>
+                                    @endif
                                 </ul>
                             </li>
 
