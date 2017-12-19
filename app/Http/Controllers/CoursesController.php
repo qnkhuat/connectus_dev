@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\CourseType;
+
 class CoursesController extends Controller
 {
     public function _list() {
@@ -11,7 +13,8 @@ class CoursesController extends Controller
     }
 
     public function _new() {
-      return view("ad.courses.new");
+      $types = CourseType::where("deleted", false)->orderBy("updated_at", "desc")->get();
+      return view("ad.courses.new", ["types" => $types]);
     }
 
     public function create() {

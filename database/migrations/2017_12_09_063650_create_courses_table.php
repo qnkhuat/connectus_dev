@@ -23,7 +23,7 @@ class CreateCoursesTable extends Migration
             $table->text('slide')->nullable();
             $table->char('name', 255);
             $table->float('old_price')->nullable();
-            $table->float('new_price');
+            $table->float('new_price')->default(0);
             $table->boolean('new_price_only')->default(true);
             $table->float('sale')->nullable()->default(0);
             $table->string('gift', 511)->nullable();

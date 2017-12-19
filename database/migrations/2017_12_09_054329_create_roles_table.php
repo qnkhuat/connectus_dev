@@ -30,6 +30,11 @@ class CreateRolesTable extends Migration
             $table->boolean('destroy_profile')->default(false);
             $table->boolean('view_profile')->default(false);
 
+            $table->boolean('create_category')->default(false);
+            $table->boolean('update_category')->default(false);
+            $table->boolean('destroy_category')->default(false);
+            $table->boolean('view_category')->default(false);
+
             $table->boolean('create_page')->default(false);
             $table->boolean('update_page')->default(false);
             $table->boolean('destroy_page')->default(false);
@@ -44,6 +49,17 @@ class CreateRolesTable extends Migration
             $table->boolean('update_comment')->default(false);
             $table->boolean('destroy_comment')->default(false);
             $table->boolean('view_comment')->default(false);
+
+            $table->boolean('create_course_type')->default(false);
+            $table->boolean('update_course_type')->default(false);
+            $table->boolean('destroy_course_type')->default(false);
+            $table->boolean('view_course_type')->default(false);
+
+            $table->boolean('create_teacher')->default(false);
+            $table->boolean('update_teacher')->default(false);
+            $table->boolean('destroy_teacher')->default(false);
+            $table->boolean('view_teacher')->default(false);
+            $table->boolean('view_all_teacher')->default(false);
 
             $table->boolean('create_course')->default(false);
             $table->boolean('update_course')->default(false);

@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Models\Category;
 use App\Models\Role;
+use App\Models\CourseType;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,63 +15,130 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        $gender = ['male', 'female', 'other'];
-        $group = ['student', 'post', 'parter', 'admin'];
-        for($i = 0; $i < 10; $i ++) {
-          $randNumber = rand(0, 2);
-          $randGroup = rand(0, 3);
+        $admin = User::create([
+          'avatar' => 'default.png',
+          'name' => 'Super Admin',
+          'email' => 'admin@connectus.vn',
+          'password' => bcrypt("admin"),
+          'website' => 'http://connectus.vn',
+          'phone' => '0969540038',
+          'gender' => 'male',
+          'group' => 'admin',
+          'birth' => '1994/01/22',
+          'address' => '[]',
+          'description' => 'tài khoản mặc định của hệ thống',
+          'fb_page' => 'https://facebook.com/trung.hongoc',
+        ]);
 
-          $address = json_encode(["địa chỉ số " . rand(1,100), "Địa chỉ số 2 là: " . rand(1,100)], JSON_UNESCAPED_UNICODE);
-          $user = new User;
-          $user->name = str_random(10);
-          $user->group = $group[$randGroup];
-          $user->email = str_random(10).'@gmail.com';
-          $user->password = bcrypt('password');
-          $user->avatar = '1.jpg';
-          $user->website = 'https://www.youtube.com/' . str_random(10);
-          $user->phone = '0969540038';
-          $user->gender = $gender[$randNumber];
-          $user->address = $address;
-          $user->save();
+        Role::create([
+          'user_id' => $admin->id,
+          'create_role' => true,
+          'create_user' => true,
+          'update_user' => true,
+          'destroy_user' => true,
+          'view_user' => true,
+          'login' => true,
 
-          $role = new Role;
-          $role->user_id = $user->id;
-          $role->create_role = rand(0, 1);
-          $role->login = rand(0, 1);
-          $role->create_user = rand(0, 1);
-          $role->destroy_user = rand(0, 1);
-          $role->update_course = rand(0, 1);
-          $role->destroy_course = rand(0, 1);
-          $role->view_log = rand(0, 1);
-          $role->create_footer = rand(0, 1);
-          $role->view_order = rand(0, 1);
-          $role->create_notification = rand(0, 1);
-          $role->save();
-        }
+          'create_profile' => true,
+          'update_profile' => true,
+          'destroy_profile' => true,
+          'view_profile' => true,
 
-        $category = new Category;
-        $category->user_id = 1;
-        $category->name = 'Học ai eo cùng Happy Polla';
-        $category->description = 'Vừa học vừa chùi nước miếng ))';
-        $category->publish = true;
-        $category->save();
+          'create_category' => true,
+          'update_category' => true,
+          'destroy_category' => true,
+          'view_category' => true,
 
-        $category2 = new Category;
-        $category2->user_id = 1;
-        $category2->name = 'Tô ích 900 trong 2 giờ ))';
-        $category2->description = 'Chất lượng méo thể ngờ ))';
-        $category2->publish = false;
-        $category2->save();
+          'create_page' => true,
+          'update_page' => true,
+          'destroy_page' => true,
+          'view_page' => true,
 
-        for($i = 0; $i < 10; $i ++) {
-          $randNumber = rand(1, 9);
-          $category3 = new Category;
-          $category3->user_id = $randNumber;
-          $category3->name = str_random(10);
-          $category3->description = str_random(10);
-          $category3->publish = rand(0, 1);
-          $category3->save();
-        }
+          'create_post' => true,
+          'update_post' => true,
+          'destroy_post' => true,
+          'view_post' => true,
+
+          'create_comment' => true,
+          'update_comment' => true,
+          'destroy_comment' => true,
+          'view_comment' => true,
+
+          'create_course_type' => true,
+          'update_course_type' => true,
+          'destroy_course_type' => true,
+          'view_course_type' => true,
+
+          'create_teacher' => true,
+          'update_teacher' => true,
+          'destroy_teacher' => true,
+          'view_teacher' => true,
+          'view_all_teacher' => true,
+
+          'create_course' => true,
+          'update_course' => true,
+          'destroy_course' => true,
+          'view_course' => true,
+
+          'create_log' => true,
+          'update_log' => true,
+          'destroy_log' => true,
+          'view_log' => true,
+
+          'create_menu' => true,
+          'update_menu' => true,
+          'destroy_menu' => true,
+          'view_menu' => true,
+
+          'create_banner' => true,
+          'update_banner' => true,
+          'destroy_banner' => true,
+          'view_banner' => true,
+
+          'create_footer' => true,
+          'update_footer' => true,
+          'destroy_footer' => true,
+          'view_footer' => true,
+
+          'create_order' => true,
+          'update_order' => true,
+          'destroy_order' => true,
+          'view_order' => true,
+          'send_order' => true,
+
+          'create_resource' => true,
+          'update_resource' => true,
+          'destroy_resource' => true,
+          'view_resource' => true,
+
+          'create_notification' => true,
+          'update_notification' => true,
+          'destroy_notification' => true,
+          'view_notification' => true,
+
+          'send_mail' => true,
+          'view_mail' => true,
+        ]);
+
+        Category::create([
+          'user_id' => $admin->id,
+          'name' => 'Học ai eo cùng Happy Polla',
+          'description' => 'Vừa học vừa chùi nước miếng ))',
+          'publish' => true
+        ]);
+
+        CourseType::create([
+            'user_id' => $admin->id,
+            'name' => 'Ai eo',
+            'slug' => 'ai-eo',
+            'publish' => true
+        ]);
+
+        CourseType::create([
+            'user_id' => $admin->id,
+            'name' => 'tô x',
+            'slug' => 'to-x',
+            'publish' => true
+        ]);
     }
 }

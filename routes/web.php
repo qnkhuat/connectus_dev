@@ -61,6 +61,16 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
     Route::post('/destroy', 'CategoriesController@destroy');
   });
 
+  Route::prefix('/teachers')->group(function () {
+    Route::get('/', 'TeacherController@_list');
+    Route::get('/all', 'TeacherController@_listAll');
+    Route::get('/create', 'TeacherController@_new');
+    Route::post('/create', 'TeacherController@create');
+    Route::get('/edit/{id}', 'TeacherController@edit');
+    Route::post('/update', 'TeacherController@update');
+    Route::post('/destroy', 'TeacherController@destroy');
+  });
+
   Route::prefix('/course-types')->group(function () {
     Route::get('/', 'CoursesTypeController@_list');
     Route::get('/create', 'CoursesTypeController@_new');
