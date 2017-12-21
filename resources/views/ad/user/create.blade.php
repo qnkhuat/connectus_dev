@@ -141,7 +141,6 @@ form {width: 100%;}
                 </div> -->
 
                 <div class="form-group">
-                  <p class="mr-t-10"><strong>Opening:</strong></p>
                   <div>
                       <div class="input-group">
                           <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
