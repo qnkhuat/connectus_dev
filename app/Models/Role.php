@@ -38,7 +38,7 @@ class Role extends Model
       'create_comment', 'update_comment', 'destroy_comment',
       'create_post', 'update_post', 'destroy_post'
     ],
-    'parter': [
+    'partner': [
       'login', 'update_profile', 'view_profile',
       'create_comment', 'update_comment', 'destroy_comment',
       'create_post', 'update_post', 'destroy_post',
@@ -75,7 +75,7 @@ class Role extends Model
       'create_comment', 'update_comment', 'destroy_comment',
       'create_post', 'update_post', 'destroy_post'
     ],
-    'parter' => [
+    'partner' => [
       'login', 'update_profile', 'view_profile',
       'create_comment', 'update_comment', 'destroy_comment',
       'create_post', 'update_post', 'destroy_post',

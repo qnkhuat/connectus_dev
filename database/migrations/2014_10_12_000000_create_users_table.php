@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->string('phone')->nullable();
             $table->enum('gender', ['male', 'female', 'other'])->default('male');
-            $table->enum('group', ['student', 'post', 'parter', 'admin'])->default('student');
+            $table->enum('group', ['student', 'post', 'partner', 'admin'])->default('student');
             $table->date('birth')->nullable();
             $table->text('address')->nullable();
             $table->string('description', 512)->nullable();

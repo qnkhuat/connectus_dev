@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public static $types = ['student', 'post', 'parter', 'admin'];
+    public static $types = ['student', 'post', 'partner', 'admin'];
     public static $genders = ['male', 'female', 'other'];
 
     public static function destroyNow($id) {
