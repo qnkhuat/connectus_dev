@@ -353,8 +353,7 @@
 <script src="/backend/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
 <script src="/backend/assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
 <script src="/backend/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="assets/pages/jquery.form-advanced.init.js"></script>
-
+<script type="text/javascript" src="/backend/assets/pages/jquery.form-advanced.init.js"></script>
 
 
 <script src="/backend/assets/js/jquery.core.js"></script>
