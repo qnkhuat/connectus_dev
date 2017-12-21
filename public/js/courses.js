@@ -85,7 +85,6 @@ jQuery(document).ready(function($) {
     var count =0,current=0;
     var steps=3;
     var lengthOfCourses=$(this).parent().find('div.more-item-box').length;
-    console.log(lengthOfCourses);
     for(i =1;i<=lengthOfCourses;i++){
       var name = $(this).parent().find('.more-item-box:nth-child('+i+')');
       if(name.css('display')=='none' && count <steps){
@@ -101,26 +100,6 @@ jQuery(document).ready(function($) {
 
   });
 
-    //scroll in single courses
-    var w = $(window).width();
-
-    if(w>600){
-      var topPosition=$('.course-details-info-right-content').offset().top -60;//-50 of the fixed menu
-      var leftPosition=$('.course-details-info-right').offset().left +6;//+6 of padding
-      var widthOfBox= $('.course-details-info-right').width();
-      $(window).scroll(function (event) {
-        if($(window).scrollTop()>=topPosition){
-          $('.course-details-info-right').addClass('scroll');
-          $('.course-details-info-right').css('width',widthOfBox);
-          $('.course-details-info-right').css('left',leftPosition);
-        }else{
-          $('.course-details-info-right').removeClass('scroll');
-          $('.course-details-info-right').css('left','auto');
-        }
-      });
-    }else{
-
-    }
 
 
 });

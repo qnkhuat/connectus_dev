@@ -475,3 +475,25 @@ html,body{
     }
   }
 }
+
+
+footer{
+  position: relative;
+  border-top: 1px solid #999;
+  p{
+    margin: 0;
+    line-height: 50px;
+  }
+  .facebook-icon{
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    background: #3b5897;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    transform: translateX(-50%);
+    color: white;
+  }//.facebook-icon
+}//footer
