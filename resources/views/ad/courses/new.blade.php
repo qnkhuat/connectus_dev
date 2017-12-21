@@ -362,7 +362,13 @@
 
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
-  CKEDITOR.replace( 'editor_ckeditor' );
+  var options = {
+    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+  };
+  CKEDITOR.replace( 'editor_ckeditor', options );
   $(document).ready(function(){
     $(".more-image").click(function() {
       $('#more-link-image-slider').append('<div class="mr-t-10"><div class="item-image-link"> <div class="input-group"> <input type="text" name="slideImageLink[]" class="form-control" data-buttonname="btn-white"> <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest(\'.item-image-link\').remove()"> <button type="button" class="btn waves-effect waves-light btn-warning"> <i class="fa fa-trash" aria-hidden="true"></i> </button> </span> </div></div></div>')
