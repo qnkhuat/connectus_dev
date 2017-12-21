@@ -193,7 +193,17 @@ form {width: 100%;}
             <div class="row">
               <div class="col-md-12">
                 <p class="mr-t-10"><strong>address:</strong></p>
-                <textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea>
+                <div class="item-address">
+                  <div class="input-group">
+                      <textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea>
+                      <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest('.item-address').remove()">
+                          <button type="button" class="btn waves-effect waves-light btn-warning">
+                              <i class="fa fa-trash" aria-hidden="true"></i>
+                          </button>
+                      </span>
+                  </div>
+                </div>
+
                 <div id="more-address"></div>
                 <div class="mr-t-10">
                   <button type="button" class="btn btn-info btn-rounded waves-effect waves-light float-right more-address">more</button>
@@ -251,7 +261,7 @@ form {width: 100%;}
   var userGroup = "student"
   $(document).ready(function() {
     $(".more-address").click(function() {
-      $('#more-address').append('<div class="mr-t-10"><textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea></div>')
+      $('#more-address').append('<div class="mr-t-10"><div class="item-address"> <div class="input-group"> <textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea> <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest(\'.item-address\').remove()"> <button type="button" class="btn waves-effect waves-light btn-warning"> <i class="fa fa-trash" aria-hidden="true"></i> </button> </span> </div></div></div>')
     })
 
     // selected role if user group changing
@@ -259,10 +269,6 @@ form {width: 100%;}
     $("#select-group").change(function() {
       setRolesChecked($(this).val())
     })
-
-    $('.datepicker').datepicker({
-        format: 'dd/mm/yyyy',
-    });
   })
 
   function setRolesChecked(userGroup = 'student') {

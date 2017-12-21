@@ -185,7 +185,16 @@ form {width: 100%;}
                 <p class="mr-t-10"><strong>address:</strong></p>
                 @foreach($address as $a)
                 <div class="mr-t-10">
-                  <textarea name="address[]" id="" cols="30" rows="10" class="form-control">{{$a}}</textarea>
+                  <div class="item-address">
+                    <div class="input-group">
+                        <textarea name="address[]" id="" cols="30" rows="10" class="form-control">{{$a}}</textarea>
+                        <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest('.item-address').remove()">
+                            <button type="button" class="btn waves-effect waves-light btn-warning">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    </div>
+                  </div>
                 </div>
                 @endforeach
                 <div id="more-address"></div>
@@ -236,7 +245,7 @@ form {width: 100%;}
   var userRole = {!!$userRoleJSON!!}
   $(document).ready(function() {
     $(".more-address").click(function() {
-      $('#more-address').append('<div class="mr-t-10"><textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea></div>')
+      $('#more-address').append('<div class="mr-t-10"><div class="item-address"> <div class="input-group"> <textarea name="address[]" id="" cols="30" rows="10" class="form-control"></textarea> <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest(\'.item-address\').remove()"> <button type="button" class="btn waves-effect waves-light btn-warning"> <i class="fa fa-trash" aria-hidden="true"></i> </button> </span> </div></div></div>')
     })
 
     // selected role if user group changing
