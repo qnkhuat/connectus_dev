@@ -140,8 +140,10 @@ ul.pagination li.active span {background: transparent; color: #fff;}
               $user->group == "admin" ? '<span class="label label-table label-success">admin</span>' :
               (
                 $user->group == "partner" ? '<span class="label label-table label-warning">partner</span>' :
-                  $user->group == "post" ? '<span class="label label-table label-danger">post</span>' :
-                    '<span class="label label-table label-inverse">student</span>'
+                  (
+                    $user->group == "post" ? '<span class="label label-table label-danger">post</span>' :
+                      '<span class="label label-table label-inverse">student</span>'
+                  )
               )
             !!}
           </td>
