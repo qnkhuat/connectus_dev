@@ -161,7 +161,7 @@
             <div>
                 <div class="input-group">
                     <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
-                    <input type="text" name="opening" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose">
+                    <input type="text" name="opening" class="form-control" placeholder="yyyy/mm/dd" id="datepicker-autoclose">
                 </div><!-- input-group -->
             </div>
         </div>

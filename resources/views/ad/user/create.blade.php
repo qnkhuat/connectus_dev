@@ -4,6 +4,12 @@
 <!-- Plugins css-->
 <link href="/backend/assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
 <link href="/backend/assets/plugins/bootstrap-table/css/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
+<link href="/backend/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+<link href="/backend/assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" />
+<link href="/backend/assets/plugins/multiselect/css/multi-select.css"  rel="stylesheet" type="text/css" />
+<link href="/backend/assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="/backend/assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
 <style>
 form {width: 100%;}
 .mr-t-10 {margin-top: 10px;}
@@ -129,9 +135,19 @@ form {width: 100%;}
             <div class="row">
               <div class="col-md-12">
                 <p class="mr-t-10"><strong>Birth day:<span class="color-red">*</span></strong></p>
-                <div class="input-group">
+                <!-- <div class="input-group">
                     <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
                     <input type="date" required name="birth" placeholder="dd/mm/yyyy">
+                </div> -->
+
+                <div class="form-group">
+                  <p class="mr-t-10"><strong>Opening:</strong></p>
+                  <div>
+                      <div class="input-group">
+                          <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
+                          <input type="text" name="birth" class="form-control" placeholder="yyyy/mm/dd" id="datepicker-autoclose">
+                      </div><!-- input-group -->
+                  </div>
                 </div>
               </div>
             </div>
@@ -218,6 +234,17 @@ form {width: 100%;}
 <script src="/backend/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="/backend/assets/pages/jquery.form-pickers.init.js"></script>
 
+<script src="/backend/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+<script src="/backend/assets/plugins/switchery/js/switchery.min.js"></script>
+<script type="text/javascript" src="/backend/assets/plugins/multiselect/js/jquery.multi-select.js"></script>
+<script type="text/javascript" src="/backend/assets/plugins/jquery-quicksearch/jquery.quicksearch.js"></script>
+<script src="/backend/assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+<script src="/backend/assets/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="/backend/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+<script src="/backend/assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+<script src="/backend/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/backend/assets/pages/jquery.form-advanced.init.js"></script>
+
 
 <script>
   var defaultGroupRole = {!!$defaultGroupRole!!}
@@ -232,6 +259,10 @@ form {width: 100%;}
     $("#select-group").change(function() {
       setRolesChecked($(this).val())
     })
+
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy',
+    });
   })
 
   function setRolesChecked(userGroup = 'student') {
