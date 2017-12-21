@@ -15,6 +15,9 @@ use App\Http\Middleware\AllowGoToAdmin;
 Route::get('/', function () {
     return view('front.main');
 });
+Route::get('/checkout', function () {
+    return view('front.checkout');
+});
 Route::prefix('/login')->group(function () {
   Route::get('/', 'LoginController@login');
   Route::post('/', 'LoginController@postLogin');

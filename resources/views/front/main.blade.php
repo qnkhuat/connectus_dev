@@ -48,7 +48,7 @@
             <img src="/images/courses/english/English-courses {{$i}}.png" class="course-image full" alt="">
           </div>
           <div class="course-info-box">
-            <a class="course-info-title title-blue one-line-text">
+            <a class="course-info-title one-line-text">
               IELTS 8.5 ({{$i}})
             </a>
 

@@ -31,8 +31,8 @@
   <body>
     <!-- #menu -->
     <div id="menu">
-      <div id="login-popup" class="fixed-top full">
-        <div class="modal-background full"></div>
+      <div id="login-popup" class="lightbox login-popup">
+        <div class="modal-background"></div>
         <div class="modal-dialogs">
           <div class="login-tab">
 
@@ -94,7 +94,7 @@
         </div>
 
         <div class="menu-right">
-          <p class="login-button">Đăng nhập</p>
+          <p class="lightbox-button login-popup login-button">Đăng nhập</p>
           <div class="cart">
             <a href="" class="fa fa-shopping-cart cart-icon"></a>
             <span class="cart-count"><span class="cart-count-items">1</span> khoá</span>
@@ -192,7 +192,11 @@
 
     <!-- #courses -->
     @yield('coursesInSinglePate')
+
+    @yield('checkoutForm')
 <!-- //single Page -->
+
+
 
     <!-- //#footer -->
     <footer class="text-center">
@@ -211,6 +215,7 @@
     <script src="js/popup-item.js"></script>
     <script src="js/courses.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/lightbox.js"></script>
     @yield('latter_js')
 </body>
 </html>
