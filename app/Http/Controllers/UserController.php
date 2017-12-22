@@ -80,7 +80,15 @@ class UserController extends Controller
       $user->birth = $request->birth;
       $user->description = $request->description;
       $user->fb_page = $request->fb_page;
-      $user->address = json_encode($request->address, JSON_UNESCAPED_UNICODE);
+      $address = $request->address;
+      $listAddress = [];
+      if(is_array($address)) {
+        foreach($address as $a)
+        if($a != null)
+          array_push($listAddress, $a);
+        $user->address = count($listAddress) > 0 ? json_encode($listAddress, JSON_UNESCAPED_UNICODE) : "[]";
+      } else
+        $user->address = "[]";
 
       if($user->save())
       {
@@ -133,7 +141,16 @@ class UserController extends Controller
         $user->birth = $request->birth;
         $user->description = $request->description;
         $user->fb_page = $request->fb_page;
-        $user->address = json_encode($request->address, JSON_UNESCAPED_UNICODE);
+        $address = $request->address;
+        $listAddress = [];
+        if(is_array($address)) {
+          foreach($address as $a)
+          if($a != null)
+            array_push($listAddress, $a);
+          $user->address = count($listAddress) > 0 ? json_encode($listAddress, JSON_UNESCAPED_UNICODE) : "[]";
+        } else
+          $user->address = "[]";
+
         $user->save();
         Role::setRole($user->id, $request->roles);
         if($request->hasFile('avatar'))

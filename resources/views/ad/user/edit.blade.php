@@ -139,7 +139,7 @@ form {width: 100%;}
                   <div>
                       <div class="input-group">
                           <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
-                          <input type="text" name="birth" class="form-control" placeholder="yyyy/mm/dd" id="datepicker-autoclose">
+                          <input type="text" name="birth" class="form-control" placeholder="yyyy/mm/dd" id="datepicker-autoclose" value="{{$user->birth}}">
                       </div><!-- input-group -->
                   </div>
                 </div>

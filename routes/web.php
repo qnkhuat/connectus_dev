@@ -40,6 +40,12 @@ Route::get('/test', function(){
   return view('test');
 });
 
+Route::group(['middleware' => ['auth', 'allowGoToAdmin']], function () {
+  Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
+  Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
+  // list all lfm routes here...
+});
+
 Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function () {
 	Route::get('/', function () {
 		return view("ad.dashboard.dashboard");
