@@ -22,8 +22,20 @@ class TeacherController extends Controller
     return view("ad.teachers.list");
   }
 
-  public function _listAll() {
-    return view("ad.teachers.list_all");
+  public function _listAll(Request $request) {
+    $perpage = (int) $request->perpage;
+    $perpage < 5 ? $perpage = 5 : $perpage;
+    $perpage > 50 ? $perpage = 50 : $perpage;
+    $partner = (int) $request->partner;
+
+    $partners = User::where("group", "partner")->get();
+    if($partner != null && User::find($partner))
+      $teachers = Teacher::with("user")
+          ->where('user_id', $partner)
+          ->paginate($perpage);
+    else
+      $teachers = Teacher::with("user")->paginate($perpage);
+    return view("ad.teachers.list_all", ["teachers" => $teachers, "partners" => $partners]);
   }
 
   public function create(TeacherCreateRequest $request) {
@@ -58,8 +70,13 @@ class TeacherController extends Controller
       return redirect()->back()->with(["messages" => ["type" => "success", "content" => "Not auth!"]]);
   }
 
-  public function edit() {
-    return view("ad.teachers.edit");
+  public function edit(Request $request) {
+    $id = (int) $request->id;
+    if(Teacher::find($id)) {
+      $teacher = Teacher::find($id);
+      return view("ad.teachers.edit", ["teacher" => $teacher]);
+    } else
+    return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Not exits!"]]);
   }
 
   public function update(TeacherUpdateRequest $request) {

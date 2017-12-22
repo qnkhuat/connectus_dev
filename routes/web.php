@@ -80,12 +80,12 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
   });
 
   Route::prefix('/teachers')->group(function () {
-    Route::get('/', 'TeacherController@_list');
-    Route::get('/list-all', 'TeacherController@_listAll');
+    Route::get('/', 'TeacherController@_list')->middleware("teacherView");
+    Route::get('/list-all', 'TeacherController@_listAll')->middleware("teacherViewAll");
     Route::get('/create', 'TeacherController@_new');
-    Route::post('/create', 'TeacherController@create');
+    Route::post('/create', 'TeacherController@create')->middleware("teacherCreate");
     Route::get('/edit/{id}', 'TeacherController@edit');
-    Route::post('/update', 'TeacherController@update');
+    Route::post('/update', 'TeacherController@update')->middleware("teacherUpdate");
     Route::post('/destroy', 'TeacherController@destroy');
   });
 

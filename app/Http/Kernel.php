@@ -58,5 +58,9 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'allowGoToAdmin' => \App\Http\Middleware\AllowGoToAdmin::class,
         'viewListAllAddress' => \App\Http\Middleware\ViewListAllAddress::class,
+        'teacherCreate' => \App\Http\Middleware\TeacherCreate::class,
+        'teacherUpdate' => \App\Http\Middleware\TeacherUpdate::class,
+        'teacherView' => \App\Http\Middleware\TeacherView::class,
+        'teacherViewAll' => \App\Http\Middleware\TeacherViewAll::class,
     ];
 }

@@ -23,12 +23,12 @@
 <ol class="breadcrumb pull-right mb-0">
     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
     <li class="breadcrumb-item"><a href="#">Teachers</a></li>
-    <li class="breadcrumb-item"><a href="#">Edit</a></li>
+    <li class="breadcrumb-item"><a href="#">Update</a></li>
 </ol>
 @endsection
 
 @section('page_name')
-<h4 class="page-title">Teachers update</h4>
+<h4 class="page-title">Teachers</h4>
 @endsection
 
 @section('content')
@@ -46,14 +46,14 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/teachers/create" method="post">
+      <form action="/admin/teachers/create" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Avatar:</strong><span class="color-red">*</span></p>
+            <p class="mr-t-10"><strong>Avatar:</strong></p>
             <div class="input-group">
-                <input type="file" name="avatar" required class="form-control" data-buttonname="btn-white">
+                <input type="file" name="avatar" class="form-control" data-buttonname="btn-white">
             </div>
           </div>
         </div>
@@ -67,49 +67,49 @@
                         <i class="md md-mode-edit" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="text" name="name" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length" required  data-parsley-length="[1,255]">
+                <input type="text" name="name" value="{{$teacher->name}}" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length" required  data-parsley-length="[1,255]">
             </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Email: <span class="color-red">*</span></strong></p>
+            <p class="mr-t-10"><strong>Email: </strong></p>
             <div class="input-group">
                 <span class="input-group-btn" id="copy-link-file-to-clipboard">
                     <button type="button" class="btn waves-effect waves-light btn-success">
                         <i class="md md-mode-edit" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="email" name="email" id="input-name-page" class="form-control">
+                <input type="email" name="email" value="{{$teacher->email}}" id="input-name-page" class="form-control">
             </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Facebook: <span class="color-red">*</span></strong></p>
+            <p class="mr-t-10"><strong>Facebook:</strong></p>
             <div class="input-group">
                 <span class="input-group-btn" id="copy-link-file-to-clipboard">
                     <button type="button" class="btn waves-effect waves-light btn-success">
                         <i class="md md-mode-edit" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="text" name="facebook" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length" required  data-parsley-length="[1,255]">
+                <input type="text" name="facebook" value="{{$teacher->facebook}}" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length"  data-parsley-length="[1,255]">
             </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Phone number: <span class="color-red">*</span></strong></p>
+            <p class="mr-t-10"><strong>Phone number:</strong></p>
             <div class="input-group">
                 <span class="input-group-btn" id="copy-link-file-to-clipboard">
                     <button type="button" class="btn waves-effect waves-light btn-success">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="number" name="phone" id="input-name-page" class="form-control" placeholder="Phone number between 1 - 255 chars length" required=""  data-parsley-length="[1,255]">
+                <input type="number" name="phone" value="{{$teacher->phone}}" id="input-name-page" class="form-control" placeholder="Phone number between 1 - 255 chars length" data-parsley-length="[1,255]">
             </div>
           </div>
         </div>
@@ -117,28 +117,14 @@
         <div class="row">
           <div class="col-md-12">
             <p class="mr-t-10"><strong>description:</strong></p>
-            <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
+            <textarea name="description" id="" cols="30" rows="10" class="form-control">{{$teacher->description}}</textarea>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12">
             <p class="mr-t-10"><strong>Content:</strong></p>
-            <textarea name="content" id="editor_ckeditor" cols="30" rows="10" class="form-control" placeholder="Description between 1 - 512 chars length"></textarea>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <p class="mr-t-10"><strong>Publish:</strong></p>
-            <div class="radio radio-info form-check-inline">
-                <input type="radio" id="inlineRadio1" value="1" name="publish">
-                <label for="inlineRadio1"> Yes </label>
-            </div>
-            <div class="radio form-check-inline">
-                <input type="radio" id="inlineRadio2" value="0" name="publish" checked>
-                <label for="inlineRadio2"> No </label>
-            </div>
+            <textarea name="content" id="editor_ckeditor" cols="30" rows="10" class="form-control" placeholder="Description between 1 - 512 chars length">{!!$teacher->content!!}</textarea>
           </div>
         </div>
 

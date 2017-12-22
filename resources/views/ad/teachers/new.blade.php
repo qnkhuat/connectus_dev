@@ -48,6 +48,7 @@
     <div class="col-md-12">
       <form action="/admin/teachers/create" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="hidden" name="id" value="{{$teacher->id}}">
 
         <div class="row">
           <div class="col-md-12">
@@ -125,20 +126,6 @@
           <div class="col-md-12">
             <p class="mr-t-10"><strong>Content:</strong></p>
             <textarea name="content" id="editor_ckeditor" cols="30" rows="10" class="form-control" placeholder="Description between 1 - 512 chars length"></textarea>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <p class="mr-t-10"><strong>Publish:</strong></p>
-            <div class="radio radio-info form-check-inline">
-                <input type="radio" id="inlineRadio1" value="1" name="publish">
-                <label for="inlineRadio1"> Yes </label>
-            </div>
-            <div class="radio form-check-inline">
-                <input type="radio" id="inlineRadio2" value="0" name="publish" checked>
-                <label for="inlineRadio2"> No </label>
-            </div>
           </div>
         </div>
 

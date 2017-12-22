@@ -54,10 +54,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   </div>
   <?php
     $perpage = Request::get("perpage");
-    $name = Request::get("name");
     $partner = Request::get("partner");
-    $email = Request::get("email");
-    $phone = Request::get("phone");
   ?>
   <div class="col-sm-12">
     <form action="" method="get">
@@ -73,31 +70,19 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       </div>
 
       <div class="col-sm-2">
-        <span>Name</span>
-        <input name="name" type="text" class="form-control" value="{{$name}}">
-      </div>
-
-      <div class="col-sm-2">
         <span>Partner</span>
         <select name="partner" class="selectpicker" data-style="btn-default btn-custom">
             <option value=""></option>
+            @foreach($partners as $p)
+            <option value="{{$p->id}}">{{$p->name}}</option>
+            @endforeach
         </select>
-      </div>
-
-      <div class="col-sm-2">
-        <span>Email</span>
-        <input name="email" type="text" class="form-control" value="{{$email}}">
-      </div>
-
-      <div class="col-sm-2">
-        <span>Phone</span>
-        <input name="phone" type="number" class="form-control" value="{{$phone}}">
       </div>
 
       <div class="col-sm-2">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/teachers">Reset</a>
+        <a href="/admin/teachers/list-all">Reset</a>
       </div>
     </div>
     </form>
@@ -117,41 +102,44 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <th>Manage</th>
         </tr>
 
-        <!-- foreach ($users as $key => $user) -->
+        @foreach($teachers as $key => $teacher)
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{$key + 1}}</td>
+          <td>
+            <img src="/img/avatar/{{ $teacher->avatar }}" alt="" class="width-60">
+          </td>
+          <td>
+            <a href="/admin/users/profile/{{$teacher->user->id}}">{{$teacher->user->name}}</a>
+          </td>
+          <td>{{$teacher->facebook}}</td>
+          <td>{{$teacher->email}}</td>
+          <td>{{$teacher->phone}}</td>
+          <td>{{$teacher->description}}</td>
           <td></td>
           <td>
-            <a href="">View</a>
-            <a href="/admin/teachers/edit/$teacher->id">
+            <a href="">
+              <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">View</button>
+            </a>
+            <a href="/admin/teachers/edit/{{$teacher->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
-            <button type="button" onclick="destroyUser($teacher->id, '$teacher->name')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
+            <button type="button" onclick="destroyTeacher({{$teacher->id}}, '{{$teacher->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
           </td>
         </tr>
-        <!-- endforeach -->
+        @endforeach
       </table>
     </div>
   </div>
   <div class="col-sm-12">
     <div class="row">
       <div class="col-md-8">
-        $teachers->appends([
+        {{$teachers->appends([
           'perpage' => $perpage,
-          'name' => $name,
           'partner' => $partner,
-          'email' => $email,
-          'phone' => $phone
-        ])->links()
+        ])->links()}}
       </div>
       <div class="col-md-4">
-        Teachers total: $teachers->total()
+        Teachers total: {{$teachers->total()}}
       </div>
     </div>
 
@@ -184,7 +172,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   $.ajaxSetup({
     headers: { 'X-CSRF-Token' : '{{csrf_token()}}' }
   });
-  function destroyUser(teacher_id, name) {
+  function destroyTeacher(teacher_id, name) {
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
