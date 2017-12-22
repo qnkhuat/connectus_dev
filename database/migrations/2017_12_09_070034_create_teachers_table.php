@@ -19,11 +19,12 @@ class CreateTeachersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->char('avatar', 255)->nullable();
             $table->char('name', 255);
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('facebook')->nullable();
             $table->string('phone')->nullable();
             $table->string('description', 511)->nullable();
-            $table->text('content');
+            $table->text('content')->nullable();
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

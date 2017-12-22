@@ -189,7 +189,7 @@
                                     <li><a href="/admin/teachers">List</a></li>
                                     @endif
                                     @if($currenUserRoles->create_course_type)
-                                    <li><a href="/admin/teachers/create_teacher">Create</a></li>
+                                    <li><a href="/admin/teachers/create">Create</a></li>
                                     @endif
                                 </ul>
                             </li>
