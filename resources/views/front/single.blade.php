@@ -234,36 +234,134 @@
 @section('checkoutForm')
 <div id="checkout">
   <div class="lightbox checkout">
-    <div class="modal-background">
-      <div class="modal-dialogs">
-        <div class="course-options-box">
+    <div class="modal-background"></div>
 
-          <div class="course-option-general">
-            <h3 class="course-info-title">IELTS 8.5</h3>
-            <div class="course-price-box">
-              <span class="course-price-origin">5.000.000</span>
-              <span class="course-price-sale">4.000.000</span>
-            </div>
-            <div class="course-info-short">
-              <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
-              <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
-              <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
-            </div>
-          </div>
-          <?php for($i=1;$i<=4;$i++) {?>
-          <div class="course-option">
-            <div class="course-option-info">
-              <p class="course-info-start">Khai giảng : <span class="course-info-start-day">3/2/2017</span></p>
-              <div class="course-info-agent">Số {{$i}} Phạm Văn Đồng</div>
-              <div class="course-info-learning-time">Thứ 2 + 3 + {{$i}} (19:30 - 20:30)</div>
-            </div>
-            <div class="choose-course-box"><a href="" class="choose-course">Tham gia</a></div>
-          </div>
-          <?php } ?>
+    <div class="modal-dialogs">
 
+      <div class="course-options-box">
+
+        <div class="course-option-general">
+          <h3 class="course-info-title">IELTS 8.5</h3>
+          <div class="course-price-box">
+            <span class="course-price-origin">5.000.000</span>
+            <span class="course-price-sale">4.000.000</span>
+          </div>
+          <div class="course-info-short">
+            <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
+            <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
+            <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+          </div>
         </div>
+
+        <?php for($i=1;$i<=4;$i++) {?>
+        <div class="course-option">
+          <div class="course-option-info">
+            <p class="course-info-start">Khai giảng : <span class="course-info-start-day">3/2/2017</span></p>
+            <div class="course-info-agent">Số {{$i}} Phạm Văn Đồng</div>
+            <div class="course-info-learning-time">Thứ 2 + 3 + {{$i}} (19:30 - 20:30)</div>
+          </div>
+          <div class="choose-course-box"><p class="choose-course">Tham gia</p></div>
+        </div>
+        <?php } ?>
+
       </div>
+
+      <div class="checkout-box">
+
+        <div class="checkout-step1 checkout-login-step checkout-steps">
+          <div class="login-tab">
+
+            <div class="login-facebook login-tab-button">
+              <a href="" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng Facebook</a>
+            </div>
+
+            <div class="signup-button login-tab-button">
+              <p class="df"><i class="fa fa-rocket" aria-hidden="true"></i> Đăng ký tài khoản</p>
+            </div>
+
+            <div class="separate df">
+              <hr>
+              <p>Hoặc</p>
+              <hr>
+            </div>
+
+            <div class="user-infomations">
+
+              <div class="email input-user-infomations">
+                <input type="email" placeholder="E-mail">
+              </div>
+
+              <div class="password input-user-infomations">
+                <input type="password" placeholder="Mật khẩu">
+              </div>
+
+              <div class="username input-user-infomations">
+                <input type="text" placeholder="Tên hiện thị">
+              </div>
+
+              <hr>
+
+              <div class="login-submit submit">
+                <input type="submit" class="button" Value="Đăng nhập">
+              </div>
+
+              <div class="signup-submit submit">
+                <input type="submit" class="button" Value="Đăng ký">
+              </div>
+
+              <div class="forget-password">
+                <a href="">Quên mật khẩu</a>
+              </div>
+            </div><!-- .user-infomations -->
+          </div><!-- .login-tab -->
+        </div>
+
+        <div class="checkout-step2 checkout-input-step checkout-steps">
+          <h3>Hoàn thiện thông tin</h3>
+          <div class="checkout-input">
+
+            <div class="checkout-input-name">
+              <input type="text" placeholder="Tên đẩy đủ:">
+            </div>
+
+            <div class="checkout-input-phone">
+              <input type="number" placeholder="Số điện thoại">
+            </div>
+
+            <div class="checkout-input-email">
+              <input type="email" placeholder="E-mail">
+            </div>
+
+            <p>Bạn có thể nộp học phí vào:</p>
+            <div class="checkout-input-pay-day">
+              <input type="date" data-date-inline-picker="true" >
+            </div>
+
+            <p>Bạn có mã ưu đãi?</p>
+            <div class="checkout-input-coupon">
+              <input type="text">
+              <button type="submit">Áp dụng</button>
+            </div>
+
+            <p>Bạn biết đến ConnectUs qua:</p>
+            <div class="checkout-input-methods">
+              <select>
+                <option value="default" selected disabled hidden>Bạn vui lòng chọn 1 lí do</option>
+                <option value="facebook">Qua Facebook</option>
+                <option value="google">Qua Google</option>
+                <option value="friend">Qua người quen</option>
+                <option value="event">Qua các sự kiện</option>
+              </select>
+            </div>
+
+            <div class="addcart-box"><a href="" class="addcart-button">Tham gia khoá học</a></div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
+
   </div>
 </div>
 @endsection

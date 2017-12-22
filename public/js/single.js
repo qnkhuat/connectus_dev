@@ -26,3 +26,17 @@ if(w>600){
 }else{
 
 }
+
+
+//toggle of choose course button
+$('.choose-course').click(function() {
+  $('.course-options-box').css('display', 'none');
+  $('.checkout-box').css('display', 'initial');
+});
+
+
+//temporary js for signup course popup
+$('.checkout-step1 .login-submit').click(function() {
+  $('.checkout-step1').css('display', 'none');
+  $('.checkout-step2').css('display', 'initial');
+});

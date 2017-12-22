@@ -175,7 +175,6 @@
       </div><!-- #menu-mobile -->
 
     </div><!-- //#menu -->
-    <!-- //#menu -->
 
 <!-- main Page -->
     @yield('banner')
