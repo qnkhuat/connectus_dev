@@ -186,7 +186,7 @@ form {width: 100%;}
               </div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-12">
                 <p class="mr-t-10"><strong>address:</strong></p>
                 @foreach($address as $a)
@@ -209,7 +209,7 @@ form {width: 100%;}
                   <div class="clearfix"></div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="row">
               <div class="col-md-12">

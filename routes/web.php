@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Http\Middleware\AllowGoToAdmin;
 
 Route::get('/', function () {
     return view('front.main');
@@ -59,7 +58,17 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
     Route::get('/profile', 'UserController@myProfile');
     Route::get('/profile/{id}', 'UserController@profile');
     Route::post('/destroy', 'UserController@destroy');
-	});
+  });
+  
+  Route::prefix('/address')->group(function () {
+    Route::get('/', 'AddressController@_list');
+    Route::get('/list-all', 'AddressController@_listAll')->middleware("viewListAllAddress");
+    Route::get('/create', 'AddressController@_new');
+    Route::post('/create', 'AddressController@create');
+    Route::get('/edit/{id}', 'AddressController@edit');
+    Route::post('/update', 'AddressController@update');
+    Route::post('/destroy', 'AddressController@destroy');
+  });
 
   Route::prefix('/categories')->group(function () {
     Route::get('/', 'CategoriesController@_list');

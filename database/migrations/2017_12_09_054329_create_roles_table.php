@@ -24,6 +24,8 @@ class CreateRolesTable extends Migration
             $table->boolean('destroy_user')->default(false);
             $table->boolean('view_user')->default(false);
             $table->boolean('login')->default(false);
+            $table->boolean('view_all_user_address')->default(false);
+            $table->boolean('change_all_user_address')->default(false);
 
             $table->boolean('create_profile')->default(false);
             $table->boolean('update_profile')->default(false);
@@ -65,6 +67,7 @@ class CreateRolesTable extends Migration
             $table->boolean('update_course')->default(false);
             $table->boolean('destroy_course')->default(false);
             $table->boolean('view_course')->default(false);
+            $table->boolean('view_all_course')->default(false);
 
             $table->boolean('create_log')->default(false);
             $table->boolean('update_log')->default(false);

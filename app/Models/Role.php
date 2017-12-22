@@ -10,7 +10,7 @@ class Role extends Model
   protected $table = 'roles';
 
   public static $list = [
-      'create_role', 'create_user', 'update_user', 'destroy_user', 'view_user', 'login',
+      'create_role', 'create_user', 'update_user', 'destroy_user', 'view_user', 'login', 'change_all_user_address', 'view_all_user_address',
       'create_profile', 'update_profile', 'destroy_profile', 'view_profile',
       'create_category', 'update_category', 'destroy_category', 'view_category',
       'create_page', 'update_page', 'destroy_page', 'view_page',
@@ -18,7 +18,7 @@ class Role extends Model
       'create_comment', 'update_comment', 'destroy_comment', 'view_comment',
       'create_teacher', 'update_teacher', 'destroy_teacher', 'view_teacher', 'view_all_teacher',
       'create_course_type', 'update_course_type', 'destroy_course_type', 'view_course_type',
-      'create_course', 'update_course', 'destroy_course', 'view_course',
+      'create_course', 'update_course', 'destroy_course', 'view_course', 'view_all_course',
       'create_log', 'update_log', 'destroy_log', 'view_log',
       'create_menu', 'update_menu', 'destroy_menu', 'view_menu',
       'create_banner', 'update_banner', 'destroy_banner', 'view_banner',
@@ -45,7 +45,7 @@ class Role extends Model
       'create_course', 'update_course', 'destroy_course'
     ],
     'admin': [
-      'create_user', 'update_user', 'destroy_user', 'view_user', 'login',
+      'create_user', 'update_user', 'destroy_user', 'view_user', 'login', 'change_all_user_address', 'view_all_user_address',
       'create_profile', 'update_profile', 'destroy_profile', 'view_profile',
       'create_category', 'update_category', 'destroy_category', 'view_category',
       'create_page', 'update_page', 'destroy_page', 'view_page',
@@ -53,7 +53,7 @@ class Role extends Model
       'create_comment', 'update_comment', 'destroy_comment', 'view_comment',
       'create_teacher', 'update_teacher', 'destroy_teacher', 'view_teacher', 'view_all_teacher',
       'create_course_type', 'update_course_type', 'destroy_course_type', 'view_course_type',
-      'create_course', 'update_course', 'destroy_course', 'view_course',
+      'create_course', 'update_course', 'destroy_course', 'view_course', 'view_all_course',
       'create_log', 'update_log', 'destroy_log', 'view_log',
       'create_menu', 'update_menu', 'destroy_menu', 'view_menu',
       'create_banner', 'update_banner', 'destroy_banner', 'view_banner',
@@ -82,7 +82,7 @@ class Role extends Model
       'create_course', 'update_course', 'destroy_course'
     ],
     'admin' => [
-      'create_user', 'update_user', 'destroy_user', 'view_user', 'login',
+      'create_user', 'update_user', 'destroy_user', 'view_user', 'login', 'change_all_user_address', 'view_all_user_address',
       'create_profile', 'update_profile', 'destroy_profile', 'view_profile',
       'create_category', 'update_category', 'destroy_category', 'view_category',
       'create_page', 'update_page', 'destroy_page', 'view_page',
@@ -90,7 +90,7 @@ class Role extends Model
       'create_comment', 'update_comment', 'destroy_comment', 'view_comment',
       'create_teacher', 'update_teacher', 'destroy_teacher', 'view_teacher', 'view_all_teacher',
       'create_course_type', 'update_course_type', 'destroy_course_type', 'view_course_type',
-      'create_course', 'update_course', 'destroy_course', 'view_course',
+      'create_course', 'update_course', 'destroy_course', 'view_course', 'view_all_course',
       'create_log', 'update_log', 'destroy_log', 'view_log',
       'create_menu', 'update_menu', 'destroy_menu', 'view_menu',
       'create_banner', 'update_banner', 'destroy_banner', 'view_banner',

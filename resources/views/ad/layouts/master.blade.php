@@ -167,6 +167,17 @@
                             </li>
 
                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-address-book-o"></i> <span> Address </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    @if($currenUserRoles->view_all_user_address)
+                                    <li><a href="/admin/address/list-all">List all</a></li>
+                                    @endif
+                                    <li><a href="/admin/address">List</a></li>
+                                    <li><a href="/admin/address/create">Create</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-list-ol"></i> <span> Categories </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_category)

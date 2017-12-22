@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 // use Laravel\Scout\Searchable;
 use App\User;
 use App\Models\Role;
+use App\Models\Address;
 use File, Image, Hash;
 
 use App\Http\Requests\UserRequest;
@@ -80,15 +81,15 @@ class UserController extends Controller
       $user->birth = $request->birth;
       $user->description = $request->description;
       $user->fb_page = $request->fb_page;
-      $address = $request->address;
-      $listAddress = [];
-      if(is_array($address)) {
-        foreach($address as $a)
-        if($a != null)
-          array_push($listAddress, $a);
-        $user->address = count($listAddress) > 0 ? json_encode($listAddress, JSON_UNESCAPED_UNICODE) : "[]";
-      } else
-        $user->address = "[]";
+      // $address = $request->address;
+      // $listAddress = [];
+      // if(is_array($address)) {
+      //   foreach($address as $a)
+      //   if($a != null)
+      //     array_push($listAddress, $a);
+      //   $user->address = count($listAddress) > 0 ? json_encode($listAddress, JSON_UNESCAPED_UNICODE) : "[]";
+      // } else
+      //   $user->address = "[]";
 
       if($user->save())
       {
@@ -141,15 +142,15 @@ class UserController extends Controller
         $user->birth = $request->birth;
         $user->description = $request->description;
         $user->fb_page = $request->fb_page;
-        $address = $request->address;
-        $listAddress = [];
-        if(is_array($address)) {
-          foreach($address as $a)
-          if($a != null)
-            array_push($listAddress, $a);
-          $user->address = count($listAddress) > 0 ? json_encode($listAddress, JSON_UNESCAPED_UNICODE) : "[]";
-        } else
-          $user->address = "[]";
+        // $address = $request->address;
+        // $listAddress = [];
+        // if(is_array($address)) {
+        //   foreach($address as $a)
+        //   if($a != null)
+        //     array_push($listAddress, $a);
+        //   $user->address = count($listAddress) > 0 ? json_encode($listAddress, JSON_UNESCAPED_UNICODE) : "[]";
+        // } else
+        //   $user->address = "[]";
 
         $user->save();
         Role::setRole($user->id, $request->roles);
@@ -169,8 +170,8 @@ class UserController extends Controller
     }
 
     public function myProfile() {
-      $user = User::first();
-      $address = json_decode($user->address);
+      $user = auth()->user();
+      $address = $user->address()->get();
       $role = $user->role()->first();
       return view("ad.user.profile", ["user" => $user, "address" => $address, "role" => $role]);
     }

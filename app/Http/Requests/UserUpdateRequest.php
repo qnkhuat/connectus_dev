@@ -33,7 +33,7 @@ class UserUpdateRequest extends FormRequest
           "gender" => "required",
           "group" => "required",
           "birth" => "required|date",
-          "address" => "max:65535",
+        //   "address" => "max:65535",
           "role" => "array",
           "description" => "max:512",
           "fb_page" => "max:512"

@@ -139,7 +139,10 @@
                           <a href="#" title="">{{$user->name}}</a><span>(đã đăng ký 2 tháng trước)</span>
                       </div>
                       @foreach($address as $a)
-                      <p>{{$a}}</p>
+                      <div class="alert alert-default">
+                          <p><strong>{{$a->sort_description}}</strong></p>
+                          <p>{{$a->address}}</p>
+                      </div>
                       @endforeach
                   </div>
               </div>
