@@ -24,7 +24,7 @@ class TeacherIdRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "id" => "required|numeric|exists:teachers,id",
         ];
     }
 }

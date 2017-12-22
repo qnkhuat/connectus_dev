@@ -81,7 +81,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
 
   Route::prefix('/teachers')->group(function () {
     Route::get('/', 'TeacherController@_list');
-    Route::get('/all', 'TeacherController@_listAll');
+    Route::get('/list-all', 'TeacherController@_listAll');
     Route::get('/create', 'TeacherController@_new');
     Route::post('/create', 'TeacherController@create');
     Route::get('/edit/{id}', 'TeacherController@edit');

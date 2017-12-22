@@ -46,14 +46,14 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/teachers/create" method="post">
+      <form action="/admin/teachers/create" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Avatar:</strong><span class="color-red">*</span></p>
+            <p class="mr-t-10"><strong>Avatar:</strong></p>
             <div class="input-group">
-                <input type="file" name="avatar" required class="form-control" data-buttonname="btn-white">
+                <input type="file" name="avatar" class="form-control" data-buttonname="btn-white">
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Email: <span class="color-red">*</span></strong></p>
+            <p class="mr-t-10"><strong>Email: </strong></p>
             <div class="input-group">
                 <span class="input-group-btn" id="copy-link-file-to-clipboard">
                     <button type="button" class="btn waves-effect waves-light btn-success">
@@ -88,28 +88,28 @@
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Facebook: <span class="color-red">*</span></strong></p>
+            <p class="mr-t-10"><strong>Facebook:</strong></p>
             <div class="input-group">
                 <span class="input-group-btn" id="copy-link-file-to-clipboard">
                     <button type="button" class="btn waves-effect waves-light btn-success">
                         <i class="md md-mode-edit" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="text" name="facebook" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length" required  data-parsley-length="[1,255]">
+                <input type="text" name="facebook" id="input-name-page" class="form-control" placeholder="Name between 1 - 255 chars length"  data-parsley-length="[1,255]">
             </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Phone number: <span class="color-red">*</span></strong></p>
+            <p class="mr-t-10"><strong>Phone number:</strong></p>
             <div class="input-group">
                 <span class="input-group-btn" id="copy-link-file-to-clipboard">
                     <button type="button" class="btn waves-effect waves-light btn-success">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="number" name="phone" id="input-name-page" class="form-control" placeholder="Phone number between 1 - 255 chars length" required=""  data-parsley-length="[1,255]">
+                <input type="number" name="phone" id="input-name-page" class="form-control" placeholder="Phone number between 1 - 255 chars length" data-parsley-length="[1,255]">
             </div>
           </div>
         </div>

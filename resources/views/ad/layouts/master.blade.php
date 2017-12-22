@@ -194,7 +194,7 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> Teachers </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_all_teacher)
-                                    <li><a href="/admin/teachers/all">List all</a></li>
+                                    <li><a href="/admin/teachers/list-all">List all</a></li>
                                     @endif
                                     @if($currenUserRoles->view_teacher)
                                     <li><a href="/admin/teachers">List</a></li>

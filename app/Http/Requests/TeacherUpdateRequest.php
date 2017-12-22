@@ -24,7 +24,14 @@ class TeacherUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "id" => "required|numeric|exists:teachers,id",
+            "avatar" => "image",
+            "name" => "required|min:1|max:255",
+            "email" => "max:255|email",
+            "facebook" => "max:255",
+            "phone" => "max:255",
+            "description" => "max:511",
+            "content" => "max:65535"
         ];
     }
 }
