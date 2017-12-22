@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
 
-  //============mobile popup
+  //============mobile popup animation
     $('.courses-item-box').click(function() {
       $('#course-popup-mobile').css('display', 'block');
       setTimeout(function(){
@@ -9,7 +9,8 @@ jQuery(document).ready(function($) {
       },1);
     });
 
-    //wrapup for mobile popup
+
+    //wrapup for mobile course-popup
     $('.wrapup-button').click(function() {
       if($('.course-popup-detail').css('display')!='none'){
         $('.course-popup-detail').css('display', 'none');
@@ -22,11 +23,6 @@ jQuery(document).ready(function($) {
       }
 
     });
-
-    // $('.course-popup-mobile-content').click(function() {
-    //   $('.course-popup-detail').css('display', 'block');
-    //   $('wrapup-button-toggle:before').css('content', '\f077');
-    // });
 
 
     //click to switch window in menu window

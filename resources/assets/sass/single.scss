@@ -211,6 +211,49 @@ body{
       margin-top: 0;
     }
   }
+  .checkout-box{
+    display: none;
+    .checkout-step2{
+
+      display: none;
+      h3{
+        text-align: center;
+        margin: 0;
+        margin-bottom: 15px;
+      }
+      div{
+        margin-bottom: 15px;
+      }
+      div:last-child{
+        margin-bottom: 0;
+      }
+      input{
+        width: 100%;
+      }
+      p{
+        margin-bottom: 0;
+      }
+      select{
+        width: 100%;
+        border: 1px solid black;
+        padding: 5px 3px;
+      }
+      .checkout-input-coupon{
+        display: flex;
+        button{
+          width: 100px;
+          background: $red;
+          color: white;
+          border: none;
+        }
+        input{
+          width: calc(100%-100px);
+        }
+      }
+
+    }
+
+  }
   .course-option{
     border-bottom: 1px solid #333;
     padding: 5px 0;
@@ -239,6 +282,7 @@ body{
         text-align: center;
         background: #d61e2a;
         color: white;
+        cursor: pointer;
       }
     }
   }
