@@ -27,9 +27,11 @@ if(w>600){
 
 }
 
+function refreshModal(){
 
+}
 //toggle of choose course button
-$('.choose-course').click(function() {
+$('.choose-course-button').click(function() {
   $('.course-options-box').css('display', 'none');
   $('.checkout-box').css('display', 'initial');
 });
@@ -39,4 +41,10 @@ $('.choose-course').click(function() {
 $('.checkout-step1 .login-submit').click(function() {
   $('.checkout-step1').css('display', 'none');
   $('.checkout-step2').css('display', 'initial');
+});
+
+//change when click interest-butotn
+$('.interest-button').click(function() {
+  addCourses = parseInt($('.cart-count-items').html()) +1;
+  $('.cart-count-items').html(addCourses);
 });

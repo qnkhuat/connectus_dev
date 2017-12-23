@@ -268,29 +268,45 @@ body{
       right: 0;
       top: 5px;
       width: 70px;
-      height: 30px;
       z-index: 1000001;
-      border-radius: $bradius;
       overflow: hidden;
-      .choose-course{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background: #d61e2a;
+      p{
+        margin: 0;
         color: white;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
         cursor: pointer;
+        border-radius: $bradius;
       }
+      .choose-course-button{
+        background: $red;
+      }
+      .interest-button{
+        background: #3498db;
+      }
+
+
     }
   }
   .course-option:last-child{
     border: none;
   }
-}//#checkout
+  }//#checkout
 
+.choose-class-box{
+  text-align: center;
+  background: $red;
+  position: relative;
+  height: 50px;
+  border-radius: $bradius;
+  display: flex;
+  .choose-class-button{
+    line-height: 50px;
+    color: white;
+    width: 100%;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   #course-details{

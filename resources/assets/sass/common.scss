@@ -67,15 +67,14 @@ $borderColor:$red;
   position: relative;
   height: 50px;
   border-radius: $bradius;
-  a,.addcart-button{
-    color: white;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
+  display: flex;
+  a{
     line-height: 50px;
-    cursor: pointer;
+    color: white;
+    width: 50%;
+  }
+  a.details-button{
+    background: #3498db;
   }
 }
 .course-price-box{
@@ -260,7 +259,7 @@ $borderColor:$red;
     display: none;
   }
   .more-button{
-    display: block;
+    display: block !important;
     text-align: center;
     line-height: 30px;
     border: 1px solid $red;

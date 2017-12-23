@@ -43,7 +43,7 @@
             <span class="course-price-origin">5.000.000</span>
             <span class="course-price-sale">4.000.000</span>
           </div>
-          <div class="addcart-box"><p class="lightbox-button checkout addcart-button ">Đăng ký</p></div>
+          <div class="choose-class-box"><p class="lightbox-button choose-class choose-class-button ">Chọn lớp</p></div>
           <div class="course-details-addition-info">
             <ul>
               <li><i class="fa fa-star" aria-hidden="true"></i> anh yeu em</li>
@@ -233,7 +233,7 @@
 
 @section('checkoutForm')
 <div id="checkout">
-  <div class="lightbox checkout">
+  <div class="lightbox choose-class">
     <div class="modal-background"></div>
 
     <div class="modal-dialogs">
@@ -260,7 +260,10 @@
             <div class="course-info-agent">Số {{$i}} Phạm Văn Đồng</div>
             <div class="course-info-learning-time">Thứ 2 + 3 + {{$i}} (19:30 - 20:30)</div>
           </div>
-          <div class="choose-course-box"><p class="choose-course">Tham gia</p></div>
+          <div class="choose-course-box">
+            <p class="choose-course-button">Tham gia</p>
+            <p class="interest-button">Quan tâm</p>
+          </div>
         </div>
         <?php } ?>
 

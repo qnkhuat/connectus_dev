@@ -92,7 +92,7 @@
               </div>
             </div>
 
-            <div class="details-box"><a href="" class="details-button">Chi tiết</a></div>
+            <div class="details-box"><a href="" class="details-button">Chi tiết</a><a href="" class="interest-button">Quan tâm</a></div>
 
           </div><!-- .course-popup -->
         </div>
