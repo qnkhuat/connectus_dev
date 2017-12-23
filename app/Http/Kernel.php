@@ -58,9 +58,28 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'allowGoToAdmin' => \App\Http\Middleware\AllowGoToAdmin::class,
         'viewListAllAddress' => \App\Http\Middleware\ViewListAllAddress::class,
+        
         'teacherCreate' => \App\Http\Middleware\TeacherCreate::class,
         'teacherUpdate' => \App\Http\Middleware\TeacherUpdate::class,
         'teacherView' => \App\Http\Middleware\TeacherView::class,
         'teacherViewAll' => \App\Http\Middleware\TeacherViewAll::class,
+
+        'userCreate' => \App\Http\Middleware\UserCreate::class,
+        'userUpdate' => \App\Http\Middleware\UserUpdate::class,
+        'userDestroy' => \App\Http\Middleware\UserDestroy::class,
+        'userView' => \App\Http\Middleware\UserView::class,
+
+        'courseCreate' => \App\Http\Middleware\CourseCreate::class,
+        'courseUpdate' => \App\Http\Middleware\CourseUpdate::class,
+        'courseUpdateAll' => \App\Http\Middleware\CourseUpdateAll::class,
+        'courseDestroy' => \App\Http\Middleware\CourseDestroy::class,
+        'courseDestroyAll' => \App\Http\Middleware\CourseDestroyAll::class,
+        'courseView' => \App\Http\Middleware\CourseView::class,
+        'courseViewAll' => \App\Http\Middleware\CourseViewAll::class,
+
+        'categoryCreate' => \App\Http\Middleware\CategoryCreate::class,
+        'categoryUpdate' => \App\Http\Middleware\CategoryUpdate::class,
+        'categoryDestroy' => \App\Http\Middleware\CategoryDestroy::class,
+        'categoryView' => \App\Http\Middleware\CategoryView::class,
     ];
 }

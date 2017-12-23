@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Role;
 use App\Models\CourseType;
 use App\Models\Address;
+use App\Models\Teacher;
 
 class DatabaseSeeder extends Seeder
 {
@@ -102,15 +103,18 @@ class DatabaseSeeder extends Seeder
           'create_teacher' => true,
           'update_teacher' => true,
           'destroy_teacher' => true,
+          'update_all_teacher' => true,
           'destroy_all_teacher' => true,
           'view_teacher' => true,
           'view_all_teacher' => true,
 
           'create_course' => true,
           'update_course' => true,
+          'update_all_course' => true,
           'destroy_course' => true,
           'view_course' => true,
           'view_all_course' => true,
+          'destroy_all_course' => true,
 
           'create_log' => true,
           'update_log' => true,
@@ -259,6 +263,10 @@ class DatabaseSeeder extends Seeder
           'user_id' => $partner2->id,
           'sort_description' => 'Cơ sở Lào Kai',
           'address' => 'Vách núi',
+        ]);
+        Teacher::create([
+          'user_id' => $partner1->id,
+          "name" => "cô giáo thảo ))"
         ]);
     }
 }

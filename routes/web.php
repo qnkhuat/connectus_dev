@@ -50,14 +50,14 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
 		return view("ad.dashboard.dashboard");
 	});
 	Route::prefix('/users')->group(function () {
-    Route::get('/', 'UserController@_list');
-    Route::get('/create', 'UserController@_new');
-    Route::post('/create', 'UserController@create');
-    Route::get('/edit/{id}', 'UserController@edit');
-    Route::post('/update', 'UserController@update');
+    Route::get('/', 'UserController@_list')->middleware("userView");
+    Route::get('/create', 'UserController@_new')->middleware("userCreate");
+    Route::post('/create', 'UserController@create')->middleware("userCreate");
+    Route::get('/edit/{id}', 'UserController@edit')->middleware("userUpdate");
+    Route::post('/update', 'UserController@update')->middleware("userUpdate");
     Route::get('/profile', 'UserController@myProfile');
-    Route::get('/profile/{id}', 'UserController@profile');
-    Route::post('/destroy', 'UserController@destroy');
+    Route::get('/profile/{id}', 'UserController@profile')->middleware("viewListAllAddress");
+    Route::post('/destroy', 'UserController@destroy')->middleware("viewListAllAddress");
   });
   
   Route::prefix('/address')->group(function () {
@@ -71,12 +71,12 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
   });
 
   Route::prefix('/categories')->group(function () {
-    Route::get('/', 'CategoriesController@_list');
-    Route::get('/create', 'CategoriesController@_new');
-    Route::post('/create', 'CategoriesController@create');
-    Route::get('/edit/{id}', 'CategoriesController@edit');
-    Route::post('/update', 'CategoriesController@update');
-    Route::post('/destroy', 'CategoriesController@destroy');
+    Route::get('/', 'CategoriesController@_list')->middleware("categoryView");
+    Route::get('/create', 'CategoriesController@_new')->middleware("categoryCreate");
+    Route::post('/create', 'CategoriesController@create')->middleware("categoryCreate");
+    Route::get('/edit/{id}', 'CategoriesController@edit')->middleware("categoryUpdate");
+    Route::post('/update', 'CategoriesController@update')->middleware("categoryUpdate");
+    Route::post('/destroy', 'CategoriesController@destroy')->middleware("categoryDestroy");
   });
 
   Route::prefix('/teachers')->group(function () {
@@ -99,12 +99,13 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
   });
 
   Route::prefix('/courses')->group(function () {
-    Route::get('/', 'CoursesController@_list');
-    Route::get('/create', 'CoursesController@_new');
-    Route::post('/create', 'CoursesController@create');
-    Route::get('/edit/{id}', 'CoursesController@edit');
-    Route::post('/update', 'CoursesController@update');
-    Route::post('/destroy', 'CoursesController@destroy');
+    Route::get('/', 'CoursesController@_list')->middleware("courseView");
+    Route::get('/list-all', 'CoursesController@_listAll')->middleware("courseViewAll");
+    Route::get('/create', 'CoursesController@_new')->middleware("courseCreate");
+    Route::post('/create', 'CoursesController@create')->middleware("courseCreate");
+    Route::get('/edit/{id}', 'CoursesController@edit')->middleware("courseUpdate");
+    Route::post('/update', 'CoursesController@update')->middleware("courseUpdate");
+    Route::post('/destroy', 'CoursesController@destroy')->middleware("courseDestroy");
   });
 
 	Route::prefix('/files')->group(function () {

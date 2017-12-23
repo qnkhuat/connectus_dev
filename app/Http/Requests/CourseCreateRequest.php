@@ -24,7 +24,29 @@ class CourseCreateRequest extends FormRequest
     public function rules()
     {
       return [
+        "course_type_id" => "required|numeric|exists:course_types,id",
+        "avatar" => "required|image",
+        // "slide" => "",
         "name" => "required|min:1|max:255",
+        "old_price" => "numeric",
+        "new_price" => "numeric",
+        "new_price_only" => "boolean",
+        "sale" => "numeric",
+        "gift" => "max:511",
+        "opening" => "date",
+        // "current_student_total" => "numeric",
+        // "student_total" => "numeric",
+        // "lesson_total" => "numeric",
+        // "hour_total" => "numeric",
+        "day_in_week" => "max:255",
+        // "time" => "max:255",
+        "time_from" => "max:255",
+        "time_to" => "max:255",
+        // "session_total" => "numeric",
+        "slideVideoLinks" => "array",
+        "slideImageUploads" => "array",
+        "description" => "required|max:511",
+        "content" => "required",
         "publish" => "boolean"
       ];
     }

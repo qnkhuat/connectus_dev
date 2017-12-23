@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Models\CourseType;
-use App\Http\Requests\CourseCreateRequest;
-use App\Http\Requests\CourseUpdateRequest;
-use App\Http\Requests\CourseIdRequest;
+use App\Http\Requests\CourseTypeCreateRequest;
+use App\Http\Requests\CourseTypeUpdateRequest;
+use App\Http\Requests\CourseTypeIdRequest;
 
 class CoursesTypeController extends Controller
 {
@@ -37,7 +37,7 @@ class CoursesTypeController extends Controller
       return view("ad.course_types.new");
     }
 
-    public function create(CourseCreateRequest $request) {
+    public function create(CourseTypeCreateRequest $request) {
       $user = User::first();
       $type = new CourseType;
       $type->user_id = $user->id;
@@ -60,8 +60,8 @@ class CoursesTypeController extends Controller
       }
     }
 
-    public function edit($id) {
-      $type = CourseType::find($id);
+    public function edit(CourseTypeUpdateRequest $request) {
+      $type = CourseType::find($request->id);
       if($type)
         return view("ad.course_types.edit", ["type" => $type]);
       else
@@ -91,7 +91,7 @@ class CoursesTypeController extends Controller
       }
     }
 
-    public function destroy(CourseIdRequest $request) {
+    public function destroy(CourseTypeIdRequest $request) {
       $type = CourseType::find($request->id);
       $type->deleted = true;
       $type->save();

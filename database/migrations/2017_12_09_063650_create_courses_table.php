@@ -28,14 +28,17 @@ class CreateCoursesTable extends Migration
             $table->float('sale')->nullable()->default(0);
             $table->string('gift', 511)->nullable();
             $table->date('opening')->nullable();
-            $table->integer('current_student_total')->default(0);
-            $table->integer('student_total')->default(0);
-            $table->integer('lesson_total')->default(0);
-            $table->integer('hour_total')->default(0);
-            $table->integer('session_total')->default(0);
+            $table->integer('current_student_total')->nullable()->default(0);
+            $table->integer('student_total')->nullable()->default(0);
+            $table->integer('lesson_total')->nullable()->default(0);
+            $table->integer('hour_total')->nullable()->default(0);
+            $table->integer('session_total')->nullable()->default(0);
+            $table->string('day_in_week', 255)->nullable();
+            $table->string('time', 255)->nullable();
             $table->string('description', 511);
             $table->text('content');
             $table->boolean('publish')->default(false);
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

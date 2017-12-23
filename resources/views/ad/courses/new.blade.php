@@ -12,6 +12,12 @@
 <link href="/backend/assets/plugins/multiselect/css/multi-select.css"  rel="stylesheet" type="text/css" />
 <link href="/backend/assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 <link href="/backend/assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+
+<link href="/backend/assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+<link href="/backend/assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+<link href="/backend/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="/backend/assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+<link href="/backend/assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 <style>
 .mr-t-10 {margin-top: 10px;}
 .pointer {cursor: pointer;}
@@ -45,16 +51,16 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/courses/create" method="post">
+      <form action="/admin/courses/create" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <div class="row">
           <div class="col-md-12">
             <p class="mr-t-10"><strong>Course type: <span class="color-red">*</span></strong></p>
             <div class="input-group">
-              <select name="type" class="selectpicker" data-style="btn-default btn-custom">
+              <select name="course_type_id" class="selectpicker" required data-style="btn-default btn-custom">
                   @foreach($types as $type)
-                  <option value="{{$type->slug}}">{{$type->name}}</option>
+                  <option value="{{$type->id}}">{{$type->name}}</option>
                   @endforeach
               </select>
             </div>
@@ -86,14 +92,14 @@
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Old price:</strong></p>
+            <p class="mr-t-10"><strong>Old price:<span class="color-red">*</span></strong></p>
             <div class="input-group">
                 <span class="input-group-btn" id="copy-link-file-to-clipboard">
                     <button type="button" class="btn waves-effect waves-light btn-success">
                         <i class="md md-mode-edit" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="number" name="old_price" id="input-name-page" class="form-control"  data-parsley-length="[1,255]">
+                <input type="number" name="old_price" value="0" id="input-name-page" class="form-control" data-parsley-length="[1,255]">
             </div>
           </div>
         </div>
@@ -107,7 +113,7 @@
                         <i class="md md-mode-edit" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="number" name="new_price" id="input-name-page" class="form-control" required  data-parsley-length="[1,255]">
+                <input type="number" name="new_price" value="0" id="input-name-page" class="form-control" required  data-parsley-length="[1,255]">
             </div>
           </div>
         </div>
@@ -135,7 +141,7 @@
                         <i class="md md-mode-edit" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="number" name="sale" id="input-name-page" class="form-control"  data-parsley-length="[1,255]">
+                <input type="number" name="sale" value="0" id="input-name-page" class="form-control"  data-parsley-length="[1,255]">
             </div>
           </div>
         </div>
@@ -150,18 +156,19 @@
 
         <div class="form-group">
             <p class="mr-t-10"><strong>Teachers:<span class="color-red">*</span></strong></p>
-            <select multiple="multiple" class="multi-select" id="my_multi_select1" name="teacher[]" data-plugin="multiselect">
-                <option value="a1">Trung Hồ Ngọc</option>
-                <option value="a2">Ahihi :3</option>
+            <select multiple="multiple" class="multi-select" required id="my_multi_select1" name="teachers[]" data-plugin="multiselect">
+                @foreach($teachers as $teacher)
+                <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                @endforeach
             </select>
         </div>
 
         <div class="form-group">
-            <p class="mr-t-10"><strong>Opening:</strong></p>
+            <p class="mr-t-10"><strong>Opening:<span class="color-red">*</span></strong></p>
             <div>
                 <div class="input-group">
                     <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
-                    <input type="text" name="opening" class="form-control" placeholder="yyyy/mm/dd" id="datepicker-autoclose">
+                    <input type="text" name="opening" required class="form-control" placeholder="yyyy/mm/dd" id="datepicker-autoclose">
                 </div><!-- input-group -->
             </div>
         </div>
@@ -239,8 +246,44 @@
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>description:</strong></p>
-            <textarea name="description" id="" cols="30" rows="10" class="form-control" placeholder="Description between 1 - 512 chars length"></textarea>
+            <p class="mr-t-10"><strong>Days in week:</strong></p>
+            <div class="input-group">
+                <span class="input-group-btn" id="copy-link-file-to-clipboard">
+                    <button type="button" class="btn waves-effect waves-light btn-success">
+                        <i class="md md-mode-edit" aria-hidden="true"></i>
+                    </button>
+                </span>
+                <input type="text" name="day_in_week" id="input-name-page" class="form-control" data-parsley-length="[1,255]">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mr-t-10"><strong>Learn time:</strong></p>
+            <div class="col-md-4">
+              <p>From</p>
+              <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
+                  <input type="text" name="time_from" class="form-control" value="18:00">
+                  <span class="input-group-addon"> <span class="md md-access-time"></span> </span>
+              </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-4">
+              <p>To</p>
+              <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
+                  <input type="text" name="time_to" class="form-control" value="21:00">
+                  <span class="input-group-addon"> <span class="md md-access-time"></span> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mr-t-10"><strong>description:<span class="color-red">*</span></strong></p>
+            <textarea name="description" required id="" cols="30" rows="10" class="form-control" placeholder="Description between 1 - 512 chars length"></textarea>
           </div>
         </div>
 
@@ -249,7 +292,7 @@
             <p class="mr-t-10"><strong>Video for introduction:</strong></p>
             <div class="item-image-link">
               <div class="input-group">
-                  <input type="text" name="slideVideoLink[]" class="form-control" data-buttonname="btn-white">
+                  <input type="text" name="slideVideoLinks[]" class="form-control" data-buttonname="btn-white">
                   <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest('.item-image-link').remove()">
                       <button type="button" class="btn waves-effect waves-light btn-warning">
                           <i class="fa fa-trash" aria-hidden="true"></i>
@@ -268,9 +311,9 @@
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Imgage for introduction:</strong></p>
-            <input type="file" name="slideImageUpload" multiple class="form-control" data-buttonname="btn-white">
-            <p class="mr-t-10">Or paste a link:</p>
+            <p class="mr-t-10"><strong>Imgage for introduction:<span class="color-red">*</span></strong></p>
+            <input type="file" name="slideImageUploads[]" required multiple class="form-control" data-buttonname="btn-white">
+            <!-- <p class="mr-t-10">Or paste a link:</p>
             <div class="item-image-link">
               <div class="input-group">
                   <input type="text" name="slideImageLink[]" class="form-control" data-buttonname="btn-white">
@@ -286,14 +329,14 @@
             <div class="mr-t-10">
               <button type="button" class="btn btn-info btn-rounded waves-effect waves-light float-right more-image">more</button>
               <div class="clearfix"></div>
-            </div>
+            </div> -->
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Content:</strong></p>
-            <textarea name="content" id="editor_ckeditor" cols="30" rows="10" class="form-control" placeholder="Description between 1 - 512 chars length"></textarea>
+            <p class="mr-t-10"><strong>Content:<span class="color-red">*</span></strong></p>
+            <textarea name="content" required id="editor_ckeditor" cols="30" rows="10" class="form-control" placeholder="Description between 1 - 512 chars length"></textarea>
           </div>
         </div>
 
@@ -301,11 +344,11 @@
           <div class="col-md-12">
             <p class="mr-t-10"><strong>Publish:</strong></p>
             <div class="radio radio-info form-check-inline">
-                <input type="radio" id="inlineRadio1" value="1" name="publish">
+                <input type="radio" id="inlineRadio1" value="1" name="publish" checked>
                 <label for="inlineRadio1"> Yes </label>
             </div>
             <div class="radio form-check-inline">
-                <input type="radio" id="inlineRadio2" value="0" name="publish" checked>
+                <input type="radio" id="inlineRadio2" value="0" name="publish">
                 <label for="inlineRadio2"> No </label>
             </div>
           </div>
@@ -374,7 +417,7 @@
     })
 
     $(".more-video").click(function() {
-      $('#more-link-video-slider').append('<div class="mr-t-10"><div class="item-image-link"> <div class="input-group"> <input type="text" name="slideVideoLink[]" class="form-control" data-buttonname="btn-white"> <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest(\'.item-image-link\').remove()"> <button type="button" class="btn waves-effect waves-light btn-warning"> <i class="fa fa-trash" aria-hidden="true"></i> </button> </span> </div></div></div>')
+      $('#more-link-video-slider').append('<div class="mr-t-10"><div class="item-image-link"> <div class="input-group"> <input type="text" name="slideVideoLinks[]" class="form-control" data-buttonname="btn-white"> <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest(\'.item-image-link\').remove()"> <button type="button" class="btn waves-effect waves-light btn-warning"> <i class="fa fa-trash" aria-hidden="true"></i> </button> </span> </div></div></div>')
     })
   })
 </script>
