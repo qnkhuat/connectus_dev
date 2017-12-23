@@ -55,12 +55,13 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   <?php
     $perpage = Request::get("perpage");
     $name = Request::get("name");
+    $partner = Request::get("partner");
     $publish = Request::get("publish");
   ?>
   <div class="col-sm-12">
     <form action="" method="get">
       <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-2">
         <span>Record</span>
         <select name="perpage" class="selectpicker" data-style="btn-default btn-custom">
             <option value="5" {{ $perpage == "5" ? "selected" : "" }}>5 record per page</option>
@@ -70,12 +71,22 @@ ul.pagination li.active span {background: transparent; color: #fff;}
         </select>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-sm-2">
+        <span>Partner</span>
+        <select name="partner" class="selectpicker" data-style="btn-default btn-custom">
+          <option value=""></option>
+          @foreach($partners as $p)
+          <option value="{{$p->id}}">{{$p->name}}</option>
+          @endforeach
+        </select>
+      </div>
+
+      <div class="col-sm-2">
         <span>Name</span>
         <input name="name" type="text" class="form-control" value="{{$name}}">
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-sm-2">
         <span>Publish</span>
         <select name="publish" class="selectpicker" data-style="btn-default btn-custom">
           <option value=""></option>
@@ -87,7 +98,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/courses">Reset</a>
+        <a href="/admin/courses/list-all">Reset</a>
       </div>
     </div>
     </form>
@@ -97,51 +108,60 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <table class="table table-hover table-bordered">
         <tr class="text-center">
           <th>#</th>
-          <th>User</th>
-          <th>Name</th>
-          <th>Description</th>
+          <th>Avatar</th>
+          <th>Partner</th>
+          <th>Course name</th>
+          <th>Opening</th>
           <th>Publish</th>
           <th>Created at</th>
           <th>Updated at</th>
           <th>Manage</th>
         </tr>
 
-        @ foreach ($courses as $key => $course)
+        @foreach($courses as $key => $course)
         <tr>
-          <td>{ $key + 1 }</td>
+          <td>{{ $key + 1 }}</td>
           <td>
-            <a href="/admin/users/profile/{$course->user_id}">
-              {$course->user->name}
+            <img src="/img/courses/{{ $course->avatar }}" alt="" class="width-60">
+          </td>
+          <td>
+            <a href="/admin/users/profile/{{$course->user_id}}">
+              {{$course->user->name}}
             </a>
           </td>
-          <td>{$course->name}</td>
-          <td>{$course->description}</td>
+          <td>{{$course->name}}</td>
+          <td>{{$course->opening}}</td>
           <td>
-            !! $course->publish ? "<span class='label label-table label-success'>yes</span>" : "<span class='label label-table label-inverse'>no</span>" !!
+            {!! $course->publish ? "<span class='label label-table label-success'>yes</span>" : "<span class='label label-table label-inverse'>no</span>" !!}
           </td>
-          <td>{$course->created_at}</td>
-          <td>{$course->updated_at}</td>
+          <td>{{$course->created_at}}</td>
+          <td>{{$course->updated_at}}</td>
           <td>
-            <a href="/admin/courses/edit/{$course->id}">
+            <a href="">
+              <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">View</button>
+            </a>
+            <a href="/admin/courses/edit/{{$course->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
-            <button type="button" onclick="destroyUser({$course->id}, '{$course->name}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
+            <button type="button" onclick="destroyUser({{$course->id}}, '{{$course->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
           </td>
         </tr>
-        @ endforeach
+        @endforeach
       </table>
     </div>
   </div>
   <div class="col-sm-12">
     <div class="row">
       <div class="col-md-8">
-        {$courses->appends([
+        {{$courses->appends([
           'perpage' => $perpage,
-          'name' => $name
-        ])->links()}
+          "partner" => $partner,
+          'name' => $name,
+          'publish' => $publish
+        ])->links()}}
       </div>
       <div class="col-md-4">
-        Categories total: {$courses->total()}
+        Courses total: {{$courses->total()}}
       </div>
     </div>
 

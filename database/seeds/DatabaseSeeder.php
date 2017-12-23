@@ -97,8 +97,10 @@ class DatabaseSeeder extends Seeder
 
           'create_course_type' => true,
           'update_course_type' => true,
+          'update_all_course_type' => true,
           'destroy_course_type' => true,
           'view_course_type' => true,
+          'destroy_all_course_type' => true,
 
           'create_teacher' => true,
           'update_teacher' => true,

@@ -97,7 +97,6 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <table class="table table-hover table-bordered">
         <tr class="text-center">
           <th>#</th>
-          <th>User</th>
           <th>Name</th>
           <th>Description</th>
           <th>Publish</th>
@@ -106,42 +105,38 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <th>Manage</th>
         </tr>
 
-        @ foreach ($courses as $key => $course)
+        @foreach($courses as $key => $course)
         <tr>
-          <td>{ $key + 1 }</td>
+          <td>{{ $key + 1 }}</td>
+          <td>{{$course->name}}</td>
+          <td>{{$course->description}}</td>
           <td>
-            <a href="/admin/users/profile/{$course->user_id}">
-              {$course->user->name}
-            </a>
+            {!! $course->publish ? "<span class='label label-table label-success'>yes</span>" : "<span class='label label-table label-inverse'>no</span>" !!}
           </td>
-          <td>{$course->name}</td>
-          <td>{$course->description}</td>
+          <td>{{$course->created_at}}</td>
+          <td>{{$course->updated_at}}</td>
           <td>
-            !! $course->publish ? "<span class='label label-table label-success'>yes</span>" : "<span class='label label-table label-inverse'>no</span>" !!
-          </td>
-          <td>{$course->created_at}</td>
-          <td>{$course->updated_at}</td>
-          <td>
-            <a href="/admin/courses/edit/{$course->id}">
+            <a href="/admin/courses/edit/{{$course->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
-            <button type="button" onclick="destroyUser({$course->id}, '{$course->name}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
+            <button type="button" onclick="destroyUser({{$course->id}}, '{{$course->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
           </td>
         </tr>
-        @ endforeach
+        @endforeach
       </table>
     </div>
   </div>
   <div class="col-sm-12">
     <div class="row">
       <div class="col-md-8">
-        {$courses->appends([
+        {{$courses->appends([
           'perpage' => $perpage,
-          'name' => $name
-        ])->links()}
+          'name' => $name,
+          'publish' => $publish
+        ])->links()}}
       </div>
       <div class="col-md-4">
-        Categories total: {$courses->total()}
+        Courses total: {{$courses->total()}}
       </div>
     </div>
 

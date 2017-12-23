@@ -38,7 +38,7 @@ class CoursesTypeController extends Controller
     }
 
     public function create(CourseTypeCreateRequest $request) {
-      $user = User::first();
+      $user = auth()->user();
       $type = new CourseType;
       $type->user_id = $user->id;
       $type->name = $request->name;
@@ -60,41 +60,54 @@ class CoursesTypeController extends Controller
       }
     }
 
-    public function edit(CourseTypeUpdateRequest $request) {
-      $type = CourseType::find($request->id);
-      if($type)
-        return view("ad.course_types.edit", ["type" => $type]);
-      else
-        return redirect()->back();
+    public function edit(Request $request) {
+      $user = auth()->user();
+      $isAuth = $user->courseTypes->find($request->id);
+      if($user->role->update_all_teacher || $isAuth) {
+        $type = CourseType::find($request->id);
+        if($type)
+          return view("ad.course_types.edit", ["type" => $type]);
+        else
+          return redirect()->back();
+      } else
+      return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Not Auth!"]]);
     }
 
-    public function update(CourseUpdateRequest $request) {
-      $user = User::first();
-      $type = CourseType::find($request->id);
-      $type->user_id = $user->id;
-      $type->name = $request->name;
-      $slug = str_slug($type->name, '-');
-      $isExits = CourseType::where("slug", $slug)->where("id", "<>", $request->id)->count() > 0;
-      if($isExits)
-        return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Course type is exits!"]]);
-      else {
-        $type->slug = $slug;
-        $type->publish = $request->publish;
-        $slugLengthValid = strlen($slug) <= 191;
-        if($slugLengthValid) {
-          if($type->save())
-            return redirect("/admin/course-types")->with(["messages" => ["type" => "success", "content" => "course type updated!"]]);
-          else
-            return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Save fail!"]]);
-        } else
-            return redirect("/admin/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Course type max length is 191 char!"]]);
-      }
+    public function update(CourseTypeUpdateRequest $request) {
+      $user = auth()->user();
+      $isAuth = $user->courseTypes->find($request->id);
+      if($user->role->update_all_teacher || $isAuth) {
+        $type = CourseType::find($request->id);
+        $type->user_id = $user->id;
+        $type->name = $request->name;
+        $slug = str_slug($type->name, '-');
+        $isExits = CourseType::where("slug", $slug)->where("id", "<>", $request->id)->count() > 0;
+        if($isExits)
+          return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Course type is exits!"]]);
+        else {
+          $type->slug = $slug;
+          $type->publish = $request->publish;
+          $slugLengthValid = strlen($slug) <= 191;
+          if($slugLengthValid) {
+            if($type->save())
+              return redirect("/admin/course-types")->with(["messages" => ["type" => "success", "content" => "course type updated!"]]);
+            else
+              return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Save fail!"]]);
+          } else
+              return redirect("/admin/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Course type max length is 191 char!"]]);
+        }
+      } else
+      return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Not Auth!"]]);
     }
 
     public function destroy(CourseTypeIdRequest $request) {
-      $type = CourseType::find($request->id);
-      $type->deleted = true;
-      $type->save();
-      return redirect("/admin/course-types")->with(["messages" => ["type" => "success", "content" => "Course type deleted!"]]);
+      $user = auth()->user();
+      $isAuth = $user->courseTypes->find($request->id);
+      if($user->role->update_all_teacher || $isAuth) {
+        $type = CourseType::find($request->id);
+        $type->deleted = true;
+        $type->save();
+        return redirect("/admin/course-types")->with(["messages" => ["type" => "success", "content" => "Course type deleted!"]]);
+      }
     }
 }

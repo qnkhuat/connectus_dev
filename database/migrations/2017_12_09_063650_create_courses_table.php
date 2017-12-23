@@ -20,6 +20,7 @@ class CreateCoursesTable extends Migration
             $table->integer('course_type_id')->unsigned();
             $table->foreign('course_type_id')->references('id')->on('course_types');
             $table->char('avatar', 255)->nullable();
+            $table->text('video')->nullable();
             $table->text('slide')->nullable();
             $table->char('name', 255);
             $table->float('old_price')->nullable();
@@ -35,6 +36,8 @@ class CreateCoursesTable extends Migration
             $table->integer('session_total')->nullable()->default(0);
             $table->string('day_in_week', 255)->nullable();
             $table->string('time', 255)->nullable();
+            $table->string('time_from', 255)->nullable();
+            $table->string('time_to', 255)->nullable();
             $table->string('description', 511);
             $table->text('content');
             $table->boolean('publish')->default(false);

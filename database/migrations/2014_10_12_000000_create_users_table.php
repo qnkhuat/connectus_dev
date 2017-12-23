@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             // $table->text('address')->nullable();
             $table->string('description', 512)->nullable();
             $table->string('fb_page', 512)->nullable();
+            $table->text('content')->nullable();
             $table->boolean('deleted')->default(false);
             $table->timestamps();
         });

@@ -34,6 +34,7 @@ class CourseCreateRequest extends FormRequest
         "sale" => "numeric",
         "gift" => "max:511",
         "opening" => "date",
+        "teachers" => "required|array",
         // "current_student_total" => "numeric",
         // "student_total" => "numeric",
         // "lesson_total" => "numeric",

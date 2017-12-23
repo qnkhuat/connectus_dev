@@ -26,7 +26,7 @@ class CourseUpdateRequest extends FormRequest
         return [
             "id" => "required|numeric|exists:courses,id",
             "course_type_id" => "required|numeric|exists:course_types,id",
-            "avatar" => "required|image",
+            "avatar" => "image",
             // "slide" => "",
             "name" => "required|min:1|max:255",
             "old_price" => "numeric",
@@ -35,6 +35,7 @@ class CourseUpdateRequest extends FormRequest
             "sale" => "numeric",
             "gift" => "max:511",
             "opening" => "date",
+            "teachers" => "required|array",
             // "current_student_total" => "numeric",
             // "student_total" => "numeric",
             // "lesson_total" => "numeric",

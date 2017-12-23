@@ -38,7 +38,7 @@ class CategoriesController extends Controller
     }
 
     public function create(CategoryCreatRequest $request) {
-      $user = User::first();
+      $user = auth()->user();
       $category = new Category;
       $category->user_id = $user->id;
       $category->name = $request->name;
@@ -51,6 +51,7 @@ class CategoriesController extends Controller
     }
 
     public function edit($id) {
+      $user = auth()->user();
       $category = Category::find($id);
       if($category)
         return view("ad.categories.edit", ["category" => $category]);
@@ -59,7 +60,7 @@ class CategoriesController extends Controller
     }
 
     public function update(CategoryUpdateRequest $request) {
-      $user = User::first();
+      $user = auth()->user();
       $category = Category::find($request->id);
       $category->user_id = $user->id;
       $category->name = $request->name;
