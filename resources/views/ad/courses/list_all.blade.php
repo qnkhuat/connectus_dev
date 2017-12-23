@@ -140,7 +140,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <a href="">
               <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">View</button>
             </a>
-            <a href="/admin/courses/branch/{{$course->id}}">
+            <a href="/admin/courses/branchs/{{$course->id}}">
               <button type="button" class="btn btn-xs btn-inverse btn-rounded waves-effect waves-light">Branch</button>
             </a>
             <a href="/admin/courses/edit/{{$course->id}}">
