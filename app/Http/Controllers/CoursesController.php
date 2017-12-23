@@ -196,6 +196,7 @@ class CoursesController extends Controller
 
         $teachers = $request->teachers;
         if(is_array($teachers)) {
+          TeachersOfCourse::where("course_id", $course->id)->delete();
           foreach($teachers as $teacher) {
             $t = new TeachersOfCourse;
             $t->course_id = $course->id;
