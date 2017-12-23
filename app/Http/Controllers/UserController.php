@@ -111,7 +111,6 @@ class UserController extends Controller
 
     public function edit($id) {
       $user = User::find($id);
-
       if($user) {
         $userRole = $user->role()->first()->toArray();
         $userRoleJSON = json_encode($user->role(), JSON_UNESCAPED_UNICODE);

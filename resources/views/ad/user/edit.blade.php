@@ -186,31 +186,6 @@ form {width: 100%;}
               </div>
             </div>
 
-            <!-- <div class="row">
-              <div class="col-md-12">
-                <p class="mr-t-10"><strong>address:</strong></p>
-                @foreach($address as $a)
-                <div class="mr-t-10">
-                  <div class="item-address">
-                    <div class="input-group">
-                        <textarea name="address[]" id="" cols="30" rows="10" class="form-control">{{$a}}</textarea>
-                        <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest('.item-address').remove()">
-                            <button type="button" class="btn waves-effect waves-light btn-warning">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                        </span>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-                <div id="more-address"></div>
-                <div class="mr-t-10">
-                  <button type="button" class="btn btn-info btn-rounded waves-effect waves-light float-right more-address">more</button>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div> -->
-
             <div class="row">
               <div class="col-md-12">
                 <div class="mr-t-10 text-center">

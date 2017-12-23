@@ -78,7 +78,7 @@ class CoursesController extends Controller
 
     public function _new() {
       $user = auth()->user();
-      $types = CourseType::where("deleted", false)->orderBy("updated_at", "desc")->get();
+      $types = CourseType::where("deleted", false)->where("publish", true)->orderBy("updated_at", "desc")->get();
       $teachers = $user->teachers()->where("deleted", false)->get();
       return view("ad.courses.new", ["types" => $types, "teachers" => $teachers]);
     }
@@ -156,7 +156,7 @@ class CoursesController extends Controller
       if($isExits) {
         if($user->role->update_all_course || $user->courses()->find($request->id)) {
           $course = Course::find($request->id);
-          $types = CourseType::where("deleted", false)->orderBy("updated_at", "desc")->get();
+          $types = CourseType::where("deleted", false)->where("publish", true)->orderBy("updated_at", "desc")->get();
           $courseOfUser = $course->user;
           $teachers = $courseOfUser->teachers()->where("deleted", false)->get();
           $teachersChecked = $course->teachersChecked();
