@@ -158,8 +158,12 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           </td>
           <td>{{ $user->email }}</td>
           <td>{{ $user->phone }}</td>
-          <td>{{ $user->website }}</td>
-          <td>{{$user->fb_page}}</td>
+          <td>
+            <a href="{{ $user->website }}">{{ $user->website }}</a>
+          </td>
+          <td>
+            <a href="{{$user->fb_page}}">{{$user->fb_page}}</a>
+          </td>
           <td>
             <a href="/admin/address/list-all?partner={{$user->id}}">view</a>
           </td>
