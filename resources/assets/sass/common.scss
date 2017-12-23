@@ -68,12 +68,13 @@ $borderColor:$red;
   height: 50px;
   border-radius: $bradius;
   display: flex;
-  a{
+  p,a{
     line-height: 50px;
     color: white;
     width: 50%;
+    cursor: pointer;
   }
-  a.details-button{
+  .details-button{
     background: #3498db;
   }
 }
@@ -250,6 +251,9 @@ $borderColor:$red;
     }//.login-tap
   }//.modal-dialog
 }//#login-popup
+.more-button{
+  display: none;
+}
 @media only screen and (max-width: 600px) {
   .padding-0-15{
     padding: 0 5px;
@@ -259,7 +263,7 @@ $borderColor:$red;
     display: none;
   }
   .more-button{
-    display: block !important;
+    display: block;
     text-align: center;
     line-height: 30px;
     border: 1px solid $red;
@@ -268,6 +272,7 @@ $borderColor:$red;
     background: white;
     cursor: pointer;
     font-size: 14px;
+    width: 100%;
   }
 
 }

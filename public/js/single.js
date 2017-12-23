@@ -42,9 +42,3 @@ $('.checkout-step1 .login-submit').click(function() {
   $('.checkout-step1').css('display', 'none');
   $('.checkout-step2').css('display', 'initial');
 });
-
-//change when click interest-butotn
-$('.interest-button').click(function() {
-  addCourses = parseInt($('.cart-count-items').html()) +1;
-  $('.cart-count-items').html(addCourses);
-});

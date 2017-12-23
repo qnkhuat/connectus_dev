@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/checkout', function () {
     return view('front.checkout');
 });
+Route::get('/search', function () {
+    return view('front.search');
+});
 Route::prefix('/login')->group(function () {
   Route::get('/', 'LoginController@login');
   Route::post('/', 'LoginController@postLogin');
@@ -59,7 +62,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
     Route::get('/profile/{id}', 'UserController@profile')->middleware("viewListAllAddress");
     Route::post('/destroy', 'UserController@destroy')->middleware("viewListAllAddress");
   });
-  
+
   Route::prefix('/address')->group(function () {
     Route::get('/', 'AddressController@_list');
     Route::get('/list-all', 'AddressController@_listAll')->middleware("viewListAllAddress");

@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/layout.css" media="screen" >
     <link rel="stylesheet" href="css/common.css" media="screen" >
     <link rel="stylesheet" href="css/responsive.css" media="screen" >
+    <link rel="stylesheet" href="css/courses.css">
     @yield('latter_css')
   </head>
   <body>
@@ -196,6 +197,17 @@
 <!-- //single Page -->
 
 
+<!-- search Page -->
+
+    @yield('header-bar')
+
+    @yield('search_section')
+
+    @yield('search_course')
+
+<!-- //search Page -->
+
+
 
     <!-- //#footer -->
     <footer class="text-center">
@@ -215,6 +227,7 @@
     <script src="js/courses.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/lightbox.js"></script>
+    <script src="js/interest-button.js"></script>
     @yield('latter_js')
 </body>
 </html>

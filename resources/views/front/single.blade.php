@@ -154,9 +154,9 @@
   <div id="courses">
 
     <div class="course-ielts courses-row">
-      <h3 class="courses-row-title padding-0-15">Khoá học IELTS</h3>
+      <h3 class="courses-row-title padding-0-15"><a href="">Khoá học IELTS</a></h3>
       <div class="courses-group more-group">
-        <?php for($i = 1; $i <= 7; $i ++) { ?>
+        <?php for($i = 1; $i <= 8; $i ++) { ?>
         <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup("/khoahoc/{{$i}}", $(this).find(".course-popup").html())'>
           <div class="course-item-content">
             <div class="course-image-box">
@@ -207,7 +207,7 @@
                 </div>
               </div>
 
-              <div class="details-box"><a href="" class="details-button">Chi tiết</a></div>
+              <div class="details-box"><a href="" class="details-button">Chi tiết</a><p class="interest-button">Quan tâm</p></div>
 
             </div><!-- .course-popup -->
           </div>
@@ -225,7 +225,6 @@
         <i class="fa fa-chevron-up wrapup-button-up" aria-hidden="true"></i>
         <i class="fa fa-chevron-down wrapup-button-down" aria-hidden="true"></i>
       </div>
-
     </div>
   </div><!-- #courses -->
 </div>

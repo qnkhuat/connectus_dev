@@ -1,0 +1,84 @@
+
+$red:#d61e2a;
+$pink:#e55e8d;
+$violet:#828bcc;
+$reda:#d61e2a;
+$blue:#164675;//facebook
+$buttonColor: black;
+$bradius:3px;
+$transition-time:0.3s ;
+$titleBlue:#017691;
+$itemwidth:23%;
+$padding:13px;
+$borderColor:$red;
+$backgroundHeading:#2a303b;
+
+.button-group{
+  position: relative;
+}
+
+.header-bar{
+  background:$backgroundHeading;
+  color: white;
+  padding: 60px 0;
+  h1{
+    margin: 0;
+  }
+}
+.search-bar{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  border-bottom: 1px solid #e8e9eb;
+  .button-group{
+    button{
+      border-color: $red !important;
+      background: white !important;
+    }
+  }
+  button{
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+  .submit-button{
+    width: 80px;
+    background: $red;
+    color: white;
+    border: none;
+    border-radius: $bradius;
+    margin-right: 0;
+  }
+}
+.dropdown-menu{
+  top: calc(100% - 15px);
+}
+.dropdown-menu>li>a{
+  padding: 3px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  input{
+    margin-right: 5px;
+  }
+}
+
+.course-result{
+  margin-bottom:30px;
+  .container{
+    display: flex ;
+    flex-wrap: wrap ;
+  }
+}
+.courses-item-box{
+  width: 18% ;
+  margin-bottom: 15px ;
+}
+@media only screen and (max-width: 992px) {
+  .courses-item-box{
+    width: 23% ;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .courses-item-box{
+    width: calc(94%/3) ;
+  }
+}

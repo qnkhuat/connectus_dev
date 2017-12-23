@@ -11,6 +11,7 @@ $titleBlue:#017691;
 $itemwidth:23%;
 $padding:13px;
 $borderColor:$red;
+$backgroundHeading:#2a303b;
 .layer{
   position: absolute;
   display: none;
@@ -139,6 +140,7 @@ html,body{
 #menu{
   z-index: 99999;
   position: relative;
+  margin-bottom: 50px;
   #menu-desktop{
     width: 100%;
     height: 50px;
@@ -281,6 +283,7 @@ html,body{
 @media only screen and (max-width: 600px) {
 
   #menu{
+    margin-bottom: 0;
     #menu-desktop{
       display: none;
     }//#menu-desktop

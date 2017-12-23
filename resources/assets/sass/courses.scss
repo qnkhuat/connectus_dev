@@ -182,9 +182,7 @@ $borderColor:$red;
     }
   }
 }
-.more-button{
-  display: none;
-}
+
 .wrapup-button{
   display: none;
 }
@@ -281,26 +279,27 @@ $borderColor:$red;
     }
     .courses-group{
       white-space: normal;
-      .courses-item-box{
-        margin: 0;
+
+    }
+  }
+  .courses-item-box{
+    margin: 0;
+    width: 100% !important;
+    display: none;
+    margin-bottom: 10px;
+    .course-item-content{
+      display: flex;
+      .course-image-box{
+        width: 150px;
+        height: 100px;
+      }
+      .course-info-box{
         width: 100%;
-        display: none;
-        margin-bottom: 10px;
-        .course-item-content{
-          display: flex;
-          .course-image-box{
-            width: 150px;
-            height: 100px;
-          }
-          .course-info-box{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            .course-price-box{
-              margin-top: 0;
-            }
-          }
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        .course-price-box{
+          margin-top: 0;
         }
       }
     }
