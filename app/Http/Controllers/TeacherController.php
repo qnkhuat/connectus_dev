@@ -18,8 +18,13 @@ class TeacherController extends Controller
     return view("ad.teachers.new");
   }
 
-  public function _list() {
-    return view("ad.teachers.list");
+  public function _list(Request $request) {
+    $perpage = (int) $request->perpage;
+    $perpage < 5 ? $perpage = 5 : $perpage;
+    $perpage > 50 ? $perpage = 50 : $perpage;
+    $user = auth()->user();
+    $teachers = $user->teachers()->where('deleted', false)->paginate($perpage);
+    return view("ad.teachers.list", ["teachers" => $teachers]);
   }
 
   public function _listAll(Request $request) {
@@ -32,9 +37,10 @@ class TeacherController extends Controller
     if($partner != null && User::find($partner))
       $teachers = Teacher::with("user")
           ->where('user_id', $partner)
+          ->where('deleted', false)
           ->paginate($perpage);
     else
-      $teachers = Teacher::with("user")->paginate($perpage);
+      $teachers = Teacher::with("user")->where('deleted', false)->paginate($perpage);
     return view("ad.teachers.list_all", ["teachers" => $teachers, "partners" => $partners]);
   }
 
@@ -63,11 +69,11 @@ class TeacherController extends Controller
         if($user->role->view_all_teacher)
             return redirect("/admin/teachers/list-all")->with(["messages" => ["type" => "success", "content" => "Teachers created!"]]);
         else
-            return redirect()->back()->with(["messages" => ["type" => "success", "content" => "Teachers created!"]]);
+            return redirect("/admin/teachers")->with(["messages" => ["type" => "success", "content" => "Teachers created!"]]);
       } else
-        return redirect()->back()->with(["messages" => ["type" => "warning", "content" => "Save fail!"]]);
+        return redirect("/admin/teachers")->with(["messages" => ["type" => "warning", "content" => "Save fail!"]]);
     } else
-      return redirect()->back()->with(["messages" => ["type" => "success", "content" => "Not auth!"]]);
+      return redirect("/admin/teachers")->with(["messages" => ["type" => "success", "content" => "Not auth!"]]);
   }
 
   public function edit(Request $request) {
@@ -80,10 +86,41 @@ class TeacherController extends Controller
   }
 
   public function update(TeacherUpdateRequest $request) {
+    $user = auth()->user();
+    $teacher = $user->teachers()->find($request->id);
+    if($teacher) {
+      $teacher->name = $request->name;
+      $teacher->email = $request->email;
+      $teacher->facebook = $request->facebook;
+      $teacher->phone = $request->phone;
+      $teacher->description = $request->description;
+      $teacher->content = $request->content;
 
+      if($request->hasFile('avatar'))
+      {
+        $path = "img/avatar/";
+        $avatar = $request->file('avatar');
+        $avatarName = $user->id."_".$teacher->id.".".$avatar->getClientOriginalExtension();
+        $avatar->move($path, $avatarName);
+        Image::make(sprintf($path."%s", $avatarName))->resize(300, 300)->save();
+        $teacher->avatar = $avatarName;
+      }
+      $teacher->save();
+      return redirect("/admin/teachers")->with(["messages" => ["type" => "success", "content" => "Teacher Updated!"]]);
+    } else
+      return redirect("/admin/teachers")->with(["messages" => ["type" => "warning", "content" => "Update fail!"]]);
   }
 
   public function destroy(TeacherIdRequest $request) {
-
+    $user = auth()->user();
+    if($user->role->destroy_all_teacher)
+      $teacher = Teacher::find($request->id);
+    else
+      $teacher = $user->teachers()->find($request->id);
+    if($teacher) {
+      $teacher->deleted = true;
+      $teacher->save();
+    }
+    return redirect()->back()->with(["messages" => ["type" => "success", "content" => "Teacher Deleted!"]]);
   }
 }

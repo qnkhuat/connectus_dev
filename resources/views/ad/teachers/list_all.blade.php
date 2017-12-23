@@ -32,12 +32,12 @@ ul.pagination li.active span {background: transparent; color: #fff;}
 @section('breadcrumb')
 <ol class="breadcrumb pull-right mb-0">
     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-    <li class="breadcrumb-item active">Users</li>
+    <li class="breadcrumb-item active">Teachers</li>
 </ol>
 @endsection
 
 @section('page_name')
-<h4 class="page-title">List user</h4>
+<h4 class="page-title">Teachers all</h4>
 @endsection
 
 @section('content')
@@ -111,11 +111,11 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <td>
             <a href="/admin/users/profile/{{$teacher->user->id}}">{{$teacher->user->name}}</a>
           </td>
+          <td>{{$teacher->name}}</td>
           <td>{{$teacher->facebook}}</td>
           <td>{{$teacher->email}}</td>
           <td>{{$teacher->phone}}</td>
           <td>{{$teacher->description}}</td>
-          <td></td>
           <td>
             <a href="">
               <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">View</button>

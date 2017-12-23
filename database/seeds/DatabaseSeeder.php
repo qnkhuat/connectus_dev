@@ -102,6 +102,7 @@ class DatabaseSeeder extends Seeder
           'create_teacher' => true,
           'update_teacher' => true,
           'destroy_teacher' => true,
+          'destroy_all_teacher' => true,
           'view_teacher' => true,
           'view_all_teacher' => true,
 

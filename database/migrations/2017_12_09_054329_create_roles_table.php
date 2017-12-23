@@ -60,8 +60,10 @@ class CreateRolesTable extends Migration
             $table->boolean('create_teacher')->default(false);
             $table->boolean('update_teacher')->default(false);
             $table->boolean('destroy_teacher')->default(false);
+            $table->boolean('destroy_all_teacher')->default(false);
             $table->boolean('view_teacher')->default(false);
             $table->boolean('view_all_teacher')->default(false);
+
 
             $table->boolean('create_course')->default(false);
             $table->boolean('update_course')->default(false);

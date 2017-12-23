@@ -46,8 +46,9 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/teachers/create" method="post" enctype="multipart/form-data">
+      <form action="/admin/teachers/update" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="hidden" name="id" value="{{$teacher->id}}">
 
         <div class="row">
           <div class="col-md-12">
