@@ -106,13 +106,13 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
     Route::get('/edit/{id}', 'CoursesController@edit')->middleware("courseUpdate");
     Route::post('/update', 'CoursesController@update')->middleware("courseUpdate");
     Route::post('/destroy', 'CoursesController@destroy')->middleware("courseDestroy");
-    Route::prefix('/branch/{id}')->group(function () {
-      Route::get('/', 'CoursesController@branchList')->middleware("courseView");
-      Route::get('/create', 'CoursesController@branchNew')->middleware("courseView");
-      Route::post('/create', 'CoursesController@branchCreate')->middleware("courseView");
-      Route::get('/edit', 'CoursesController@branchEdit')->middleware("courseView");
-      Route::post('/update', 'CoursesController@branchUpdate')->middleware("courseView");
-      Route::post('/destroy', 'CoursesController@branchDestroy')->middleware("courseView");
+    Route::prefix('/branchs/{id}')->group(function () {
+      Route::get('/', 'CourseBranchsController@_list');
+      Route::get('/create', 'CourseBranchsController@_new');
+      Route::post('/create', 'CourseBranchsController@create');
+      Route::get('/edit/{branch_id}', 'CourseBranchsController@edit');
+      Route::post('/update', 'CourseBranchsController@update');
+      Route::post('/destroy', 'CourseBranchsController@destroy');
     });
   });
 

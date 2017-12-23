@@ -8,6 +8,7 @@
 form {width: 100%;}
 .width-60 {width: 60px;}
 .mr-t-10 {margin-top: 10px;}
+.mr-t-20 {margin-top: 20px;}
 .btn-group {width: 300px;}
 .pointer {cursor: pointer;}
 .float-right {float: right;}
@@ -32,12 +33,13 @@ ul.pagination li.active span {background: transparent; color: #fff;}
 @section('breadcrumb')
 <ol class="breadcrumb pull-right mb-0">
     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-    <li class="breadcrumb-item active">Courses</li>
+    <li class="breadcrumb-item active"><a href="#">Courses</a></li>
+    <li class="breadcrumb-item active">Branchs</li>
 </ol>
 @endsection
 
 @section('page_name')
-<h4 class="page-title">Courses</h4>
+<h4 class="page-title">Courses branchs</h4>
 @endsection
 
 @section('content')
@@ -54,14 +56,11 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   </div>
   <?php
     $perpage = Request::get("perpage");
-    $name = Request::get("name");
-    $partner = Request::get("partner");
-    $publish = Request::get("publish");
   ?>
   <div class="col-sm-12">
     <form action="" method="get">
       <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <span>Record</span>
         <select name="perpage" class="selectpicker" data-style="btn-default btn-custom">
             <option value="5" {{ $perpage == "5" ? "selected" : "" }}>5 record per page</option>
@@ -71,82 +70,53 @@ ul.pagination li.active span {background: transparent; color: #fff;}
         </select>
       </div>
 
-      <div class="col-sm-2">
-        <span>Partner</span>
-        <select name="partner" class="selectpicker" data-style="btn-default btn-custom">
-          <option value=""></option>
-          @foreach($partners as $p)
-          <option value="{{$p->id}}">{{$p->name}}</option>
-          @endforeach
-        </select>
-      </div>
-
-      <div class="col-sm-2">
-        <span>Name</span>
-        <input name="name" type="text" class="form-control" value="{{$name}}">
-      </div>
-
-      <div class="col-sm-2">
-        <span>Publish</span>
-        <select name="publish" class="selectpicker" data-style="btn-default btn-custom">
-          <option value=""></option>
-          <option value="1" {{ $publish == "1" ? "selected" : "" }}>yes</option>
-          <option value="0" {{ $publish == "0" ? "selected" : "" }}>no</option>
-        </select>
-      </div>
-
       <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/courses/list-all">Reset</a>
+        <a href="/admin/courses/branchs/{{$course->id}}">Reset</a>
+      </div>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3">
+        <div style="margin-top: 22px;"></div>
+        <a href="/admin/courses/branchs/{{$course->id}}/create" class="btn btn-info waves-effect waves-light">Create</a>
       </div>
     </div>
     </form>
+  </div>
+  <div class="col-md-12">
+    <div class="mr-t-20"></div>
+    <p>Course: 
+      <a href="/admin/courses/edit/{{$course->id}}">
+        {{$course->name}}
+      </a>
+    </p>
   </div>
   <div class="col-sm-12">
     <div class="table-responsive min-height-250">
       <table class="table table-hover table-bordered">
         <tr class="text-center">
           <th>#</th>
-          <th>Avatar</th>
-          <th>Partner</th>
-          <th>Course name</th>
+          <th>Day of week</th>
           <th>Opening</th>
-          <th>Publish</th>
-          <th>Created at</th>
-          <th>Updated at</th>
+          <th>Address</th>
           <th>Manage</th>
         </tr>
 
-        @foreach($courses as $key => $course)
+        @foreach($branchs as $key => $branch)
         <tr>
           <td>{{ $key + 1 }}</td>
+          <td>{{$branch->day_of_week}}</td>
+          <td>{{$branch->opening}}</td>
           <td>
-            <img src="/img/courses/{{ $course->avatar }}" alt="" class="width-60">
-          </td>
-          <td>
-            <a href="/admin/users/profile/{{$course->user_id}}">
-              {{$course->user->name}}
+            <a href="/admin/address/edit/{{$branch->address_id}}">
+            {{$address->where("id", $branch->address_id)->first()->sort_description}}
             </a>
           </td>
-          <td>{{$course->name}}</td>
-          <td>{{$course->opening}}</td>
           <td>
-            {!! $course->publish ? "<span class='label label-table label-success'>yes</span>" : "<span class='label label-table label-inverse'>no</span>" !!}
-          </td>
-          <td>{{$course->created_at}}</td>
-          <td>{{$course->updated_at}}</td>
-          <td>
-            <a href="">
-              <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">View</button>
-            </a>
-            <a href="/admin/courses/branchs/{{$course->id}}">
-              <button type="button" class="btn btn-xs btn-inverse btn-rounded waves-effect waves-light">Branch</button>
-            </a>
-            <a href="/admin/courses/edit/{{$course->id}}">
+            <a href="/admin/courses/branchs/{{$course->id}}/edit/{{$branch->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
-            <button type="button" onclick="destroyUser({{$course->id}}, '{{$course->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
+            <button type="button" onclick="destroyUser({{$course->id}}, {{$branch->id}}, '{{$branch->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
           </td>
         </tr>
         @endforeach
@@ -156,15 +126,12 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   <div class="col-sm-12">
     <div class="row">
       <div class="col-md-8">
-        {{$courses->appends([
-          'perpage' => $perpage,
-          "partner" => $partner,
-          'name' => $name,
-          'publish' => $publish
+        {{$branchs->appends([
+          'perpage' => $perpage
         ])->links()}}
       </div>
       <div class="col-md-4">
-        Courses total: {{$courses->total()}}
+        Branchs total: {{$branchs->total()}}
       </div>
     </div>
 
@@ -197,15 +164,19 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   $.ajaxSetup({
     headers: { 'X-CSRF-Token' : '{{csrf_token()}}' }
   });
-  function destroyUser(course_id, name) {
+  function destroyUser(course_id, branch_id, name) {
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
+      <?php
+        $url = "/admin/courses/branchs/$course->id/destroy";
+      ?>
       $.ajax({
-        url : "{{ url('/admin/courses/destroy') }}",
+        url : "{{ url($url) }}",
         type : "post",
         dataType:"text",
         data : {
-          id: course_id
+          branch_id: branch_id,
+          // course_id: course_id
         },
         success : function (result){
           location.reload()
