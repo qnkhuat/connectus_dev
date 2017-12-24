@@ -51,6 +51,19 @@
 
         <div class="row">
           <div class="col-md-12">
+            <p class="mr-t-10"><strong>District: <span class="color-red">*</span></strong></p>
+            <div class="input-group">
+              <select name="district_id" class="selectpicker" required data-style="btn-default btn-custom">
+                  @foreach($districts as $district)
+                  <option value="{{$district->id}}">{{$district->name}}</option>
+                  @endforeach
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
             <p class="mr-t-10"><strong>Sort description:</strong><span class="color-red">*</span></p>
             <div class="input-group">
                 <textarea name="sort_description" id="" cols="30" rows="10" class="form-control" required placeholder="between 1 - 255 chars length"></textarea>

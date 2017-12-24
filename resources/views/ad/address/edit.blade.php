@@ -24,12 +24,12 @@
 <ol class="breadcrumb pull-right mb-0">
     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
     <li class="breadcrumb-item"><a href="#">Address</a></li>
-    <li class="breadcrumb-item"><a href="#">Create</a></li>
+    <li class="breadcrumb-item"><a href="#">Update</a></li>
 </ol>
 @endsection
 
 @section('page_name')
-<h4 class="page-title">Address create</h4>
+<h4 class="page-title">Address update</h4>
 @endsection
 
 @section('content')
@@ -50,6 +50,19 @@
       <form action="/admin/address/update" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <input type="hidden" name="id" value={{$address->id}}>
+
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mr-t-10"><strong>District: <span class="color-red">*</span></strong></p>
+            <div class="input-group">
+              <select name="district_id" class="selectpicker" required data-style="btn-default btn-custom">
+                  @foreach($districts as $district)
+                  <option value="{{$district->id}}" {{$address->district_id == $district->id ? "selected" : ""}}>{{$district->name}}</option>
+                  @endforeach
+              </select>
+            </div>
+          </div>
+        </div>
 
         <div class="row">
           <div class="col-md-12">

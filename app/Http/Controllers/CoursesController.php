@@ -9,6 +9,7 @@ use App\Models\CourseType;
 use App\Models\Course;
 use App\Models\Teacher;
 use App\Models\TeachersOfCourse;
+use App\Models\District;
 use App\Http\Requests\CourseCreateRequest;
 use App\Http\Requests\CourseUpdateRequest;
 use App\Http\Requests\CourseIdRequest;
@@ -130,11 +131,12 @@ class CoursesController extends Controller
 
     public function _new() {
       $user = auth()->user();
+      $districts = District::orderBy("name")->where("deleted", false)->get();
       $learnTime = Course::$learnTime;
       $teacherTypes = Teacher::$type;
       $types = CourseType::where("deleted", false)->where("publish", true)->orderBy("updated_at", "desc")->get();
       $teachers = $user->teachers()->where("deleted", false)->get();
-      return view("ad.courses.new", ["types" => $types, "teachers" => $teachers, "teacherTypes" => $teacherTypes, "learnTime" => $learnTime]);
+      return view("ad.courses.new", ["types" => $types, "teachers" => $teachers, "teacherTypes" => $teacherTypes, "learnTime" => $learnTime, "districts" => $districts]);
     }
 
     public function create(CourseCreateRequest $request) {
@@ -162,6 +164,13 @@ class CoursesController extends Controller
       $course->description = $request->description;
       $course->content = $request->content;
       $course->publish = $request->publish;
+
+      $course->session_per_week = $request->session_per_week;
+      $course->districts_array_id = json_encode($request->districts_array_id, JSON_UNESCAPED_UNICODE);
+      $course->districts_text = "";
+      $arrDistrictsText = District::whereIn('id', $request->districts_array_id)->pluck("key")->toArray();
+      foreach($arrDistrictsText as $text)
+        $course->districts_text .= " " . $text;
       $course->save();
 
       $teachers = $request->teachers;
@@ -217,6 +226,7 @@ class CoursesController extends Controller
       $isExits = Course::find($request->id);
       if($isExits) {
         if($user->role->update_all_course || $user->courses()->find($request->id)) {
+          $districts = District::orderBy("name")->where("deleted", false)->get();
           $learnTime = Course::$learnTime;
           $teacherTypes = Teacher::$type;
           $course = Course::find($request->id);
@@ -225,7 +235,9 @@ class CoursesController extends Controller
           $teachers = $courseOfUser->teachers()->where("deleted", false)->get();
           $teachersChecked = $course->teachersChecked();
           $videos = json_decode($course->video);
-          return view("ad.courses.edit", ["course" => $course, "types" => $types, "teachers" => $teachers, "teachersChecked" => $teachersChecked, "videos" => $videos, "learnTime" => $learnTime, "teacherTypes" => $teacherTypes]);
+          $districtsChoosen = json_decode($course->districts_array_id);
+          return view("ad.courses.edit", ["course" => $course, "types" => $types, "teachers" => $teachers, "teachersChecked" => $teachersChecked, "videos" => $videos,
+            "learnTime" => $learnTime, "teacherTypes" => $teacherTypes, "districts" => $districts, "districtsChoosen" => $districtsChoosen]);
         } else {
           return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
         }
@@ -258,6 +270,13 @@ class CoursesController extends Controller
         $course->description = $request->description;
         $course->content = $request->content;
         $course->publish = $request->publish;
+
+        $course->session_per_week = $request->session_per_week;
+        $course->districts_array_id = json_encode($request->districts_array_id, JSON_UNESCAPED_UNICODE);
+        $course->districts_text = "";
+        $arrDistrictsText = District::whereIn('id', $request->districts_array_id)->pluck("key")->toArray();
+        foreach($arrDistrictsText as $text)
+          $course->districts_text .= " " . $text;
 
         $teachers = $request->teachers;
         if(is_array($teachers)) {

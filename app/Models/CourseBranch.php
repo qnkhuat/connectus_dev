@@ -12,4 +12,9 @@ class CourseBranch extends Model
     {
       return $this->belongsTo('App\Models\Course');
     }
+
+    public function address()
+    {
+      return $this->belongsTo('App\Models\Address');
+    }
 }

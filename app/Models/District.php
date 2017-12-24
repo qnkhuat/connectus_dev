@@ -8,8 +8,8 @@ class District extends Model
 {
     protected $table = 'districts';
 
-    // public function user()
-    // {
-    //     return $this->belongsTo('App\User');
-    // }
+    public function address()
+  	{
+  		return $this->hasMany('App\Models\Address');
+  	}
 }

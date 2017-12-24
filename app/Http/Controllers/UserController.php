@@ -172,7 +172,8 @@ class UserController extends Controller
       $user = auth()->user();
       $address = $user->address()->get();
       $role = $user->role()->first();
-      return view("ad.user.profile", ["user" => $user, "address" => $address, "role" => $role]);
+      $labels = ["success", "warning","info", "danger", "primary", "default", "purple", "inverse", "pink"];
+      return view("ad.user.profile", ["user" => $user, "address" => $address, "role" => $role, "labels" => $labels]);
     }
 
     public function profile($id) {

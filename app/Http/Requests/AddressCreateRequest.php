@@ -24,6 +24,7 @@ class AddressCreateRequest extends FormRequest
     public function rules()
     {
         return [
+            "district_id" => "required|max:1|exists:districts,id",
             "sort_description" => "required|max:255",
             "address" => "required|max:512",
         ];

@@ -22,7 +22,8 @@ class FrontController extends Controller
             $courses = Course::with("user")->where("deleted", false)->where("publish", true)->get();
             $videos = json_decode($course->video);
             $slides = json_decode($course->slide);
-            return view('front.single', ["courses" => $courses, "course" => $course, "videos" => $videos, "slides" => $slides]);
+            $branches = $course->branchs;
+            return view('front.single', ["courses" => $courses, "course" => $course, "videos" => $videos, "slides" => $slides, "branches" => $branches]);
         } else
             return redirect("/");
     }

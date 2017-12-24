@@ -97,6 +97,26 @@
 
         <div class="row">
           <div class="col-md-12">
+            <p class="mr-t-10"><strong>Learn time:</strong></p>
+            <div class="col-md-4">
+              <p>From</p>
+              <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
+                  <input type="text" name="time_from" class="form-control" value="{{$courseBranch->time_from}}">
+                  <span class="input-group-addon"> <span class="md md-access-time"></span> </span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p>To</p>
+              <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
+                  <input type="text" name="time_to" class="form-control" value="{{$courseBranch->time_to}}">
+                  <span class="input-group-addon"> <span class="md md-access-time"></span> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
             <div class="mr-t-10 text-center">
               <button type="submit" class="btn btn-warning btn-rounded waves-effect waves-light">SAVE</button>
             </div>

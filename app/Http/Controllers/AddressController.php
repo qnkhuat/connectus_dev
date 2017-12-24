@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Models\Address;
 use App\Models\Role;
+use App\Models\District;
 use App\Http\Requests\AddressCreateRequest;
 use App\Http\Requests\AddressUpdateRequest;
 use App\Http\Requests\AddressIdRequest;
@@ -13,7 +14,8 @@ use App\Http\Requests\AddressIdRequest;
 class AddressController extends Controller
 {
     public function _new() {
-        return view("ad.address.new");
+        $districts = District::orderBy("name")->where("deleted", false)->get();
+        return view("ad.address.new", ["districts" => $districts]);
     }
 
     public function _listAll(Request $request) {
@@ -47,6 +49,7 @@ class AddressController extends Controller
         $user = auth()->user();
         $address = new Address;
         $address->user_id = $user->id;
+        $address->district_id = $request->district_id;
         $address->sort_description = $request->sort_description;
         $address->address = $request->address;
         $address->save();
@@ -60,8 +63,9 @@ class AddressController extends Controller
     public function edit(Request $request) {
         $countRows = Address::where("user_id", auth()->user()->id)->where("id", $request->id)->count();
         if($countRows > 0) {
+            $districts = District::orderBy("name")->where("deleted", false)->get();
             $address = Address::where("user_id", auth()->user()->id)->where("id", $request->id)->first();
-            return view("ad.address.edit", ["address" => $address]);
+            return view("ad.address.edit", ["address" => $address, "districts" => $districts]);
         } else
             return redirect("/admin");
     }
@@ -73,6 +77,7 @@ class AddressController extends Controller
 
         if($countRows > 0 || $isAuth) {
             $address = Address::where("user_id", auth()->user()->id)->where("id", $request->id)->first();
+            $address->district_id = $request->district_id;
             $address->sort_description = $request->sort_description;
             $address->address = $request->address;
             $address->save();

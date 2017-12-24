@@ -30,6 +30,8 @@ class CourseBranchsController extends Controller
             $courseBranch->day_of_week = $request->day_of_week;
             $courseBranch->opening = $request->opening;
             $courseBranch->address_id = $request->address_id;
+            $courseBranch->time_from = $request->time_from;
+            $courseBranch->time_to = $request->time_to;
             $courseBranch->save();
             return redirect("/admin/courses/branchs/$courseBranch->course_id")->with(["messages" => ["type" => "success", "content" => "Saved!"]]);
         } else
@@ -73,6 +75,8 @@ class CourseBranchsController extends Controller
             $courseBranch->day_of_week = $request->day_of_week;
             $courseBranch->opening = $request->opening;
             $courseBranch->address_id = $request->address_id;
+            $courseBranch->time_from = $request->time_from;
+            $courseBranch->time_to = $request->time_to;
             $courseBranch->save();
             return redirect("/admin/courses/branchs/$courseBranch->course_id")->with(["messages" => ["type" => "success", "content" => "Saved!"]]);
         } else

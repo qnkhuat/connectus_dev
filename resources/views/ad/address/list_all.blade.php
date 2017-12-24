@@ -93,6 +93,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
         <tr class="text-center">
           <th>#</th>
           <th>Partner</th>
+          <th>District</th>
           <th>Sort description</th>
           <th>Address</th>
           <th>Manage</th>
@@ -104,6 +105,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <td>
                 <a href="/admin/users/profile/{{$a->user_id}}">{{$a->user->name}}</a>
             </td>
+            <td>{{$a->district->name}}</td>
             <td>{{$a->sort_description}}</td>
             <td>{{$a->address}}</td>
             <td>
