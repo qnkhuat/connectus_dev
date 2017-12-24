@@ -23,10 +23,10 @@ class CreateCoursesTable extends Migration
             $table->text('video')->nullable();
             $table->text('slide')->nullable();
             $table->char('name', 255);
-            $table->float('old_price')->nullable();
-            $table->float('new_price')->default(0);
+            $table->float('old_price', 16)->nullable();
+            $table->float('new_price', 16)->default(0);
             $table->boolean('new_price_only')->default(true);
-            $table->float('sale')->nullable()->default(0);
+            $table->float('sale', 16)->nullable()->default(0);
             $table->string('gift', 511)->nullable();
             $table->date('opening')->nullable();
             $table->integer('current_student_total')->nullable()->default(0);

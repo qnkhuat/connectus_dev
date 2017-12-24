@@ -1,6 +1,9 @@
 
 @extends('front.layout')
-
+<?php
+  use Carbon\Carbon;
+  Carbon::setLocale('vi');
+?>
 @section('latter_css')
 <link rel="stylesheet" href="/css/courses.css" media="screen" >
 <link rel="stylesheet" href="/css/single.css" media="screen" >
@@ -9,8 +12,6 @@
 @section('latter_js')
 <script src="/js/single.js"></script>
 @endsection
-
-
 
 @section('courseDetails')
 <div id="course-details">
@@ -49,11 +50,11 @@
           <div class="choose-class-box"><p class="lightbox-button choose-class choose-class-button ">Chọn lớp</p></div>
           <div class="course-details-addition-info">
             <ul>
-              <li class="student-per-class-bar"><i class="fa fa-users" aria-hidden="true"></i> Số lượng học viên: <span class="student-per-class-number">3</span></li>
-              <li class="course-info-total-hours-bar"><i class="fa fa-play-circle" aria-hidden="true"></i> Số giờ: <span class="course-info-total-hours-number">80</span></li>
-              <li class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i> Số buổi: <span class="course-info-total-periods-number">20</span></li>
-              <li class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2,3,4</span></li>
-              <li class="course-info-braches"><i class="fa fa-building-o" aria-hidden="true"></i> Có <span class="course-info-braches-number">4</span> chi nhánh</li>
+              <li class="student-per-class-bar"><i class="fa fa-users" aria-hidden="true"></i> Số lượng học viên/lớp: <span class="student-per-class-number">{{$course->student_total}}</span></li>
+              <li class="course-info-total-hours-bar"><i class="fa fa-play-circle" aria-hidden="true"></i> Số giờ: <span class="course-info-total-hours-number">{{$course->hour_total}}</span></li>
+              <li class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i> Số buổi: <span class="course-info-total-periods-number">{{$course->session_total}}</span></li>
+              <li class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">{{$course->day_in_week}}</span></li>
+              <li class="course-info-braches"><i class="fa fa-building-o" aria-hidden="true"></i> Có <span class="course-info-braches-number">{{$course->branchs()->count()}}</span> chi nhánh</li>
             </ul>
           </div>
         </div>
@@ -176,31 +177,39 @@
       <div class="course-options-box">
 
         <div class="course-option-general">
-          <h3 class="course-info-title">IELTS 8.5</h3>
+          <h3 class="course-info-title">{{$course->name}}</h3>
           <div class="course-price-box">
-            <span class="course-price-origin">5.000.000</span>
-            <span class="course-price-sale">4.000.000</span>
+            @if($course->new_price_only)
+            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            @else
+            <span class="course-price-origin">{{number_format($course->old_price)}}</span>
+            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            @endif
           </div>
           <div class="course-info-short">
-            <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 80 </span> giờ</span>
-            <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 40 </span> buổi</span>
-            <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2</span> , <span class="course-info-day-number-2">3</span> , <span class="course-info-day-number-3">4</span> </span>
+            <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> {{$course->hour_total}} </span> giờ</span>
+            <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> {{$course->session_total}} </span> buổi</span>
+            <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ {{$course->day_in_week}} </span>
           </div>
         </div>
 
-        <?php for($i=1;$i<=4;$i++) {?>
+        @foreach($branches as $branch)
+        <?php
+          $opening = new Carbon($branch->opening,"Asia/Ho_Chi_Minh");
+          $opening = $opening->diffForHumans();
+        ?>
         <div class="course-option">
           <div class="course-option-info">
-            <p class="course-info-start">Khai giảng : <span class="course-info-start-day">3/2/2017</span></p>
-            <div class="course-info-agent">Số {{$i}} Phạm Văn Đồng</div>
-            <div class="course-info-learning-time">Thứ 2 + 3 + {{$i}} (19:30 - 20:30)</div>
+            <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$opening}}</span></p>
+            <div class="course-info-agent">{{$branch->address->address}}</div>
+            <div class="course-info-learning-time">Thứ {{$branch->day_of_week}} ({{$branch->time_from}} - {{$branch->time_to}})</div>
           </div>
           <div class="choose-course-box">
             <p class="choose-course-button">Tham gia</p>
             <p class="interest-button">Quan tâm</p>
           </div>
         </div>
-        <?php } ?>
+        @endforeach
 
       </div>
 

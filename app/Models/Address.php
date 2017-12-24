@@ -17,4 +17,9 @@ class Address extends Model
     {
         return $this->belongsTo('App\Models\District');
     }
+
+    public function courseBranches()
+    {
+        return $this->hasMany('App\Models\CourseBranch');
+    }
 }

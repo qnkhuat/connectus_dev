@@ -148,7 +148,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <td>{{$teacherTypes[$course->teacher_type]}}</td>
           <td>...</td>
           <td>
-            <a href="">
+            <a href="/khoahoc/{{$course->id}}">
               <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">View</button>
             </a>
             <a href="/admin/courses/branchs/{{$course->id}}">

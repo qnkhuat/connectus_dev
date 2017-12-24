@@ -1,3 +1,7 @@
+<?php
+  use Carbon\Carbon;
+  Carbon::setLocale('vi');
+?>
 <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup("/khoahoc/{{$course->id}}", $(this).find(".course-popup").html())'>
   <div class="course-item-content">
     <div class="course-image-box">
@@ -7,8 +11,14 @@
       <a class="course-info-title one-line-text">
         {{$course->name}}
       </a>
+      <p>
+        <?php
+          $opening = new Carbon($course->opening,"Asia/Ho_Chi_Minh");
+          $opening = $opening->diffForHumans();
+        ?>
+      </p>
 
-      <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->name}}</span></p>
+      <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></p>
       @if($course->sale > 0)
       <div class="best-seller-tag"><span>Best seller</span></div>
       @endif
@@ -24,7 +34,7 @@
 
     <div class="course-popup">
       <a class="course-info-title" href="">{{$course->name}}</a>
-      <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$course->opening}}</span></p>
+      <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$opening}}</span></p>
 
       <div class="course-price-box">
         @if($course->new_price_only)
@@ -41,9 +51,9 @@
         </div>
 
         <div class="course-info-short">
-          <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> {{$course->hours_total}} </span> giờ</span>
-          <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> {{$course->sessions_total}} </span> buổi</span>
-          <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ {{$course->day_of_week}} </span>
+          <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> {{$course->hour_total}} </span> giờ</span>
+          <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> {{$course->session_total}} </span> buổi</span>
+          <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ {{$course->day_in_week}} </span>
         </div>
 
         <div class="course-info-intro">
