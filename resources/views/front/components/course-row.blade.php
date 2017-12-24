@@ -13,7 +13,7 @@
 <div id="course-popup-mobile">
   <div class="course-popup-mobile-content">
     <div class="course-popup">
-      
+
     </div>
   </div>
   <div class="wrapup-button">

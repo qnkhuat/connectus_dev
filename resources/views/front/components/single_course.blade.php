@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-<div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'>
-=======
+
+
 <?php
   use Carbon\Carbon;
   Carbon::setLocale('vi');
 ?>
-<div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup("/khoahoc/{{$course->id}}", $(this).find(".course-popup").html())'>
->>>>>>> fae4a2794be1996ca373943e220556276a770ba5
+<div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'>
   <div class="course-item-content">
     <div class="course-image-box">
       <img src="/img/courses/{{$course->avatar}}" class="course-image full" alt="">
@@ -37,9 +35,12 @@
     </div>
 
     <div class="course-popup">
-<<<<<<< HEAD">{{$course->name}}</a>
+
+      <!-- conflict cho nay -->
+      <a class="course-info-title" href="">{{$course->name}}</a>
       <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$opening}}</span></p>
->>>>>>> fae4a2794be1996ca373943e220556276a770ba5
+      <!-- conflict cho nay -->
+
 
       <div class="course-price-box">
         @if($course->new_price_only)

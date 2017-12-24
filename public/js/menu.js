@@ -92,15 +92,16 @@ function coursePopup(content){
 
 function interest(content,isHave){
   if(!isHave){
-    $(this).addClass('interested');
+    console.log('ha');
     $('.cart-popup').append(content);
-    if(w<600){//have to do this because append create new interest-button in the initial DOM
+
+
       addCourses = parseInt($('.interest-count-items').html()) +1;
       $('.interest-count-items').html(addCourses);
       $('.cart-popup').css('display', 'grid');
       setTimeout(function(){
         $('.cart-popup').css('display', 'none');
       },2000)
-    }
+
   }
 }
