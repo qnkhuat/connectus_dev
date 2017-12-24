@@ -26,9 +26,7 @@ Route::prefix('/login')->group(function () {
 });
 Route::get('/logout', 'LoginController@logout');
 
-Route::get('/khoahoc', function () {
-    return view('front.single');
-});
+Route::get('/khoahoc/{id}', 'FrontController@course');
 // Route::get('/', 'test_controller@test');
 Route::get('/blog/categories/a/1', function () {
     return view('bbbbb');

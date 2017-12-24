@@ -179,13 +179,19 @@ class CoursesController extends Controller
       $avatarName = $user->id."_".$course->id.".".$avatar->getClientOriginalExtension();
       $avatar->move($path, $avatarName);
       $course->avatar = $avatarName;
-
       $slideVideos = [];
       $videos = $request->slideVideoLinks;
       if(is_array($videos)) {
         foreach($videos as $video)
-          if(strlen(trim($video, " ")) > 0)
-            array_push($slideVideos, trim($video, " "));
+          if(strlen(trim($video, " ")) > 0) {
+            $newLink = trim($video, " ");
+            $pos = strpos($newLink, "?v=");
+            if($pos > 0) {
+              $newLink = substr($newLink, $pos + 3, strlen($newLink));
+              $newLink = "https://www.youtube.com/embed/" . $newLink;
+            }
+            array_push($slideVideos, $newLink);
+          }
       }
 
       $slide = [];
@@ -278,8 +284,15 @@ class CoursesController extends Controller
         $videos = $request->slideVideoLinks;
         if(is_array($videos)) {
           foreach($videos as $video)
-            if(strlen(trim($video, " ")) > 0)
-              array_push($slideVideos, trim($video, " "));
+            if(strlen(trim($video, " ")) > 0) {
+              $newLink = trim($video, " ");
+              $pos = strpos($newLink, "?v=");
+              if($pos > 0) {
+                $newLink = substr($newLink, $pos + 3, strlen($newLink));
+                $newLink = "https://www.youtube.com/embed/" . $newLink;
+              }
+              array_push($slideVideos, $newLink);
+            }
         }
         $course->video = json_encode($slideVideos, JSON_UNESCAPED_UNICODE);
 

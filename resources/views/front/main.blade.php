@@ -91,7 +91,7 @@
               </div>
             </div>
 
-            <div class="details-box"><a href="" class="details-button">Chi tiết</a><p class="interest-button">Quan tâm</p></div>
+            <div class="details-box"><a href="/khoahoc/{{$course->id}}" class="details-button">Chi tiết</a><p class="interest-button">Quan tâm</p></div>
 
           </div><!-- .course-popup -->
         </div>
