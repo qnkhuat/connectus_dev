@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front.main');
-});
+Route::get('/', 'FrontController@mainPage');
 Route::get('/checkout', function () {
     return view('front.checkout');
 });
