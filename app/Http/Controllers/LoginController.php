@@ -11,10 +11,12 @@ use Hash;
 class LoginController extends Controller
 {
     public function login() {
+      auth()->logout();
       return view('login');
     }
 
     public function postLogin(LoginRequest $request) {
+      auth()->logout();
       $user = User::where("email", $request->email)->first();
       $authLogin = $user->role->login;
 

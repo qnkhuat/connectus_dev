@@ -155,13 +155,28 @@
         </div>
 
 
-        <div class="form-group">
-            <p class="mr-t-10"><strong>Teachers:<span class="color-red">*</span></strong></p>
-            <select multiple="multiple" class="multi-select" required id="my_multi_select1" name="teachers[]" data-plugin="multiselect">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <p class="mr-t-10"><strong>Teachers:</strong></p>
+              <select multiple="multiple" class="multi-select" id="my_multi_select1" name="teachers[]" data-plugin="multiselect">
                 @foreach($teachers as $teacher)
                 <option value="{{$teacher->id}}" {{in_array($teacher->id, $teachersChecked) ? "selected" : ""}}>{{$teacher->name}}</option>
                 @endforeach
-            </select>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <p class="mr-t-10"><strong>Teacher type: <span class="color-red">*</span></strong></p>
+            <div class="input-group">
+              <select name="teacher_type" class="selectpicker" required data-style="btn-default btn-custom">
+                  @foreach($teacherTypes as $key => $type)
+                  <option value="{{$key}}">{{$type}}</option>
+                  @endforeach
+              </select>
+            </div>
+          </div>
         </div>
 
         <div class="form-group">
@@ -262,6 +277,17 @@
         <div class="row">
           <div class="col-md-12">
             <p class="mr-t-10"><strong>Learn time:</strong></p>
+            <div class="col-md-4">
+              <p class="mr-t-10"><strong>Thời gian học: <span class="color-red">*</span></strong></p>
+              <div class="input-group">
+                <select name="time_in_date" class="selectpicker" required data-style="btn-default btn-custom">
+                    @foreach($learnTime as $key => $value)
+                    <option value="{{$key}}" {{$key == $course->time_in_date ? "selected" : ""}}>{{$value}}</option>
+                    @endforeach
+                </select>
+              </div>
+            </div>
+
             <div class="col-md-4">
               <p>From</p>
               <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">

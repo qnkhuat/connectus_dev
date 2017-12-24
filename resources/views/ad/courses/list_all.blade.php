@@ -56,6 +56,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     $perpage = Request::get("perpage");
     $name = Request::get("name");
     $partner = Request::get("partner");
+    $teacherType = Request::get("teacherType");
     $publish = Request::get("publish");
   ?>
   <div class="col-sm-12">
@@ -95,6 +96,16 @@ ul.pagination li.active span {background: transparent; color: #fff;}
         </select>
       </div>
 
+      <div class="col-sm-2">
+        <span>Teacher Type</span>
+        <select name="teacherType" class="selectpicker" data-style="btn-default btn-custom">
+            <option value=""></option>
+            @foreach($teacherTypes as $key => $type)
+            <option value="{{$key}}" {{$teacherType == $key ? "selected" : ""}}>{{$type}}</option>
+            @endforeach
+        </select>
+      </div>
+
       <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
@@ -113,8 +124,8 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <th>Course name</th>
           <th>Opening</th>
           <th>Publish</th>
-          <th>Created at</th>
-          <th>Updated at</th>
+          <th>Teacher type</th>
+          <th>Học viên đã cung cấp</th>
           <th>Manage</th>
         </tr>
 
@@ -134,8 +145,8 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <td>
             {!! $course->publish ? "<span class='label label-table label-success'>yes</span>" : "<span class='label label-table label-inverse'>no</span>" !!}
           </td>
-          <td>{{$course->created_at}}</td>
-          <td>{{$course->updated_at}}</td>
+          <td>{{$teacherTypes[$course->teacher_type]}}</td>
+          <td>...</td>
           <td>
             <a href="">
               <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">View</button>
@@ -160,6 +171,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           'perpage' => $perpage,
           "partner" => $partner,
           'name' => $name,
+          'teacherType' => $teacherType,
           'publish' => $publish
         ])->links()}}
       </div>

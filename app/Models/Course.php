@@ -9,6 +9,14 @@ class Course extends Model
 {
   protected $table = 'courses';
 
+  public static $learnTime = [
+    "both" => "Linh động",
+    "s" => "Buổi sáng",
+    "c" => "Buổi chiều",
+    "t" => "Buổi tối"
+  ];
+  public static $checkLearnTime = ["s", "c", "t", "both"];
+
   public function user()
   {
     return $this->belongsTo('App\User');

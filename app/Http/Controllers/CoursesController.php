@@ -21,22 +21,39 @@ class CoursesController extends Controller
       $perpage = (int) $request->perpage;
       $perpage < 5 ? $perpage = 5 : $perpage;
       $perpage > 50 ? $perpage = 50 : $perpage;
+      $teacherType = $request->teacherType;
       $name = $request->name;
       $publish = $request->publish;
+      $teacherTypes = Teacher::$type;
 
-      if($publish != null)
-        $courses = Course::with("user")
-          ->where("deleted", false)
-          ->where("name", "like", "%$name%")
-          ->where("publish", $publish)
-          ->paginate($perpage);
-      else
-        $courses = Course::with("user")
-          ->where("deleted", false)
-          ->where("name", "like", "%$name%")
-          ->paginate($perpage);
-
-      return view("ad.courses.list", ["courses" => $courses]);
+      if($teacherType == null) {
+        if($publish != null)
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("publish", $publish)
+            ->paginate($perpage);
+        else
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->paginate($perpage);
+      } else {
+        if($publish != null)
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("publish", $publish)
+            ->where("teacher_type", $teacherType)
+            ->paginate($perpage);
+        else
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("teacher_type", $teacherType)
+            ->paginate($perpage);
+      }
+      return view("ad.courses.list", ["courses" => $courses, "teacherTypes" => $teacherTypes]);
     }
 
     public function _listAll(Request $request) {
@@ -44,43 +61,80 @@ class CoursesController extends Controller
       $perpage < 5 ? $perpage = 5 : $perpage;
       $perpage > 50 ? $perpage = 50 : $perpage;
       $name = $request->name;
+      $teacherType = $request->teacherType;
       $partner = (int) $request->partner;
       $publish = $request->publish;
+      $teacherTypes = Teacher::$type;
+
+      echo $teacherType;
 
       $partners = User::where("group", "partner")->get();
-
-      if($partner != null && $publish != null)
-        $courses = Course::with("user")
-          ->where("deleted", false)
-          ->where("name", "like", "%$name%")
-          ->where("user_id", $partner)
-          ->where("publish", $publish)
-          ->paginate($perpage);
-      else if($partner != null)
-        $courses = Course::with("user")
-          ->where("deleted", false)
-          ->where("name", "like", "%$name%")
-          ->where("user_id", $partner)
-          ->paginate($perpage);
-      else if($publish != null)
-        $courses = Course::with("user")
-          ->where("deleted", false)
-          ->where("name", "like", "%$name%")
-          ->where("publish", $publish)
-          ->paginate($perpage);
-      else
-        $courses = Course::with("user")
-          ->where("deleted", false)
-          ->where("name", "like", "%$name%")
-          ->paginate($perpage);
-      return view("ad.courses.list_all", ["courses" => $courses, "partners" => $partners]);
+      if($teacherType == null) {
+        if($partner != null && $publish != null)
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("user_id", $partner)
+            ->where("publish", $publish)
+            ->paginate($perpage);
+        else if($partner != null)
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("user_id", $partner)
+            ->paginate($perpage);
+        else if($publish != null)
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("publish", $publish)
+            ->paginate($perpage);
+        else
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->paginate($perpage);
+      } else {
+        if($partner != null && $publish != null)
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("user_id", $partner)
+            ->where("publish", $publish)
+            ->where("teacher_type", $teacherType)
+            ->paginate($perpage);
+        else if($partner != null)
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("user_id", $partner)
+            ->where("teacher_type", $teacherType)
+            ->paginate($perpage);
+        else if($publish != null)
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("publish", $publish)
+            ->where("teacher_type", $teacherType)
+            ->paginate($perpage);
+        else
+          $courses = Course::with("user")
+            ->where("deleted", false)
+            ->where("name", "like", "%$name%")
+            ->where("teacher_type", $teacherType)
+            ->paginate($perpage);
+      }
+      
+      return view("ad.courses.list_all", ["courses" => $courses, "partners" => $partners, "teacherTypes" => $teacherTypes]);
     }
 
     public function _new() {
       $user = auth()->user();
+      $learnTime = Course::$learnTime;
+      $teacherTypes = Teacher::$type;
       $types = CourseType::where("deleted", false)->where("publish", true)->orderBy("updated_at", "desc")->get();
       $teachers = $user->teachers()->where("deleted", false)->get();
-      return view("ad.courses.new", ["types" => $types, "teachers" => $teachers]);
+      return view("ad.courses.new", ["types" => $types, "teachers" => $teachers, "teacherTypes" => $teacherTypes, "learnTime" => $learnTime]);
     }
 
     public function create(CourseCreateRequest $request) {
@@ -94,12 +148,14 @@ class CoursesController extends Controller
       $course->new_price_only = $request->new_price_only;
       $course->sale = $request->sale;
       $course->gift = $request->gift;
+      $course->teacher_type = $request->teacher_type;
       $course->opening = $request->opening;
       $course->current_student_total = $request->current_student_total;
       $course->student_total = $request->student_total;
       $course->lesson_total = $request->lesson_total;
       $course->hour_total = $request->hour_total;
       $course->session_total = $request->session_total;
+      $course->time_in_date = $request->time_in_date;
       $course->time_from = $request->time_from;
       $course->time_to = $request->time_to;
       $course->day_in_week = $request->day_in_week;
@@ -155,13 +211,15 @@ class CoursesController extends Controller
       $isExits = Course::find($request->id);
       if($isExits) {
         if($user->role->update_all_course || $user->courses()->find($request->id)) {
+          $learnTime = Course::$learnTime;
+          $teacherTypes = Teacher::$type;
           $course = Course::find($request->id);
           $types = CourseType::where("deleted", false)->where("publish", true)->orderBy("updated_at", "desc")->get();
           $courseOfUser = $course->user;
           $teachers = $courseOfUser->teachers()->where("deleted", false)->get();
           $teachersChecked = $course->teachersChecked();
           $videos = json_decode($course->video);
-          return view("ad.courses.edit", ["course" => $course, "types" => $types, "teachers" => $teachers, "teachersChecked" => $teachersChecked, "videos" => $videos]);
+          return view("ad.courses.edit", ["course" => $course, "types" => $types, "teachers" => $teachers, "teachersChecked" => $teachersChecked, "videos" => $videos, "learnTime" => $learnTime, "teacherTypes" => $teacherTypes]);
         } else {
           return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
         }
@@ -187,6 +245,7 @@ class CoursesController extends Controller
         $course->lesson_total = $request->lesson_total;
         $course->hour_total = $request->hour_total;
         $course->session_total = $request->session_total;
+        $course->time_in_date = $request->time_in_date;
         $course->time_from = $request->time_from;
         $course->time_to = $request->time_to;
         $course->day_in_week = $request->day_in_week;

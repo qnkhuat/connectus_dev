@@ -38,8 +38,10 @@ class CreateCoursesTable extends Migration
             $table->string('time', 255)->nullable();
             $table->string('time_from', 255)->nullable();
             $table->string('time_to', 255)->nullable();
+            $table->enum('time_in_date', ['s', 'c', 't', 'both'])->default('both');
             $table->string('description', 511);
             $table->text('content');
+            $table->enum('teacher_type', ['viet_nam', 'native', 'viet_nam_and_native'])->default('viet_nam');
             $table->boolean('publish')->default(false);
             $table->boolean('deleted')->default(false);
             $table->timestamps();
