@@ -167,6 +167,10 @@ body{
               line-height: 18px;
               i{
                 width: 15px;
+                color: #017691;
+              }
+              span{
+                color: $red;
               }
             }
           }
@@ -177,11 +181,14 @@ body{
   }//.course-details-box
   .course-details-main{
     .course-details-box{
-      .course-details-info-right{
-        display: none;
-      }
-      .course-details-info-left{
-        padding: 15px 15px 15px 0;
+      .course-details-info{
+        width: 100%;
+        .course-details-info-right{
+          display: none;
+        }
+        .course-details-info-left{
+          padding: 15px 15px 15px 0;
+        }
       }
     }
   }//.course-details-main
@@ -355,13 +362,15 @@ body{
     }//.course-details-headline
     .course-details-main{
       .course-details-box{
-        .course-details-info-left{
-          padding-right: 0;
-          width: 100%;
+        .course-details-info{
+          .course-details-info-left{
+            padding-right: 0;
+            width: 100%;
 
-        }
-        .course-details-info-right{
-          display: none;
+          }
+          .course-details-info-right{
+            display: none;
+          }
         }
       }
     }//.course-details-main

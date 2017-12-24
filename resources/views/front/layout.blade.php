@@ -60,7 +60,7 @@
             <p class="lightbox-button login-popup login-button">Đăng nhập</p>
           @endif
           <div class="cart">
-            <a href="" class="fa fa-shopping-cart cart-icon"></a>
+            <a href="" class="fa fa-heart-o cart-icon"></a>
             <span class="cart-count"><span class="cart-count-items">1</span> khoá</span>
             <div class="cart-popup"></div>
 
@@ -133,7 +133,8 @@
           </div><!--// .menu-mobile-popup -->
         </div>
         <div class="cart">
-          <a href="" class="fa fa-shopping-cart cart-icon "></a>
+          <a href="" class="fa fa-heart-o cart-icon "></a>
+
           <h1 class="cart-count"><p class="cart-count-items">1</p></h1>
         </div>
       </div><!-- #menu-mobile -->

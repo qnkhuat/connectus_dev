@@ -49,11 +49,11 @@
           <div class="choose-class-box"><p class="lightbox-button choose-class choose-class-button ">Chọn lớp</p></div>
           <div class="course-details-addition-info">
             <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i> anh yeu em</li>
-              <li><i class="fa fa-cloud-upload" aria-hidden="true"></i> anh yeu em</li>
-              <li><i class="fa fa-cog" aria-hidden="true"></i> anh yeu em</li>
-              <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> anh yeu em</li>
-              <li><i class="fa fa-star" aria-hidden="true"  ></i> anh yeu em</li>
+              <li class="student-per-class-bar"><i class="fa fa-users" aria-hidden="true"></i> Số lượng học viên: <span class="student-per-class-number">3</span></li>
+              <li class="course-info-total-hours-bar"><i class="fa fa-play-circle" aria-hidden="true"></i> Số giờ: <span class="course-info-total-hours-number">80</span></li>
+              <li class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i> Số buổi: <span class="course-info-total-periods-number">20</span></li>
+              <li class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">2,3,4</span></li>
+              <li class="course-info-braches"><i class="fa fa-building-o" aria-hidden="true"></i> Có <span class="course-info-braches-number">4</span> chi nhánh</li>
             </ul>
           </div>
         </div>
@@ -207,11 +207,7 @@
       <div class="checkout-box">
 
         <div class="checkout-step1 checkout-login-step checkout-steps">
-          <div class="login-tab">
-            <div class="login-facebook login-tab-button">
-              <a href="" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng Facebook</a>
-            </div>
-          </div><!-- .login-tab -->
+          @include('front.components.login')
         </div>
 
         <div class="checkout-step2 checkout-input-step checkout-steps">

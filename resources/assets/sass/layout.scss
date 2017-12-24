@@ -226,14 +226,12 @@ html,body{
     .cart{
       position: fixed;
       right: 15px;
-      top: 15px;
+      top: 75px;
       background: $red;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
+      border: 1px solid white;
+
       a{
         color: white;
-        padding-right: 2px;
       }
       .cart-count{
         position: absolute;
@@ -245,13 +243,13 @@ html,body{
         margin: 0;
         .cart-count-items{
           position: absolute;
-          top: 0;
-          right: 0;
+          top: -1px;
+          right: -1px;
           height: 15px;
           width: 15px;
           background: black;
           color: white;
-          font-size: 12px;
+          font-size: 11px;
           line-height: 15px;
           border-radius: 50%;
         }

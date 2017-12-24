@@ -18,6 +18,7 @@ Route::get('/checkout', function () {
 Route::get('/search', function () {
     return view('front.search');
 });
+
 Route::prefix('/login')->group(function () {
   Route::get('/', 'LoginController@login');
   Route::post('/', 'LoginController@postLogin');
