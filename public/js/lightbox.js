@@ -18,6 +18,5 @@ $(function() {
       $('.lightbox').css('display', 'none');
     },300);
   });
-  $('.modal-dialogs').click(function() {
-  });
+
 });

@@ -21,7 +21,6 @@ jQuery(document).ready(function($) {
         $('.wrapup-button-down').css('display', 'none');
         $('.wrapup-button-up').css('display', 'inline-block');
       }
-
     });
 
 

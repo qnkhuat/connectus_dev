@@ -157,6 +157,9 @@ $borderColor:$red;
         width: 100%;
         border-radius: 3px;
         overflow: hidden;
+        p{
+          margin: 0;
+        }
         .df{
           flex-direction: row;
           align-items: center;
@@ -180,8 +183,12 @@ $borderColor:$red;
         cursor: pointer;
         .df{
           background: $red;
-          margin-bottom: 0;
         }
+      }
+      .signin-button{
+        background: #3498db;
+        margin-top: 10px;
+        display: none;
       }
       .user-infomations{
         display: flex;

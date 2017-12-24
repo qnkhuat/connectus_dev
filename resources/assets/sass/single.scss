@@ -213,6 +213,16 @@ body{
   }
   .checkout-box{
     display: none;
+    .checkout-step1{
+      .login-tab{
+        .back-button{
+          text-align: center;
+          width: 100%;
+          cursor: pointer;
+          color: $red;
+        }
+      }
+    }
     .checkout-step2{
 
       display: none;

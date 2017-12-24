@@ -2,31 +2,43 @@ jQuery(document).ready(function($) {
 
   currentTransform=0;//keep track the transform location
   currentCourses=0;//keeptrack the course in order to know when to need move 1 course
+  $('.prev-button').css('display', 'none');//hide the pre button from the beginning
+
   $('.pagination-button').click(function() {
+
     row= $(this).parent('div');
     group=row.find('.courses-group');
     courseItems=group.find('.courses-item-box');
 
-    numberOfCourses=group.children('div').length;
+    numberOfCourses=group.children('div').length -1; // -1 of more button div
     lengthOfACourse=courseItems.width();
     lengthOfGroup=group.width();
 
     ratioOfAItems=Math.round(lengthOfGroup/lengthOfACourse);
+
+    //control the hide and display of button
+    $('.prev-button').css('display', 'initial');
+    $('.next-button').css('display', 'initial');
+
     if($(this).hasClass('prev-button')){
       if(currentCourses==0){
-        //donothing
       }else if(currentCourses==1){//move 1 course
         if(ratioOfAItems==4){
           currentTransform=currentTransform+25;
           value="translate("+currentTransform+"%)";
           group.css('transform', value);
           currentCourses-=1;
+
+          $('.prev-button').css('display', 'none');
+          $('.next-button').css('display', 'initial');
         }
         if(ratioOfAItems==3){
           currentTransform=currentTransform+100/3;
           value="translate("+currentTransform+"%)";
           group.css('transform', value);
           currentCourses-=1;
+          $('.prev-button').css('display', 'none');
+          $('.next-button').css('display', 'initial');
         }
       }else{
         if(ratioOfAItems==4){
@@ -57,6 +69,10 @@ jQuery(document).ready(function($) {
           value="translate("+currentTransform+"%)";
           group.css('transform', value);
           currentCourses+=1;
+
+          //hide the button
+          $('.prev-button').css('display', 'initial');
+          $('.next-button').css('display', 'none');
         }
       }else if(ratioOfAItems==3){
         if(currentCourses+3==numberOfCourses){
@@ -71,6 +87,10 @@ jQuery(document).ready(function($) {
           value="translate("+currentTransform+"%)";
           group.css('transform', value);
           currentCourses+=1;
+
+          //hide the button
+          $('.prev-button').css('display', 'initial');
+          $('.next-button').css('display', 'none');
         }
       }
     }
@@ -99,7 +119,7 @@ jQuery(document).ready(function($) {
     }
 
   });
-  
+
 
 
 
