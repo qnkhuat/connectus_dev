@@ -39,7 +39,7 @@
 @section('courseInMainPage')
 <div id="courses">
   @include('front.components.course-row')
-  
+
 </div>
 @endsection
 
@@ -48,27 +48,11 @@
 <div id="partners">
   <h3>Đối tác chính của chúng tôi</h3>
   <div class="partners-box">
-
+    @foreach($partners as $partner)
     <div class="partners-item">
-      <img src="/images/partners/gln.png" alt="">
+      <img src="img/avatar/{{$partner->avatar}}" alt="">
     </div>
-
-    <div class="partners-item">
-      <img src="/images/partners/ila.png" alt="">
-    </div>
-
-    <div class="partners-item">
-      <img src="/images/partners/langmaster.png" alt="">
-    </div>
-
-    <div class="partners-item">
-      <img src="/images/partners/ieltstrangnguyen.jpg" alt="">
-    </div>
-
-    <div class="partners-item">
-      <img src="/images/partners/kos.jpg" alt="">
-    </div>
-
+    @endforeach
   </div>
 
 </div>

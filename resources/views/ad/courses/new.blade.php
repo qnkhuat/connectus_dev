@@ -153,15 +153,30 @@
           </div>
         </div>
 
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <p class="mr-t-10"><strong>Teachers:</strong></p>
+              <select multiple="multiple" class="multi-select" id="my_multi_select1" name="teachers[]" data-plugin="multiselect">
+                  @foreach($teachers as $teacher)
+                  <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                  @endforeach
+              </select>
+            </div>
+          </div>
 
-        <div class="form-group">
-            <p class="mr-t-10"><strong>Teachers:<span class="color-red">*</span></strong></p>
-            <select multiple="multiple" class="multi-select" required id="my_multi_select1" name="teachers[]" data-plugin="multiselect">
-                @foreach($teachers as $teacher)
-                <option value="{{$teacher->id}}">{{$teacher->name}}</option>
-                @endforeach
-            </select>
+          <div class="col-md-6">
+            <p class="mr-t-10"><strong>Teacher type: <span class="color-red">*</span></strong></p>
+            <div class="input-group">
+              <select name="teacher_type" class="selectpicker" required data-style="btn-default btn-custom">
+                  @foreach($teacherTypes as $key => $type)
+                  <option value="{{$key}}">{{$type}}</option>
+                  @endforeach
+              </select>
+            </div>
+          </div>
         </div>
+        
 
         <div class="form-group">
             <p class="mr-t-10"><strong>Opening:<span class="color-red">*</span></strong></p>
@@ -262,13 +277,21 @@
           <div class="col-md-12">
             <p class="mr-t-10"><strong>Learn time:</strong></p>
             <div class="col-md-4">
+              <p class="mr-t-10"><strong>Thời gian học: <span class="color-red">*</span></strong></p>
+              <div class="input-group">
+                <select name="time_in_date" class="selectpicker" required data-style="btn-default btn-custom">
+                    @foreach($learnTime as $key => $value)
+                    <option value="{{$key}}">{{$value}}</option>
+                    @endforeach
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
               <p>From</p>
               <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
                   <input type="text" name="time_from" class="form-control" value="18:00">
                   <span class="input-group-addon"> <span class="md md-access-time"></span> </span>
               </div>
-            </div>
-            <div class="col-md-3">
             </div>
             <div class="col-md-4">
               <p>To</p>
@@ -313,23 +336,6 @@
           <div class="col-md-12">
             <p class="mr-t-10"><strong>Imgage for introduction:<span class="color-red">*</span></strong></p>
             <input type="file" name="slideImageUploads[]" required multiple class="form-control" data-buttonname="btn-white">
-            <!-- <p class="mr-t-10">Or paste a link:</p>
-            <div class="item-image-link">
-              <div class="input-group">
-                  <input type="text" name="slideImageLink[]" class="form-control" data-buttonname="btn-white">
-                  <span class="input-group-btn" id="copy-link-file-to-clipboard" onclick="$(this).closest('.item-image-link').remove()">
-                      <button type="button" class="btn waves-effect waves-light btn-warning">
-                          <i class="fa fa-trash" aria-hidden="true"></i>
-                      </button>
-                  </span>
-              </div>
-            </div>
-
-            <div id="more-link-image-slider"></div>
-            <div class="mr-t-10">
-              <button type="button" class="btn btn-info btn-rounded waves-effect waves-light float-right more-image">more</button>
-              <div class="clearfix"></div>
-            </div> -->
           </div>
         </div>
 

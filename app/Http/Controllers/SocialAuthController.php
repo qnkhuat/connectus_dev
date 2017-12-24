@@ -31,6 +31,6 @@ class SocialAuthController extends Controller
       $user->gender = $gender;
       $user->save();
       auth()->login($user);
-      return redirect()->to('/test');
+      return redirect()->back();
   }
 }
