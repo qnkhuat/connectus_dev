@@ -81,5 +81,10 @@ class Kernel extends HttpKernel
         'categoryUpdate' => \App\Http\Middleware\CategoryUpdate::class,
         'categoryDestroy' => \App\Http\Middleware\CategoryDestroy::class,
         'categoryView' => \App\Http\Middleware\CategoryView::class,
+
+        'districtCreate' => \App\Http\Middleware\DistrictCreate::class,
+        'districtUpdate' => \App\Http\Middleware\DistrictUpdate::class,
+        'districtDestroy' => \App\Http\Middleware\DistrictDestroy::class,
+        'districtView' => \App\Http\Middleware\DistrictView::class,
     ];
 }

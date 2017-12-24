@@ -17,6 +17,7 @@ class CreateDistrictsTable extends Migration
             $table->increments('id');
             $table->string('key', 1)->unique();
             $table->string('name', 255);
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

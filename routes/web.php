@@ -60,6 +60,15 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
     Route::post('/destroy', 'UserController@destroy')->middleware("viewListAllAddress");
   });
 
+  Route::prefix('/districts')->group(function () {
+    Route::get('/', 'DistrictController@_list')->middleware("districtView");
+    Route::get('/create', 'DistrictController@_new')->middleware("districtCreate");
+    Route::post('/create', 'DistrictController@create')->middleware("districtCreate");
+    Route::get('/edit/{id}', 'DistrictController@edit')->middleware("districtUpdate");
+    Route::post('/update', 'DistrictController@update')->middleware("districtUpdate");
+    Route::post('/destroy', 'DistrictController@destroy')->middleware("districtDestroy");
+  });
+
   Route::prefix('/address')->group(function () {
     Route::get('/', 'AddressController@_list');
     Route::get('/list-all', 'AddressController@_listAll')->middleware("viewListAllAddress");

@@ -167,6 +167,18 @@
                             </li>
 
                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-location-arrow"></i> <span> Districts </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    @if($currenUserRoles->view_district)
+                                    <li><a href="/admin/districts">List</a></li>
+                                    @endif
+                                    @if($currenUserRoles->create_district)
+                                    <li><a href="/admin/districts/create">Create</a></li>
+                                    @endif
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-address-book-o"></i> <span> Address </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_all_user_address)
