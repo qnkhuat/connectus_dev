@@ -1,4 +1,4 @@
-<div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup("/khoahoc/{{$course->id}}", $(this).find(".course-popup").html())'>
+<div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'>
   <div class="course-item-content">
     <div class="course-image-box">
       <img src="/img/courses/{{$course->avatar}}" class="course-image full" alt="">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="course-popup">
-      <a class="course-info-title" href="">{{$course->name}}</a>
+      <a class="course-info-title one-line-text" href="">{{$course->name}}</a>
       <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$course->opening}}</span></p>
 
       <div class="course-price-box">
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <div class="details-box"><a href="/khoahoc/{{$course->id}}" class="details-button">Chi tiết</a><p class="interest-button">Quan tâm</p></div>
+      <div class="details-box"><a href="/khoahoc/{{$course->id}}" class="details-button">Chi tiết</a><p class="interest-button" onclick='interest( $(this).parent().parent().parent().html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p></div>
 
     </div><!-- .course-popup -->
   </div>

@@ -27,25 +27,39 @@ if(w>600){
 
 }
 
-function refreshModal(){
-  $('.checkout-step1').css('display', 'initial');
-  $('.checkout-step2').css('display', 'none');
+
+
+function toggleModal(mode){
+  if(mode ==1){
+    $('.checkout-step1').css('display', 'initial');
+    $('.checkout-step2').css('display', 'none');
+  }else if (mode ==2 ){
+    $('.checkout-step1').css('display', 'none');
+    $('.checkout-step2').css('display', 'initial');
+  }
 }
 //toggle of choose course button
 $('.choose-course-button').click(function() {
   $('.course-options-box').css('display', 'none');
   $('.checkout-box').css('display', 'initial');
+  if(login_status){
+    toggleModal(1);
+  }else{
+    toggleModal(2);
+  }
+
 });
 
 $('.modal-background').click(function() {
-  refreshModal();
-});
-//temporary js for signup course popup
-$('.checkout-step1 .login-submit').click(function() {
-  $('.checkout-step1').css('display', 'none');
-  $('.checkout-step2').css('display', 'initial');
+  $('.course-options-box').css('display', 'initial');
+  $('.checkout-box').css('display', 'none');
 });
 
+// //temporary js for signup course popup
+// $('.checkout-step1 .login-submit').click(function() {
+//   toggleModal(2);
+// });
+//
 
 
 

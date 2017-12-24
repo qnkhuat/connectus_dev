@@ -1,6 +1,7 @@
 
 @extends('front.layout')
 
+
 @section('latter_css')
 <link rel="stylesheet" href="/css/courses.css" media="screen" >
 <link rel="stylesheet" href="/css/single.css" media="screen" >
@@ -161,7 +162,7 @@
 @endsection
 
 <!-- add the back button in choose course section -->
-@section('addtion_login')
+@section('addition_login')
 <div class="back-button"><i class="fa fa-undo" aria-hidden="true"></i> Chọn lớp</div>
 @endsection
 

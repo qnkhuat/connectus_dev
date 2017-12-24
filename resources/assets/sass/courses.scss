@@ -213,6 +213,15 @@ $borderColor:$red;
     transform: translate(0,-100%);
     .course-popup-mobile-content{
       margin-right: 75px;
+      .course-image-box,.course-info-box{
+        display: none;
+      }
+      .course-popup{
+        display: initial;
+        a,.course-info-short,.course-info-intro-summary{
+          margin: 0;
+        }
+      }
     }
     .details-box{
       position: absolute;
@@ -232,9 +241,6 @@ $borderColor:$red;
         background: $red;
         color: white;
       }
-      // .addcart-button{
-      //   display: none;
-      // }
       .interest-button{
         width: 100%;
         height: 50%;

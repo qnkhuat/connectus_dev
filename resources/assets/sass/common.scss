@@ -42,7 +42,7 @@ $borderColor:$red;
 .df{
   display: flex;
 }
-.cart{
+.interest-button-top{
   line-height: 43px;
   position: relative;
   height: 40px;
@@ -56,7 +56,7 @@ $borderColor:$red;
   a{
     color:$red;
   }
-  .cart-count{
+  .interest-count{
     color: $red;
   }
 }
@@ -68,6 +68,7 @@ $borderColor:$red;
   height: 50px;
   border-radius: $bradius;
   display: flex;
+  overflow: hidden;
   p,a{
     display: flex;
     justify-content: center;

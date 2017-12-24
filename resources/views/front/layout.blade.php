@@ -59,10 +59,12 @@
           @else
             <p class="lightbox-button login-popup login-button">Đăng nhập</p>
           @endif
-          <div class="cart">
+          <div class="interest-button-top">
             <a href="" class="fa fa-heart-o cart-icon"></a>
-            <span class="cart-count"><span class="cart-count-items">1</span> khoá</span>
-            <div class="cart-popup"></div>
+            <span class="interest-count"><span class="interest-count-items">0</span></span>
+            <div class="cart-popup">
+
+            </div>
 
           </div>
         </div>
@@ -132,10 +134,11 @@
             </div>
           </div><!--// .menu-mobile-popup -->
         </div>
-        <div class="cart">
+        <div class="interest-button-top">
           <a href="" class="fa fa-heart-o cart-icon "></a>
 
-          <h1 class="cart-count"><p class="cart-count-items">1</p></h1>
+          <h1 class="interest-count"><p class="interest-count-items">1</p></h1>
+          <div class="cart-popup"></div>
         </div>
       </div><!-- #menu-mobile -->
 
