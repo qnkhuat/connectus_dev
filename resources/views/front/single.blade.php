@@ -136,9 +136,6 @@
           </div>
           <!-- //.course-details-comment-box -->
 
-          <!-- .courses-row -->
-
-          <!-- //.courses-row -->
 
         </div>
         <!-- //#course-details -->
