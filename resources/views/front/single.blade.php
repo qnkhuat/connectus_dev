@@ -18,10 +18,10 @@
   <div class="course-details-headline">
     <div class="container course-details-box">
       <div class="course-details-info-left">
-        <h1 class="course-info-title">Học tiếng anh cho người nghèo</h1>
-        <p class="course-info-intro-summary">Người giàu cũng học được</p>
+        <h1 class="course-info-title">{{$course->name}}</h1>
+        <p class="course-info-intro-summary">{{$course->description}}</p>
         <div class="course-info-rating">
-          {!! strlen($course->sale) > 1 ? '<div class="best-seller-tag best-seller-non-fix"><span>Best seller</span></div>' : "" !!}
+          {!! $course->sale > 0 ? '<div class="best-seller-tag best-seller-non-fix"><span>Best seller</span></div>' : "" !!}
           <div class="stars-rating-static">
             <span class="star-rating-static-first fa fa-star">
                 <span class="star-rating-static-second fa fa-star" style="width: 69%;"></span>
@@ -30,7 +30,7 @@
           <div class="course-info-enrolled-student"><span class="course-info-enrolled-student-count">100</span> Học viên đã đăng ký khoá học này</div>
         </div>
 
-        <div class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->name}}</span></div>
+        <div class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></div>
       </div><!-- //.course-details-info-left -->
 
       <div class="course-details-info-right">
@@ -154,7 +154,7 @@
 <div class="container">
   <div id="courses">
 
-    @include('front.components.course-row')
+    @include('front.components.course_row')
 
   </div><!-- #courses -->
 </div>
