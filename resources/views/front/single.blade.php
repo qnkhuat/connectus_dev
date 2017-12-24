@@ -207,7 +207,11 @@
       <div class="checkout-box">
 
         <div class="checkout-step1 checkout-login-step checkout-steps">
-          @include('front.components.login')
+          <div class="login-tab">
+            <div class="login-facebook login-tab-button">
+              <a href="" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng Facebook</a>
+            </div>
+          </div><!-- .login-tab -->
         </div>
 
         <div class="checkout-step2 checkout-input-step checkout-steps">
