@@ -34,6 +34,9 @@ class CreateCoursesTable extends Migration
             $table->integer('lesson_total')->nullable()->default(0);
             $table->integer('hour_total')->nullable()->default(0);
             $table->integer('session_total')->nullable()->default(0);
+            $table->integer('session_per_week')->nullable()->default(0);
+            $table->string('districts_text', 511)->nullable();
+            $table->string('districts_array_id', 511)->nullable();
             $table->string('day_in_week', 255)->nullable();
             $table->string('time', 255)->nullable();
             $table->string('time_from', 255)->nullable();

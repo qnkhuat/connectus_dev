@@ -155,7 +155,7 @@
                       <div>
                         @foreach($role["original"] as $key => $r)
                           @if($r == 1 && $key != "id" && $key != "user_id" && $key != "created_at" && $key != "updated_at")
-                          <span class="label label-table label-success">{{$key}}</span>
+                          <span class="label label-table label-{{$labels[rand(0, 8)]}}">{{$key}}</span>
                           @endif
                         @endforeach
                       </div>

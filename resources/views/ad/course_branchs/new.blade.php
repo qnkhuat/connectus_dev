@@ -71,9 +71,9 @@
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Day of week:</strong><span class="color-red">*</span></p>
+            <p class="mr-t-10"><strong>Các ngày trong tuần:</strong><span class="color-red">*</span></p>
             <div class="input-group">
-                <input type="text" name="day_of_week" required class="form-control" data-buttonname="btn-white">
+                <input type="text" name="day_of_week" required class="form-control" data-buttonname="btn-white" placeholder="2, 3, 5">
             </div>
           </div>
         </div>
@@ -90,6 +90,26 @@
                         <input type="text" name="opening" required class="form-control" placeholder="yyyy/mm/dd" id="datepicker-autoclose">
                     </div><!-- input-group -->
                 </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mr-t-10"><strong>Learn time:</strong></p>
+            <div class="col-md-4">
+              <p>From</p>
+              <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
+                  <input type="text" name="time_from" class="form-control" value="18:00">
+                  <span class="input-group-addon"> <span class="md md-access-time"></span> </span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p>To</p>
+              <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
+                  <input type="text" name="time_to" class="form-control" value="21:00">
+                  <span class="input-group-addon"> <span class="md md-access-time"></span> </span>
+              </div>
             </div>
           </div>
         </div>

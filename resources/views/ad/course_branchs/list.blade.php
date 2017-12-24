@@ -99,6 +99,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <th>Day of week</th>
           <th>Opening</th>
           <th>Address</th>
+          <th>Time</th>
           <th>Manage</th>
         </tr>
 
@@ -111,6 +112,9 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <a href="/admin/address/edit/{{$branch->address_id}}">
             {{$address->where("id", $branch->address_id)->first()->sort_description}}
             </a>
+          </td>
+          <td>
+            {{$branch->time_from}} - {{$branch->time_to}}
           </td>
           <td>
             <a href="/admin/courses/branchs/{{$course->id}}/edit/{{$branch->id}}">

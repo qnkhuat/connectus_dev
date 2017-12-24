@@ -17,6 +17,8 @@ class CreateAddressTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('district_id')->unsigned();
+            $table->foreign('district_id')->references('id')->on('districts');
             $table->string('sort_description', 255);
             $table->string('address', 512);
             $table->timestamps();

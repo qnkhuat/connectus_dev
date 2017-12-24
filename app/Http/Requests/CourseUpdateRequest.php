@@ -38,6 +38,8 @@ class CourseUpdateRequest extends FormRequest
             "teachers" => "array",
             "teacher_type" => "required",
             "time_in_date" => "required",
+            "session_per_week" => "required|numeric",
+            "districts_array_id" => "required|array",
             // "current_student_total" => "numeric",
             // "student_total" => "numeric",
             // "lesson_total" => "numeric",

@@ -261,14 +261,28 @@
 
         <div class="row">
           <div class="col-md-12">
-            <p class="mr-t-10"><strong>Days in week:</strong></p>
+            <p class="mr-t-10"><strong>Các ngày trong tuần:</strong></p>
             <div class="input-group">
                 <span class="input-group-btn" id="copy-link-file-to-clipboard">
                     <button type="button" class="btn waves-effect waves-light btn-success">
                         <i class="md md-mode-edit" aria-hidden="true"></i>
                     </button>
                 </span>
-                <input type="text" name="day_in_week" id="input-name-page" class="form-control" data-parsley-length="[1,255]">
+                <input type="text" name="day_in_week" id="input-name-page" class="form-control" data-parsley-length="[1,255]" placeholder="2, 3, 5">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mr-t-10"><strong>Số buổi trong 1 tuần:</strong><span class="color-red">*</span></strong></p>
+            <div class="input-group">
+                <span class="input-group-btn" id="copy-link-file-to-clipboard">
+                    <button type="button" class="btn waves-effect waves-light btn-success">
+                        <i class="md md-mode-edit" aria-hidden="true"></i>
+                    </button>
+                </span>
+                <input type="number" required name="session_per_week" id="input-name-page" class="form-control" data-parsley-length="[1,255]">
             </div>
           </div>
         </div>
@@ -299,6 +313,19 @@
                   <input type="text" name="time_to" class="form-control" value="21:00">
                   <span class="input-group-addon"> <span class="md md-access-time"></span> </span>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <p class="mr-t-10"><strong>Districts:</strong><span class="color-red">*</span></strong></p>
+              <select multiple="multiple" required class="multi-select" id="my_multi_select1" name="districts_array_id[]" data-plugin="multiselect">
+                  @foreach($districts as $district)
+                  <option value="{{$district->id}}">{{$district->name}}</option>
+                  @endforeach
+              </select>
             </div>
           </div>
         </div>

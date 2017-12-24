@@ -25,6 +25,7 @@ class AddressUpdateRequest extends FormRequest
     {
         return [
             "id" => "required|numeric|exists:address,id",
+            "district_id" => "required|max:1|exists:districts,id",
             "sort_description" => "required|max:255",
             "address" => "required|max:512",
         ];

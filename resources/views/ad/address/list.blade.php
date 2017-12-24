@@ -82,6 +82,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <table class="table table-hover table-bordered">
         <tr class="text-center">
           <th>#</th>
+          <th>District</th>
           <th>Sort description</th>
           <th>Address</th>
           <th>Manage</th>
@@ -90,6 +91,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
         @foreach ($address as $key => $a)
         <tr>
             <td>{{ $key + 1 }}</td>
+            <td>{{$a->district->name}}</td>
             <td>{{$a->sort_description}}</td>
             <td>{{$a->address}}</td>
             <td>

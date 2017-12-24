@@ -21,6 +21,8 @@ class CreateCourseBranchsTable extends Migration
             $table->date('opening')->nullable();
             $table->integer('address_id')->unsigned();
             $table->foreign('address_id')->references('id')->on('address');
+            $table->string('time_from', 255)->nullable();
+            $table->string('time_to', 255)->nullable();
             $table->timestamps();
         });
     }

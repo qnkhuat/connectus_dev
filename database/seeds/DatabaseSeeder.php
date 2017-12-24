@@ -256,21 +256,21 @@ class DatabaseSeeder extends Seeder
             'publish' => true
         ]);
 
-        Address::create([
-          'user_id' => $partner1->id,
-          'sort_description' => 'Cơ sở Hồ Tùng Mậu',
-          'address' => 'số 69 ngách 96 đường Hồ Tùng Mậu, phường Hồ Tùng Mậu, quận Hồ Tùng Mậu',
-        ]);
-        Address::create([
-          'user_id' => $partner1->id,
-          'sort_description' => 'Cơ sở Hồ XUân Hương',
-          'address' => 'số 69 ngách 96 đường Hồ XUân Hương, phường Hồ XUân Hương, Hồ XUân Hương',
-        ]);
-        Address::create([
-          'user_id' => $partner2->id,
-          'sort_description' => 'Cơ sở Lào Kai',
-          'address' => 'Vách núi',
-        ]);
+        // Address::create([
+        //   'user_id' => $partner1->id,
+        //   'sort_description' => 'Cơ sở Hồ Tùng Mậu',
+        //   'address' => 'số 69 ngách 96 đường Hồ Tùng Mậu, phường Hồ Tùng Mậu, quận Hồ Tùng Mậu',
+        // ]);
+        // Address::create([
+        //   'user_id' => $partner1->id,
+        //   'sort_description' => 'Cơ sở Hồ XUân Hương',
+        //   'address' => 'số 69 ngách 96 đường Hồ XUân Hương, phường Hồ XUân Hương, Hồ XUân Hương',
+        // ]);
+        // Address::create([
+        //   'user_id' => $partner2->id,
+        //   'sort_description' => 'Cơ sở Lào Kai',
+        //   'address' => 'Vách núi',
+        // ]);
         Teacher::create([
           'user_id' => $partner1->id,
           "name" => "cô giáo thảo ))"
