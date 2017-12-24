@@ -81,6 +81,11 @@ class CreateRolesTable extends Migration
             $table->boolean('destroy_log')->default(false);
             $table->boolean('view_log')->default(false);
 
+            $table->boolean('create_district')->default(false);
+            $table->boolean('update_district')->default(false);
+            $table->boolean('destroy_district')->default(false);
+            $table->boolean('view_district')->default(false);
+
             $table->boolean('create_menu')->default(false);
             $table->boolean('update_menu')->default(false);
             $table->boolean('destroy_menu')->default(false);

@@ -123,6 +123,11 @@ class DatabaseSeeder extends Seeder
           'destroy_log' => true,
           'view_log' => true,
 
+          'create_district' => true,
+          'update_district' => true,
+          'destroy_district' => true,
+          'view_district' => true,
+
           'create_menu' => true,
           'update_menu' => true,
           'destroy_menu' => true,
