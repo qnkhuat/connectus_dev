@@ -38,7 +38,7 @@
 
 @section('courseInMainPage')
 <div id="courses">
-  @include('front.components.course-row')
+  @include('front.components.course_row')
 
 </div>
 @endsection
