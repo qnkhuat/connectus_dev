@@ -21,13 +21,18 @@ class CreateOrdersTable extends Migration
             $table->foreign('course_id')->references('id')->on('courses');
             $table->integer('course_branch_id')->unsigned();
             $table->foreign('course_branch_id')->references('id')->on('course_branchs');
-            $table->float('price')->nullable();
-            $table->float('sale')->nullable();
+            $table->float('price', 16)->nullable();
+            $table->float('sale', 16)->nullable();
             $table->date('opening')->nullable();
             $table->string('gift', 511)->nullable();
+            $table->string('name', 255)->nullable();
             $table->string('message', 511)->nullable();
             $table->string('description', 511)->nullable();
-            $table->enum('status', ['not_seen', 'seen', 'sent', 'received_success', 'received_fail']);
+            $table->date('payment_schedule')->nullable(); // ngày user hẹn đóng tiền
+            $table->date('payment_date_complete')->nullable(); // ngày thanh toán thực (đã thanh toán vào ngày này)
+            $table->date('receive_money_date')->nullable(); // ngày hệ thống nhận được tiền
+            $table->float('admin_receive_money_count', 16)->nullable()->default(0); // số tiền hoa hồng admin nhận được
+            $table->enum('admin_status', ['not_seen', 'seen', 'sent', 'received_success', 'received_fail']);
             $table->timestamps();
         });
     }
