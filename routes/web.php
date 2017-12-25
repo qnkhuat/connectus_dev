@@ -125,6 +125,13 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
     });
   });
 
+  Route::prefix('/orders')->group(function () {
+    Route::get('/', 'OrdersController@_list');
+    Route::get('/list-all', 'OrdersController@_listAll');
+    Route::get('/detail/{course_id}', 'OrdersController@detail');
+    Route::get('/request', 'OrdersController@_request');
+  });
+
 	Route::prefix('/files')->group(function () {
 		Route::get('/', function () {
 			return view("ad.files.list");

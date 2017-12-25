@@ -245,6 +245,15 @@
                             </li>
 
                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="md md-my-library-books"></i> <span> Orders </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="/admin/orders/list-all">List all</a></li>
+                                    <li><a href="/admin/orders">List</a></li>
+                                    <li><a href="/admin/orders/request">Request</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="md md-my-library-books"></i> <span> Pages </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="/admin/pages">List</a></li>
