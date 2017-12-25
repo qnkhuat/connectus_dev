@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Order;
 
 class OrdersController extends Controller
 {
@@ -10,8 +11,14 @@ class OrdersController extends Controller
         return view("ad.orders.list");
     }
 
-    public function _listAll() {
-        return view("ad.orders.list_all");
+    public function _listAll(Request $request) {
+        $perpage = (int) $request->perpage;
+        $perpage < 5 ? $perpage = 5 : $perpage;
+        $perpage > 50 ? $perpage = 50 : $perpage;
+        $name = $request->name;
+
+        $orders = Order::paginate($perpage);
+        return view("ad.orders.list_all", ["orders" => $orders]);
     }
 
     public function detail() {

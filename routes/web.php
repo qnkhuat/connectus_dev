@@ -126,10 +126,10 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
   });
 
   Route::prefix('/orders')->group(function () {
-    Route::get('/', 'DistrictController@_list');
-    Route::get('/list-all', 'DistrictController@_listAll');
-    Route::get('/detail/{course_id}', 'DistrictController@detail');
-    Route::get('/request', 'DistrictController@_request');
+    Route::get('/', 'OrdersController@_list');
+    Route::get('/list-all', 'OrdersController@_listAll');
+    Route::get('/detail/{course_id}', 'OrdersController@detail');
+    Route::get('/request', 'OrdersController@_request');
   });
 
 	Route::prefix('/files')->group(function () {
