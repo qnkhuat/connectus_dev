@@ -213,7 +213,7 @@
 
       </div>
 
-      <div class="checkout-box">
+      <div class="checkout-box">ph
 
         <div class="checkout-step1 checkout-login-step checkout-steps">
           @include('front.components.login')
