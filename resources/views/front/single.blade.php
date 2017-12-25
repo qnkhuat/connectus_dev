@@ -10,6 +10,9 @@
 @endsection
 
 @section('latter_js')
+<script type="text/javascript">
+  login_status=false;
+</script>
 <script src="/js/single.js"></script>
 @endsection
 
@@ -18,20 +21,38 @@
   <!-- .course-details-headline -->
   <div class="course-details-headline">
     <div class="container course-details-box">
-      <div class="course-details-info-left">
-        <h1 class="course-info-title">{{$course->name}}</h1>
-        <p class="course-info-intro-summary">{{$course->description}}</p>
-        <div class="course-info-rating">
-          {!! $course->sale > 0 ? '<div class="best-seller-tag best-seller-non-fix"><span>Best seller</span></div>' : "" !!}
-          <div class="stars-rating-static">
-            <span class="star-rating-static-first fa fa-star">
-                <span class="star-rating-static-second fa fa-star" style="width: 69%;"></span>
-            </span>
-          </div>
-          <div class="course-info-enrolled-student"><span class="course-info-enrolled-student-count">100</span> Học viên đã đăng ký khoá học này</div>
-        </div>
 
-        <div class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></div>
+      <div class="course-details-info-left">
+        <!-- added the interested-course for the purpose of interest-button -->
+
+        <div class="interested-course">
+          <div class="details-box"><a href="/khoahoc/{{$course->id}}" class="details-button">Chi tiết</a><p class="interest-button" onclick='interest( $(this).parent().parent().parent().html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p></div>
+        <!-- added the interested-course for the purpose of interest-button -->
+
+
+
+          <h1 class="course-info-title">{{$course->name}}</h1>
+          <div class="course-price-box">
+            @if($course->new_price_only)
+            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            @else
+            <span class="course-price-origin">{{number_format($course->old_price)}}</span>
+            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            @endif
+          </div>
+          <p class="course-info-intro-summary">{{$course->description}}</p>
+          <div class="course-info-rating">
+            {!! $course->sale > 0 ? '<div class="best-seller-tag best-seller-non-fix"><span>Best seller</span></div>' : "" !!}
+            <div class="stars-rating-static">
+              <span class="star-rating-static-first fa fa-star">
+                  <span class="star-rating-static-second fa fa-star" style="width: 69%;"></span>
+              </span>
+            </div>
+            <div class="course-info-enrolled-student"><span class="course-info-enrolled-student-count">100</span> Học viên đã đăng ký khoá học này</div>
+          </div>
+
+          <div class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></div>
+        </div>
       </div><!-- //.course-details-info-left -->
 
       <div class="course-details-info-right">
@@ -47,7 +68,8 @@
             <span class="course-price-sale">{{number_format($course->new_price)}}</span>
             @endif
           </div>
-          <div class="choose-class-box"><p class="lightbox-button choose-class choose-class-button ">Chọn lớp</p></div>
+          <div class="choose-class-box"><p class="lightbox-button choose-class choose-class-button ">Chọn lớp</p><p class="interest-button" onclick='interest( $(".course-details-info-left").html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p></div>
+
           <div class="course-details-addition-info">
             <ul>
               <li class="student-per-class-bar"><i class="fa fa-users" aria-hidden="true"></i> Số lượng học viên/lớp: <span class="student-per-class-number">{{$course->student_total}}</span></li>
@@ -154,8 +176,8 @@
 @section('coursesInSinglePate')
 <div class="container">
   <div id="courses">
-
-    @include('front.components.course_row')
+    <!-- CHANGED ORIGINAL: course_row instead of course_row_replace -->
+    @include('front.components.course_row_replace')
 
   </div><!-- #courses -->
 </div>
@@ -206,14 +228,14 @@
           </div>
           <div class="choose-course-box">
             <p class="choose-course-button">Tham gia</p>
-            <p class="interest-button">Quan tâm</p>
+            <!-- <p class="interest-button" onclick='interest( $(".course-popup").html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p> -->
           </div>
         </div>
         @endforeach
 
       </div>
 
-      <div class="checkout-box">ph
+      <div class="checkout-box">
 
         <div class="checkout-step1 checkout-login-step checkout-steps">
           @include('front.components.login')
@@ -244,6 +266,11 @@
             <div class="checkout-input-coupon">
               <input type="text">
               <button type="submit">Áp dụng</button>
+            </div>
+
+            <p>Bạn có muốn thôgn tin gì thêm?</p>
+            <div class="checkout-input-addition-info">
+              <input type="text" placeholder="Tôi yêu cầu...">
             </div>
 
             <p>Bạn biết đến ConnectUs qua:</p>

@@ -145,9 +145,9 @@ html,body{
   margin-bottom: 50px;
   .cart-popup{
     position: absolute;
-    display: grid;
+    display: none;
     width: 300px;
-    left: 0;
+    right: -190%;
     border-radius: $bradius;
     text-align: left;
     box-shadow: 0 2px 8px hsla(210,3%,87%,.5);
@@ -157,7 +157,7 @@ html,body{
     .course-image-box,.course-info-box{
       display: none;
     }
-    .course-popup{
+    .interested-course{
       display: grid !important;
       border-bottom: 1px solid $gray;
       color: black;
@@ -174,10 +174,21 @@ html,body{
         margin: 0;
       }
       .course-info-title{
-        font-size: 16px;
-        line-height: 21px;
-        margin: 0;
+        font-size: 16px !important;
+        line-height: 21px !important;
+        margin: 0 !important;
         color: $red !important;
+      }
+      .course-info-intro-summary{
+        display: none;
+      }
+      .course-info-rating{
+        display: none;
+      }
+      .course-info-centre{
+        line-height: 15px;
+        margin: 0;
+        font-size: 14px;
       }
       .course-price-box{
         text-align: left;
@@ -202,7 +213,7 @@ html,body{
         display: none !important;
       }
 
-    .course-popup:last-child{
+    .interested-course:last-child{
       border: none;
     }
   }
@@ -354,7 +365,9 @@ html,body{
     }//#menu-desktop
     #menu-mobile{
       display: initial;
-
+      .cart-popup{
+        display: none;
+      }
     }//#menu-mobile
   }//#menu
   .menu-mobile-popup::before{
@@ -441,5 +454,8 @@ footer{
     line-height: 30px;
     transform: translateX(-50%);
     color: white;
+    i{
+      line-height: 30px;
+    }
   }//.facebook-icon
 }//footer

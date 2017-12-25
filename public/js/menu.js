@@ -51,36 +51,8 @@ jQuery(document).ready(function($) {
       $('.menu-mobile-popup-second-sence').css('display', 'inline-block');
     });
 
-    // $('body').click(function() {
-    //   if($('.menu-logo-button').hasClass('open')){
-    //     $('.menu-logo-button').removeClass('open');
-    //     $('.menu-mobile-popup').css('display', 'none');
-    //   }
-    // });
-    // var boxDisplay = false;
-    // var $win = $(window); // or $box parent container
-		// var $box = $(".menu-logo-button");
-    //
-    //
-		//  $win.on("click.Bst", function(event){
-    //   if (
-    //     $box.has(event.target).length == 0 //checks if descendants of $box was clicked
-    //     &&
-    //     !$box.is(event.target) //checks if the $box itself was clicked
-    //   ){
-    //
-    //     alert("outside")
-    //
-		// 	} else {
-		// 		alert("inside")
-		// 	}
-		// });
-    //
-    //
 
-
-
-    //change when click interest-butotn
+//change when click interest-butotn
 
 });
 var w = $(document).width();
@@ -92,16 +64,18 @@ function coursePopup(content){
 
 function interest(content,isHave){
   if(!isHave){
-    console.log('ha');
+    //append html to cart window
+
     $('.cart-popup').append(content);
 
+    //change the number of order
+    addCourses = parseInt($('.interest-count-items').html()) +1;
+    $('.interest-count-items').html(addCourses);
 
-      addCourses = parseInt($('.interest-count-items').html()) +1;
-      $('.interest-count-items').html(addCourses);
-      $('.cart-popup').css('display', 'grid');
-      setTimeout(function(){
-        $('.cart-popup').css('display', 'none');
-      },2000)
-
+    //display the cart window
+    $('.cart-popup').css('display', 'grid');
+    setTimeout(function(){
+      $('.cart-popup').css('display', 'none');
+    },2000)
   }
 }

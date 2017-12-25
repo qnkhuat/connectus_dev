@@ -133,6 +133,9 @@ $borderColor:$red;
   position: absolute;
   top: 140px;
   cursor: pointer;
+  i{
+    line-height: 36px;
+  }
 }
 .pagination-button:hover{
   box-shadow: 0 2px 8px 2px rgba(20,23,28,.15);
@@ -218,7 +221,7 @@ $borderColor:$red;
       }
       .course-popup{
         display: initial;
-        a,.course-info-short,.course-info-intro-summary{
+        a,.course-info-short,.course-info-intro-summary,.course-info-centre{
           margin: 0;
         }
       }

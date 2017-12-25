@@ -20,8 +20,8 @@ body{
     background: #2a303b;
     padding: 60px 0;
     color: white;
-    .course-info-title{
-
+    .course-price-box{
+      display: none;
     }
     .course-info-intro-summary{
       font-size: 21px;
@@ -47,6 +47,9 @@ body{
     position: relative;
     .course-details-info-left{
       width: calc(200%/3);
+      .details-box{
+        display: none;
+      }
       #courses{
         display: grid;
         .courses-row{
@@ -58,6 +61,7 @@ body{
       }
       .course-details-comment-box{
         margin-top: 30px;
+        display: none;
         .course-details-comments-list{
         .course-details-comment-individuals{
           border: solid $borderColor;
@@ -241,8 +245,12 @@ body{
       }
     }
     .checkout-step2{
-
       display: none;
+      .addcart-box{
+        .addcart-button{
+          width: 100%;
+        }
+      }
       h3{
         text-align: center;
         margin: 0;
@@ -328,10 +336,17 @@ body{
   height: 50px;
   border-radius: $bradius;
   display: flex;
-  .choose-class-button{
-    line-height: 50px;
+  overflow: hidden;
+  .choose-class-button,.interest-button{
     color: white;
-    width: 100%;
+    width: 50%;
+    cursor: pointer;
+    margin: 0;
+    line-height: 50px;
+
+  }
+  .choose-class-button{
+    background: #3498db;
   }
 }
 

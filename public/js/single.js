@@ -55,12 +55,6 @@ $('.modal-background').click(function() {
   $('.checkout-box').css('display', 'none');
 });
 
-// //temporary js for signup course popup
-// $('.checkout-step1 .login-submit').click(function() {
-//   toggleModal(2);
-// });
-//
-
 
 
 //handle the back button
@@ -68,3 +62,12 @@ $('.back-button').click(function() {
   $('.course-options-box').css('display', 'initial');
   $('.checkout-box').css('display', 'none');
 });
+
+
+
+//check the login login_status
+
+if(login_status){
+  $('.checkout-step1').css('display', 'none');
+  $('.checkout-step2').css('display', 'block');
+}

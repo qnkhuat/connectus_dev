@@ -1,9 +1,10 @@
 <div class="course-ielts courses-row">
   <h3 class="courses-row-title padding-0-15"><a href="">Khoá học IELTS</a></h3>
   <div class="courses-group more-group">
-    <?php for($i = 1; $i <= 7; $i ++) { ?>
-    @include('front.components.singleCourse')
-    <?php } ?>
+    @foreach($courses as $course)
+    <!-- CHANGED original:single_course instead of single_course_replace -->
+    @include('front.components.single_course_replace')
+    @endforeach
     <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
   </div><!-- //.courses-group -->
 

@@ -157,6 +157,13 @@ $borderColor:$red;
     width: 400px;
     z-index: 3;
     .login-tab{
+      //temporay just can singin through Facebook
+      div{
+        display: none !important;
+      }
+      .login-facebook{
+        display: block !important;
+      }
       .login-tab-button{
         box-shadow: 0 2px 2px 0 rgba(41,48,59,.24), 0 0 2px 0 rgba(41,48,59,.12);
         width: 100%;

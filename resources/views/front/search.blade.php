@@ -126,7 +126,8 @@
 <div class="course-result">
   <div class="container">
     <?php for($i = 1; $i <= 7; $i ++) { ?>
-    @include('front.components.singleCourse')
+      <!-- CHANGED original:single_coure instead of single_course_replace -->
+    @include('front.components.single_course_replace')
     <?php } ?>
     <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
   </div>

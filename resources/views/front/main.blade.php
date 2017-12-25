@@ -38,7 +38,8 @@
 
 @section('courseInMainPage')
 <div id="courses">
-  @include('front.components.course_row')
+  <!-- CHANGED original:course_row instead of course_row_replace -->
+  @include('front.components.course_row_replace')
 
 </div>
 @endsection

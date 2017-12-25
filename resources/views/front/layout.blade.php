@@ -17,6 +17,7 @@
     <!-- LIBARIES -->
     <link rel="stylesheet" href="/css/drooltip.css" media="screen" >
     <link rel="stylesheet" href="/css/swiper.min.css" media="screen" >
+    <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" >
 
 
     <!------------CSS -->
@@ -187,8 +188,9 @@
 
 
     <script src="/backend/assets/js/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <script src="/js/swiper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
     <script src="/js/header.js"></script>
     <script src="/js/drooltip.src.js"></script>
