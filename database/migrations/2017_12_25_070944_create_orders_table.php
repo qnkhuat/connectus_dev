@@ -19,6 +19,8 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')->references('id')->on('courses');
+            $table->integer('course_branch_id')->unsigned();
+            $table->foreign('course_branch_id')->references('id')->on('course_branchs');
             $table->float('price')->nullable();
             $table->float('sale')->nullable();
             $table->date('opening')->nullable();
