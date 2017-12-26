@@ -1,16 +1,5 @@
+@import "variables";
 
-$red:#d61e2a;
-$pink:#e55e8d;
-$violet:#828bcc;
-$reda:#d61e2a;
-$blue:#164675;//facebook
-$buttonColor: black;
-$bradius:3px;
-$transition-time:0.3s ;
-$titleBlue:#017691;
-$itemwidth:23%;
-$padding:13px;
-$borderColor:$red;
 #banner{
   background: url("/images/header/banner2.jpg");
   margin-top: 50px;
@@ -54,7 +43,7 @@ $borderColor:$red;
       left: 0;
       right: 0;
       bottom: 0;
-      background: #ff5850;
+      background: black;
       transition: $transition-time all;
       font-size: 20px;
       line-height: 100px;
@@ -65,7 +54,7 @@ $borderColor:$red;
     .language:before{
       content: "";
       z-index: -1;
-      background: red;
+      background: $color2;
     }
     a{
       position: absolute;
@@ -121,7 +110,7 @@ $borderColor:$red;
     align-items: center;
     font-size: 20px;
     height: 70px;
-    background: $red;
+    background: $button1;
     a{
       color: white;
     }

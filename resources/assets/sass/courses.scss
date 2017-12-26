@@ -1,21 +1,9 @@
-
-$red:#d61e2a;
-$pink:#e55e8d;
-$violet:#828bcc;
-$reda:#d61e2a;
-$blue:#164675;//facebook
-$buttonColor: black;
-$bradius:3px;
-$transition-time:0.3s ;
-$titleBlue:#017691;
-$itemwidth:23%;
-$padding:13px;
-$borderColor:$red;
+@import "variables";
 
 .best-seller-tag{
   position: absolute;
   top: 10px;
-  background: $red;
+  background: $button2;
   color: white;
   left: 0;
   border-radius: $bradius;
@@ -28,7 +16,7 @@ $borderColor:$red;
   span:after{
     border-radius: 3px;
     right: -4px;
-    background: inherit;
+    background: $button2;
     content: "";
     height: 14px;
     position: absolute;
@@ -37,7 +25,6 @@ $borderColor:$red;
     width: 14px;
     z-index: -1;
     display: block;
-    background: $red;
   }
 }
 .best-seller-non-fix{
@@ -102,7 +89,7 @@ $borderColor:$red;
         }
         .course-price-sale{
           font-size: 18px;
-          color: $red;
+          color: $color1;
         }
       }
     }//..course-info-box
@@ -123,7 +110,7 @@ $borderColor:$red;
 
 .pagination-button{
   box-shadow: 0px 2px 6px 2px rgba(20, 23, 28, 0.15);
-  color: $red;
+  color: $color1;
   height: 35px;
   width: 35px;
   border-radius: 50%;

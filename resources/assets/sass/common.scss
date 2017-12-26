@@ -1,16 +1,5 @@
+@import "variables";
 
-$red:#d61e2a;
-$pink:#e55e8d;
-$violet:#828bcc;
-$reda:#d61e2a;
-$blue:#164675;//facebook
-$buttonColor: black;
-$bradius:3px;
-$transition-time:0.3s ;
-$titleBlue:#017691;
-$itemwidth:23%;
-$padding:13px;
-$borderColor:$red;
 .padding-0-30{
   padding: 0 30px;
 }
@@ -54,16 +43,16 @@ $borderColor:$red;
   transition: 0.3s all;
   background: white;
   i{
-    color:$red;
+    color:$color1;
   }
   .interest-count{
-    color: $red;
+    color: $color1;;
   }
 }
 
 .details-box,.addcart-box{
   text-align: center;
-  background: $red;
+  background: $button1;
   position: relative;
   height: 50px;
   border-radius: $bradius;
@@ -80,7 +69,7 @@ $borderColor:$red;
     cursor: pointer;
   }
   .details-button{
-    background: #3498db;
+    background: $button3;
   }
 }
 .course-price-box{
@@ -92,7 +81,7 @@ $borderColor:$red;
   }
   .course-price-sale{
     font-size: 18px;
-    color: $red;
+    color: $color1;
   }
 }
 .full{
@@ -166,7 +155,7 @@ $borderColor:$red;
     margin-top: 10px;
     cursor: pointer;
     .df{
-      background: $red;
+      background: $color1;
     }
   }
   .signin-button{
@@ -287,9 +276,9 @@ $borderColor:$red;
     display: block;
     text-align: center;
     line-height: 30px;
-    border: 1px solid $red;
+    border: 1px solid $color1;
     border-radius: $bradius;
-    color: $red;
+    color: $color1;
     background: white;
     cursor: pointer;
     font-size: 14px;
