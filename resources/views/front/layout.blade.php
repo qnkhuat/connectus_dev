@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="/images/header/logo_transparent.png">
     <title>ConnectUs - Học nhiều hơn,tiết kiệm hơn</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7//css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- file js nay tao rat nhieu class o html -->
     <script src="/backend/assets/js/modernizr.min.js"></script>
 
     <!------------FONTS -->
@@ -28,6 +29,7 @@
     <link rel="stylesheet" href="/css/common.css" media="screen" >
     <link rel="stylesheet" href="/css/responsive.css" media="screen" >
     <link rel="stylesheet" href="/css/courses.css">
+    <link rel="stylesheet" href="/css/temporary.css">
     @yield('latter_css')
   </head>
   <body>
@@ -52,16 +54,19 @@
         </div>
 
         <div class="menu-right">
+
           @if(auth()->user())
             <a href="/profile">
-              <p class="lightbox-button login-button">Trang cá nhân</p>
+              <p class="lightbox-button personal-site">Trang cá nhân</p>
             </a>
             <a href="/logout"><p class="lightbox-button login-button">Đăng xuất</p></a>
           @else
             <p class="lightbox-button login-popup login-button">Đăng nhập</p>
           @endif
+          <p class="lightbox-button test-online-button">Test online</p>
+
           <div class="interest-button-top">
-            <a href="" class="fa fa-heart-o cart-icon"></a>
+            <i class="fa fa-heart-o cart-icon"></i>
             <span class="interest-count"><span class="interest-count-items">0</span></span>
             <div class="cart-popup">
 

@@ -61,7 +61,6 @@ body{
       }
       .course-details-comment-box{
         margin-top: 30px;
-        display: none;
         .course-details-comments-list{
         .course-details-comment-individuals{
           border: solid $borderColor;
@@ -229,14 +228,16 @@ body{
   }
   .checkout-box{
     display: none;
+    .back-button{
+      text-align: center;
+      width: 100%;
+      cursor: pointer;
+      color: $red;
+      margin-top: 15px;
+    }
     .checkout-step1{
       .login-tab{
-        .back-button{
-          text-align: center;
-          width: 100%;
-          cursor: pointer;
-          color: $red;
-        }
+
       }
       .addcart-box{
         .addcart-button{
@@ -367,6 +368,15 @@ body{
 @media only screen and (max-width: 600px) {
   #course-details{
     margin-top: 0;
+    .course-details-box{
+      .course-details-info-left{
+        .course-details-info-left-slider{
+          .swiper-container{
+            width: 500px;
+          }
+        }
+      }
+    }
     .course-details-headline{
       padding: 0 0 30px 0;
       .course-details-box{
@@ -423,6 +433,7 @@ body{
         .course-details-info-left-slider{
           .swiper-container{
             width: 300px;
+            height: 200px;
           }
         }
       }

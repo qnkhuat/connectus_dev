@@ -42,7 +42,7 @@ function toggleModal(mode){
 $('.choose-course-button').click(function() {
   $('.course-options-box').css('display', 'none');
   $('.checkout-box').css('display', 'initial');
-  if(login_status){
+  if(!login_status){
     toggleModal(1);
   }else{
     toggleModal(2);
@@ -62,12 +62,3 @@ $('.back-button').click(function() {
   $('.course-options-box').css('display', 'initial');
   $('.checkout-box').css('display', 'none');
 });
-
-
-
-//check the login login_status
-
-if(login_status){
-  $('.checkout-step1').css('display', 'none');
-  $('.checkout-step2').css('display', 'block');
-}

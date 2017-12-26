@@ -11,7 +11,7 @@
 
 @section('latter_js')
 <script type="text/javascript">
-  login_status=false;
+  login_status=true;
 </script>
 <script src="/js/single.js"></script>
 @endsection
@@ -268,7 +268,7 @@
               <button type="submit">Áp dụng</button>
             </div>
 
-            <p>Bạn có muốn thôgn tin gì thêm?</p>
+            <p>Bạn có muốn thông tin gì thêm?</p>
             <div class="checkout-input-addition-info">
               <input type="text" placeholder="Tôi yêu cầu...">
             </div>
@@ -286,6 +286,7 @@
 
             <div class="addcart-box"><a href="" class="addcart-button">Tham gia khoá học</a></div>
           </div>
+          <div class="back-button"><i class="fa fa-undo" aria-hidden="true"></i> Chọn lớp</div>
         </div>
 
       </div>

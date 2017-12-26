@@ -53,7 +53,7 @@ $borderColor:$red;
   font-size: 20px;
   transition: 0.3s all;
   background: white;
-  a{
+  i{
     color:$red;
   }
   .interest-count{
@@ -126,7 +126,120 @@ $borderColor:$red;
     }
   }
 }//.stars-rating-static
+.login-tab{
+  //temporay just can singin through Facebook
+  div{
+    display: none !important;
+  }
 
+  .login-facebook,.back-button{
+    display: block !important;
+  }
+
+  .login-tab-button{
+    box-shadow: 0 2px 2px 0 rgba(41,48,59,.24), 0 0 2px 0 rgba(41,48,59,.12);
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    p{
+      margin: 0;
+    }
+    .df{
+      flex-direction: row;
+      align-items: center;
+      color: white;
+      font-size: 16px;
+      i.fa{
+        padding: 11px 0 11px 5px;
+        font-size: 20px;
+        text-align: center;
+        width: 50px;
+      }
+    }
+  }//.login-tab-button
+  .login-facebook{
+    .df{
+      background: $blue;
+    }
+  }
+  .signup-button{
+    margin-top: 10px;
+    cursor: pointer;
+    .df{
+      background: $red;
+    }
+  }
+  .signin-button{
+    background: #3498db;
+    margin-top: 10px;
+    display: none;
+  }
+  .user-infomations{
+    display: flex;
+    flex-wrap: wrap;
+    .input-user-infomations{
+      position: relative;
+      width: 100%;
+      margin-bottom: 10px;
+      input{
+        width: 100%;
+        box-shadow: none;
+        padding: 10px 10px 10px 40px;
+      }
+    }
+    .submit{
+      width: 100%;
+      input{
+        width: 100%;
+        padding:10px;
+        font-weight: 500;
+
+      }
+    }
+    .signup-submit{
+      display: none;
+    }
+    .forget-password{
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      a{
+        color: $blue;
+        font-weight: 500;
+      }
+    }
+    .input-user-infomations:before{
+      font:normal normal normal 14px/1 FontAwesome;
+      color: #dedfe0;
+      font-size: 20px;
+      left: 10px;
+      line-height: 1;
+      margin-top: 10px;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 20px;
+      z-index: 2;
+    }
+    hr{
+      width: 100%;
+      margin:10px 0 20px 0;
+      padding: 0;
+    }
+    .username{
+      display: none;
+    }
+    .email:before{
+      content:'\f0e0';
+    }
+    .password:before{
+      content:"\f023";
+    }
+    .username:before{
+      content: '\f2c0';
+    }
+  }//.user-infomations
+}//.login-tap
 .lightbox{
   left: 0;
   transition: $transition-time;
@@ -156,118 +269,7 @@ $borderColor:$red;
     padding: 30px 15px;
     width: 400px;
     z-index: 3;
-    .login-tab{
-      //temporay just can singin through Facebook
-      div{
-        display: none !important;
-      }
-      .login-facebook{
-        display: block !important;
-      }
-      .login-tab-button{
-        box-shadow: 0 2px 2px 0 rgba(41,48,59,.24), 0 0 2px 0 rgba(41,48,59,.12);
-        width: 100%;
-        border-radius: 3px;
-        overflow: hidden;
-        p{
-          margin: 0;
-        }
-        .df{
-          flex-direction: row;
-          align-items: center;
-          color: white;
-          font-size: 16px;
-          i.fa{
-            padding: 11px 0 11px 5px;
-            font-size: 20px;
-            text-align: center;
-            width: 50px;
-          }
-        }
-      }//.login-tab-button
-      .login-facebook{
-        .df{
-          background: $blue;
-        }
-      }
-      .signup-button{
-        margin-top: 10px;
-        cursor: pointer;
-        .df{
-          background: $red;
-        }
-      }
-      .signin-button{
-        background: #3498db;
-        margin-top: 10px;
-        display: none;
-      }
-      .user-infomations{
-        display: flex;
-        flex-wrap: wrap;
-        .input-user-infomations{
-          position: relative;
-          width: 100%;
-          margin-bottom: 10px;
-          input{
-            width: 100%;
-            box-shadow: none;
-            padding: 10px 10px 10px 40px;
-          }
-        }
-        .submit{
-          width: 100%;
-          input{
-            width: 100%;
-            padding:10px;
-            font-weight: 500;
 
-          }
-        }
-        .signup-submit{
-          display: none;
-        }
-        .forget-password{
-          width: 100%;
-          text-align: center;
-          margin-top: 10px;
-          a{
-            color: $blue;
-            font-weight: 500;
-          }
-        }
-        .input-user-infomations:before{
-          font:normal normal normal 14px/1 FontAwesome;
-          color: #dedfe0;
-          font-size: 20px;
-          left: 10px;
-          line-height: 1;
-          margin-top: 10px;
-          position: absolute;
-          text-align: center;
-          top: 0;
-          width: 20px;
-          z-index: 2;
-        }
-        hr{
-          width: 100%;
-          margin:10px 0 20px 0;
-          padding: 0;
-        }
-        .username{
-          display: none;
-        }
-        .email:before{
-          content:'\f0e0';
-        }
-        .password:before{
-          content:"\f023";
-        }
-        .username:before{
-          content: '\f2c0';
-        }
-      }//.user-infomations
-    }//.login-tap
   }//.modal-dialog
 }//#login-popup
 .more-button{

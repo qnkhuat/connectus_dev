@@ -250,7 +250,7 @@ html,body{
     }//.middle
     .menu-right{
       width: 42%;
-      p.login-button{
+      .login-button,.test-online-button{
         float: right;
         cursor: pointer;
         border-radius: $bradius;
@@ -261,10 +261,10 @@ html,body{
         color: #686f7a;
         font-weight: 500;
         text-transform: uppercase;
+        margin-left: 10px;
       }
       .interest-button-top{
         float: right;
-        margin-right: 10px;
         color: white;
         margin-top: 5px;
         border-radius: $bradius;

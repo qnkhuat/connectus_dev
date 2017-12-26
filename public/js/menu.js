@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 
   //============mobile popup animation
   var w = $(document).width();
-  if(w<600){
+  if(w<=600){
     $('.courses-item-box').click(function() {
       $('#course-popup-mobile').css('display', 'block');
       $('.wrapup-button-down').css('display', 'none');
@@ -33,6 +33,10 @@ jQuery(document).ready(function($) {
     });
 
 
+
+
+    //========toggle when click into the logo
+
     //click to switch window in menu window
     $('.menu-logo-button').click(function() {
       if($('.menu-logo-button').hasClass('open')){
@@ -46,6 +50,23 @@ jQuery(document).ready(function($) {
       }
     });
 
+
+
+
+    // //==========toggle when click outside the logo
+    // $('.menu-logo-button').hover(function() {
+    //   /* Stuff to do when the mouse enters the element */
+    //   $('.menu-logo-button').addClass('open');
+    //   $('.menu-mobile-popup').css('display', 'initial');
+    // }, function() {
+    //   /* Stuff to do when the mouse leaves the element */
+    //   $('.menu-logo-button').removeClass('open');
+    //   $('.menu-mobile-popup').css('display', 'none');
+    //   $('.menu-mobile-popup-wrap').css('transform', 'translate(0%)');
+    //   $('.menu-mobile-popup-second-sence').css('display', 'none');
+    // });
+
+    //change window when click dang nhap
     $('.menu-mobile-popup-login').click(function() {
       $('.menu-mobile-popup-wrap').css('transform', 'translate(-100%)');
       $('.menu-mobile-popup-second-sence').css('display', 'inline-block');
@@ -57,12 +78,23 @@ jQuery(document).ready(function($) {
 });
 var w = $(document).width();
 function coursePopup(content){
-  if(w<600){
+
+  if(w<=600){
+    console.log('yo');
     $('#course-popup-mobile').find(".course-popup-mobile-content").html(content[0].outerHTML);
   }
 }
 
 function interest(content,isHave){
+
+  //display anyway
+  $('.cart-popup').css('display', 'grid');
+  setTimeout(function(){
+    $('.cart-popup').css('display', 'none');
+  },2000)
+
+
+
   if(!isHave){
     //append html to cart window
 
@@ -73,9 +105,6 @@ function interest(content,isHave){
     $('.interest-count-items').html(addCourses);
 
     //display the cart window
-    $('.cart-popup').css('display', 'grid');
-    setTimeout(function(){
-      $('.cart-popup').css('display', 'none');
-    },2000)
+
   }
 }

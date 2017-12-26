@@ -45,6 +45,7 @@
     <div class="forget-password">
       <a href="">Quên mật khẩu</a>
     </div>
-    @yield('addition_login')
+
   </div><!-- .user-infomations -->
+  @yield('addition_login')
 </div><!-- .login-tab -->

@@ -2,9 +2,25 @@ jQuery(document).ready(function($) {
 
   currentTransform=0;//keep track the transform location
   currentCourses=0;//keeptrack the course in order to know when to need move 1 course
-  $('.prev-button').css('display', 'none');//hide the pre button from the beginning
+  $('#courses .prev-button').css('display', 'none');//hide the pre button from the beginning
 
-  $('.pagination-button').click(function() {
+
+  function tooggleButton(mode){
+    if(mode==1){//next-button appear
+      $('#courses .prev-button').css('display', 'none');
+      $('#courses .next-button').css('display', 'initial');
+    }else if(mode==2){//prev-button appear
+      $('#courses .prev-button').css('display', 'initial');
+      $('#courses .next-button').css('display', 'none');
+    }
+  }
+  function handle_css(currentTransform){
+    value="translate("+currentTransform+"%)";
+    group.css('transform', value);
+  }
+
+
+  $('#courses .pagination-button').click(function() {
 
     row= $(this).parent('div');
     group=row.find('.courses-group');
@@ -17,41 +33,37 @@ jQuery(document).ready(function($) {
     ratioOfAItems=Math.round(lengthOfGroup/lengthOfACourse);
 
     //control the hide and display of button
-    $('.prev-button').css('display', 'initial');
-    $('.next-button').css('display', 'initial');
+    $('#courses .prev-button').css('display', 'initial');
+    $('#courses .next-button').css('display', 'initial');
+
+
 
     if($(this).hasClass('prev-button')){
       if(currentCourses==0){
       }else if(currentCourses==1){//move 1 course
         if(ratioOfAItems==4){
           currentTransform=currentTransform+25;
-          value="translate("+currentTransform+"%)";
-          group.css('transform', value);
+          handle_css(currentTransform);
           currentCourses-=1;
 
-          $('.prev-button').css('display', 'none');
-          $('.next-button').css('display', 'initial');
+          tooggleButton(1);
         }
         if(ratioOfAItems==3){
           currentTransform=currentTransform+100/3;
-          value="translate("+currentTransform+"%)";
-          group.css('transform', value);
+          handle_css(currentTransform);
           currentCourses-=1;
-          $('.prev-button').css('display', 'none');
-          $('.next-button').css('display', 'initial');
+          tooggleButton(1);
         }
       }else{
         if(ratioOfAItems==4){
           currentTransform=currentTransform+50;
-          value="translate("+currentTransform+"%)";
-          group.css('transform', value);
+          handle_css(currentTransform);
           currentCourses-=2;
         }
 
         if(ratioOfAItems==3){
           currentTransform=currentTransform+200/3;
-          value="translate("+currentTransform+"%)";
-          group.css('transform', value);
+          handle_css(currentTransform);
           currentCourses-=2;
         }
       }
@@ -61,36 +73,30 @@ jQuery(document).ready(function($) {
           //do nothing
         }else if(currentCourses+6<numberOfCourses){
           currentTransform=currentTransform-50;
-          value="translate("+currentTransform+"%)";
-          group.css('transform', value);
+          handle_css(currentTransform);
           currentCourses+=2;
         }else{//move 1 course
           currentTransform=currentTransform-25;
-          value="translate("+currentTransform+"%)";
-          group.css('transform', value);
+          handle_css(currentTransform);
           currentCourses+=1;
 
           //hide the button
-          $('.prev-button').css('display', 'initial');
-          $('.next-button').css('display', 'none');
+          tooggleButton(2);
         }
       }else if(ratioOfAItems==3){
         if(currentCourses+3==numberOfCourses){
           //do nothing
         }else if(currentCourses+5<numberOfCourses){
           currentTransform=currentTransform-200/3;
-          value="translate("+currentTransform+"%)";
-          group.css('transform', value);
+          handle_css(currentTransform);
           currentCourses+=2;
         }else{//move 1 course
           currentTransform=currentTransform-100/3;
-          value="translate("+currentTransform+"%)";
-          group.css('transform', value);
+          handle_css(currentTransform);
           currentCourses+=1;
 
           //hide the button
-          $('.prev-button').css('display', 'initial');
-          $('.next-button').css('display', 'none');
+          tooggleButton(2);
         }
       }
     }
