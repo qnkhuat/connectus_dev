@@ -224,8 +224,7 @@ html,body{
       }
     }//#menuLeft
     .middle{
-      width: 15%;
-      width: 50px;
+      width: 60px;
       text-align: center;
       .logoBrand{
         img{
@@ -235,7 +234,7 @@ html,body{
     }//.middle
     .menu-right{
       width: 42%;
-      .login-button,.test-online-button{
+      .login-button,.test-online-button,.logout-button{
         float: right;
         cursor: pointer;
         border-radius: $bradius;
@@ -271,8 +270,43 @@ html,body{
 
   #menu-mobile{
     display: none;
+    .menu-mobile-popup-box{
+      .modal-dialogs{
+        margin: 0;
+        position: absolute;
+        bottom: 61px;
+        top: auto;
+        left: 50%;
+        transform: translate(-50%);
+        .menu-mobile-popup{
+          .menu-mobile-popup-wrap{
+            .menu-mobile-popup-pages{
+              display: flex;
+              flex-wrap: wrap;
+              a{
+                width: 100%;
+                height: 42px;
+                border-radius: $bradius;
+                margin-bottom: 10px;
+                background: $button3;
+                line-height: 42px;
+                color: white;
+              }
+            }
+            .menu-mobile-popup-login-tab{
+              .logout-button{
+                background: $button3;
+                height: 42px;
+                line-height: 42px;
+                color: white;
+                border-radius: $bradius;
+              }
+            }
+          }
+        }
+      }
+    }
     .menu-logo{
-      // overflow: hidden;
       width: 100%;
       justify-content: center;
       bottom: 5px;
@@ -280,6 +314,7 @@ html,body{
         cursor: pointer;
         width: 50px;
         border-radius: 50%;
+        z-index: 10001;
       }
     }
     .interest-button-top{
@@ -361,7 +396,7 @@ html,body{
     position:absolute;
     width:0;
     border:6px solid transparent;
-    border-top-color:inherit;
+    border-top-color:white;
     z-index:2;
     bottom:-12px;
     left: 50%;
@@ -369,54 +404,8 @@ html,body{
     opacity:1;
     transition: 0.2s ease-in-out;
   }
-  .menu-mobile-popup{
-    overflow: hidden;
-    position: absolute;
-    bottom: 56px;
-    background: white;
-    width: 65%;
-    border-radius: $bradius;
-    display: none;
-    background: black;
-    .menu-mobile-popup-wrap{
-      font-size: 0;
-      white-space: nowrap;
-      .menu-mobile-popup-first-sence,.menu-mobile-popup-second-sence{
-        display: inline-block;
-        padding: 10px ;
-        font-size: 14px;
-        width: 100%;
-      }
-      .menu-mobile-popup-first-sence{
-        a{
-          height: 40px;
-          width: 100%;
-          border: 1px solid white;
-          background: transparent;
-          color:white;
-          display: block;
-          margin-top: 10px;
-          line-height: 40px;
-          border-radius: $bradius;
-        }
-        a:first-child{
-          margin-top: 0;
-        }
-      }
-      .menu-mobile-popup-second-sence{
-        display: none;
-      }
-      .menu-mobile-popup-account,.menu-mobile-popup-login{
-        height: 40px;
-        width: 100%;
-        background:transparent;
-        border: 1px solid white;
-        color: white;
-        line-height: 40px;
-        margin-top: 10px;
-        border-radius: $bradius;
-      }
-    }
+  .menu-mobile-popup-first-sence{
+
   }
 }
 

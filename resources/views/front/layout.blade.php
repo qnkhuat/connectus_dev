@@ -34,6 +34,7 @@
   </head>
   <body>
     <!-- #menu -->
+
     <div id="menu">
       <div id="login-popup" class="lightbox login-popup">
         <div class="modal-background"></div>
@@ -50,7 +51,7 @@
 
         </div>
         <div class="middle">
-          <a href="/" class="logoBrand"><img src="/images/header/logo_transparent.png" class="full" alt="logo"></a>
+          <a href="/" class="logoBrand"><img src="/images/logo/logo_rectangle.png" class="full" alt="logo"></a>
         </div>
 
         <div class="menu-right">
@@ -59,7 +60,7 @@
             <a href="/profile">
               <p class="lightbox-button personal-site">Trang cá nhân</p>
             </a>
-            <a href="/logout"><p class="lightbox-button login-button">Đăng xuất</p></a>
+            <a href="/logout"><p class="lightbox-button logout-button">Đăng xuất</p></a>
           @else
             <p class="lightbox-button login-popup login-button">Đăng nhập</p>
           @endif
@@ -81,64 +82,35 @@
       <div id="menu-mobile">
 
         <div class="menu-logo df fixed-bottom">
-          <img src="/images/header/logo_small.png" alt="logo" class="full menu-logo-button" title=".menu-mobile-popup">
-          <div id="menu-mobile-popup" class="menu-mobile-popup text-center">
-            <div class="menu-mobile-popup-wrap">
-              <div class="menu-mobile-popup-first-sence">
-                <a class="menu-mobile-popup-blog">BLOG</a>
-                <a class="menu-mobile-popup-blog">Khoá học Tiếng Anh</a>
-                <div class="menu-mobile-popup-account">Quản lý tài khoản</div>
-                <div class="menu-mobile-popup-login">Đăng nhập</div>
+          <img src="/images/logo/logo_small.png" alt="logo" class="lightbox-button menu-mobile-popup-box full menu-logo-button" title=".menu-mobile-popup">
+          <div class="lightbox menu-mobile-popup-box">
+            <div class="modal-background"></div>
+            <div class="modal-dialogs">
+              <div class="menu-mobile-popup text-center">
+              <div class="menu-mobile-popup-wrap">
+                <div class="menu-mobile-popup-pages">
+                  <a href="" class="menu-mobile-popup-blog">BLOG</a>
+                  <a href="" class="menu-mobile-popup-catigories">Khoá học Tiếng Anh</a>
+                </div>
+                <div class="menu-mobile-popup-login-tab">
+                <div class="login-tab">
+                  @if(auth()->user())
+                    <a href="/logout"><p class="logout-button">Đăng xuất</p></a>
+                  @else
+                  <div class="login-facebook login-tab-button">
+                    <a href="" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng Facebook</a>
+                  </div>
+                  @endif
+
+
+
+                </div><!-- //.login-tab -->
+              </div><!-- //.menu-mobile-popup-second-sence -->
               </div>
-              <div class="menu-mobile-popup-second-sence">
-              <div class="login-tab">
-
-                <div class="login-facebook login-tab-button">
-                  <a href="" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng Facebook</a>
-                </div>
-
-                <div class="signup-button login-tab-button">
-                  <p class="df"><i class="fa fa-rocket" aria-hidden="true"></i> Đăng ký tài khoản</p>
-                </div>
-
-                <div class="separate df">
-                  <hr>
-                  <p>Hoặc</p>
-                  <hr>
-                </div>
-
-                <div class="user-infomations">
-
-                  <div class="email input-user-infomations">
-                    <input type="email" placeholder="E-mail">
-                  </div>
-
-                  <div class="password input-user-infomations">
-                    <input type="password" placeholder="Mật khẩu">
-                  </div>
-
-                  <div class="username input-user-infomations">
-                    <input type="text" placeholder="Tên hiện thị">
-                  </div>
-
-                  <hr>
-
-                  <div class="login-submit submit">
-                    <input type="submit" class="button" Value="Đăng nhập">
-                  </div>
-
-                  <div class="signup-submit submit">
-                    <input type="submit" class="button" Value="Đăng ký">
-                  </div>
-
-                  <div class="forget-password">
-                    <a href="">Quên mật khẩu</a>
-                  </div>
-                </div><!-- //.user-infomations -->
-              </div><!-- //.login-tab -->
-            </div><!-- //.menu-mobile-popup-second-sence -->
+            </div><!--// .menu-mobile-popup -->
             </div>
-          </div><!--// .menu-mobile-popup -->
+          </div>
+
         </div>
         <div class="interest-button-top">
           <a href="" class="fa fa-heart-o cart-icon "></a>
