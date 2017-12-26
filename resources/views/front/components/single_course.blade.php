@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <div class="details-box"><a href="/khoahoc/{{$course->id}}" class="details-button">Chi tiết</a><p class="interest-button" onclick='interest( $(this).parent().parent().parent().html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p></div>
+      <div class="details-box"><a href="/khoahoc/{{$course->id}}" class="details-button">Chi tiết</a><p class="interest-button" onclick='interestssss({{$course->id}} )'>Quan tâm</p></div>
 
     </div><!-- .course-popup -->
   </div>

@@ -19,7 +19,7 @@
   border-bottom: 1px solid #e8e9eb;
   .button-group{
     button{
-      border-color: $red !important;
+      border-color: $color1 !important;
       background: white !important;
     }
   }
@@ -29,7 +29,7 @@
   }
   .submit-button{
     width: 80px;
-    background: $red;
+    background: $color1;
     color: white;
     border: none;
     border-radius: $bradius;

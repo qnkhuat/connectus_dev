@@ -15,9 +15,7 @@ Route::get('/', 'FrontController@mainPage');
 Route::get('/checkout', function () {
     return view('front.checkout');
 });
-Route::get('/search', function () {
-    return view('front.search');
-});
+Route::get('/search', 'FrontController@search');
 
 Route::prefix('/login')->group(function () {
   Route::get('/', 'LoginController@login');

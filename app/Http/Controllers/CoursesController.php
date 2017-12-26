@@ -67,8 +67,6 @@ class CoursesController extends Controller
       $publish = $request->publish;
       $teacherTypes = Teacher::$type;
 
-      echo $teacherType;
-
       $partners = User::where("group", "partner")->get();
       if($teacherType == null) {
         if($partner != null && $publish != null)
@@ -125,7 +123,7 @@ class CoursesController extends Controller
             ->where("teacher_type", $teacherType)
             ->paginate($perpage);
       }
-      
+
       return view("ad.courses.list_all", ["courses" => $courses, "partners" => $partners, "teacherTypes" => $teacherTypes]);
     }
 
@@ -242,7 +240,7 @@ class CoursesController extends Controller
           return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
         }
       } else
-      return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);     
+      return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
     }
 
     public function update(CourseUpdateRequest $request) {

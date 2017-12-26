@@ -27,4 +27,10 @@ class FrontController extends Controller
         } else
             return redirect("/");
     }
+
+    public function search() {
+        $courses = Course::with("user")->where("deleted", false)->where("publish", true)->get();
+        $partners = User::where("group", "partner")->where("deleted", false)->get();
+        return view("front.search", ["courses" => $courses, "partners" => $partners]);
+    }
 }
