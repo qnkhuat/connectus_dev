@@ -35,6 +35,22 @@
   <body>
     <!-- #menu -->
 
+  <div id="facebook-chat" class="fb-livechat">
+    <div class="ctrlq fb-overlay"></div>
+    <div class="fb-widget">
+      <div class="ctrlq fb-close"></div>
+      <div class="fb-page" data-href="https://www.facebook.com/connectus.vn/" data-tabs="messages" data-width="360" data-height="400" data-small-header="true" data-hide-cover="true" data-show-facepile="false">
+        <blockquote cite="https://www.facebook.com/connectus.vn/" class="fb-xfbml-parse-ignore"> </blockquote>
+      </div>
+      <div class="fb-credit">
+      </div>
+      <div id="fb-root"></div>
+    </div>
+    <a href="https://m.me/connectus.vn" title="Send us a message on Facebook" class="ctrlq fb-button"></a>
+  </div>
+
+
+
     <div id="menu">
       <div id="login-popup" class="lightbox login-popup">
         <div class="modal-background"></div>
@@ -91,6 +107,7 @@
                 <div class="menu-mobile-popup-pages">
                   <a href="" class="menu-mobile-popup-blog">BLOG</a>
                   <a href="" class="menu-mobile-popup-catigories">Khoá học Tiếng Anh</a>
+                  <a href="https://www.facebook.com/connectus.vn/" class="menu-mobile-popup-fanpage">Fanpage</a>
                 </div>
                 <div class="menu-mobile-popup-login-tab">
                 <div class="login-tab">
@@ -176,6 +193,8 @@
     <script src="/js/menu.js"></script>
     <script src="/js/lightbox.js"></script>
     <script src="/js/interest-button.js"></script>
+    <script src="/js/facebook.js"></script>
+    <script src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9"></script>
     @yield('latter_js')
 </body>
 </html>

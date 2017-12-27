@@ -12,9 +12,15 @@
 */
 
 Route::get('/', 'FrontController@mainPage');
+
+Route::get('/business', function () {
+    return view('front.partner_signin');
+});
+
 Route::get('/checkout', function () {
     return view('front.checkout');
 });
+
 Route::get('/search', 'FrontController@search');
 
 Route::prefix('/login')->group(function () {

@@ -33,6 +33,38 @@
     </div>
 
   </div>
+
+</div>
+<div id="banner-features">
+  <div class="feature1 feature cash-back">
+    <div class="feature-icon">
+      <i class="fa fa-undo"></i>
+    </div>
+    <div class="feature-content">
+      <h3 class="feature-title">Hoàn tiền</h3>
+      <p class="feature-details">Tiết kiệm lên tới 1.000.000 đồng</p>
+    </div>
+  </div>
+
+  <div class="feature2 feature searching">
+    <div class="feature-icon">
+      <i class="fa fa-search"></i>
+    </div>
+    <div class="feature-content">
+      <h3 class="feature-title">Tìm kiếm dễ dàng</h3>
+      <p class="feature-details">Lựa chọn khoá học phù hợp nhất</p>
+    </div>
+  </div>
+
+  <div class="feature3 feature diverse">
+    <div class="feature-icon">
+      <i class="fa fa-reply"></i>
+    </div>
+    <div class="feature-content">
+      <h3 class="feature-title">Đa dạng</h3>
+      <p class="feature-details">Tiếp cận với 50+ trung tâm anh ngữ</p>
+    </div>
+  </div>
 </div>
 @endsection
 

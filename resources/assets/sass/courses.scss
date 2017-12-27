@@ -222,13 +222,14 @@
       z-index: 1000001;
       display: flex;
       flex-direction: column;
+      border-radius: 0;
       .details-button{
         height:50%;
         width: 100%;
         display: flex;
         justify-content: center;
         text-align: center;
-        background: $red;
+        background: $button1;
         color: white;
       }
       .interest-button{
@@ -237,7 +238,8 @@
         display: flex;
         justify-content: center;
         text-align: center;
-        background: #3498db;
+        background: #5a0065;
+        color: white;
         margin: 0;
       }
     }
