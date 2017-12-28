@@ -15,6 +15,7 @@ class Course extends Model
     "c" => "Buổi chiều",
     "t" => "Buổi tối"
   ];
+
   public static $checkLearnTime = ["s", "c", "t", "both"];
 
   public function user()

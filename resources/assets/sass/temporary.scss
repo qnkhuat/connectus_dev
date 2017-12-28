@@ -7,3 +7,17 @@
 .personal-site{
   display: none;
 }
+
+
+//cho hien thi tat ca cac khoa ra man hinh
+.courses-row{
+  .pagination-button{
+    display: none;
+  }
+  .courses-group{
+    white-space: unset !important;
+    .courses-item-box{
+      margin-bottom:20px !important;
+    }
+  }
+}

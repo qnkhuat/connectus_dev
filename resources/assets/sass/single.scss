@@ -4,7 +4,6 @@ body{
   background: white;
 }
 #course-details{
-  margin-top: 50px;
   .course-details-headline{
     background: #2a303b;
     padding: 60px 0;
@@ -19,6 +18,7 @@ body{
 
     .course-info-rating{
       display: flex;
+      flex-wrap: wrap;
       .best-seller-tag{
         margin-right: 15px;
       }
@@ -321,7 +321,7 @@ body{
 
 .choose-class-box{
   text-align: center;
-  background: $button1;
+  // background: $button1;
   position: relative;
   height: 50px;
   border-radius: $bradius;
@@ -333,7 +333,13 @@ body{
     cursor: pointer;
     margin: 0;
     line-height: 50px;
+    background: white;
 
+
+  }
+  .interest-button{
+    color: $a;
+    border: 1px solid $borderColor;
   }
   .choose-class-button{
     background: $button3;
@@ -368,6 +374,11 @@ body{
     }
     .course-details-headline{
       padding: 0 0 30px 0;
+      .course-info-rating{
+        .course-info-enrolled-student{
+          width: 100%;
+        }
+      }
       .course-details-box{
         flex-wrap: wrap;
         .course-details-info-left{

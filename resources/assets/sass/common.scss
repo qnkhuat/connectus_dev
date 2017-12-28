@@ -49,10 +49,14 @@
     color: $color1;;
   }
 }
+.interest-button{
+  color: $a !important;
+  border: 1px solid $borderColor;
+  background: white;
 
+}
 .details-box,.addcart-box{
   text-align: center;
-  background: $button1;
   position: relative;
   height: 50px;
   border-radius: $bradius;
@@ -81,7 +85,7 @@
   }
   .course-price-sale{
     font-size: 18px;
-    color: $color1;
+    color: #29303b;
   }
 }
 .full{
@@ -276,9 +280,9 @@
     display: block;
     text-align: center;
     line-height: 30px;
-    border: 1px solid $color1;
+    border: 1px solid $borderColor;
     border-radius: $bradius;
-    color: $color1;
+    color: $a;
     background: white;
     cursor: pointer;
     font-size: 14px;

@@ -42,7 +42,6 @@
       <!-- conflict cho nay -->
       <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></p>
 
-
       <div class="course-price-box">
         @if($course->new_price_only)
         <span class="course-price-sale">{{number_format($course->new_price)}}</span>

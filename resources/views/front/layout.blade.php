@@ -33,9 +33,9 @@
     @yield('latter_css')
   </head>
   <body>
-    <!-- #menu -->
 
-  <div id="facebook-chat" class="fb-livechat">
+
+    <div id="facebook-chat" class="fb-livechat">
     <div class="ctrlq fb-overlay"></div>
     <div class="fb-widget">
       <div class="ctrlq fb-close"></div>
@@ -50,7 +50,7 @@
   </div>
 
 
-
+    <!-- #menu -->
     <div id="menu">
       <div id="login-popup" class="lightbox login-popup">
         <div class="modal-background"></div>
@@ -170,6 +170,13 @@
     @yield('search_course')
 
 <!-- //search Page -->
+
+
+<!-- business Page -->
+
+  @yield('business_form')
+
+<!-- //business Page -->
 
 
 
