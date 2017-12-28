@@ -3,6 +3,11 @@
 body{
   background: white;
 }
+#login-popup{
+  .back-button{
+    display: none !important;
+  }
+}
 #course-details{
   .course-details-headline{
     background: #2a303b;
@@ -226,7 +231,6 @@ body{
     }
     .checkout-step1{
       .login-tab{
-
       }
       .addcart-box{
         .addcart-button{
@@ -239,6 +243,7 @@ body{
       .addcart-box{
         .addcart-button{
           width: 100%;
+          background:$red;
         }
       }
       h3{
