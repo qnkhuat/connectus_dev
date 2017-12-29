@@ -86,5 +86,8 @@ class Kernel extends HttpKernel
         'districtUpdate' => \App\Http\Middleware\DistrictUpdate::class,
         'districtDestroy' => \App\Http\Middleware\DistrictDestroy::class,
         'districtView' => \App\Http\Middleware\DistrictView::class,
+
+        'orderListAll' => \App\Http\Middleware\OrderListAll::class,
+        'orderEdit' => \App\Http\Middleware\OrderEdit::class,
     ];
 }

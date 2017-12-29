@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\User;
+use Auth;
 
 class FrontController extends Controller
 {
@@ -23,7 +24,18 @@ class FrontController extends Controller
             $videos = json_decode($course->video);
             $slides = json_decode($course->slide);
             $branches = $course->branchs;
-            return view('front.single', ["courses" => $courses, "course" => $course, "videos" => $videos, "slides" => $slides, "branches" => $branches]);
+            $isAuth = Auth::check() ? true : false;
+            $user = [];
+            $nickName = "";
+            if($isAuth) {
+                $user = auth()->user();
+                $socialAccounts = $user->SocialAccounts()->first();
+                $nickName = isset($socialAccounts->nick_name) ? $socialAccounts->nick_name : $user->name;
+            }
+            return view('front.single', ["courses" => $courses, "course" => $course,
+                "videos" => $videos, "slides" => $slides, "branches" => $branches,
+                "isAuth" => $isAuth, "user" => $user, "nickName" => $nickName
+            ]);
         } else
             return redirect("/");
     }

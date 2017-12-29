@@ -49,6 +49,8 @@ Route::group(['middleware' => ['auth', 'allowGoToAdmin']], function () {
   // list all lfm routes here...
 });
 
+Route::post('/order', 'OrdersController@order')->middleware("auth");
+
 Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function () {
 	Route::get('/', function () {
 		return view("ad.dashboard.dashboard");
@@ -131,9 +133,12 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
 
   Route::prefix('/orders')->group(function () {
     Route::get('/', 'OrdersController@_list');
-    Route::get('/list-all', 'OrdersController@_listAll');
-    Route::get('/detail/{course_id}', 'OrdersController@detail');
+    Route::get('/list-all', 'OrdersController@_listAll')->middleware("orderListAll");
+    Route::get('/detail/{id}', 'OrdersController@detail');
     Route::get('/request', 'OrdersController@_request');
+    Route::get("/edit/{id}", 'OrdersController@edit')->middleware("orderEdit");
+    Route::get("/confirm/{id}", 'OrdersController@confirm');
+    Route::post("/update", 'OrdersController@update')->middleware("orderEdit");
   });
 
 	Route::prefix('/files')->group(function () {

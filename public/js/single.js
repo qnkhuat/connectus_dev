@@ -43,6 +43,7 @@ function toggleModal(mode){
 $('.choose-course-button').click(function() {
   $('.course-options-box').css('display', 'none');
   $('.checkout-box').css('display', 'initial');
+  $("#studen-reg-course-branch").val($(this).data("branch"));
   if(!login_status){
     toggleModal(1);
   }else{

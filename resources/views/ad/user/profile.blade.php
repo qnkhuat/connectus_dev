@@ -153,6 +153,7 @@
                           <a href="#" title="">Roles</a>
                       </div>
                       <div>
+                        <?php $labels = ["success", "warning","info", "danger", "primary", "default", "purple", "inverse", "pink"]; ?>
                         @foreach($role["original"] as $key => $r)
                           @if($r == 1 && $key != "id" && $key != "user_id" && $key != "created_at" && $key != "updated_at")
                           <span class="label label-table label-{{$labels[rand(0, 8)]}}">{{$key}}</span>
