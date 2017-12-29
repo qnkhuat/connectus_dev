@@ -27,7 +27,9 @@ class CreateOrdersTable extends Migration
             $table->string('gift', 511)->nullable();
             $table->string('name', 255)->nullable();
             $table->string('message', 511)->nullable();
+            $table->string('phone', 255)->nullable();
             $table->string('description', 511)->nullable();
+            $table->string('know', 255)->nullable();
             $table->date('payment_schedule')->nullable(); // ngày user hẹn đóng tiền
             $table->date('payment_date_complete')->nullable(); // ngày thanh toán thực (đã thanh toán vào ngày này)
             $table->date('receive_money_date')->nullable(); // ngày hệ thống nhận được tiền
