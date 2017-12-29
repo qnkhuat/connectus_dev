@@ -82,11 +82,23 @@
 <div id="partners">
   <h3>Đối tác chính của chúng tôi</h3>
   <div class="partners-box">
-    @foreach($partners as $partner)
+    <!-- @foreach($partners as $partner)
     <div class="partners-item">
       <img src="img/avatar/{{$partner->avatar}}" alt="">
     </div>
-    @endforeach
+    @endforeach -->
+    <div class="partners-item">
+      <img src="images/partners/ieltstrangnguyen.jpg" alt="">
+    </div>
+    <div class="partners-item">
+      <img src="images/partners/kos.jpg" alt="">
+    </div>
+    <div class="partners-item">
+      <img src="images/partners/face.jpg" alt="">
+    </div>
+    <div class="partners-item">
+      <img src="images/partners/geeko.jpg" alt="">
+    </div>
   </div>
 
 </div>
@@ -98,7 +110,7 @@
   <h3>Bạn là Trung Tâm Đào tạo?</h3>
   <p>Hãy tham gia vào cộng đồng ConnectUs để đón nhận thêm học viên mỗi ngày</p>
   <div class="become-button">
-    <a href="">Hợp tác cùng ConnectUs</a>
+    <a href="/business">Hợp tác cùng ConnectUs</a>
   </div>
 </div>
 @endsection

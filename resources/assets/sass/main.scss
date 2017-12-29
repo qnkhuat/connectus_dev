@@ -1,6 +1,6 @@
 @import "variables";
 #banner{
-  background: url("/images/header/banner2.jpg");
+  background: url("/images/header/banner3.jpg");
   height: 580px;
   background-size: cover;
   background-position: bottom;
@@ -130,7 +130,7 @@
 }//#partners
 
 #becomePartner{
-  background-image: url(https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?auto=format&fit=crop&w=2821&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  background-image: url("/images/header/partner2.jpg");
   background-size: cover;
   background-position: center;
   color: white;
@@ -187,7 +187,14 @@
   }//#banner
 }
 @media only screen and (max-width: 600px) {
-
+  #becomePartner{
+    h3{
+      font-size: 30px;
+    }
+    p{
+      font-size: 14px;
+    }
+  }
   #banner-features{
     display: none;
   }
