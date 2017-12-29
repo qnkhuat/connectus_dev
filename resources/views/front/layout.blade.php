@@ -202,7 +202,12 @@
     <script src="/js/interest-button.js"></script>
     <script src="/js/facebook.js"></script>
     <script src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9"></script>
-    @yield('latter_js')
+    <script src="/backend/assets/plugins/timepicker/bootstrap-timepicker.js"></script>
+    <script src="/backend/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <script src="/backend/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="/backend/assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+    <script src="/backend/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="/backend/assets/pages/jquery.form-pickers.init.js"></script>    @yield('latter_js')
 </body>
 </html>
 

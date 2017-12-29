@@ -47,4 +47,8 @@ class Course extends Model
   {
     return $this->hasMany('App\Models\Ratting');
   }
+
+  public function orders() {
+    return $this->hasMany('App\Models\Order');
+  }
 }

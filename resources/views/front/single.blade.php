@@ -7,17 +7,37 @@
 @section('latter_css')
 <link rel="stylesheet" href="/css/courses.css" media="screen" >
 <link rel="stylesheet" href="/css/single.css" media="screen" >
+<link href="/backend/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 @endsection
 
 @section('latter_js')
 <script type="text/javascript">
-  login_status=true;
+  var login_status = {{ $isAuth }};
 </script>
 <script src="/js/single.js"></script>
 @endsection
 
 @section('courseDetails')
 <div id="course-details">
+    @if (Session::has('messages'))
+      <div class="alert alert-{{ Session::get('messages')["type"] }}">
+        <div class="container">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>{{ Session::get('messages')["content"] }}</strong>
+        </div>
+      </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
   <!-- .course-details-headline -->
   <div class="course-details-headline">
     <div class="container course-details-box">
@@ -178,7 +198,6 @@
   <div id="courses">
     <!-- CHANGED ORIGINAL: course_row instead of course_row_replace -->
     @include('front.components.course_row_replace')
-
   </div><!-- #courses -->
 </div>
 @endsection
@@ -227,7 +246,7 @@
             <div class="course-info-learning-time">Thứ {{$branch->day_of_week}} ({{$branch->time_from}} - {{$branch->time_to}})</div>
           </div>
           <div class="choose-course-box">
-            <p class="choose-course-button">Tham gia</p>
+            <p class="choose-course-button" data-branch="{{$branch->id}}">Tham gia</p>
             <!-- <p class="interest-button" onclick='interest( $(".course-popup").html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p> -->
           </div>
         </div>
@@ -240,55 +259,68 @@
         <div class="checkout-step1 checkout-login-step checkout-steps">
           @include('front.components.login')
         </div>
+        
+        @if($isAuth)
+        <form action="/order" method="post">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="course" value="{{$course->id}}">
+          <input type="hidden" name="branch" value="" id="studen-reg-course-branch">
+          <div class="checkout-step2 checkout-input-step checkout-steps">
+            <h3>Hoàn thiện thông tin</h3>
+            <div class="checkout-input">
 
-        <div class="checkout-step2 checkout-input-step checkout-steps">
-          <h3>Hoàn thiện thông tin</h3>
-          <div class="checkout-input">
+              <div class="checkout-input-name">
+                <input name="name" value="{{$nickName}}" type="text" placeholder="Tên đẩy đủ:">
+              </div>
 
-            <div class="checkout-input-name">
-              <input type="text" placeholder="Tên đẩy đủ:">
+              <div class="checkout-input-phone">
+                <input type="number" name="phone" value="{{$user->phone}}" placeholder="Số điện thoại">
+              </div>
+
+              <div class="checkout-input-email">
+                <input type="email" name="email" value="{{$user->email}}" placeholder="E-mail">
+              </div>
+
+              <p>Bạn có thể nộp học phí vào:</p>
+              <!-- <div class="checkout-input-pay-day">
+                <input type="date" name="payment_schedule" data-date-inline-picker="true" >
+              </div> -->
+
+              <div class="input-group">
+                  <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
+                  <input type="text" name="payment_schedule" class="form-control" placeholder="yyyy/mm/dd" id="datepicker-autoclose">
+              </div><!-- input-group -->
+
+              <p>Bạn có mã ưu đãi?</p>
+              <div class="checkout-input-coupon">
+                <input type="text">
+                <button type="submit">Áp dụng</button>
+              </div>
+
+              <p>Bạn có muốn thông tin gì thêm?</p>
+              <div class="checkout-input-addition-info">
+                <input type="text" name="message" placeholder="Tôi yêu cầu...">
+              </div>
+
+              <p>Bạn biết đến ConnectUs qua:</p>
+              <div class="checkout-input-methods">
+                <select name="know">
+                  <option value="default" selected disabled hidden>Bạn vui lòng chọn 1 lí do</option>
+                  <option value="facebook">Qua Facebook</option>
+                  <option value="google">Qua Google</option>
+                  <option value="friend">Qua người quen</option>
+                  <option value="event">Qua các sự kiện</option>
+                </select>
+              </div>
+
+              <div class="addcart-box">
+                <button type="submit" class="addcart-button">Tham gia khoá học</button>
+              </div>
             </div>
-
-            <div class="checkout-input-phone">
-              <input type="number" placeholder="Số điện thoại">
-            </div>
-
-            <div class="checkout-input-email">
-              <input type="email" placeholder="E-mail">
-            </div>
-
-            <p>Bạn có thể nộp học phí vào:</p>
-            <div class="checkout-input-pay-day">
-              <input type="date" data-date-inline-picker="true" >
-            </div>
-
-            <p>Bạn có mã ưu đãi?</p>
-            <div class="checkout-input-coupon">
-              <input type="text">
-              <button type="submit">Áp dụng</button>
-            </div>
-
-            <p>Bạn có muốn thông tin gì thêm?</p>
-            <div class="checkout-input-addition-info">
-              <input type="text" placeholder="Tôi yêu cầu...">
-            </div>
-
-            <p>Bạn biết đến ConnectUs qua:</p>
-            <div class="checkout-input-methods">
-              <select>
-                <option value="default" selected disabled hidden>Bạn vui lòng chọn 1 lí do</option>
-                <option value="facebook">Qua Facebook</option>
-                <option value="google">Qua Google</option>
-                <option value="friend">Qua người quen</option>
-                <option value="event">Qua các sự kiện</option>
-              </select>
-            </div>
-
-            <div class="addcart-box"><a href="" class="addcart-button">Tham gia khoá học</a></div>
+            <div class="back-button"><i class="fa fa-undo" aria-hidden="true"></i> Chọn lớp</div>
           </div>
-          <div class="back-button"><i class="fa fa-undo" aria-hidden="true"></i> Chọn lớp</div>
-        </div>
-
+        </form>
+        @endif
       </div>
 
     </div>

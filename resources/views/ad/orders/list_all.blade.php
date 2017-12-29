@@ -32,12 +32,12 @@ ul.pagination li.active span {background: transparent; color: #fff;}
 @section('breadcrumb')
 <ol class="breadcrumb pull-right mb-0">
     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-    <li class="breadcrumb-item active">Districts</li>
+    <li class="breadcrumb-item active">Orders</li>
 </ol>
 @endsection
 
 @section('page_name')
-<h4 class="page-title">Districts</h4>
+<h4 class="page-title">Orders</h4>
 @endsection
 
 @section('content')
@@ -69,15 +69,15 @@ ul.pagination li.active span {background: transparent; color: #fff;}
         </select>
       </div>
 
-      <div class="col-sm-3">
+      <!-- <div class="col-sm-3">
         <span>Name</span>
         <input name="name" type="text" class="form-control" value="{{$name}}">
-      </div>
+      </div> -->
 
       <div class="col-sm-2">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/teachers/list-all">Reset</a>
+        <a href="/admin/orders/list-all">Reset</a>
       </div>
     </div>
     </form>
@@ -87,24 +87,67 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <table class="table table-hover table-bordered">
         <tr class="text-center">
           <th>#</th>
-          <th>Key</th>
+          <th>Course</th>
+          <th>Branch</th>
+          <th>Opening</th>
           <th>Name</th>
+          <th>Phone</th>
+          <td>Price</td>
+          <td>Sale</td>
+          <td>Gift</td>
+          <td>Message</td>
+          <td>Description</td>
+          <td>Status</td>
           <th>Manage</th>
         </tr>
 
-        @ foreach($districts as $key => $district)
+        @foreach($orders as $key => $order)
         <tr>
-          <td>$key + 1</td>
-          <td></td>
-          <td></td>
+          <td>{{$key + 1}}</td>
+          <td>{{$order->course->name}}</td>
+          <td>{{$order->courseBranch->address->address}}</td>
+          <td>{{$order->opening}}</td>
+          <td>{{$order->name}}</td>
+          <td>{{$order->phone}}</td>
+          <td>{{ number_format($order->price) }}</td>
+          <td>{{$order->sale}}</td>
+          <td>{{$order->gift}}</td>
+          <td>{{$order->message}}</td>
+          <td>{{$order->description}}</td>
           <td>
-            <a href="/admin/orders/edit/$order->id">
+          {{$order->admin_status}}
+          <?php
+            switch ($order->admin_status) {
+              case "not_seen":
+                  echo '<span class="label label-table label-purple">Chưa xem</span>';
+                  break;
+              case "seen":
+                  echo '<span class="label label-table label-default">Đã xem</span>';
+                  break;
+              case "sent":
+                  echo '<span class="label label-table label-info">Đối tác đã xác nhận đã xem order</span>';
+                  break;
+              case "received_success":
+                  echo '<span class="label label-table label-warning">Đã gửi cho đối tác và nhận được tiền</span>';
+                  break;
+              case "received_fail":
+                  echo '<span class="label label-table label-success">Đã gửi cho đối tác và fail</span>';
+                  break;
+              default:
+                  echo '<span class="label label-table label-inverse">Không xác định</span>';
+          }
+          ?>
+          </td>
+          <td>
+            <a href="/admin/orders/edit/{{$order->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
-            <button type="button" onclick="destroyTeacher($order->id, '$order->name')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
+            <a href="/admin/orders/detail/{{$order->id}}">
+              <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">Detail</button>
+            </a>
           </td>
         </tr>
-        @ endforeach
+        @endforeach
       </table>
     </div>
   </div>

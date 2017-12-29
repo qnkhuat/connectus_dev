@@ -22,4 +22,8 @@ class Address extends Model
     {
         return $this->hasMany('App\Models\CourseBranch');
     }
+
+    public function orders() {
+        return $this->hasMany('App\Models\Order');
+    }
 }
