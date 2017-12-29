@@ -209,6 +209,12 @@ body{
 }
 
 #checkout{
+  .choose-class{
+    .modal-dialogs{
+      position: absolute;
+      overflow: scroll;
+    }
+  }
   .course-option-general{
     border-bottom: 1px solid $borderColor;
     padding: 5px 0;

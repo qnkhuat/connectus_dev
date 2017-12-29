@@ -38,6 +38,7 @@ function toggleModal(mode){
     $('.checkout-step2').css('display', 'initial');
   }
 }
+
 //toggle of choose course button
 $('.choose-course-button').click(function() {
   $('.course-options-box').css('display', 'none');
