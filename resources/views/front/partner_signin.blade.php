@@ -11,15 +11,15 @@
   <div class="modal-background-partner"></div>
   <form class="partner_signin_form" action="" method="post">
     <p>Trung tâm:</p>
-    <input type="text" name="" placeholder="Trung tâm ABC">
+    <input type="text" name="" placeholder="Trung tâm anh ngữ">
     <p>Email liên hệ:</p>
-    <input type="email" name="" placeholder="abc@abc.com">
+    <input type="email" name="" placeholder="contact@example.com">
     <p>Số điện thoại liên hệ:</p>
     <input type="phone" name="" placeholder="0123456789">
     <p>Người đại diện:</p>
-    <input type="text" name="" placeholder="Nguyễn Văn An">
+    <input type="text" name="" placeholder="">
     <p>Nội dung:</p>
-    <input type="text" name="" placeholder="Trung tâm ABC">
+    <input type="text" name="" placeholder="">
     <button type="submit">Gửi</button>
   </form>
 </div>

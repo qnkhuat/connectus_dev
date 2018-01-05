@@ -127,7 +127,7 @@
   <div class="container">
 
     @foreach($courses as $course)
-      @include('front.components.single_course')
+      @include('front.components.single_course_replace')
     @endforeach
     <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
   </div>

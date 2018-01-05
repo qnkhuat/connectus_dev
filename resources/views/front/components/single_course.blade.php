@@ -7,7 +7,7 @@
 <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'>
   <div class="course-item-content">
     <div class="course-image-box">
-      <img src="/img/courses/{{$course->avatar}}" class="course-image full" alt="">
+      <img src="{{$course->avatar}}" class="course-image full" alt="">
     </div>
     <div class="course-info-box">
       <a class="course-info-title one-line-text">
