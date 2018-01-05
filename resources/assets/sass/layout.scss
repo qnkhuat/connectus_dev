@@ -1,4 +1,10 @@
 @import "variables";
+
+@font-face{
+  font-family: "FontAwesome";
+  src:url('/fonts/font-awesome/fontawesome-webfont.woff');
+}
+
 .layer{
   position: absolute;
   display: none;
