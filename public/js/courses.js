@@ -102,7 +102,13 @@ jQuery(document).ready(function($) {
     }
   });
 
+  var w = $(document).width();
+  function coursePopup(content){
+    if(w<=600){
+      $('#course-popup-mobile').find(".course-popup-mobile-content").html(content[0].outerHTML);
+    }
 
+  }
   //load more course in mobile mode
   for(i=1;i<=3;i++){
     $('.more-item-box:nth-child('+i+')').css('display', 'inline-block');

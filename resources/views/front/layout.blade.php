@@ -9,7 +9,10 @@
     <title>ConnectUs - Học nhiều hơn,tiết kiệm hơn</title>
     <!-- file js nay tao rat nhieu class o html -->
     <script src="/backend/assets/js/modernizr.min.js"></script>
-
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
     <!------------FONTS -->
     <link href='/fonts/Roboto.css' rel='stylesheet' type='text/css'>
 
@@ -17,7 +20,7 @@
     <link rel="stylesheet" href="/css/drooltip.css" media="screen" >
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" >
     <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" >
-
+    <script src="/js/menu.js"></script>
 
     <!------------CSS -->
     @yield('prior_css')
@@ -185,14 +188,13 @@
     <!-- //#footer -->
 
 
-    <script src="/backend/assets/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
 
+    <script src="/js/bootstrap.min.js"></script>
     <script src="/js/header.js"></script>
     <script src="/js/drooltip.src.js"></script>
     <script src="/js/popup-item.js"></script>
     <script src="/js/courses.js"></script>
-    <script src="/js/menu.js"></script>
+
     <script src="/js/lightbox.js"></script>
     <script src="/js/interest-button.js"></script>
     <script src="/js/facebook.js"></script>

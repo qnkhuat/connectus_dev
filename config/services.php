@@ -35,9 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
     'facebook' => [
-    'client_id' => env('FACEBOOK_APP_ID'),
-    'client_secret' => env('FACEBOOK_APP_SECRET'),
-    'redirect' => env('FACEBOOK_APP_CALLBACK_URL'),
+    'client_id' => '723171474553706',
+    'client_secret' => 'a2c3c5825270dea7e67474fa6897d9ea',
+    'redirect' => '/callback/facebook',
     ],
     'github' => [
         'client_id' => env('GITHUB_APP_ID'),
