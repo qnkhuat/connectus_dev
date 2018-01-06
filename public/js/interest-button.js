@@ -8,14 +8,9 @@ jQuery(document).ready(function($) {
     $('.cart-popup').css('display', 'none');
   });
 
-
-
-
-
   $('.interest-button').click(function() {
     if(!$(this).hasClass('interested')){
       $(this).addClass('interested');
-      console.log('hey');
       addCourses = parseInt($('.interest-count-items').html()) +1;
       $('.interest-count-items').html(addCourses);
       $('.cart-popup').css('display', 'grid');
@@ -26,3 +21,15 @@ jQuery(document).ready(function($) {
   });
 
 });
+
+function formatCourseInfoFollow(id,title,old_price,new_price,centre){
+  return '<div class="interested-item"><div class="course-info-title"><a href="/khoahoc/' + id +'">'+title+'</a></div><div class="course-price-box"><span class="course-price-origin">'+old_price+'</span><span class="course-price-sale">'+new_price+'</span></div><div class="course-info-centre">'+centre+'</div></div>';
+}
+
+
+function interest(id,title,old_price,new_price,centre){
+  var div = formatCourseInfoFollow(id,title,old_price,new_price,centre);
+  $('.cart-popup').append(div);
+
+
+}

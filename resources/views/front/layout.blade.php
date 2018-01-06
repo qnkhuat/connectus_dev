@@ -86,7 +86,18 @@
             <i class="fa fa-heart-o cart-icon"></i>
             <span class="interest-count"><span class="interest-count-items">0</span></span>
             <div class="cart-popup">
+              <div class="interested-item">
 
+                <div class="course-info-title"></div>
+                <div class="course-price-box">
+                  <span class="course-price-origin"></span>
+                  <span class="course-price-sale"></span>
+                </div>
+                <div class="course-info-centre">
+
+                </div>
+
+              </div>
             </div>
 
           </div>
