@@ -5,7 +5,7 @@
   Carbon::setLocale('vi');
 ?>
 @section('latter_css')
-<!-- <link rel="stylesheet" href="/css/swiper.min.css" media="screen" > -->
+<link rel="stylesheet" href="/css/swiper.min.css" media="screen" >
 <link rel="stylesheet" href="/css/courses.css" media="screen" >
 <link rel="stylesheet" href="/css/single.css" media="screen" >
 <link href="/backend/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
@@ -15,7 +15,7 @@
 <script type="text/javascript">
   var login_status = {{ $isAuth }};
 </script>
-<!-- <script src="/js/swiper.min.js"></script> -->
+<script src="/js/swiper.min.js"></script>
 <script src="/js/single.js"></script>
 @endsection
 
