@@ -241,7 +241,7 @@
         ?>
         <div class="course-option">
           <div class="course-option-info">
-            <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$opening}}</span></p>
+            <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{date('d-m-Y', strtotime($branch->opening))}}</span></p>
             <div class="course-info-agent">{{$branch->address->address}}</div>
             <div class="course-info-learning-time">Thứ {{$branch->day_of_week}} ({{$branch->time_from}} - {{$branch->time_to}})</div>
           </div>
@@ -259,7 +259,7 @@
         <div class="checkout-step1 checkout-login-step checkout-steps">
           @include('front.components.login')
         </div>
-        
+
         @if($isAuth)
         <form action="/order" method="post">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
