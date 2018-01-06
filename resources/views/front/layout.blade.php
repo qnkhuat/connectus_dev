@@ -15,7 +15,6 @@
 
     <!-- LIBARIES -->
     <link rel="stylesheet" href="/css/drooltip.css" media="screen" >
-    <link rel="stylesheet" href="/css/swiper.min.css" media="screen" >
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" >
     <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" >
 
@@ -187,7 +186,6 @@
 
 
     <script src="/backend/assets/js/jquery.min.js"></script>
-    <script src="/js/swiper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 
     <script src="/js/header.js"></script>
