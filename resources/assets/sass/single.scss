@@ -13,8 +13,7 @@ body{
     background: #2a303b;
     padding: 60px 0;
     color: white;
-    .course-price-box{
-    }
+
     .course-info-intro-summary{
       font-size: 21px;
       line-height: 27px;
@@ -40,6 +39,9 @@ body{
     position: relative;
     .course-details-info-left{
       width: calc(200%/3);
+      .course-price-box{
+        display: none;
+      }
       .details-box{
         display: none;
       }
