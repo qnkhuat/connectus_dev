@@ -1,6 +1,7 @@
 <div class="login-tab">
 
   <div class="login-facebook login-tab-button">
+    <div id="mess-if-not-loged" style="display: none;"></div>
     <a href="/redirect/facebook" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng Facebook</a>
   </div>
 

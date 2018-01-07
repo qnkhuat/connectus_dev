@@ -68,6 +68,12 @@ function courseFollowToggle(course_id, type, div) {
         $('.interest-count-items').html(result.totalCourseFollows);
         div.remove();
       }
+
+      if(!result.loged) {
+        $("#mess-if-not-loged").text(result.message)
+        $("#mess-if-not-loged").attr("style", "display: block!important");
+        openModalLogin();
+      }
     }
   });
 }

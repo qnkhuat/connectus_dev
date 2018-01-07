@@ -125,7 +125,7 @@
                     <a href="/logout"><p class="logout-button">Đăng xuất</p></a>
                   @else
                   <div class="login-facebook login-tab-button">
-                    <a href="/redirect/facebook" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng Facebook</a>
+                    <a href="/redirect/facebook" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhậps bằng Facebook</a>
                   </div>
                   @endif
 

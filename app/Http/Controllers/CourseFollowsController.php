@@ -20,13 +20,13 @@ class CourseFollowsController extends Controller
                     $courseFollow->course_id = $course->id;
                     $courseFollow->save();
                     $totalCourseFollows = $user->courseFollows()->count();
-                    return ["success" => true, "message" => "Bạn đã quan tâm 1 khóa học!", "totalCourseFollows" => $totalCourseFollows];
+                    return ["success" => true, "loged" => true, "message" => "Bạn đã quan tâm 1 khóa học!", "totalCourseFollows" => $totalCourseFollows];
                 } else
-                return ["success" => false, "message" => "Bạn đã quan tâm khóa học này trước đó!"];
+                return ["success" => false, "loged" => true, "message" => "Bạn đã quan tâm khóa học này trước đó!"];
             } else
-            return ["success" => false, "message" => "Khóa học không tồn tại!"];
+            return ["success" => false, "loged" => true, "message" => "Khóa học không tồn tại!"];
         } else
-        return ["success" => false, "message" => "Bạn chưa đăng nhập, hãy đăng nhập trước khi nhấn quan tâm một khóa học!"];
+        return ["success" => false, "loged" => false, "message" => "Bạn chưa đăng nhập, hãy đăng nhập trước khi nhấn quan tâm một khóa học!"];
     }
 
     public function destroy(Request $request) {
@@ -39,12 +39,12 @@ class CourseFollowsController extends Controller
                     $courseFollow = CourseFollow::where("user_id", $user->id)->where("course_id", $course->id)->first();
                     $courseFollow->delete();
                     $totalCourseFollows = $user->courseFollows()->count();
-                    return ["success" => true, "message" => "Bạn đã bỏ quan tâm 1 khóa học!", "totalCourseFollows" => $totalCourseFollows];
+                    return ["success" => true, "loged" => true, "message" => "Bạn đã bỏ quan tâm 1 khóa học!", "totalCourseFollows" => $totalCourseFollows];
                 } else
-                return ["success" => false, "message" => "Không thể bỏ quan tâm khóa học này vì hiện tại bạn không quan tâm nó!"];
+                return ["success" => false, "loged" => true, "message" => "Không thể bỏ quan tâm khóa học này vì hiện tại bạn không quan tâm nó!"];
             } else
-            return ["success" => false, "message" => "Khóa học không tồn tại!"];
+            return ["success" => false, "loged" => true, "message" => "Khóa học không tồn tại!"];
         } else
-        return ["success" => false, "message" => "Bạn chưa đăng nhập, hãy đăng nhập trước khi bỏ quan tâm một khóa học!"];
+        return ["success" => false, "loged" => false, "message" => "Bạn chưa đăng nhập, hãy đăng nhập trước khi bỏ quan tâm một khóa học!"];
     }
 }
