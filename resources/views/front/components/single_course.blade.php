@@ -38,22 +38,22 @@
 
       <!-- conflict cho nay -->
       <a class="course-info-title" href="">{{$course->name}}</a>
-      <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$opening}}</span></p>
+      <!-- <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$opening}}</span></p> -->
       <!-- conflict cho nay -->
 
 
-      <div class="course-price-box">
+      <!-- <div class="course-price-box">
         @if($course->new_price_only)
         <span class="course-price-sale">{{number_format($course->new_price)}}</span>
         @else
         <span class="course-price-origin">{{number_format($course->old_price)}}</span>
         <span class="course-price-sale">{{number_format($course->new_price)}}</span>
         @endif
-      </div>
+      </div> -->
 
       <div class="course-popup-detail">
         <div class="course-info-category">
-          in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+          Khoá học: <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"></span>
         </div>
 
         <div class="course-info-short">

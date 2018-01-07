@@ -1,12 +1,5 @@
 jQuery(document).ready(function($) {
   //popup in mobile mode
-  var w = $(document).width();
-  function coursePopup(content){
-
-    if(w<=600){
-      $('#course-popup-mobile').find(".course-popup-mobile-content").html(content[0].outerHTML);
-    }
-  }
 
 
 
@@ -43,3 +36,10 @@ jQuery(document).ready(function($) {
 //change when click interest-butotn
 
 });
+
+var w = $(document).width();
+function coursePopup(content){
+  if(w<=600){
+    $('#course-popup-mobile').find(".course-popup-mobile-content").html(content[0].outerHTML);
+  }
+}
