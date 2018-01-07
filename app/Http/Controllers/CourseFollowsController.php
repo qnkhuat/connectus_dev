@@ -19,21 +19,23 @@ class CourseFollowsController extends Controller
                     $courseFollow->user_id = $user->id;
                     $courseFollow->course_id = $course->id;
                     $courseFollow->save();
-                }
-                return ["success" => true, "message" => "Bạn đã quan tâm 1 khóa học!"];
+                    return ["success" => true, "message" => "Bạn đã quan tâm 1 khóa học!"];
+                } else
+                return ["success" => false, "message" => "Bạn đã quan tâm khóa học này trước đó!"];
             } else
             return ["success" => false, "message" => "Khóa học không tồn tại!"];
         } else
         return ["success" => false, "message" => "Bạn chưa đăng nhập, hãy đăng nhập trước khi nhấn quan tâm một khóa học!"];
     }
 
-    public function destroy() {
+    public function destroy(Request $request) {
         if(auth()->user()) {
             $user = auth()->user();
             $course = Course::find($request->id);
             if($course) {
                 $followExits = CourseFollow::where("user_id", $user->id)->where("course_id", $course->id)->count() > 0 ? true : false;
                 if($followExits) {
+                    $courseFollow = CourseFollow::where("user_id", $user->id)->where("course_id", $course->id)->first();
                     $courseFollow->delete();
                     return ["success" => true, "message" => "Bạn đã bỏ quan tâm 1 khóa học!"];
                 } else
