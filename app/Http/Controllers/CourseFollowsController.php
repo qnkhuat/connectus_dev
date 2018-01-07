@@ -26,7 +26,7 @@ class CourseFollowsController extends Controller
             } else
             return ["success" => false, "loged" => true, "message" => "Khóa học không tồn tại!"];
         } else
-        return ["success" => false, "loged" => false, "message" => "Bạn chưa đăng nhập, hãy đăng nhập trước khi nhấn quan tâm một khóa học!"];
+        return ["success" => false, "loged" => false, "message" => "Vui lòng đăng nhập để có thể sử dụng chức năng quan tâm!"];
     }
 
     public function destroy(Request $request) {

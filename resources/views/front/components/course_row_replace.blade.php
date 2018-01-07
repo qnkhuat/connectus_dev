@@ -98,25 +98,3 @@
   </div>
 
 </div>
-
-<div id="follow">
-
-</div>
-
-<div class="box">
-  <div class="title">
-    <a href="/khoahoc/id"></a>
-  </div>
-  <div class="price"></div>
-  <div class="centre"></div>
-</div>
-<div class="box">
-  <div class="title"></div>
-  <div class="price"></div>
-  <div class="centre"></div>
-</div>
-<div class="box">
-  <div class="title"></div>
-  <div class="price"></div>
-  <div class="centre"></div>
-</div>
