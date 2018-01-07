@@ -77,9 +77,3 @@ function courseFollowToggle(course_id, type, div) {
     }
   });
 }
-
-
-function appear(){
-  console.log('fuck');
-
-}

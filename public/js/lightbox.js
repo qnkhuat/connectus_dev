@@ -1,6 +1,6 @@
 $(function() {
 
-  //click login button
+  //click lightbox button
   $('.lightbox-button').click(function() {
     el=this.classList;//get the list of classes of clicked button. The button have to has class obey the rules : lightbox-button {class of the openbox}
     lightboxDiv=".lightbox."+el[1];
@@ -10,6 +10,7 @@ $(function() {
       $(lightboxDiv).css('opacity', '1');
     }, 1);
   });
+
 
   $('.modal-background').click(function() {
       $('.lightbox').css('z-index', '-1');
@@ -22,6 +23,7 @@ $(function() {
 
 
 });
+
 function openModalLogin(){
   $('.lightbox.login-popup').css('display', 'initial');
   setTimeout(function(){
