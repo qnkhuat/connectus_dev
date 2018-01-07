@@ -18,6 +18,7 @@ $(function() {
       setTimeout(function(){
         $('.lightbox').css('display', 'none');
       },300);
+      $("#mess-if-not-loged").hide();
   });
 
 
