@@ -242,7 +242,6 @@ html,body{
     text-align: left;
     box-shadow: 0 2px 8px 2px rgba(96, 97, 99, 0.78);
     overflow: hidden;
-    border-top:5px solid transparent;
     top: 40px;
     color: black;
     .interested-item{
@@ -478,6 +477,7 @@ html,body{
         z-index: 10001;
       }
     }
+
     .interest-button-top{
       position: fixed;
       right: 15px;
@@ -485,9 +485,13 @@ html,body{
       background: $color1;
       border: 1px solid white;
       .cart-popup{
-
         left: auto;
         right: 0;
+        .course-info-title{
+          a{
+            color: black;
+          }
+        }
       }
       a{
         color: white;

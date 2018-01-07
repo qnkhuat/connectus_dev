@@ -81,7 +81,7 @@
 
           <div class="interest-button-top">
             <i class="fa fa-heart-o cart-icon"></i>
-            <span class="interest-count"><span class="interest-count-items">{{$courseFollows->count()}}</span></span>
+            <span class="interest-count"><span class="interest-count-items">{{ count($courseFollows) }}</span></span>
             <div class="cart-popup">
             @foreach($courseFollows as $course)
             <div class="interested-item">
@@ -142,8 +142,23 @@
         <div class="interest-button-top">
           <a href="" class="fa fa-heart-o cart-icon "></a>
 
-          <h1 class="interest-count"><p class="interest-count-items">0</p></h1>
-          <div class="cart-popup"></div>
+          <h1 class="interest-count"><p class="interest-count-items">{{ count($courseFollows) }}</p></h1>
+          <div class="cart-popup">
+            @foreach($courseFollows as $course)
+            <div class="interested-item">
+                <div class="interested-item-content">
+                    <div class="course-info-title"><a href="/khoahoc/{{$course->id}}">{{$course->name}}</a></div>
+                    <div class="course-price-box"><span class="course-price-origin">{{ number_format($course->old_price) }}</span>
+                    <span class="course-price-sale">{{ number_format($course->new_price) }}</span></div>
+                    <div class="course-info-centre">{{$course->user->name}}</div>
+                </div>
+                <div class="interested-item-control-button">
+                    <div class="details-button"><a href="/khoahoc/{{$course->id}}"/>Chi tiết</a></div>
+                    <div class="delete-button"><i class="fa fa-times" onclick='unInterested($(this).closest(".interested-item"), {{$course->id}})' aria-hidden="true"></i></div>
+                </div>
+            </div>
+            @endforeach
+          </div>
         </div>
       </div><!-- #menu-mobile -->
 
@@ -196,7 +211,9 @@
       <a class="facebook-icon" href="https://www.facebook.com/connectus.vn/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
     </footer>
     <!-- //#footer -->
-
+    <script type="text/javascript">
+      var courseFollowsTotal = {{ count($courseFollows) }};
+    </script>
 
 
     <script src="/js/jquery-3.2.1.min.js"></script>

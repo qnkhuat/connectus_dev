@@ -4,17 +4,10 @@ jQuery(document).ready(function($) {
   }, function() {
     $('.cart-popup').css('display', 'none');
   });
-
-  $('.interest-button').click(function() {
-    addCourses = parseInt($('.interest-count-items').html()) +1;
-    $('.interest-count-items').html(addCourses);
-    $('.cart-popup').css('display', 'grid');
-    setTimeout(function(){
-      $('.cart-popup').css('display', 'none');
-    },2000)
-  });
-
 });
+
+
+w =$(document).width();
 
 Number.prototype.formatNumber = function(n, x) {
   var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
@@ -34,6 +27,15 @@ function formatCourseInfoFollow(id,title,old_price,new_price,centre){
 
 //append new item when use press interest
 function interest(id,title,old_price,new_price,centre){
+  //appear when click just for desktop
+  if(w>600){
+    $('.cart-popup').css('display', 'grid');
+    setTimeout(function(){
+      $('.cart-popup').css('display', 'none');
+    },2000)
+  }
+
+
     var div = formatCourseInfoFollow(id,title,old_price,new_price,centre);
     courseFollowToggle(id, "follow", div);
 }
@@ -60,13 +62,21 @@ function courseFollowToggle(course_id, type, div) {
     success : function (result){
       if(type == "follow" && result.success) {
         $('.cart-popup').append(div);
+        addCourses = courseFollowsTotal + 1;
+        $('.interest-count-items').html(addCourses);
       }
       else if (result.success) {
-        var addCourses = parseInt($('.interest-count-items').html()) - 1;
+        var addCourses = courseFollowsTotal - 1;
         addCourses = addCourses < 0 ? 0 : addCourses;
         $('.interest-count-items').html(addCourses);
         div.remove();
       }
     }
   });
+}
+
+
+function appear(){
+  console.log('fuck');
+
 }
