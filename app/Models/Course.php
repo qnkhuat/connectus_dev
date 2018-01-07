@@ -51,4 +51,9 @@ class Course extends Model
   public function orders() {
     return $this->hasMany('App\Models\Order');
   }
+
+  public function follows()
+  {
+    return $this->hasMany('App\Models\CourseFollow');
+  }
 }

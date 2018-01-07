@@ -55,7 +55,7 @@
 
           <div class="course-popup-detail">
             <div class="course-info-category">
-              Khoá học: <span class="course-info-catigory-in"><a href="">IELTS</a></span> | Môn <span class="course-info-category-name">Tiếng anh</span>
+              Khoá học: <span class="course-info-catigory-in"><a href="">{{$course->courseType->name}}</a></span> | Môn <span class="course-info-category-name">Tiếng anh</span>
             </div>
 
             <div class="course-info-short">

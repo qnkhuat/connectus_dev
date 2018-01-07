@@ -94,5 +94,10 @@ class User extends Authenticatable
     public function partnerInfo()
   	{
   		return $this->hasMany('App\Models\PartnerInfo');
-  	}
+    }
+    
+    public function courseFollows()
+    {
+      return $this->hasMany('App\Models\CourseFollow');
+    }
 }
