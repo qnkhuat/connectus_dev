@@ -53,7 +53,7 @@
 
       <div class="course-popup-detail">
         <div class="course-info-category">
-          in <span class="course-info-catigory-in"><a href="">IELTS</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
+          in <span class="course-info-catigory-in"><a href="">{{$course->courseType->name}}</a></span> | <span class="course-info-category-name"> Tiếng anh</span>
         </div>
 
         <div class="course-info-short">
