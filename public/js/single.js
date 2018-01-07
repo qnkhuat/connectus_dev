@@ -57,8 +57,6 @@ $('.modal-background').click(function() {
   $('.checkout-box').css('display', 'none');
 });
 
-
-
 //handle the back button
 $('.back-button').click(function() {
   $('.course-options-box').css('display', 'initial');

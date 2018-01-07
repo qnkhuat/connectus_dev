@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
     <meta name="author" content="Coderthemes">
+    <meta name="_token" content="{{csrf_token()}}">
     <link rel="shortcut icon" href="/images/header/logo_transparent.png">
     <title>ConnectUs - Học nhiều hơn,tiết kiệm hơn</title>
     <!-- file js nay tao rat nhieu class o html -->
@@ -84,8 +85,22 @@
 
           <div class="interest-button-top">
             <i class="fa fa-heart-o cart-icon"></i>
-            <span class="interest-count"><span class="interest-count-items">0</span></span>
+            <span class="interest-count"><span class="interest-count-items">{{$courseFollows->count()}}</span></span>
             <div class="cart-popup">
+            @foreach($courseFollows as $course)
+            <div class="interested-item">
+                <div class="interested-item-content">
+                    <div class="course-info-title"><a href="/khoahoc/{{$course->id}}">{{$course->name}}</a></div>
+                    <div class="course-price-box"><span class="course-price-origin">{{ number_format($course->old_price) }}</span>
+                    <span class="course-price-sale">{{ number_format($course->new_price) }}</span></div>
+                    <div class="course-info-centre">{{$course->user->name}}</div>
+                </div>
+                <div class="interested-item-control-button">
+                    <div class="details-button"><a href="/khoahoc/{{$course->id}}"/>Chi tiết</a></div>
+                    <div class="delete-button"><i class="fa fa-times" onclick='unInterested($(this).closest(".interested-item"), {{$course->id}})' aria-hidden="true"></i></div>
+                </div>
+            </div>
+            @endforeach
             </div>
 
           </div>
