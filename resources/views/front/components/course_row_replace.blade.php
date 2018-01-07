@@ -9,7 +9,7 @@
     <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'>
       <div class="course-item-content">
         <div class="course-image-box">
-          <img src="{{$course->avatar}}" class="course-image full" alt="">
+          <img src="/img/courses/{{$course->avatar}}" class="course-image full" alt="">
         </div>
         <div class="course-info-box">
           <a class="course-info-title one-line-text">
@@ -43,15 +43,15 @@
           <!-- <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$opening}}</span></p> -->
           <!-- conflict cho nay -->
 
-
-          <!-- <div class="course-price-box">
+          <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></p>
+          <div class="course-price-box">
             @if($course->new_price_only)
             <span class="course-price-sale">{{number_format($course->new_price)}}</span>
             @else
             <span class="course-price-origin">{{number_format($course->old_price)}}</span>
             <span class="course-price-sale">{{number_format($course->new_price)}}</span>
             @endif
-          </div> -->
+          </div>
 
           <div class="course-popup-detail">
             <div class="course-info-category">

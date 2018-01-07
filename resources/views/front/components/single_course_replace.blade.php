@@ -41,14 +41,14 @@
       <!-- conflict cho nay -->
 
 
-      <!-- <div class="course-price-box">
+      <div class="course-price-box">
         @if($course->new_price_only)
         <span class="course-price-sale">{{number_format($course->new_price)}}</span>
         @else
         <span class="course-price-origin">{{number_format($course->old_price)}}</span>
         <span class="course-price-sale">{{number_format($course->new_price)}}</span>
         @endif
-      </div> -->
+      </div>
 
       <div class="course-popup-detail">
         <div class="course-info-category">

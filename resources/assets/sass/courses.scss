@@ -195,8 +195,8 @@
     width: 100%;
     padding-left: $padding;
     height: auto;
-    color: white;
-    background: black;
+    color: black;
+    background: white;
     z-index: 1000000;
     box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.37);
     transition: $transition-time all;
@@ -210,6 +210,12 @@
         display: initial;
         a,.course-info-short,.course-info-intro-summary,.course-info-centre{
           margin: 0;
+        }
+        .course-info-intro{
+          padding-bottom: 7px;
+        }
+        .course-info-title{
+          font-weight: 500;
         }
       }
     }
@@ -229,7 +235,7 @@
         display: flex;
         justify-content: center;
         text-align: center;
-        background: $button1;
+        background: $button3;
         color: white;
       }
       .interest-button{
@@ -238,9 +244,10 @@
         display: flex;
         justify-content: center;
         text-align: center;
-        background: #5a0065;
-        color: white;
+        background: $red;
+        color: white !important;
         margin: 0;
+        border: none;
       }
     }
     .wrapup-button{
