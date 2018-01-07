@@ -112,12 +112,16 @@
                                 <i class="zmdi zmdi-account-circle"></i> <span>Profile</span>
                                 </a>
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="zmdi zmdi-settings"></i> <span>Settings</span>
-                                </a>
+                                </a> -->
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="zmdi zmdi-lock-open"></i> <span>Lock Screen</span>
+                                </a> -->
+                                <!-- item -->
+                                <a href="/admin/password-changing" class="dropdown-item notify-item">
+                                <i class="zmdi zmdi-lock-open"></i> <span>Đổi mật khẩu</span>
                                 </a>
                                 <!-- item-->
                                 <a href="/logout" class="dropdown-item notify-item">

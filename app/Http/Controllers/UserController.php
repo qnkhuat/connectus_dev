@@ -13,6 +13,7 @@ use File, Image, Hash;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Http\Requests\UserIdRequest;
+use App\Http\Requests\UserPasswordChangingRequest;
 
 class UserController extends Controller
 {
@@ -81,15 +82,6 @@ class UserController extends Controller
       $user->birth = $request->birth;
       $user->description = $request->description;
       $user->fb_page = $request->fb_page;
-      // $address = $request->address;
-      // $listAddress = [];
-      // if(is_array($address)) {
-      //   foreach($address as $a)
-      //   if($a != null)
-      //     array_push($listAddress, $a);
-      //   $user->address = count($listAddress) > 0 ? json_encode($listAddress, JSON_UNESCAPED_UNICODE) : "[]";
-      // } else
-      //   $user->address = "[]";
 
       if($user->save())
       {
@@ -104,7 +96,7 @@ class UserController extends Controller
           $user->avatar = $avatarName;
           $user->save();
         }
-        return redirect("/admin/users")->with(["messages" => ["type" => "success", "content" => "User created!"]]);
+        return redirect("/admin/users")->with(["messages" => ["type" => "success", "content" => "Đã tạo thành công tài khoản: $user->email ($user->name), với mật khẩu: $password, lưu ý: mật khẩu chỉ cấp 1 lần duy nhất, hãy đổi mật khẩu ngay lần đăng nhập đầu tiên!"]]);
       } else
         return redirect("/admin/users/create")->with(["result" => "save fail"]);
     }
@@ -141,15 +133,6 @@ class UserController extends Controller
         $user->birth = $request->birth;
         $user->description = $request->description;
         $user->fb_page = $request->fb_page;
-        // $address = $request->address;
-        // $listAddress = [];
-        // if(is_array($address)) {
-        //   foreach($address as $a)
-        //   if($a != null)
-        //     array_push($listAddress, $a);
-        //   $user->address = count($listAddress) > 0 ? json_encode($listAddress, JSON_UNESCAPED_UNICODE) : "[]";
-        // } else
-        //   $user->address = "[]";
 
         $user->save();
         Role::setRole($user->id, $request->roles);
@@ -188,5 +171,31 @@ class UserController extends Controller
 
     public function destroy(UserIdRequest $request) {
       User::destroyNow($request->id);
+    }
+
+    public function getPasswordChanging() {
+      return view("ad.user.password_changing");
+    }
+
+    public function postPasswordChanging(UserPasswordChangingRequest $request) {
+      $user = auth()->user();
+      if(Hash::check($request->old_password, $user->password)) {
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+        // return redirect()->back()->with(["messages" => ["type" => "success", "content" => "Thay đổi mật khẩu thành công!"]]);
+        return redirect("/login")->with(["messages" => ["type" => "success", "content" => "Thay đổi mật khẩu thành công!, hãy tiến hành đăng nhập lại bằng mật khẩu mới!"]]);
+      } else
+      return redirect()->back()->with(["messages" => ["type" => "warning", "content" => "Mật khẩu cũ không đúng!"]]);
+    }
+
+    public function passwordreset($id) {
+      $user = User::find($id);
+      if($user) {
+        $password = str_random(16);
+        $user->password = Hash::make($password);
+        $user->save();
+        return redirect()->back()->with(["messages" => ["type" => "success", "content" => "Đã reset: $user->email ($user->name), với mật khẩu mới là: $password, lưu ý: mật khẩu chỉ cấp 1 lần duy nhất, hãy đổi mật khẩu ngay lần đăng nhập đầu tiên!"]]);
+      } else
+      return redirect()->back()->with(["messages" => ["type" => "warning", "content" => "Không thể reset mật khẩu cho tài khoản không tồn tại!"]]);
     }
 }

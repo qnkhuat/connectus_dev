@@ -13,6 +13,8 @@
 
 Route::get('/', 'FrontController@mainPage');
 
+Route::get('/send', 'MailController@ahi');
+
 Route::get('/business', function () {
     return view('front.partner_signin');
 });
@@ -22,6 +24,8 @@ Route::get('/checkout', function () {
 });
 
 Route::get('/search', 'FrontController@search');
+Route::post('/course-follow', 'CourseFollowsController@create');
+Route::post('/course-unfollow', 'CourseFollowsController@destroy');
 
 Route::prefix('/login')->group(function () {
   Route::get('/', 'LoginController@login');
@@ -54,7 +58,10 @@ Route::post('/order', 'OrdersController@order')->middleware("auth");
 Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function () {
 	Route::get('/', function () {
 		return view("ad.dashboard.dashboard");
-	});
+  });
+  
+  Route::get('/password-changing', 'UserController@getPasswordChanging');
+  Route::post('/password-changing', 'UserController@postPasswordChanging');
 	Route::prefix('/users')->group(function () {
     Route::get('/', 'UserController@_list')->middleware("userView");
     Route::get('/create', 'UserController@_new')->middleware("userCreate");
@@ -64,6 +71,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
     Route::get('/profile', 'UserController@myProfile');
     Route::get('/profile/{id}', 'UserController@profile')->middleware("viewListAllAddress");
     Route::post('/destroy', 'UserController@destroy')->middleware("viewListAllAddress");
+    Route::get('/password-reset/{id}', 'UserController@passwordreset')->middleware("userUpdate");
   });
 
   Route::prefix('/districts')->group(function () {

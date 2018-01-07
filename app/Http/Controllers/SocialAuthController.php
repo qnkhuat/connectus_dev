@@ -34,3 +34,6 @@ class SocialAuthController extends Controller
       return redirect()->back();
   }
 }
+
+
+// http://127.0.0.1/callback/facebookXóahttp://127.0.0.1:8000/callback/facebookXóahttp://connectus.vn/callback/facebookXóa

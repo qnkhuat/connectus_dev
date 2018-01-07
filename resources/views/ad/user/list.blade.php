@@ -174,6 +174,9 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <a href="/admin/users/edit/{{$user->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
+            <a href="/admin/users/password-reset/{{$user->id}}">
+              <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">Reset password</button>
+            </a>
             <button type="button" onclick="destroyUser({{$user->id}}, '{{$user->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
           </td>
         </tr>
