@@ -62,13 +62,10 @@ function courseFollowToggle(course_id, type, div) {
     success : function (result){
       if(type == "follow" && result.success) {
         $('.cart-popup').append(div);
-        addCourses = courseFollowsTotal + 1;
-        $('.interest-count-items').html(addCourses);
+        $('.interest-count-items').html(result.totalCourseFollows);
       }
       else if (result.success) {
-        var addCourses = courseFollowsTotal - 1;
-        addCourses = addCourses < 0 ? 0 : addCourses;
-        $('.interest-count-items').html(addCourses);
+        $('.interest-count-items').html(result.totalCourseFollows);
         div.remove();
       }
     }

@@ -203,18 +203,12 @@
 
 <!-- //business Page -->
 
-
-
     <!-- //#footer -->
     <footer class="text-center">
       <p class="copyright">© 2017 ConnectUs. All rights reserved</p>
       <a class="facebook-icon" href="https://www.facebook.com/connectus.vn/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
     </footer>
     <!-- //#footer -->
-    <script type="text/javascript">
-      var courseFollowsTotal = {{ count($courseFollows) }};
-    </script>
-
 
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>

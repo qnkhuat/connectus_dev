@@ -19,7 +19,8 @@ class CourseFollowsController extends Controller
                     $courseFollow->user_id = $user->id;
                     $courseFollow->course_id = $course->id;
                     $courseFollow->save();
-                    return ["success" => true, "message" => "Bạn đã quan tâm 1 khóa học!"];
+                    $totalCourseFollows = $user->courseFollows()->count();
+                    return ["success" => true, "message" => "Bạn đã quan tâm 1 khóa học!", "totalCourseFollows" => $totalCourseFollows];
                 } else
                 return ["success" => false, "message" => "Bạn đã quan tâm khóa học này trước đó!"];
             } else
@@ -37,7 +38,8 @@ class CourseFollowsController extends Controller
                 if($followExits) {
                     $courseFollow = CourseFollow::where("user_id", $user->id)->where("course_id", $course->id)->first();
                     $courseFollow->delete();
-                    return ["success" => true, "message" => "Bạn đã bỏ quan tâm 1 khóa học!"];
+                    $totalCourseFollows = $user->courseFollows()->count();
+                    return ["success" => true, "message" => "Bạn đã bỏ quan tâm 1 khóa học!", "totalCourseFollows" => $totalCourseFollows];
                 } else
                 return ["success" => false, "message" => "Không thể bỏ quan tâm khóa học này vì hiện tại bạn không quan tâm nó!"];
             } else

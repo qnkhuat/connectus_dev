@@ -12,22 +12,26 @@ class FrontController extends Controller
 {
     public function mainPage() {
         $courseFollows = [];
+        $totalCourseFollows = 0;
         if(auth()->user()) {
             $user = auth()->user();
             $courseFollowIds = $user->courseFollows()->pluck("course_id")->toArray();
             $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
+            $totalCourseFollows = count($courseFollows);
         }
         $courses = Course::with("user")->where("deleted", false)->where("publish", true)->get();
         $partners = User::where("group", "partner")->where("deleted", false)->get();
-        return view('front.main', ["courses" => $courses, "partners" => $partners, "courseFollows" => $courseFollows]);
+        return view('front.main', ["courses" => $courses, "partners" => $partners, "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows]);
     }
 
     public function course(Request $request) {
         $courseFollows = [];
+        $totalCourseFollows = 0;
         if(auth()->user()) {
             $user = auth()->user();
             $courseFollowIds = $user->courseFollows()->pluck("course_id")->toArray();
             $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
+            $totalCourseFollows = count($courseFollows);
         }
 
         $course_id = (int) $request->id;
@@ -49,7 +53,7 @@ class FrontController extends Controller
             return view('front.single', ["courses" => $courses, "course" => $course,
                 "videos" => $videos, "slides" => $slides, "branches" => $branches,
                 "isAuth" => $isAuth, "user" => $user, "nickName" => $nickName,
-                "courseFollows" => $courseFollows
+                "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows
             ]);
         } else
             return redirect("/");
