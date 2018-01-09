@@ -13,7 +13,7 @@
 
 @section('latter_js')
 <script type="text/javascript">
-  var login_status = {{ $isAuth }};
+  var login_status = {{ $isAuth ? "true" : "false" }};
 </script>
 <script src="/js/swiper.min.js"></script>
 <script src="/js/single.js"></script>
