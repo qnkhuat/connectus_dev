@@ -123,7 +123,7 @@
               <div class="menu-mobile-popup text-center">
               <div class="menu-mobile-popup-wrap">
                 <div class="menu-mobile-popup-pages">
-                  <a href="" class="menu-mobile-popup-blog">BLOG</a>
+                  <a href="" class="menu-follw-popup-blog">BLOG</a>
                   <a href="" class="menu-mobile-popup-catigories">Khoá học Tiếng Anh</a>
                   <a href="https://www.facebook.com/connectus.vn/" class="menu-mobile-popup-fanpage">Fanpage</a>
                 </div>
