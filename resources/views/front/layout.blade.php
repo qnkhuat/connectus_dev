@@ -31,21 +31,29 @@
     @yield('latter_css')
   </head>
   <body>
+    <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '486530838414237',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.11'
+      });
+    };
 
-    <div id="facebook-chat" class="fb-livechat">
-    <div class="ctrlq fb-overlay"></div>
-    <div class="fb-widget">
-      <div class="ctrlq fb-close"></div>
-      <div class="fb-page" data-href="https://www.facebook.com/connectus.vn/" data-tabs="messages" data-width="360" data-height="400" data-small-header="true" data-hide-cover="true" data-show-facepile="false">
-        <blockquote cite="https://www.facebook.com/connectus.vn/" class="fb-xfbml-parse-ignore"> </blockquote>
-      </div>
-      <div class="fb-credit">
-      </div>
-      <div id="fb-root"></div>
-    </div>
-    <a href="https://m.me/connectus.vn" title="Send us a message on Facebook" class="ctrlq fb-button"></a>
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/vi_VN/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <div class="fb-customerchat"
+   page_id="497359463938807"
+   ref="<OPTIONAL_WEBHOOK_PARAM>">
   </div>
-
 
     <!-- #menu -->
     <div id="menu">
@@ -222,8 +230,8 @@
     <script src="/js/menu.js"></script>
     <script src="/js/lightbox.js"></script>
     <script src="/js/interest-button.js"></script>
-    <script src="/js/facebook.js"></script>
-    <script src="/js/facebook_message_plugin.js"></script>
+    <!-- <script src="/js/facebook.js"></script> -->
+    <!-- <script src="/js/facebook_message_plugin.js"></script> -->
     <script src="/backend/assets/plugins/timepicker/bootstrap-timepicker.js"></script>
     <script src="/backend/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
     <script src="/backend/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
