@@ -45,7 +45,8 @@ function coursePopup(content){
 }
 
 
-function expandCourse(){
-  $(this).addClass('expand-course');
-  console.log('yo');
+function expandCourse(div){
+  if(w<=600){
+    div.addClass('expand-course')
+  }
 }
