@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="description" content="Nền tảng kết nối học viên với các lớp học, khóa học một cách nhanh nhất, phù hợp nhất và tiết kiệm nhất.">
     <meta name="author" content="Coderthemes">
     <meta name="_token" content="{{csrf_token()}}">
     <link rel="shortcut icon" href="/images/header/logo_transparent.png">
@@ -50,11 +50,7 @@
      }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <div class="fb-customerchat"
-   data-href="http://connectus.vn"
-   messenger_app_id="486530838414237"
-   page_id="497359463938807"
-  </div>
+  <div class="fb-customerchat" data-href="http://connectus.vn" messenger_app_id="486530838414237" page_id="497359463938807"> </div>
 
 
 
