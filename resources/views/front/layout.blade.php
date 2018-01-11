@@ -85,7 +85,7 @@
           @else
             <p class="lightbox-button login-popup login-button">Đăng nhập</p>
           @endif
-          <p class="lightbox-button test-online-button">Test online</p>
+          <!-- <p class="lightbox-button test-online-button">Test online</p> -->
 
           <div class="interest-button-top">
             <i class="fa fa-heart-o cart-icon"></i>

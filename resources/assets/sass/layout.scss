@@ -554,10 +554,16 @@ html,body{
     margin-bottom: 0;
     height: 0;
     #menu-desktop{
-      display: none;
+      // display: none;
+      .menu-left{
+        display: none;
+      }
+      .menu-right{
+        width: calc(100% - 60px);
+      }
     }//#menu-desktop
     #menu-mobile{
-      display: initial;
+      display: none;
       .cart-popup{
         display: none;
       }

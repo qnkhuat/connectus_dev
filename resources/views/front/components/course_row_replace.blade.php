@@ -6,7 +6,8 @@
       Carbon::setLocale('vi');
     ?>
     @foreach($courses as $course)
-    <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'>
+    <!-- <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'> -->
+    <div class="courses-item-box more-item-box" title=".course-popup" onclick='$(this).toggleClass("expand-course")'>
       <div class="course-item-content">
         <div class="course-image-box">
           <img src="/img/courses/{{$course->avatar}}" class="course-image full" alt="">
@@ -44,14 +45,14 @@
           <!-- conflict cho nay -->
 
           <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></p>
-          <div class="course-price-box">
+          <!-- <div class="course-price-box">
             @if($course->new_price_only)
             <span class="course-price-sale">{{number_format($course->new_price)}}</span>
             @else
             <span class="course-price-origin">{{number_format($course->old_price)}}</span>
             <span class="course-price-sale">{{number_format($course->new_price)}}</span>
             @endif
-          </div>
+          </div> -->
 
           <div class="course-popup-detail">
             <div class="course-info-category">
@@ -86,7 +87,7 @@
   <div class="next-button pagination-button"> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
   <div class="prev-button pagination-button"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
 </div><!-- //.courses-row -->
-<div id="course-popup-mobile">
+<!-- <div id="course-popup-mobile">
   <div class="course-popup-mobile-content">
     <div class="course-popup">
 
@@ -97,4 +98,4 @@
     <i class="fa fa-chevron-down wrapup-button-down" aria-hidden="true"></i>
   </div>
 
-</div>
+</div> -->

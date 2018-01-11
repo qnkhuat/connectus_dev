@@ -3,7 +3,8 @@
   use Carbon\Carbon;
   Carbon::setLocale('vi');
 ?>
-<div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'>
+<!-- <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'> -->
+<div class="courses-item-box more-item-box" title=".course-popup" onclick='expandCourse()'>
   <div class="course-item-content">
     <div class="course-image-box">
       <img src="{{$course->avatar}}" class="course-image full" alt="">

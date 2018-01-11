@@ -43,3 +43,9 @@ function coursePopup(content){
     $('#course-popup-mobile').find(".course-popup-mobile-content").html(content[0].outerHTML);
   }
 }
+
+
+function expandCourse(){
+  $(this).addClass('expand-course');
+  console.log('yo');
+}

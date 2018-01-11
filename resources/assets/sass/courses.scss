@@ -1,5 +1,33 @@
 @import "variables";
 
+
+
+
+.expand-course{
+  .course-item-content{
+    flex-wrap: wrap;
+    .course-image-box{
+      width: 100px !important;
+      height: 100px !important;
+    }
+    .course-info-box{
+      width: calc(100% - 100px) !important;
+    }
+    .course-popup{
+      display: block;
+      width: 100%;
+      padding: 3px;
+      .course-info-title{
+        display: none;
+      }
+      .course-info-centre{
+        display: none;
+      }
+    }
+  }
+}
+
+
 .best-seller-tag{
   position: absolute;
   top: 10px;
@@ -162,7 +190,7 @@
     }
   }
   .course-info-category{
-    margin: 10px 0;
+    margin-bottom: 10px;
   }
   .course-info-intro{
     ul{
