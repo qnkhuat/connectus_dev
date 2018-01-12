@@ -148,7 +148,6 @@
 
           <!-- conflict cho nay -->
           <a class="course-info-title" href="">{{$course->name}}</a>
-          <!-- <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$opening}}</span></p> -->
           <!-- conflict cho nay -->
 
           <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></p>
