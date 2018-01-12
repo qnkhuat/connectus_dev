@@ -15,9 +15,8 @@ Route::get('/', 'FrontController@mainPage');
 
 Route::get('/send', 'MailController@ahi');
 
-Route::get('/business', function () {
-    return view('front.partner_signin');
-});
+Route::get('/business', 'FrontController@business');
+Route::post('/business', 'FrontController@postBusiness');
 
 Route::get('/checkout', function () {
     return view('front.checkout');

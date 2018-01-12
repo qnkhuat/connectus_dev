@@ -60,8 +60,38 @@ class FrontController extends Controller
     }
 
     public function search() {
+        $courseFollows = [];
+        $totalCourseFollows = 0;
+        if(auth()->user()) {
+            $user = auth()->user();
+            $courseFollowIds = $user->courseFollows()->pluck("course_id")->toArray();
+            $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
+            $totalCourseFollows = count($courseFollows);
+        }
+
         $courses = Course::with("user")->where("deleted", false)->where("publish", true)->get();
         $partners = User::where("group", "partner")->where("deleted", false)->get();
-        return view("front.search", ["courses" => $courses, "partners" => $partners]);
+        return view("front.search", [
+            "courses" => $courses, "partners" => $partners,
+            "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows
+        ]);
+    }
+
+    public function business() {
+        $courseFollows = [];
+        $totalCourseFollows = 0;
+        if(auth()->user()) {
+            $user = auth()->user();
+            $courseFollowIds = $user->courseFollows()->pluck("course_id")->toArray();
+            $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
+            $totalCourseFollows = count($courseFollows);
+        }
+        return view('front.partner_signin', [
+            "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,
+        ]);
+    }
+
+    public function postBusiness() {
+        
     }
 }
