@@ -76,8 +76,40 @@ class FrontController extends Controller
         $teacherTypes = Teacher::$type;
         $learnTime = Course::$learnTime;
 
-        // get request
-        
+        // get params
+        $pCouseType = $request->courseTypes ? $request->courseTypes : [];
+        $pDistricts = $request->districts ? $request->districts : [];
+        $pTuition = $request->tuition;
+        $pStudentPerClass = $request->student_per_class;
+        $pTeacherType = $request->teacher_type;
+        $pLearnTime = $request->time;
+
+        // handle raw sql
+            $sCouseType = "";
+            foreach($pCouseType as $type)
+                $sCouseType .= "course_type_id=$type or ";
+            $sCouseType = substr($sCouseType, 0, strlen($sCouseType) - 4);
+            $sCouseType = "(" . $sCouseType . ")";
+            $sCouseType = count($pCouseType) > 0 ? $sCouseType : "";
+            
+            $sDistricts = "";
+            foreach($pDistricts as $district)
+                $sDistricts .= "districts_text like '%$district%' or ";
+            $sDistricts = substr($sDistricts, 0, strlen($sDistricts) - 4);
+            $sDistricts = "(" . $sDistricts . ")";
+            $sDistricts = count($pDistricts) > 0 ? $sDistricts : "";
+
+            $sTuition = "";
+            if(strlen($pTuition) > 2) {
+                $sTuitionLength = strlen($pTuition);
+                $priceStart = (float) substr($pTuition, 0, strpos($pTuition, "-"));
+                $priceEnd = (float) substr($pTuition, strpos($pTuition, "-") + 1, $sTuitionLength);
+                $sTuition = "new_price >= $priceStart and new_price <= $priceEnd ";
+            }
+
+            // echo $sTuition;
+            // die();
+        // .handle raw sql
 
         $courses = Course::with("user")->where("deleted", false)->where("publish", true)->get();
         $partners = User::where("group", "partner")->where("deleted", false)->get();
@@ -85,7 +117,10 @@ class FrontController extends Controller
             "courses" => $courses, "partners" => $partners,
             "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,
             "couseType" => $couseType, "districts" => $districts,
-            "teacherTypes" => $teacherTypes, "learnTime" => $learnTime
+            "teacherTypes" => $teacherTypes, "learnTime" => $learnTime,
+            "pCouseType" => $pCouseType, "pDistricts" => $pDistricts,
+            "pTuition" => $pTuition, "pStudentPerClass" => $pStudentPerClass,
+            "pTeacherType" => $pTeacherType, "pLearnTime" => $pLearnTime
         ]);
     }
 
