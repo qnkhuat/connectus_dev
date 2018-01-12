@@ -129,12 +129,6 @@
           <a class="course-info-title one-line-text">
             {{$course->name}}
           </a>
-          <p>
-            <?php
-              $opening = new Carbon($course->opening,"Asia/Ho_Chi_Minh");
-              $opening = $opening->diffForHumans();
-            ?>
-          </p>
 
           <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></p>
           @if($course->sale > 0)
