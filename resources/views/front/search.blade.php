@@ -30,7 +30,7 @@
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Khoá học <span class="caret"></span></button>
         <ul class="dropdown-menu">
         @foreach($couseType as $type)
-        <li><a href="#" class="small" data-value="{{$type->id}}" tabIndex="-1"><input name="types[]" value="{{$type->id}}" type="checkbox"/>{{$type->name}}</a></li>
+        <li><a href="#" class="small" data-value="{{$type->id}}" tabIndex="-1"><input name="courseTypes[]" {{ in_array($type->id, $pCouseType) ? "checked" : "" }} value="{{$type->id}}" type="checkbox"/>{{$type->name}}</a></li>
         @endforeach
         </ul>
       </div>
@@ -60,7 +60,7 @@
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Địa điểm <span class="caret"></span></button>
         <ul class="dropdown-menu">
           @foreach($districts as $district)
-          <li><a href="#" class="small" data-value="{{$district->id}}" tabIndex="-1"><input name="districts[]" value="{{$district->id}}" type="checkbox"/>{{$district->name}}</a></li>
+          <li><a href="#" class="small" data-value="{{$district->key}}" tabIndex="-1"><input name="districts[]" {{ in_array($district->key, $pDistricts) ? "checked" : "" }} value="{{$district->key}}" type="checkbox"/>{{$district->name}}</a></li>
           @endforeach
         </ul>
       </div>
@@ -68,23 +68,23 @@
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Học phí <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="0-1000000" tabIndex="-1"><input name="tuition[]" value="0-1000000" type="checkbox"/>< 1.000.000</a></li>
-          <li><a href="#" class="small" data-value="1000000-4000000" tabIndex="-1"><input name="tuition[]" value="1000000-4000000" type="checkbox"/>1.000.000-4.000.000</a></li>
-          <li><a href="#" class="small" data-value="4000000-8000000" tabIndex="-1"><input name="tuition[]" value="4000000-8000000" type="checkbox"/>4.000.000-8.000.000</a></li>
-          <li><a href="#" class="small" data-value="8000000-12000000" tabIndex="-1"><input name="tuition[]" value="8000000-12000000" type="checkbox"/>8.000.000-12.000.000</a></li>
-          <li><a href="#" class="small" data-value="12000000-1000000000" tabIndex="-1"><input name="tuition[]" value="12000000-1000000000" type="checkbox"/>> 12.000.000</a></li>
+          <li><a href="#" class="small" data-value="0-1000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "0-1000000" ? "checked" : "" }} value="0-1000000" type="radio"/>< 1.000.000</a></li>
+          <li><a href="#" class="small" data-value="1000000-4000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "1000000-4000000" ? "checked" : "" }} value="1000000-4000000" type="radio"/>1.000.000-4.000.000</a></li>
+          <li><a href="#" class="small" data-value="4000000-8000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "4000000-8000000" ? "checked" : "" }} value="4000000-8000000" type="radio"/>4.000.000-8.000.000</a></li>
+          <li><a href="#" class="small" data-value="8000000-12000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "8000000-12000000" ? "checked" : "" }} value="8000000-12000000" type="radio"/>8.000.000-12.000.000</a></li>
+          <li><a href="#" class="small" data-value="12000000-1000000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "12000000-1000000000" ? "checked" : "" }} value="12000000-1000000000" type="radio"/>> 12.000.000</a></li>
         </ul>
       </div>
 
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Số học viên 1 lớp <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="1-1" tabIndex="-1"><input name="student_per_class[]" value="1-1" type="checkbox"/>1:1</a></li>
-          <li><a href="#" class="small" data-value="1-4" tabIndex="-1"><input name="student_per_class[]" value="1-4" type="checkbox"/>1-4</a></li>
-          <li><a href="#" class="small" data-value="4-8" tabIndex="-1"><input name="student_per_class[]" value="4-8" type="checkbox"/>4-8</a></li>
-          <li><a href="#" class="small" data-value="8-12" tabIndex="-1"><input name="student_per_class[]" value="8-12" type="checkbox"/>8-12</a></li>
-          <li><a href="#" class="small" data-value="12-20" tabIndex="-1"><input name="student_per_class[]" value="12-20" type="checkbox"/>12-20</a></li>
-          <li><a href="#" class="small" data-value="20-20000" tabIndex="-1"><input name="student_per_class[]" value="20-20000" type="checkbox"/>> 20</a></li>
+          <li><a href="#" class="small" data-value="1-1" tabIndex="-1"><input name="student_per_class" value="1-1" {{ $pStudentPerClass == "1-1" ? "checked" : "" }} type="radio"/>1:1</a></li>
+          <li><a href="#" class="small" data-value="1-4" tabIndex="-1"><input name="student_per_class" value="1-4" {{ $pStudentPerClass == "1-4" ? "checked" : "" }} type="radio"/>1-4</a></li>
+          <li><a href="#" class="small" data-value="4-8" tabIndex="-1"><input name="student_per_class" value="4-8" {{ $pStudentPerClass == "4-8" ? "checked" : "" }} type="radio"/>4-8</a></li>
+          <li><a href="#" class="small" data-value="8-12" tabIndex="-1"><input name="student_per_class" value="8-12" {{ $pStudentPerClass == "8-12" ? "checked" : "" }} type="radio"/>8-12</a></li>
+          <li><a href="#" class="small" data-value="12-20" tabIndex="-1"><input name="student_per_class" value="12-20" {{ $pStudentPerClass == "12-20" ? "checked" : "" }} type="radio"/>12-20</a></li>
+          <li><a href="#" class="small" data-value="20-20000" tabIndex="-1"><input name="student_per_class" value="20-20000" {{ $pStudentPerClass == "20-20000" ? "checked" : "" }} type="radio"/>> 20</a></li>
         </ul>
       </div>
 
@@ -92,7 +92,7 @@
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Giáo viên <span class="caret"></span></button>
         <ul class="dropdown-menu">
           @foreach($teacherTypes as $key => $type)
-          <li><a href="#" class="small" data-value="{{$key}}" tabIndex="-1"><input name="teachers[]" value="{{$key}}" type="checkbox"/>{{$type}}</a></li>
+          <li><a href="#" class="small" data-value="{{$key}}" tabIndex="-1"><input name="teacher_type" {{$pTeacherType == $key ? "checked" : ""}} value="{{$key}}" type="radio"/>{{$type}}</a></li>
           @endforeach
         </ul>
       </div>
@@ -101,7 +101,7 @@
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Thời gian học <span class="caret"></span></button>
         <ul class="dropdown-menu">
           @foreach($learnTime as $key => $time)
-          <li><a href="#" class="small" data-value="{{$key}}" tabIndex="-1"><input name="time[]" value="{{$key}}" type="checkbox"/>{{$time}}</a></li>
+          <li><a href="#" class="small" data-value="{{$key}}" tabIndex="-1"><input name="time" {{$pLearnTime == $key ? "checked" : ""}}  value="{{$key}}" type="radio"/>{{$time}}</a></li>
           @endforeach
         </ul>
       </div>
