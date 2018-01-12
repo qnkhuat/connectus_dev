@@ -24,17 +24,14 @@
 @section('search_section')
 <div class="container">
   <form class="" action="" method="get">
+  <input type="hidden" name="_token" value="{{ csrf_token() }}">
   <div class="search-bar">
-
-
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Khoá học <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="type[]" type="checkbox"/>Cơ bản</a></li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="type[]" type="checkbox"/>Giao tiếp</a></li>
-          <li><a href="#" class="small english-ielts" data-value="option3" tabIndex="-1"><input name="type[]" type="checkbox"/>Ielts</a></li>
-          <li><a href="#" class="small english-toeic" data-value="option4" tabIndex="-1"><input name="type[]" type="checkbox"/>Toeic</a></li>
-          <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input name="type[]" type="checkbox"/>Trẻ em</a></li>
+        @foreach($couseType as $type)
+        <li><a href="#" class="small" data-value="{{$type->id}}" tabIndex="-1"><input name="types[]" value="{{$type->id}}" type="checkbox"/>{{$type->name}}</a></li>
+        @endforeach
         </ul>
       </div>
 
@@ -62,54 +59,50 @@
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Địa điểm <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="locations" type="checkbox"/>Ba đình</a></li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="locations" type="checkbox"/>Cầu giấy</a></li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input name="locations" type="checkbox"/>Đống đa</a></li>
-          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input name="locations" type="checkbox"/>Hai bà Trưng</a></li>
-          <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input name="locations" type="checkbox"/>Hoàn kiếm</a></li>
-          <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input name="locations" type="checkbox"/>Tây hồ</a></li>
-          <li><a href="#" class="small" data-value="option7" tabIndex="-1"><input name="locations" type="checkbox"/>Thanh xuân</a></li>
+          @foreach($districts as $district)
+          <li><a href="#" class="small" data-value="{{$district->id}}" tabIndex="-1"><input name="districts[]" value="{{$district->id}}" type="checkbox"/>{{$district->name}}</a></li>
+          @endforeach
         </ul>
       </div>
 
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Học phí <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="tuition" type="checkbox"/>< 1.000.000</a></li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="tuition" type="checkbox"/>1.000.000-4.000.000</a></li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input name="tuition" type="checkbox"/>4.000.000-8.000.000</a></li>
-          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input name="tuition" type="checkbox"/>8.000.000-12.000.000</a></li>
-          <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input name="tuition" type="checkbox"/>> 12.000.000</a></li>
+          <li><a href="#" class="small" data-value="0-1000000" tabIndex="-1"><input name="tuition[]" value="0-1000000" type="checkbox"/>< 1.000.000</a></li>
+          <li><a href="#" class="small" data-value="1000000-4000000" tabIndex="-1"><input name="tuition[]" value="1000000-4000000" type="checkbox"/>1.000.000-4.000.000</a></li>
+          <li><a href="#" class="small" data-value="4000000-8000000" tabIndex="-1"><input name="tuition[]" value="4000000-8000000" type="checkbox"/>4.000.000-8.000.000</a></li>
+          <li><a href="#" class="small" data-value="8000000-12000000" tabIndex="-1"><input name="tuition[]" value="8000000-12000000" type="checkbox"/>8.000.000-12.000.000</a></li>
+          <li><a href="#" class="small" data-value="12000000-1000000000" tabIndex="-1"><input name="tuition[]" value="12000000-1000000000" type="checkbox"/>> 12.000.000</a></li>
         </ul>
       </div>
 
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Số học viên 1 lớp <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="student_per_class" type="checkbox"/>1:1</a></li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="student_per_class" type="checkbox"/>1-4</a></li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input name="student_per_class" type="checkbox"/>4-8</a></li>
-          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input name="student_per_class" type="checkbox"/>8-12</a></li>
-          <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input name="student_per_class" type="checkbox"/>12-20</a></li>
-          <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input name="student_per_class" type="checkbox"/>> 20</a></li>
+          <li><a href="#" class="small" data-value="1-1" tabIndex="-1"><input name="student_per_class[]" value="1-1" type="checkbox"/>1:1</a></li>
+          <li><a href="#" class="small" data-value="1-4" tabIndex="-1"><input name="student_per_class[]" value="1-4" type="checkbox"/>1-4</a></li>
+          <li><a href="#" class="small" data-value="4-8" tabIndex="-1"><input name="student_per_class[]" value="4-8" type="checkbox"/>4-8</a></li>
+          <li><a href="#" class="small" data-value="8-12" tabIndex="-1"><input name="student_per_class[]" value="8-12" type="checkbox"/>8-12</a></li>
+          <li><a href="#" class="small" data-value="12-20" tabIndex="-1"><input name="student_per_class[]" value="12-20" type="checkbox"/>12-20</a></li>
+          <li><a href="#" class="small" data-value="20-20000" tabIndex="-1"><input name="student_per_class[]" value="20-20000" type="checkbox"/>> 20</a></li>
         </ul>
       </div>
 
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Giáo viên <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="teacher" type="checkbox"/>Bản ngữ</a></li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="teacher" type="checkbox"/>Việt Nam</a></li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input name="teacher" type="checkbox"/>Bản ngữ + Việt Nam</a></li>
+          @foreach($teacherTypes as $key => $type)
+          <li><a href="#" class="small" data-value="{{$key}}" tabIndex="-1"><input name="teachers[]" value="{{$key}}" type="checkbox"/>{{$type}}</a></li>
+          @endforeach
         </ul>
       </div>
 
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Thời gian học <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="time" value="sang" type="checkbox"/>Sáng</a></li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="time" type="checkbox"/>Chiều</a></li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input name="time" type="checkbox"/>Tối</a></li>
+          @foreach($learnTime as $key => $time)
+          <li><a href="#" class="small" data-value="{{$key}}" tabIndex="-1"><input name="time[]" value="{{$key}}" type="checkbox"/>{{$time}}</a></li>
+          @endforeach
         </ul>
       </div>
 

@@ -7,6 +7,9 @@ use App\Models\Course;
 use App\User;
 use Auth, Session;
 use App\Models\CourseFollow;
+use App\Models\CourseType;
+use App\Models\District;
+use App\Models\Teacher;
 
 class FrontController extends Controller
 {
@@ -59,7 +62,7 @@ class FrontController extends Controller
             return redirect("/");
     }
 
-    public function search() {
+    public function search(Request $request) {
         $courseFollows = [];
         $totalCourseFollows = 0;
         if(auth()->user()) {
@@ -68,13 +71,26 @@ class FrontController extends Controller
             $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
             $totalCourseFollows = count($courseFollows);
         }
+        $couseType = CourseType::where("deleted", false)->get();
+        $districts = District::where("deleted", false)->get();
+        $teacherTypes = Teacher::$type;
+        $learnTime = Course::$learnTime;
+
+        // get request
+        
 
         $courses = Course::with("user")->where("deleted", false)->where("publish", true)->get();
         $partners = User::where("group", "partner")->where("deleted", false)->get();
         return view("front.search", [
             "courses" => $courses, "partners" => $partners,
-            "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows
+            "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,
+            "couseType" => $couseType, "districts" => $districts,
+            "teacherTypes" => $teacherTypes, "learnTime" => $learnTime
         ]);
+    }
+
+    public function psearch(Request $request) {
+        dd($request->all());
     }
 
     public function business() {
@@ -91,7 +107,7 @@ class FrontController extends Controller
         ]);
     }
 
-    public function postBusiness() {
-        
+    public function postBusiness(Request $request) {
+        dd($request->all());
     }
 }
