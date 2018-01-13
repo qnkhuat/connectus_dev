@@ -11,6 +11,17 @@
 |
 */
 
+
+
+//landing page
+Route::get('/landing/tn', function () {
+    return view('front.landings.tn');
+});
+
+
+//landing page
+
+
 Route::get('/', 'FrontController@mainPage');
 
 Route::get('/send', 'MailController@ahi');
@@ -59,7 +70,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
 	Route::get('/', function () {
 		return view("ad.dashboard.dashboard");
   });
-  
+
   Route::get('/password-changing', 'UserController@getPasswordChanging');
   Route::post('/password-changing', 'UserController@postPasswordChanging');
 	Route::prefix('/users')->group(function () {
