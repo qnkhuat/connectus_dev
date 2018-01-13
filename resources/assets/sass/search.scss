@@ -3,7 +3,9 @@
 .button-group{
   position: relative;
 }
-
+#search-mobile{
+  display: none;
+}
 .header-bar{
   background:$backgroundHeading;
   color: white;

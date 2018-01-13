@@ -51,9 +51,9 @@
   </script>
 
   <div class="fb-customerchat"  data-href="http://connectus.vn" messenger_app_id="486530838414237" page_id="497359463938807"> </div>
-
-
-
+    <div id="search-mobile">
+      <a href="/search" class="blog"><i class="fa fa-search" aria-hidden="true"></i></a>
+    </div>
     <!-- #menu -->
     <div id="menu">
       <div id="login-popup" class="lightbox login-popup">
