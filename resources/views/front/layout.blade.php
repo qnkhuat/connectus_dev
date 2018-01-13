@@ -54,7 +54,9 @@
 
 
 
-
+    <div id="search-mobile">
+      <a href="/search" class="blog"><i class="fa fa-search" aria-hidden="true"></i></a>
+    </div>
     <!-- #menu -->
     <div id="menu">
       <div id="login-popup" class="lightbox login-popup">
