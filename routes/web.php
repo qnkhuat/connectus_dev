@@ -160,6 +160,11 @@ Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function 
     Route::post("/update", 'OrdersController@update')->middleware("orderEdit");
   });
 
+  Route::prefix('/business')->group(function () {
+    Route::get('/', 'BusinessController@_list')->middleware("isSuperAdmin");
+    Route::post("/destroy", 'BusinessController@destroy')->middleware("isSuperAdmin");
+  });
+
 	Route::prefix('/files')->group(function () {
 		Route::get('/', function () {
 			return view("ad.files.list");

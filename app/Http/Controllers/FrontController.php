@@ -10,6 +10,8 @@ use App\Models\CourseFollow;
 use App\Models\CourseType;
 use App\Models\District;
 use App\Models\Teacher;
+use App\Models\Business;
+use App\Http\Requests\BusinessCreateRequest;
 
 class FrontController extends Controller
 {
@@ -178,7 +180,16 @@ class FrontController extends Controller
         ]);
     }
 
-    public function postBusiness(Request $request) {
-        dd($request->all());
+    public function postBusiness(BusinessCreateRequest $request) {
+        $business = new Business;
+        $business->name = $request->name;
+        $business->email = $request->email;
+        $business->phone = $request->phone;
+        $business->representative = $request->representative;
+        $business->message = $request->message;
+        if($business->save())
+            return redirect()->back()->with(["messages" => ["type" => "success", "content" => "Successfully!"]]);
+        else
+        return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Fail!"]]);
     }
 }

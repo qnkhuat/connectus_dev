@@ -259,6 +259,15 @@
                                 </ul>
                             </li>
 
+                            @if(auth()->user()->group == "admin")
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-handshake-o"></i> <span> Business </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="/admin/business">List</a></li>
+                                </ul>
+                            </li>
+                            @endif
+
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="md md-my-library-books"></i> <span> Pages </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
