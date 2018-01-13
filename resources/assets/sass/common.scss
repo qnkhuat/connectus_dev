@@ -9,7 +9,15 @@
 .padding-0-15{
   padding: 0 15px;
 }
-
+.search-button{
+  border: 1px solid $color1;
+  background: rgba(0, 0, 0, 0.45098039215686275);
+  border-radius: 3px;
+  a{
+      color: white;
+      font-size: 30px;
+  }
+}
 .one-line-text{
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -85,7 +93,7 @@
   }
   .course-price-sale{
     font-size: 18px;
-    color: $red; 
+    color: $red;
   }
 }
 .full{

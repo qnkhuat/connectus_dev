@@ -5,6 +5,7 @@
   <div class="banner-slogan">
     <h1>CONNECTUS</h1>
     <h3>Học nhiều hơn - Tiết kiệm hơn</h3>
+    <button type="button" class="search-button" name="button"><a href="/search">Tìm khoá học <i class="fa fa-search" aria-hidden="true"></i> </a></button>
   </div>
   <div class="category">
 
@@ -66,6 +67,8 @@
     </div>
   </div>
 </div>
+
+
 @endsection
 
 @section('courseInMainPage')

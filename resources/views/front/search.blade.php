@@ -27,7 +27,7 @@
 
 
   <form class="" action="" method="get">
-  <div class="search-bar">
+    <div class="search-bar">
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Khoá học <span class="caret"></span></button>
         <ul class="dropdown-menu">

@@ -91,7 +91,7 @@ class FrontController extends Controller
             $sCouseType = substr($sCouseType, 0, strlen($sCouseType) - 4);
             $sCouseType = "(" . $sCouseType . ")";
             $sCouseType = count($pCouseType) > 0 ? $sCouseType : "";
-            
+
             $sDistricts = "";
             foreach($pDistricts as $district)
                 $sDistricts .= "districts_text like '%$district%' or ";

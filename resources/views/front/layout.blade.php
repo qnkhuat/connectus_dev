@@ -68,7 +68,7 @@
       <!-- #menu -->
       <div id="menu-desktop" class="padding-0-15 df fixed-top">
         <div class="menu-left">
-          <a href="" class="blog">Blog</a>
+          <a href="/search" class="blog"><i class="fa fa-search" aria-hidden="true"></i></a>
 
         </div>
         <div class="middle">
