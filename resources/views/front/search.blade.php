@@ -23,6 +23,9 @@
 
 @section('search_section')
 <div class="container">
+
+
+
   <form class="" action="" method="get">
   <div class="search-bar">
       <div class="button-group">
@@ -59,7 +62,7 @@
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Địa điểm <span class="caret"></span></button>
         <ul class="dropdown-menu">
           @foreach($districts as $district)
-          <li><a href="#" class="small" data-value="{{$district->key}}" tabIndex="-1"><input name="districts[]" {{ in_array($district->key, $pDistricts) ? "checked" : "" }} value="{{$district->key}}" type="checkbox"/>{{$district->name}}</a></li>
+          <li><a href="#" class="small" data-value="{{$district->key}}" tabIndex="-1"><input onchange="handleCheck(this)" name="districts[]" {{ in_array($district->key, $pDistricts) ? "checked" : "" }} value="{{$district->key}}" type="checkbox"/>{{$district->name}}</a></li>
           @endforeach
         </ul>
       </div>
@@ -67,11 +70,11 @@
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Học phí <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="0-1000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "0-1000000" ? "checked" : "" }} value="0-1000000" type="radio"/>< 1.000.000</a></li>
-          <li><a href="#" class="small" data-value="1000000-4000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "1000000-4000000" ? "checked" : "" }} value="1000000-4000000" type="radio"/>1.000.000-4.000.000</a></li>
-          <li><a href="#" class="small" data-value="4000000-8000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "4000000-8000000" ? "checked" : "" }} value="4000000-8000000" type="radio"/>4.000.000-8.000.000</a></li>
-          <li><a href="#" class="small" data-value="8000000-12000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "8000000-12000000" ? "checked" : "" }} value="8000000-12000000" type="radio"/>8.000.000-12.000.000</a></li>
-          <li><a href="#" class="small" data-value="12000000-1000000000" tabIndex="-1"><input name="tuition" {{ $pTuition == "12000000-1000000000" ? "checked" : "" }} value="12000000-1000000000" type="radio"/>> 12.000.000</a></li>
+          <li><a href="#" class="small" data-value="0-1000000" tabIndex="-1"><input name="tuition" onchange="handleCheck(this)" {{ $pTuition == "0-1000000" ? "checked" : "" }} value="0-1000000" type="radio"/>< 1.000.000</a></li>
+          <li><a href="#" class="small" data-value="1000000-4000000" tabIndex="-1"><input name="tuition" onchange="handleCheck(this)" {{ $pTuition == "1000000-4000000" ? "checked" : "" }} value="1000000-4000000" type="radio"/>1.000.000-4.000.000</a></li>
+          <li><a href="#" class="small" data-value="4000000-8000000" tabIndex="-1"><input name="tuition" onchange="handleCheck(this)" {{ $pTuition == "4000000-8000000" ? "checked" : "" }} value="4000000-8000000" type="radio"/>4.000.000-8.000.000</a></li>
+          <li><a href="#" class="small" data-value="8000000-12000000" tabIndex="-1"><input name="tuition" onchange="handleCheck(this)" {{ $pTuition == "8000000-12000000" ? "checked" : "" }} value="8000000-12000000" type="radio"/>8.000.000-12.000.000</a></li>
+          <li><a href="#" class="small" data-value="12000000-1000000000" tabIndex="-1"><input name="tuition" onchange="handleCheck(this)" {{ $pTuition == "12000000-1000000000" ? "checked" : "" }} value="12000000-1000000000" type="radio"/>> 12.000.000</a></li>
         </ul>
       </div>
 
@@ -109,7 +112,13 @@
 
   </div>
    </form>
+
+
+   <ul class="checked-box">
+
+   </ul>
 </div>
+
 @endsection
 
 
