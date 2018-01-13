@@ -24,7 +24,6 @@
 @section('search_section')
 <div class="container">
   <form class="" action="" method="get">
-  <input type="hidden" name="_token" value="{{ csrf_token() }}">
   <div class="search-bar">
       <div class="button-group">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Khoá học <span class="caret"></span></button>
@@ -183,6 +182,21 @@
     </div><!-- //item -->
     @endforeach
     <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{$courses->appends([
+          'courseTypes' => $pCouseType,
+          'districts' => $pDistricts,
+          'tuition' => $pTuition,
+          'student_per_class' => $pStudentPerClass,
+          'teacher_type' => $pTeacherType,
+          'time' => $pLearnTime,
+        ])->links()}}
+      </div>
+    </div>
   </div>
 </div>
 <div id="course-popup-mobile">

@@ -22,7 +22,7 @@ class FrontController extends Controller
             $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
             $totalCourseFollows = count($courseFollows);
         }
-        $courses = Course::with("user")->where("deleted", false)->where("publish", true)->get();
+        $courses = Course::with("user")->where("deleted", false)->where("publish", true)->orderBy("created_at", "desc")->paginate(20);
         $partners = User::where("group", "partner")->where("deleted", false)->get();
         return view('front.main', ["courses" => $courses, "partners" => $partners, "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows]);
     }
@@ -41,7 +41,7 @@ class FrontController extends Controller
         $course = Course::where("id", $course_id)->where("deleted", false)->where("publish", true)->count() > 0 ? true : false;
         if($course) {
             $course = Course::find($course_id);
-            $courses = Course::with("user")->where("deleted", false)->where("publish", true)->get();
+            $courses = Course::with("user")->where("deleted", false)->where("publish", true)->orderBy("created_at", "desc")->paginate(12);
             $videos = json_decode($course->video);
             $slides = json_decode($course->slide);
             $branches = $course->branchs;
@@ -107,11 +107,47 @@ class FrontController extends Controller
                 $sTuition = "new_price >= $priceStart and new_price <= $priceEnd ";
             }
 
-            // echo $sTuition;
-            // die();
-        // .handle raw sql
+            $sStudent_per_class = "";
+            if(strlen($pStudentPerClass) > 2) {
+                $sStudent_per_class_length = strlen($pStudentPerClass);
+                $studentNumStart = (float) substr($pStudentPerClass, 0, strpos($pStudentPerClass, "-"));
+                $studentNumEnd = (float) substr($pStudentPerClass, strpos($pStudentPerClass, "-") + 1, $sStudent_per_class_length);
+                $sStudent_per_class = "student_total >= $studentNumStart and student_total <= $studentNumEnd ";
+            }
 
-        $courses = Course::with("user")->where("deleted", false)->where("publish", true)->get();
+            $sTeacher = $pTeacherType != "" ? "teacher_type='" . $pTeacherType ."' " : "";
+            $sLearnTime = $pLearnTime != "" ? "time_in_date='" . $pLearnTime . "'" : "";
+            $sSearch = $sCouseType . " and " . $sDistricts . " and " .
+                $sTuition . " and " . $sStudent_per_class . " and " .
+                $sTeacher . " and " . $sLearnTime;
+            $sSearch = trim($sSearch);
+            $sSearch = str_replace("  ", " ", $sSearch);
+            $sSearch = trim($sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = trim($sSearch);
+            $findAndFirst = strpos($sSearch, "and");
+            if($findAndFirst === 0)
+                $sSearch = substr($sSearch, 4, strlen($sSearch) - 4);
+            $sSearch = trim($sSearch);
+            if(substr($sSearch, strlen($sSearch) - 3, strlen($sSearch)) == "and")
+                $sSearch = substr($sSearch, 0, strlen($sSearch) - 4);
+            $sSearch = trim($sSearch);
+        // .handle raw sql
+        if($sSearch != "")
+            $courses = Course::with("user")
+                ->where("deleted", false)
+                ->where("publish", true)
+                ->whereRaw($sSearch)
+                ->paginate(12);
+        else
+            $courses = Course::with("user")
+                ->where("deleted", false)
+                ->where("publish", true)
+                ->paginate(12);
         $partners = User::where("group", "partner")->where("deleted", false)->get();
         return view("front.search", [
             "courses" => $courses, "partners" => $partners,
