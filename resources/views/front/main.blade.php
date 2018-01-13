@@ -71,9 +71,9 @@
 @section('courseInMainPage')
 <div id="courses">
   <!-- CHANGED original:course_row instead of course_row_replace -->
-
   @include('front.components.course_row_replace')
 
+  {{$courses->links()}}
 </div>
 @endsection
 

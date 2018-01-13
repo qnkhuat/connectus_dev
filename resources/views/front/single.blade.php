@@ -201,6 +201,8 @@
     <!-- CHANGED ORIGINAL: course_row instead of course_row_replace -->
     @include('front.components.course_row_replace')
   </div><!-- #courses -->
+
+  {{$courses->links()}}
 </div>
 @endsection
 
