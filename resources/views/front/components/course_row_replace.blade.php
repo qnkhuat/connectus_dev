@@ -9,6 +9,7 @@
     <!-- <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'> -->
     <div class="courses-item-box more-item-box" title=".course-popup" onclick='expandCourse($(this))'>
       <div class="course-item-content">
+        <a href="/khoahoc/{{$course->id}}" class="one-click-box" ></a>
         <div class="course-image-box">
           <img src="/img/courses/{{$course->avatar}}" class="course-image full" alt="">
         </div>

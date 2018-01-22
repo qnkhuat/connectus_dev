@@ -1,8 +1,5 @@
 @import "variables";
 
-
-
-
 .expand-course{
   .course-item-content{
     flex-wrap: wrap;
@@ -94,6 +91,15 @@
   margin: 0 1%;
   box-shadow :0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
   .course-item-content{
+    position: relative;
+    .one-click-box{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+
+    }
     .course-info-box{
       padding: 10px;
       font-size: 14px;
@@ -214,6 +220,9 @@
   $padding:5px;
   .course-popup{
     display: none;
+  }
+  .one-click-box{
+    display: none !important;
   }
   #course-popup-mobile{
     display: none;
