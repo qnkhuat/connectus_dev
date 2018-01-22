@@ -237,6 +237,7 @@ html,body{
 
 #search-mobile{
   position: fixed;
+  display: none;
   top: 100px;
   right: 5px;
   background: white;
@@ -553,8 +554,8 @@ html,body{
 .banner-slogan{
   color: white;
   position: absolute;;
-  top: 50px;
-  left: 50px;
+  top: 0;
+  padding-top: 50px;
   h1{
     font-size: 76px;
   }
@@ -567,6 +568,15 @@ html,body{
 }
 
 @media only screen and (max-width: 600px) {
+  #banner{
+    .banner-slogan{
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+  #search-mobile{
+    display: initial;
+  }
   #facebook-chat{
     display: none !important;
   }
