@@ -6,7 +6,7 @@
     <meta name="description" content="Nền tảng kết nối học viên với các lớp học, khóa học một cách nhanh nhất, phù hợp nhất và tiết kiệm nhất.">
     <meta name="author" content="Coderthemes">
     <meta name="_token" content="{{csrf_token()}}">
-    <link rel="shortcut icon" href="/images/header/logo_transparent.png">
+    <link rel="shortcut icon" href="/images/header/favicon.png">
     <title>ConnectUs - Học nhiều hơn,tiết kiệm hơn</title>
     <!-- file js nay tao rat nhieu class o html -->
     <script src="/backend/assets/js/modernizr.min.js"></script>
