@@ -1,5 +1,5 @@
 <div class="course-ielts courses-row">
-  <h3 class="courses-row-title padding-0-15"><a href="">Khoá học Tiếng Anh</a></h3>
+  <h3 class="courses-row-title padding-0-15"><a href="#">Khoá học Tiếng Anh</a></h3>
   <div class="courses-group more-group">
     <?php
       use Carbon\Carbon;

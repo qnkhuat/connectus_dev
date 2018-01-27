@@ -24,9 +24,12 @@ class FrontController extends Controller
             $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
             $totalCourseFollows = count($courseFollows);
         }
-        $courses = Course::with("user")->where("deleted", false)->where("publish", true)->orderBy("created_at", "desc")->paginate(20);
+        $categories = CourseType::where("publish", true)->where("deleted", false)->get();
+        $coursesWithCat = [];
+        foreach($categories as $cat)
+            array_push($coursesWithCat, [ "category" => $cat, "courses" => Course::with("user")->where("course_type_id", $cat->id)->where("deleted", false)->where("publish", true)->orderBy("created_at", "desc")->get()]);
         $partners = User::where("group", "partner")->where("deleted", false)->get();
-        return view('front.main', ["courses" => $courses, "partners" => $partners, "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows]);
+        return view('front.main', ["coursesWithCat" => $coursesWithCat, "partners" => $partners, "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows]);
     }
 
     public function course(Request $request) {
