@@ -41,7 +41,10 @@ class FrontController extends Controller
             $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
             $totalCourseFollows = count($courseFollows);
         }
-
+        $categories = CourseType::where("publish", true)->where("deleted", false)->get();
+        $coursesWithCat = [];
+        foreach($categories as $cat)
+            array_push($coursesWithCat, [ "category" => $cat, "courses" => Course::with("user")->where("course_type_id", $cat->id)->where("deleted", false)->where("publish", true)->orderBy("created_at", "desc")->get()]);
         $course_id = (int) $request->id;
         $course = Course::where("id", $course_id)->where("deleted", false)->where("publish", true)->count() > 0 ? true : false;
         if($course) {
@@ -58,7 +61,7 @@ class FrontController extends Controller
                 $socialAccounts = $user->SocialAccounts()->first();
                 $nickName = isset($socialAccounts->nick_name) ? $socialAccounts->nick_name : $user->name;
             }
-            return view('front.single', ["courses" => $courses, "course" => $course,
+            return view('front.single', ["coursesWithCat" => $coursesWithCat,"courses" => $courses, "course" => $course,
                 "videos" => $videos, "slides" => $slides, "branches" => $branches,
                 "isAuth" => $isAuth, "user" => $user, "nickName" => $nickName,
                 "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows
