@@ -44,8 +44,6 @@
 
 
 
-
-
     <script>
     window.fbAsyncInit = function() {
       FB.init({

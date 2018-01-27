@@ -1,12 +1,13 @@
+<?php
+  use Carbon\Carbon;
+  Carbon::setLocale('vi');
+?>
+@foreach($coursesWithCat as $cat)
+@if(count($cat["courses"]) > 0)
 <div class="course-ielts courses-row">
-  <h3 class="courses-row-title padding-0-15"><a href="#">Khoá học Tiếng Anh</a></h3>
+  <h3 class="courses-row-title padding-0-15"><a href="#">Khóa học: {{$cat["category"]->name}}</a></h3>
   <div class="courses-group more-group">
-    <?php
-      use Carbon\Carbon;
-      Carbon::setLocale('vi');
-    ?>
-    @foreach($courses as $course)
-    <!-- <div class="courses-item-box more-item-box" title=".course-popup" onclick='coursePopup($(this).find(".course-popup"))'> -->
+    @foreach($cat["courses"] as $course)
     <div class="courses-item-box more-item-box" title=".course-popup" onclick='expandCourse($(this))'>
       <div class="course-item-content">
         <a href="/khoahoc/{{$course->id}}" class="one-click-box" ></a>
@@ -39,21 +40,9 @@
         </div>
 
         <div class="course-popup">
-
-          <!-- conflict cho nay -->
           <a class="course-info-title" href="">{{$course->name}}</a>
-          <!-- <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{$opening}}</span></p> -->
-          <!-- conflict cho nay -->
 
           <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></p>
-          <!-- <div class="course-price-box">
-            @if($course->new_price_only)
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
-            @else
-            <span class="course-price-origin">{{number_format($course->old_price)}}</span>
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
-            @endif
-          </div> -->
 
           <div class="course-popup-detail">
             <div class="course-info-category">
@@ -76,27 +65,12 @@
         </div><!-- .course-popup -->
       </div>
     </div><!-- //item -->
-
-
-
-
-
     @endforeach
     <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
   </div><!-- //.courses-group -->
 
   <div class="next-button pagination-button"> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
   <div class="prev-button pagination-button"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-</div><!-- //.courses-row -->
-<!-- <div id="course-popup-mobile">
-  <div class="course-popup-mobile-content">
-    <div class="course-popup">
-
-    </div>
-  </div>
-  <div class="wrapup-button">
-    <i class="fa fa-chevron-up wrapup-button-up" aria-hidden="true"></i>
-    <i class="fa fa-chevron-down wrapup-button-down" aria-hidden="true"></i>
-  </div>
-
-</div> -->
+</div>
+@endif
+@endforeach
