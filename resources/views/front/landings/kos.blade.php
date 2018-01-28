@@ -26,7 +26,7 @@
     <!-- <link rel="stylesheet" href="/css/layout.css" media="screen" > -->
     <link rel="stylesheet" href="/css/common.css" media="screen" >
     <!-- <link rel="stylesheet" href="/css/responsive.css" media="screen" > -->
-    <link rel="stylesheet" href="/css/landing_tn.css">
+    <link rel="stylesheet" href="/css/landing_kos.css">
     <link rel="stylesheet" href="/css/courses.css">
     <!-- <link rel="stylesheet" href="/css/temporary.css"> -->
     @yield('latter_css')
@@ -82,6 +82,36 @@
     </div>
   </div>
 
+  <div id="features">
+
+    <h1>Tại sao nên chọn KOS?</h1>
+
+
+    <div class="feature">
+      <div class="icon"><i class="fa fa-building" aria-hidden="true"></i></div>
+      <div class="content"><p>Có tới 3 cơ sở trên địa bàn hà nội.</p></div>
+    </div>
+
+    <div class="feature">
+      <div class="icon"><i class="fa fa-users" aria-hidden="true"></i></div>
+      <div class="content"><p>KOS tự tin đi đầu trong việc xây dựng mô hình nhóm nhỏ ưu việt nhất ở địa bàn Hà Nội.</p></div>
+    </div>
+
+    <div class="feature">
+      <div class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+      <div class="content"><p>Đội ngũ giáo viên 100% có chứng chỉ TESOL và CELTA với nhiều năm kinh nghiệm và tâm huyết trong giảng dạy.</p></div>
+    </div>
+
+    <!-- <div class="feature">
+      <div class="icon"><i class="fa fa-book" aria-hidden="true"></i></div>
+      <div class="content"><p>Giáo trình được xây dựng và biên soạn khoa học theo các chủ điểm mang tính ứng dụng thực tiễn cao.</p></div>
+    </div> -->
+
+    <div class="feature">
+      <div class="icon"><i class="fa fa-anchor" aria-hidden="true"></i></div>
+      <div class="content"><p>KOS đảm bảo cam kết đầu ra sau mỗi khóa học.</p></div>
+    </div>
+  </div>
 
   <div id="courses">
     <div class="course-ielts courses-row">

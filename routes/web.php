@@ -17,6 +17,9 @@
 Route::get('/landing/tn', function () {
     return view('front.landings.tn');
 });
+Route::get('/landing/kos', function () {
+    return view('front.landings.kos');
+});
 
 
 //landing page
