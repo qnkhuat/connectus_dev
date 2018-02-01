@@ -3,7 +3,8 @@ var swiper = new Swiper('.course-details-info-left-slider .swiper-container', {
     paginationClickable: true,
     nextButton: '.course-details-info-left-slider .swiper-button-next',
     prevButton: '.course-details-info-left-slider .swiper-button-prev',
-    spaceBetween: 30
+    spaceBetween: 30,
+
 });
 
 //scroll in single courses

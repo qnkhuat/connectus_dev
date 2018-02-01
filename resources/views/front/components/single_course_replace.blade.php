@@ -1,4 +1,3 @@
--
 <?php
   use Carbon\Carbon;
   Carbon::setLocale('vi');

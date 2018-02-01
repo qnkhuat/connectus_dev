@@ -223,6 +223,24 @@
 
 <!-- //business Page -->
 
+
+
+<!-- portfolio page-->
+
+
+  @yield('user_portfolio')
+
+
+  @yield('info_portfolio')
+
+
+
+<!-- //portfolio page-->
+
+
+
+
+
     <!-- //#footer -->
     <footer class="text-center">
       <p class="email"><i class="fa fa-envelope" aria-hidden="true"></i> contact@connectus.vn</p>

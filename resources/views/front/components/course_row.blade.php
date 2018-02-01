@@ -4,7 +4,7 @@
     @foreach($courses as $course)
     @include('front.components.single_course')
     @endforeach
-    
+
     <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
   </div><!-- //.courses-group -->
 

@@ -23,9 +23,6 @@
 
 @section('search_section')
 <div class="container">
-
-
-
   <form class="" action="" method="get">
     <div class="search-bar">
       <div class="button-group">
