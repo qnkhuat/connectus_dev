@@ -34,8 +34,6 @@ function interest(id,title,old_price,new_price,centre){
       $('.cart-popup').css('display', 'none');
     },2000)
   }
-
-
     var div = formatCourseInfoFollow(id,title,old_price,new_price,centre);
     courseFollowToggle(id, "follow", div);
 }

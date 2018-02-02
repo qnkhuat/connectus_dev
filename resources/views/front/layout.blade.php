@@ -69,7 +69,7 @@
     </div>
     <!-- #menu -->
     <div id="menu">
-      <div id="login-popup" class="lightbox login-popup">
+      <div id="login-popup" class="lightbox_self login-popup">
         <div class="modal-background"></div>
         <div class="modal-dialogs">
           @include('front.components.login')
@@ -129,7 +129,7 @@
 
         <div class="menu-logo df fixed-bottom">
           <img src="/images/logo/logo_small.png" alt="logo" class="lightbox-button menu-mobile-popup-box full menu-logo-button" title=".menu-mobile-popup">
-          <div class="lightbox menu-mobile-popup-box">
+          <div class="lightbox_self menu-mobile-popup-box">
             <div class="modal-background"></div>
             <div class="modal-dialogs">
               <div class="menu-mobile-popup text-center">
@@ -242,12 +242,26 @@
 
 
     <!-- //#footer -->
-    <footer class="text-center">
-      <p class="email"><i class="fa fa-envelope" aria-hidden="true"></i> contact@connectus.vn</p>
-      <div class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> Địa chỉ: Số 5, ngõ 100, Cù Chính Lan, Hà Nội </div>
-      <p class="phone"><i class="fa fa-phone" aria-hidden="true"></i> Mr Ngọc: 01647843999</p>
-      <p class="copyright">© 2017 ConnectUs. All rights reserved</p>
-      <a class="facebook-icon" href="https://www.facebook.com/connectus.vn/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <footer>
+      <div class="container">
+
+        <div class="col-sm-6 col-xs-12">
+
+          <!-- <a class="facebook-icon" href="https://www.facebook.com/connectus.vn/"><i class="fa fa-facebook" aria-hidden="true"></i></a> -->
+          <a href="/">Trang chủ</a>
+          <a href="/search">Tìm kiếm</a>
+          <a href="/business">Tham gia cùng ConnectUs</a>
+        </div>
+
+        <div class="col-sm-6 col-xs-12">
+          <p class="email"><i class="fa fa-envelope" aria-hidden="true"></i> contact@connectus.vn</p>
+          <div class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> Địa chỉ: Số 5, ngõ 100, Cù Chính Lan, Hà Nội </div>
+          <p class="phone"><i class="fa fa-phone" aria-hidden="true"></i> Mr Ngọc: 01647843999</p>
+        </div>
+
+      </div>
+
+      <!-- <p class="copyright">© 2017 ConnectUs. All rights reserved</p> -->
     </footer>
     <!-- //#footer -->
 

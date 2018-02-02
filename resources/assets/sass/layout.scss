@@ -625,21 +625,34 @@ footer{
   position: relative;
   border-top: 1px solid #999;
   padding-top: 20px;
-  font-size: 16px;\
+  font-size: 16px;
   p{
     margin: 0;
     line-height: 20px;
   }
+  .col-sm-6{
+    a{
+      display: block;
+    }
+    margin-bottom: 15px;
+  }
+  .copyright{
+    text-align: center;
+    margin: 0;
+    border-top: 1px solid black;
+    margin: 0 20px;
+  }
   .facebook-icon{
     position: absolute;
-    left: 50%;
-    top: -15px;
+    text-align: center;
+    // left: 50%;
+    // top: -15px;
     background: #3b5897;
     border-radius: 50%;
     height: 30px;
     width: 30px;
     line-height: 30px;
-    transform: translateX(-50%);
+    // transform: translateX(-50%);
     color: white;
     i{
       line-height: 30px;

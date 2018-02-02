@@ -1,249 +1,268 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nền tảng kết nối học viên với các lớp học, khóa học một cách nhanh nhất, phù hợp nhất và tiết kiệm nhất.">
-    <meta name="author" content="Coderthemes">
-    <meta name="_token" content="{{csrf_token()}}">
-    <link rel="shortcut icon" href="/images/header/logo_transparent.png">
-    <title>ConnectUs - Học nhiều hơn,tiết kiệm hơn</title>
-    <!-- file js nay tao rat nhieu class o html -->
-    <script src="/backend/assets/js/modernizr.min.js"></script>
-    <!------------FONTS -->
-    <link href='/fonts/Roboto.css' rel='stylesheet' type='text/css'>
+@extends('front.layout')
 
-    <!-- LIBARIES -->
-    <link rel="stylesheet" href="/css/drooltip.css" media="screen" >
-    <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" >
-    <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" >
+@section('latter_css')
+<link rel="stylesheet" href="/css/landings.css">
+<link rel="stylesheet" href="/css/courses.css" media="screen" >
+<link rel="stylesheet" href="/css/lightbox.min.css">
+@endsection
 
+@section('latter_js')
+<script src="/js/lightbox.min.js"></script>
+<script src="/js/landing_click.js"></script>
+@endsection
 
-    <!------------CSS -->
-    @yield('prior_css')
-    <link rel="stylesheet" href="/css/reset.css" media="screen" >
-    <link rel="stylesheet" href="/css/variables.css" media="screen" >
-    <!-- <link rel="stylesheet" href="/css/layout.css" media="screen" > -->
-    <link rel="stylesheet" href="/css/common.css" media="screen" >
-    <!-- <link rel="stylesheet" href="/css/responsive.css" media="screen" > -->
-    <link rel="stylesheet" href="/css/landing_kos.css">
-    <link rel="stylesheet" href="/css/courses.css">
-    <!-- <link rel="stylesheet" href="/css/temporary.css"> -->
-    @yield('latter_css')
-  </head>
-  <body>
-  <script>
-    window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '486530838414237',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v2.11'
-    });
-    };
+@section('user_portfolio')
 
-    (function(d, s, id){
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement(s); js.id = id;
-   js.src = "https://connect.facebook.net/vi_VN/sdk.js";
-   fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
-
-  <div class="fb-customerchat"  data-href="http://connectus.vn" messenger_app_id="486530838414237" page_id="497359463938807" align="top"> </div>
-
-
-
-
-  <div id="menu" class="padding-0-15 df">
-    <div class="menu-left"></div>
-    <div class="middle"><a href="/" class="logoBrand"><img src="/images/logo/logo_rectangle.png" alt="logo"></a></div>
-    <div class="menu-right">
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle menu-right-a" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Trung tâm khác
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">KOS</a></li>
-          <li><a href="#">Res</a></li>
-        </ul>
-      </div>
-      <a href="/search" class="menu-right-a">Tìm khoá học</a>
-    </div>
+<div id="profile">
+  <div class="avatar">
+    <img src="../images/partners/kos.jpg" alt="" class="full">
   </div>
-
-  <div id="heading">
-    <img src="/images/landing/ielts_trangnguyen.jpg" alt="">
-    <div class="intro">
-      <h1>KOS English Center</h1>
-      <p>Học Tiếng Anh Uy Tín Tại Hà Nội</p>
-    </div>
-  </div>
-
-  <div id="features">
-
-    <h1>Tại sao nên chọn KOS?</h1>
+  <h1>KOS English Center</h1>
+</div>
 
 
-    <div class="feature">
-      <div class="icon"><i class="fa fa-building" aria-hidden="true"></i></div>
-      <div class="content"><p>Có tới 3 cơ sở trên địa bàn hà nội.</p></div>
-    </div>
+@endsection
 
-    <div class="feature">
-      <div class="icon"><i class="fa fa-users" aria-hidden="true"></i></div>
-      <div class="content"><p>KOS tự tin đi đầu trong việc xây dựng mô hình nhóm nhỏ ưu việt nhất ở địa bàn Hà Nội.</p></div>
-    </div>
-
-    <div class="feature">
-      <div class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
-      <div class="content"><p>Đội ngũ giáo viên 100% có chứng chỉ TESOL và CELTA với nhiều năm kinh nghiệm và tâm huyết trong giảng dạy.</p></div>
-    </div>
-
-    <!-- <div class="feature">
-      <div class="icon"><i class="fa fa-book" aria-hidden="true"></i></div>
-      <div class="content"><p>Giáo trình được xây dựng và biên soạn khoa học theo các chủ điểm mang tính ứng dụng thực tiễn cao.</p></div>
-    </div> -->
-
-    <div class="feature">
-      <div class="icon"><i class="fa fa-anchor" aria-hidden="true"></i></div>
-      <div class="content"><p>KOS đảm bảo cam kết đầu ra sau mỗi khóa học.</p></div>
-    </div>
-  </div>
-
-  <div id="courses">
-    <div class="course-ielts courses-row">
-      <h3 class="courses-row-title padding-0-15"><a href="">Khoá học của Trang Nguyễn</a></h3>
-      <div class="courses-group more-group">
-        <?php for ($x = 0; $x <= 10; $x++) {?>
-
-        <div class="courses-item-box more-item-box" title=".course-popup" onclick='expandCourse($(this))'>
-          <div class="course-item-content">
-            <div class="course-image-box">
-              <img src="/img/courses/1.png" class="course-image full" alt="">
-            </div>
-            <div class="course-info-box">
-              <a class="course-info-title one-line-text">
-                Tên khoá học
-              </a>
+@section('info_portfolio')
+<div id="port_bar">
+  <div class="entries info"><span>Giới thiệu</span></div>
+  <div class="entries courses"><span>Khoá học</span></div>
+  <div class="entries images"><span>Hình ảnh</span></div>
+  <div class="entries feedbacks"><span>Feedbacks</span></div>
+</div>
 
 
-              <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">Ielts Trang Nguyễn</span></p>
-              <div class="course-price-box">
-
-                <span class="course-price-origin">vài triệu</span>
-                <span class="course-price-sale">vài triệu trừ vài trăm</span>
-
-              </div>
-            </div>
-
-            <div class="course-popup">
-
-              <a class="course-info-title" href="">tên khoáhocj</a>
-
-
-              <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">Ielts Trang Nguyễn</span></p>
-
-
-              <div class="course-popup-detail">
-                <div class="course-info-category">
-                  Khoá học: <span class="course-info-catigory-in"><a href="">gì đó</a></span> | Môn <span class="course-info-category-name">Tiếng anh</span>
-                </div>
-
-                <div class="course-info-short">
-                  <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> 20 </span> giờ</span>
-                  <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> 30 </span> buổi</span>
-                  <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ 3,4 </span>
-                </div>
-
-                <div class="course-info-intro">
-                  <p class="course-info-intro-summary">ngắn gọn về khoá học</p>
-                </div>
-              </div>
-
-              <div class="details-box"><a href="/khoahoc/11" class="details-button">Chi tiết</a></div>
-
-            </div><!-- .course-popup -->
-          </div>
-        </div><!-- //item -->
-
-        <?php }?>
-
-        <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-      </div><!-- //.courses-group -->
-
-      <div class="next-button pagination-button"> <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-      <div class="prev-button pagination-button"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-    </div><!-- //.courses-row -->
-
-
-  </div>
-
-  <div id="signup">
-    <div class="intro">
-      <h1>Đăng ký tại connectus để nhận voucher lên đến 200k</h1>
-      <h3>Có cách nào để giảm học phí nữa không?</h3>
+<div id="info-display">
+  <div class="container">
+    <div class="info tab">
+      <h3>Tại sao bạn nên học tại KOS?</h3>
+      <p>- Mô hình lớp học nhóm nhỏ chỉ từ 6-8 học viên và các lớp học cá nhân (1 kèm 1, 1 kèm 2), KOS tự tin đi đầu trong việc xây dựng mô hình nhóm nhỏ ưu việt nhất ở địa bàn Hà Nội.</p>
+      <p>- Đội ngũ giáo viên 100% có chứng chỉ TESOL và CELTA với nhiều năm kinh nghiệm và tâm huyết trong giảng dạy, luôn cố gắng tạo động lực và niềm đam mê với Tiếng Anh cho học viên.</p>
+      <p>- Giáo trình được xây dựng và biên soạn khoa học theo các chủ điểm mang tính ứng dụng thực tiễn cao.</p>
+      <p>- Có tới 3 cơ sở trên địa bàn hà nội.</p>
       <ul>
-        <li>ĐK đôi: giảm 200k/ng</li>
-        <li>ĐK nhóm 3-4: giảm 300k/ng</li>
-        <li>ĐK nhóm 5: giảm 500k/ng</li>
+        <li>  Cơ Sở 1: Số 72E Ngõ 283 Trần Khát Chân Hoàn Kiếm. Tel: (024) 637 0047 - (024) 637 0052 </li>
+        <li>  Cơ Sở  2: Số 8 Ngõ 20 Nguyễn Công Hoan, Ba Đình. Tel: (024) 724 7269 - (024) 724 7270 </li>
+        <li>  Cơ Sở 3: Số 62A Hồ Tùng Mậu, Cầu Giấy. Tel: (024) 724 7269 - (024) 724 7270</li>
       </ul>
+
     </div>
-    <form action="/order" method="post">
+    <div class="courses tab">
+      @include('front.components.course_row_replace')
 
-        <div class="checkout-input-name">
-          <input name="name" value="" type="text" placeholder="Tên đẩy đủ:">
-        </div>
+    </div>
+    <div class="images tab">
+      <div class="wrap">
+        <h3>Lớp học tại KOS</h3>
+        <a class="example-image" href="../images/landings/kos/kos_classes1.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_classes1.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_classes2.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_classes2.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_classes3.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_classes3.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_classes4.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_classes4.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_classes5.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_classes5.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_classes6.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_classes6.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_classes7.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_classes7.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_classes8.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_classes8.jpg" alt="image-1" /></a>
+        <h3>Những học viên xuất sắc tại KOS</h3>
 
-        <div class="checkout-input-phone">
-          <input type="number" name="phone" value="" placeholder="Số điện thoại">
-        </div>
-
-        <div class="checkout-input-email">
-          <input type="email" name="email" value="" placeholder="E-mail">
-        </div>
-
-        <p>Bạn có muốn thông tin gì thêm?</p>
-        <div class="checkout-input-addition-info">
-          <input type="text" name="message" placeholder="Tôi yêu cầu...">
-        </div>
-
-        <p>Bạn biết đến ConnectUs qua:</p>
-        <div class="checkout-input-methods">
-          <select name="know">
-            <option value="default" selected disabled hidden>Bạn vui lòng chọn 1 lí do</option>
-            <option value="facebook">Qua Facebook</option>
-            <option value="google">Qua Google</option>
-            <option value="friend">Qua người quen</option>
-            <option value="event">Qua các sự kiện</option>
-          </select>
-        </div>
-
-        <div class="addcart-box">
-          <button type="submit" class="addcart-button">Đăng ký</button>
-        </div>
-
+        <a class="example-image" href="../images/landings/kos/kos_students_certi2.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi2.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_students_certi3.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi3.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_students_certi4.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi4.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_students_certi5.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi5.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_students_certi6.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi6.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_students_certi7.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi7.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_students_certi8.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi8.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_students_certi9.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi9.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_students_certi10.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi10.jpg" alt="image-1" /></a>
       </div>
-    </form>
+    </div>
+
+    <div class="feedbacks tab">
+      <div class="course-details-comments-list">
+
+        <div class="course-details-comment-individuals more-item-box">
+          <div class="course-details-comment">
+            <div class="course-details-comment-left">
+              <div class="course-details-comment-avatar">
+                <img src="../images/landings/kos/students/quynhtrang.jpg" alt="" class="full">
+              </div>
+              <div class="course-details-comment-date-username">
+                <div class="course-details-comment-username"><a href="https://www.facebook.com/this.is.for.me996?hc_ref=ARRPrCB7MP6ZVPUP4gRcOI7wB1XC_mExWFoIeQhtbZp91MpkYQxuVTrl3QGXie1D_b8">Quỳnh Trang</a></div>
+                <!-- <div class="course-details-comment-date">30/3/2017</div> -->
+              </div>
+            </div>
+
+            <div class="course-details-comment-right">
+              <div class="course-details-comment-stars">
+                <div class="stars-rating-static">
+                  <span class="star-rating-static-first fa fa-star">
+                      <span class="star-rating-static-second fa fa-star" style="width: 92%;"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="course-details-comment-content">
+                <p>Cảm ơn KOS đã tạo cho mình môi trường học hiệu quả và ý nghĩa đến như vậy, lớp học được dạy theo mô hình nhỏ rất hiệu quả, điều kiện học tập đầy đủ, hiện đại, thầy cô giáo thì nhẹ nhàng, vui tính, rất thân thiện, đặc biệt là thầy Mark, được học với thầy mình thấy rất vui và thú vị, mình đã hoàn thành khoá học target 4.0-5.0 và mình sẽ tiếp tục học thêm khoá nữa tại trung tâm. KOS- where my dream comes true. Love KOS</p>
+              </div>
+
+            </div>
+          </div>
+        </div><!-- .course-details-comment-individuals -->
+
+        <div class="course-details-comment-individuals more-item-box">
+          <div class="course-details-comment">
+            <div class="course-details-comment-left">
+              <div class="course-details-comment-avatar">
+                <img src="../images/landings/kos/students/phuonghoa.png" alt="" class="full">
+              </div>
+              <div class="course-details-comment-date-username">
+                <div class="course-details-comment-username"><a href="https://www.facebook.com/phuonghoa.nguyenthi.98?hc_ref=ARTGnP4TljJMmQy0zkRvNnhnnUNf7Q0qpZzPznUpn1zWt64C4-0D3dC-aG3pB-6Bses">Phương Hoa</a></div>
+                <!-- <div class="course-details-comment-date">30/3/2017</div> -->
+              </div>
+            </div>
+
+            <div class="course-details-comment-right">
+              <div class="course-details-comment-stars">
+                <div class="stars-rating-static">
+                  <span class="star-rating-static-first fa fa-star">
+                      <span class="star-rating-static-second fa fa-star" style="width: 85%;"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="course-details-comment-content">
+                <p>Mình học tại trung tâm qua lời giới thiệu của đứa bạn, được gặp thầy, cô giáo rất vui tính và tốt bụng ( cô Dettie, nếu các bạn muốn học lại căn bản và giao tiếp nhé. Cô dễ thương lắm ^^) , các chị nhân viên thì nhiệt tình, lại còn xênh đẹp, các chị ns tiếng anh rất hay nữa❤ Sau khi học thì bg mình tự tin nói hơn rất nhiều rồi. Mọi người ở trung tâm luôn sẵn sàng gíup đỡ học viên, nên kể cả sau khi kết thúc khóa học, các bạn cũng đừng ngại hỏi bài nha ^^.</p>
+                <p>Chúc các bạn thành công.</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- .course-details-comment-individuals -->
+
+        <div class="course-details-comment-individuals more-item-box">
+          <div class="course-details-comment">
+            <div class="course-details-comment-left">
+              <div class="course-details-comment-avatar">
+                <img src="../images/landings/kos/students/touyen.png" alt="" class="full">
+              </div>
+              <div class="course-details-comment-date-username">
+                <div class="course-details-comment-username"><a href="https://www.facebook.com/tjt.nguyen?hc_ref=ARTMg7P7evsWyk7LdK2cALpCK8a3SllMTnledXyox1dS7woOPIv9UsgFUsUsU7aAb-w">Nguyễn Tố Uyên</a></div>
+                <!-- <div class="course-details-comment-date">30/3/2017</div> -->
+              </div>
+            </div>
+
+            <div class="course-details-comment-right">
+              <div class="course-details-comment-stars">
+                <div class="stars-rating-static">
+                  <span class="star-rating-static-first fa fa-star">
+                      <span class="star-rating-static-second fa fa-star" style="width: 70%;"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="course-details-comment-content">
+                <p>Cảm thấy rất may mắn vì tìm được trung tâm KOS. Các chị tư vấn rất nhiệt tình, xinh gái, , giáo viên có nhiều phương pháp giảng dạy vừa học vừa chơi rất thoải mái, dễ tiếp thu và củng cố được bài học:) đặc biệt là mỗi lớp chỉ có 6 thành viên, giáo viên có thể quan tâm đến tất cả các học viên:) chứ không như các trung tâm khác lớp rất đông, giáo viên k thể sát xao được. Sau khi học 1 khoá học ở trung tâm, điều e thích nhất là có thể học với giáo viên người nước ngoài, giúp em có thể luyện nghe nói, phản xạ, trau dồi được vốn từ của mình. Hơn nữa, phía trung tâm còn rất tạo điều kiện để sắp xếp thời gian học cho hợp lý với thời gian biểu của e giúp e có thể tham gia lớp học đầy đủ. E rất hài lòng về chất lượng và dịch vụ của trung tâm</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- .course-details-comment-individuals -->
+
+        <div class="course-details-comment-individuals more-item-box">
+          <div class="course-details-comment">
+            <div class="course-details-comment-left">
+              <div class="course-details-comment-avatar">
+                <img src="../images/landings/kos/students/congpham.jpg" alt="" class="full">
+              </div>
+              <div class="course-details-comment-date-username">
+                <div class="course-details-comment-username"><a href="https://www.facebook.com/cong190296?hc_ref=ARSgRclgzDgVnKVaPHVaoBJSxfewMPMmOY5mULdunF4BeCDSbwtr73zumOll8_bVN9U">Công Phạm</a></div>
+                <!-- <div class="course-details-comment-date">30/3/2017</div> -->
+              </div>
+            </div>
+
+            <div class="course-details-comment-right">
+              <div class="course-details-comment-stars">
+                <div class="stars-rating-static">
+                  <span class="star-rating-static-first fa fa-star">
+                      <span class="star-rating-static-second fa fa-star" style="width: 90%;"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="course-details-comment-content">
+                <p>Trung tâm tốt, thích nhất ở việc chỉ có tối đa 6 học viên 1 lớp, giáo viên cả nước ngoài lẫn người Việt đều vui vẻ, tận tình với học viên, nhân viên tư vấn nhiệt tình, phòng học thoáng mát, đẹp.Nhưng công tác truyền thông, quảng cáo của trung tâm còn chưa tốt nên khó biết đến quá, mong sẽ cải thiện hơn</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- .course-details-comment-individuals -->
+
+        <div class="course-details-comment-individuals more-item-box">
+          <div class="course-details-comment">
+            <div class="course-details-comment-left">
+              <div class="course-details-comment-avatar">
+                <img src="../images/landings/kos/students/nguyenthuy.jpg" alt="" class="full">
+              </div>
+              <div class="course-details-comment-date-username">
+                <div class="course-details-comment-username"><a href="https://www.facebook.com/profile.php?id=100008853437431&hc_ref=ARTap22tMFMtbQupHlDePVKlCIxiKlhSmJTiujaMaTszYjfvb2Xcgs4l_sXXbhcTcxM">Nguyễn Thuỷ</a></div>
+                <!-- <div class="course-details-comment-date">30/3/2017</div> -->
+              </div>
+            </div>
+
+            <div class="course-details-comment-right">
+              <div class="course-details-comment-stars">
+                <div class="stars-rating-static">
+                  <span class="star-rating-static-first fa fa-star">
+                      <span class="star-rating-static-second fa fa-star" style="width: 65%;"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="course-details-comment-content">
+              <p>Mình cũng đã từng học 1,2 trung tâm trước khi tìm đến Kos. Ấn tượng ban đầu vs mình là:</p>
+              <ul>
+                <li>Các chị tư vấn viên nhiệt tình, chuyên nghiệp(Chị Chung)</li>
+                <li>Lịch học linh động</li>
+                <li>Lớp học theo mô hình nhóm 4-8 người nên khá hiệu quả, không đông đúc như một số trung tâm mình học trc đó</li>
+                <li>Giáo viên( Thầy Công): Vui tính, phương pháp giảng bài dễ hiểu,sau mỗi buổi học có kiểm tra từ và nhờ đó vốn từ m tăng lên đáng kể</li>
+              </ul>
+              <p>Nói chung là sẽ còn tiếp tục học một số khoá học nữa</p>
+            </div>
+          </div>
+        </div><!-- .course-details-comment-individuals -->
+
+        <!-- <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div> -->
+      </div>
+
+      <div class="course-details-comment-individuals more-item-box">
+        <div class="course-details-comment">
+          <div class="course-details-comment-left">
+            <div class="course-details-comment-avatar">
+              <img src="../images/landings/kos/students/duykhanh.jpg" alt="" class="full">
+            </div>
+            <div class="course-details-comment-date-username">
+              <div class="course-details-comment-username"><a href="https://www.facebook.com/khanhmax.khanh?hc_ref=ARQujMozmjG9lcUkgWWVKhlPqy7gJ0UfyswkpV9BzkZ4bI_L83jrL7hApwoO6-Kp3ek">Nguyễn Duy Khánh</a></div>
+              <!-- <div class="course-details-comment-date">30/3/2017</div> -->
+            </div>
+          </div>
+
+          <div class="course-details-comment-right">
+            <div class="course-details-comment-stars">
+              <div class="stars-rating-static">
+                <span class="star-rating-static-first fa fa-star">
+                    <span class="star-rating-static-second fa fa-star" style="width: 75%;"></span>
+                </span>
+              </div>
+            </div>
+            <div class="course-details-comment-content">
+              <p>Bản thân cũng đã từng học ở 1,2 trung tâm trước khi đến KOS.(Các trung tâm trước đấy đều không hài lòng tẹo nào. Vì thật sự kĩ năng sư phạm còn rất hạn chế)</p>
+              <p>Ấn tượng đầu tiên của mình ở đây chính là sự nhiệt tình của các chị tư vấn viên, luôn cảm thấy các chị như những người bạn, sẵn lòng giúp đỡ, tạo điều kiện tốt nhất cho học viên, đặc biệt là những học viên có lịch tréo ngoe như mình.</p>
+              <p>Tuy còn gặp rất nhiều khó khăn trong việc học tiếng Anh (chủ yếu là do mình ko dành được nhiều thời gian học, vướng lịch công việc, việc gia đình etc..), nhưng thật sự cảm thấy khá ưng vì đã tiến bộ rất nhiều so với thời điểm bắt đầu, được các thầy cô chỉ dạy, giúp đỡ (chị Thảo, cô Dette, thầy Mark). Học thì rất vui, cảm nhận rõ được nguồn năng lượng từ các thầy cô khi dạy, rất lôi cuốn.</p>
+            </div>
+
+          </div>
+        </div>
+      </div><!-- .course-details-comment-individuals -->
+
+
+
+
+      <!-- <div class="more-button"><i class="fa fa-chevron-down" aria-hidden="true"></i></div> -->
+    </div>
+
+    </div>
   </div>
+</div>
 
-
-
-
-
-  <!-- //#footer -->
-
-  <script src="/js/jquery-3.2.1.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/header.js"></script>
-  <script src="/js/drooltip.src.js"></script>
-  <script src="/js/popup-item.js"></script>
-  <script src="/js/courses.js"></script>
-  <script src="/js/menu.js"></script>
-  <script src="/js/lightbox.js"></script>
-  <script src="/js/interest-button.js"></script>
-  @yield('latter_js')
-</body>
-</html>
+@endsection

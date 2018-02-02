@@ -214,7 +214,7 @@
 
 @section('checkoutForm')
 <div id="checkout">
-  <div class="lightbox choose-class">
+  <div class="lightbox_self choose-class">
     <div class="modal-background"></div>
 
     <div class="modal-dialogs">
