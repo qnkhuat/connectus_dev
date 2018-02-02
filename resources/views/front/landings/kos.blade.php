@@ -70,7 +70,6 @@
         <a class="example-image" href="../images/landings/kos/kos_students_certi5.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi5.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/kos/kos_students_certi6.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi6.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/kos/kos_students_certi7.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi7.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/kos/kos_students_certi8.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi8.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/kos/kos_students_certi9.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi9.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/kos/kos_students_certi10.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi10.jpg" alt="image-1" /></a>
       </div>
