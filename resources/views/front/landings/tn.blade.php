@@ -13,11 +13,11 @@
 
 @section('user_portfolio')
 
-<div id="profile">
+<div id="profile" style="background-image: url('../images/landing/tn.jpg');">
   <div class="avatar">
-    <img src="../images/partners/kos.jpg" alt="" class="full">
+    <img src="../images/partners/ieltstrangnguyen.jpg" alt="" class="full">
   </div>
-  <h1>KOS English Center</h1>
+  <h1>Ielts Trang Nguyễn</h1>
 </div>
 
 

@@ -13,7 +13,7 @@
 
 @section('user_portfolio')
 
-<div id="profile">
+<div id="profile" style="background-image: url('../images/landing/kos.jpg');">
   <div class="avatar">
     <img src="../images/partners/kos.jpg" alt="" class="full">
   </div>
