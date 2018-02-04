@@ -15,6 +15,7 @@
 
 //landing page
 Route::get('/landing/kos', 'FrontController@kos');
+Route::get('/landing/tn', 'FrontController@tn');
 
 
 Route::get('/', 'FrontController@mainPage');

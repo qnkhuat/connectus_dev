@@ -70,6 +70,7 @@
         <a class="example-image" href="../images/landings/kos/kos_students_certi5.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi5.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/kos/kos_students_certi6.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi6.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/kos/kos_students_certi7.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi7.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/kos/kos_students_certi8.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi8.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/kos/kos_students_certi9.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi9.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/kos/kos_students_certi10.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/kos/kos_students_certi10.jpg" alt="image-1" /></a>
       </div>
@@ -77,34 +78,6 @@
 
     <div class="feedbacks tab">
       <div class="course-details-comments-list">
-
-        <div class="course-details-comment-individuals more-item-box">
-          <div class="course-details-comment">
-            <div class="course-details-comment-left">
-              <div class="course-details-comment-avatar">
-                <img src="../images/landings/kos/students/quynhtrang.jpg" alt="" class="full">
-              </div>
-              <div class="course-details-comment-date-username">
-                <div class="course-details-comment-username"><a href="https://www.facebook.com/this.is.for.me996?hc_ref=ARRPrCB7MP6ZVPUP4gRcOI7wB1XC_mExWFoIeQhtbZp91MpkYQxuVTrl3QGXie1D_b8">Quỳnh Trang</a></div>
-                <!-- <div class="course-details-comment-date">30/3/2017</div> -->
-              </div>
-            </div>
-
-            <div class="course-details-comment-right">
-              <div class="course-details-comment-stars">
-                <div class="stars-rating-static">
-                  <span class="star-rating-static-first fa fa-star">
-                      <span class="star-rating-static-second fa fa-star" style="width: 92%;"></span>
-                  </span>
-                </div>
-              </div>
-              <div class="course-details-comment-content">
-                <p>Cảm ơn KOS đã tạo cho mình môi trường học hiệu quả và ý nghĩa đến như vậy, lớp học được dạy theo mô hình nhỏ rất hiệu quả, điều kiện học tập đầy đủ, hiện đại, thầy cô giáo thì nhẹ nhàng, vui tính, rất thân thiện, đặc biệt là thầy Mark, được học với thầy mình thấy rất vui và thú vị, mình đã hoàn thành khoá học target 4.0-5.0 và mình sẽ tiếp tục học thêm khoá nữa tại trung tâm. KOS- where my dream comes true. Love KOS</p>
-              </div>
-
-            </div>
-          </div>
-        </div><!-- .course-details-comment-individuals -->
 
         <div class="course-details-comment-individuals more-item-box">
           <div class="course-details-comment">
