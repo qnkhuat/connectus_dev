@@ -188,10 +188,10 @@
 
 <!-- main Page -->
     @yield('banner')
+    
+    @yield('partners')
 
     @yield('courseInMainPage')
-
-    @yield('partners')
 
     @yield('becomePartner')
 <!-- //main Page -->

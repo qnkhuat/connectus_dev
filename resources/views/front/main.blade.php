@@ -84,7 +84,7 @@
 
 @section('partners')
 <div id="partners">
-  <h3>Đối tác chính của chúng tôi</h3>
+  <h3>Tìm hiểu về đối tác của chúng tôi</h3>
   <div class="partners-box">
     <!-- @foreach($partners as $partner)
     <div class="partners-item">
@@ -92,16 +92,19 @@
     </div>
     @endforeach -->
     <div class="partners-item">
-      <img src="images/partners/ieltstrangnguyen.jpg" alt="">
-    </div>
-    <div class="partners-item">
-      <img src="images/partners/kos.jpg" alt="">
-    </div>
-    <div class="partners-item">
       <img src="images/partners/face.jpg" alt="">
     </div>
+
     <div class="partners-item">
-      <img src="images/partners/geeko.jpg" alt="">
+      <a href="/landing/tn"><img src="images/partners/ieltstrangnguyen.jpg" alt=""></a>
+    </div>
+
+    <div class="partners-item">
+      <a href="/landing/kos"><img src="images/partners/kos.jpg" alt=""></a>
+    </div>
+
+    <div class="partners-item">
+      <img src="images/partners/theieltsworkshop.jpg" alt="">
     </div>
   </div>
 
