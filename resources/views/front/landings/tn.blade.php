@@ -17,7 +17,7 @@
   <div class="avatar">
     <img src="../images/partners/ieltstrangnguyen.jpg" alt="" class="full">
   </div>
-  <h1>Ielts Trang Nguyễn</h1>
+  <h1>IELTS Trang Nguyễn</h1>
 </div>
 
 
@@ -47,7 +47,7 @@
     </div>
     <div class="images tab">
       <div class="wrap">
-        <h3>Lớp học tại KOS</h3>
+        <h3>Lớp học tại IELTS Trang Nguyễn</h3>
         <a class="example-image" href="../images/landings/tn/tn_classes1.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes1.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/tn/tn_classes2.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes2.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/tn/tn_classes3.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes3.jpg" alt="image-1" /></a>
