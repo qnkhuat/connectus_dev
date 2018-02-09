@@ -104,7 +104,7 @@
     </div>
 
     <div class="partners-item">
-      <img src="images/partners/theieltsworkshop.jpg" alt="">
+      <a href="/landing/tiw"><img src="images/partners/tiw.jpg" alt=""></a>
     </div>
   </div>
 
