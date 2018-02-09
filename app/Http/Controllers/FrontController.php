@@ -49,6 +49,8 @@ class FrontController extends Controller
 
     }
 
+
+
     public function tn(){
       $courseFollows = [];
       $totalCourseFollows = 0;
@@ -63,6 +65,25 @@ class FrontController extends Controller
           $totalCourseFollows = count($courseFollows);
       }
       return view('front.landings.tn', [
+          "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,"coursesWithCat" => $coursesWithCat,
+      ]);
+
+    }
+
+    public function tiw(){
+      $courseFollows = [];
+      $totalCourseFollows = 0;
+      $categories = CourseType::where("publish", true)->where("deleted", false)->get();
+      $coursesWithCat = [];
+      foreach($categories as $cat)
+          array_push($coursesWithCat, [ "category" => $cat, "courses" => Course::with("user")->where("user_id",22)->where("course_type_id", $cat->id)->where("deleted", false)->where("publish", true)->orderBy("created_at", "desc")->get()]);
+      if(auth()->user()) {
+          $user = auth()->user();
+          $courseFollowIds = $user->courseFollows()->pluck("course_id")->toArray();
+          $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
+          $totalCourseFollows = count($courseFollows);
+      }
+      return view('front.landings.tiw', [
           "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,"coursesWithCat" => $coursesWithCat,
       ]);
 
