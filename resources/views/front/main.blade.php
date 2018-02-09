@@ -92,7 +92,7 @@
     </div>
     @endforeach -->
     <div class="partners-item">
-      <img src="images/partners/face.jpg" alt="">
+      <img src="images/partners/if.jpg" alt="">
     </div>
 
     <div class="partners-item">
