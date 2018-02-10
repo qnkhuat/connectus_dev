@@ -188,7 +188,7 @@
 
 <!-- main Page -->
     @yield('banner')
-    
+
     @yield('partners')
 
     @yield('courseInMainPage')
@@ -274,6 +274,7 @@
     <script src="/js/menu.js"></script>
     <script src="/js/lightbox.js"></script>
     <script src="/js/interest-button.js"></script>
+    <script src="/js/scroll.js"></script>
     <!-- <script src="/js/facebook.js"></script> -->
     <!-- <script src="/js/facebook_message_plugin.js"></script> -->
     <script src="/backend/assets/plugins/timepicker/bootstrap-timepicker.js"></script>

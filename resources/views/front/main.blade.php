@@ -12,7 +12,7 @@
     <div class="language catigories">
       <i class="fa fa-connectdevelop" aria-hidden="true"></i>
       <p>TIẾNG ANH</p>
-      <a href=""></a>
+      <!-- <a href=""></a> -->
     </div>
 
     <div class="design catigories">
