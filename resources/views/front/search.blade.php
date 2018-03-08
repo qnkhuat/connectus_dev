@@ -141,10 +141,10 @@
           @endif
           <div class="course-price-box">
             @if($course->new_price_only)
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @else
             <span class="course-price-origin">{{number_format($course->old_price)}}</span>
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @endif
           </div>
         </div>
@@ -158,10 +158,10 @@
           <p class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></p>
           <!-- <div class="course-price-box">
             @if($course->new_price_only)
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @else
             <span class="course-price-origin">{{number_format($course->old_price)}}</span>
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @endif
           </div> -->
 

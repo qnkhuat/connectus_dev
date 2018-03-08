@@ -56,10 +56,10 @@
           <h1 class="course-info-title">{{$course->name}}</h1>
           <div class="course-price-box">
             @if($course->new_price_only)
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @else
             <span class="course-price-origin">{{number_format($course->old_price)}}</span>
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @endif
           </div>
           <p class="course-info-intro-summary">{{$course->description}}</p>
@@ -84,10 +84,10 @@
         <div class="course-details-info-right-content">
           <div class="course-price-box">
             @if($course->new_price_only)
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @else
             <span class="course-price-origin">{{number_format($course->old_price)}}</span>
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @endif
           </div>
           <div class="choose-class-box"><p class="lightbox-button choose-class choose-class-button ">Chọn lớp</p><p class="interest-button" onclick='interest( $(".course-details-info-left").html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p></div>
@@ -225,10 +225,10 @@
           <h3 class="course-info-title">{{$course->name}}</h3>
           <div class="course-price-box">
             @if($course->new_price_only)
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @else
             <span class="course-price-origin">{{number_format($course->old_price)}}</span>
-            <span class="course-price-sale">{{number_format($course->new_price)}}</span>
+            <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @endif
           </div>
           <div class="course-info-short">
