@@ -70,7 +70,7 @@
 #banner-features{
   display: flex;
   justify-content: space-around;
-  background: $color1;
+  background-image: linear-gradient(-45deg, #e8608f, #828bcc);
   color: white;
   div:before{
     display: inline-block;
