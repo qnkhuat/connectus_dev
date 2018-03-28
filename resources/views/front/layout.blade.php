@@ -78,7 +78,7 @@
       <!-- //#login-popup -->
 
       <!-- #menu -->
-      <div id="menu-desktop" class="padding-0-15 df">
+      <div id="menu-desktop" class="padding-0-15 df fixed-top">
         <div class="menu-left">
           <a href="/search" class="blog"><i class="fa fa-search" aria-hidden="true"></i></a>
 
