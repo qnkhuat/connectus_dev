@@ -1,7 +1,8 @@
 @import "variables";
 #banner{
   background: url("/images/header/banner4.jpg");
-  height: calc(100% - 116px);
+  // height: calc(100% - 116px);
+  height: 360px;
   background-size: cover;
   background-position: center;
   position: relative;

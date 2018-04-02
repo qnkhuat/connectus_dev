@@ -29,7 +29,7 @@
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Khoá học <span class="caret"></span></button>
         <ul class="dropdown-menu">
         @foreach($couseType as $type)
-        <li><a href="#" class="small" data-value="{{$type->id}}" tabIndex="-1"><input name="courseTypes[]" {{ in_array($type->id, $pCouseType) ? "checked" : "" }} value="{{$type->id}}" type="checkbox"/>{{$type->name}}</a></li>
+        <li><a href="#" class="small" data-value="{{$type->id}}" tabIndex="-1"><input name="courseTypes[]" {{ in_array($type->id, $pCouseType) ? "checked" : "" }} value="{{$type->id}}" type="radio"/>{{$type->name}}</a></li>
         @endforeach
         </ul>
       </div>
@@ -37,21 +37,21 @@
       <div class="button-group ielts-target hidden">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Mục tiêu <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="target_ielts" type="checkbox"/>Pre ielts</a></li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="target_ielts" type="checkbox"/>5.0-6.0</a></li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input name="target_ielts" type="checkbox"/>6.0-7.0</a></li>
-          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input name="target_ielts" type="checkbox"/>7.0-8.0</a></li>
-          <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input name="target_ielts" type="checkbox"/>8.0-9.0</a></li>
+          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="target_ielts" type="radio"/>Pre ielts</a></li>
+          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="target_ielts" type="radio"/>5.0-6.0</a></li>
+          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input name="target_ielts" type="radio"/>6.0-7.0</a></li>
+          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input name="target_ielts" type="radio"/>7.0-8.0</a></li>
+          <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input name="target_ielts" type="radio"/>8.0-9.0</a></li>
         </ul>
       </div>
 
       <div class="button-group toeic-target hidden">
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Mục tiêu <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="taget_toieic" type="checkbox"/>Pre toeic</a></li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="taget_toieic" type="checkbox"/>250-500</a></li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input name="taget_toieic" type="checkbox"/>500-750</a></li>
-          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input name="taget_toieic" type="checkbox"/>750-990</a></li>
+          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input name="taget_toieic" type="radio"/>Pre toeic</a></li>
+          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input name="taget_toieic" type="radio"/>250-500</a></li>
+          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input name="taget_toieic" type="radio"/>500-750</a></li>
+          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input name="taget_toieic" type="radio"/>750-990</a></li>
         </ul>
       </div>
 
@@ -59,7 +59,7 @@
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Địa điểm <span class="caret"></span></button>
         <ul class="dropdown-menu">
           @foreach($districts as $district)
-          <li><a href="#" class="small" data-value="{{$district->key}}" tabIndex="-1"><input onchange="handleCheck(this)" name="districts[]" {{ in_array($district->key, $pDistricts) ? "checked" : "" }} value="{{$district->key}}" type="checkbox"/>{{$district->name}}</a></li>
+          <li><a href="#" class="small" data-value="{{$district->key}}" tabIndex="-1"><input onchange="handleCheck(this)" name="districts[]" {{ in_array($district->key, $pDistricts) ? "checked" : "" }} value="{{$district->key}}" type="radio"/>{{$district->name}}</a></li>
           @endforeach
         </ul>
       </div>
