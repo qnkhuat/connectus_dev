@@ -20,6 +20,7 @@ Route::get('/landing/tn', 'FrontController@tn');
 
 
 Route::get('/', 'FrontController@mainPage');
+Route::post('/', 'FrontController@psearch');
 
 Route::get('/business', 'FrontController@business');
 Route::post('/business', 'FrontController@postBusiness');

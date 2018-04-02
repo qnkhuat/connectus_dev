@@ -89,7 +89,7 @@ class FrontController extends Controller
 
     }
 
-    public function mainPage() {
+    public function mainPage(Request $request) {
         $courseFollows = [];
         $totalCourseFollows = 0;
         if(auth()->user()) {
@@ -112,7 +112,113 @@ class FrontController extends Controller
                     ->get()
             ]);
         $partners = User::where("group", "partner")->where("deleted", false)->get();
-        return view('front.main', ["coursesWithCat" => $coursesWithCat, "partners" => $partners, "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows]);
+
+
+
+        #add search to main
+
+        $couseType = CourseType::where("deleted", false)->get();
+        $districts = District::where("deleted", false)->get();
+        $teacherTypes = Teacher::$type;
+        $learnTime = Course::$learnTime;
+
+        // get params
+        $pCouseType = $request->courseTypes ? $request->courseTypes : [];
+        $pDistricts = $request->districts ? $request->districts : [];
+        $pTuition = $request->tuition;
+        $pStudentPerClass = $request->student_per_class;
+        $pTeacherType = $request->teacher_type;
+        $pLearnTime = $request->time;
+
+        // handle raw sql
+            $sCouseType = "";
+            foreach($pCouseType as $type)
+                $sCouseType .= "course_type_id=$type or ";
+            $sCouseType = substr($sCouseType, 0, strlen($sCouseType) - 4);
+            $sCouseType = "(" . $sCouseType . ")";
+            $sCouseType = count($pCouseType) > 0 ? $sCouseType : "";
+
+            $sDistricts = "";
+            foreach($pDistricts as $district)
+                $sDistricts .= "districts_text like '%$district%' or ";
+            $sDistricts = substr($sDistricts, 0, strlen($sDistricts) - 4);
+            $sDistricts = "(" . $sDistricts . ")";
+            $sDistricts = count($pDistricts) > 0 ? $sDistricts : "";
+
+            $sTuition = "";
+            if(strlen($pTuition) > 2) {
+                $sTuitionLength = strlen($pTuition);
+                $priceStart = (float) substr($pTuition, 0, strpos($pTuition, "-"));
+                $priceEnd = (float) substr($pTuition, strpos($pTuition, "-") + 1, $sTuitionLength);
+                $sTuition = "new_price >= $priceStart and new_price <= $priceEnd ";
+            }
+
+            $sStudent_per_class = "";
+            if(strlen($pStudentPerClass) > 2) {
+                $sStudent_per_class_length = strlen($pStudentPerClass);
+                $studentNumStart = (float) substr($pStudentPerClass, 0, strpos($pStudentPerClass, "-"));
+                $studentNumEnd = (float) substr($pStudentPerClass, strpos($pStudentPerClass, "-") + 1, $sStudent_per_class_length);
+                $sStudent_per_class = "student_total >= $studentNumStart and student_total <= $studentNumEnd ";
+            }
+
+            $sTeacher = $pTeacherType != "" ? "teacher_type='" . $pTeacherType ."' " : "";
+            $sLearnTime = $pLearnTime != "" ? "time_in_date='" . $pLearnTime . "'" : "";
+            $sSearch = $sCouseType . " and " . $sDistricts . " and " .
+                $sTuition . " and " . $sStudent_per_class . " and " .
+                $sTeacher . " and " . $sLearnTime;
+            $sSearch = trim($sSearch);
+            $sSearch = str_replace("  ", " ", $sSearch);
+            $sSearch = trim($sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = str_replace("and and", "and", $sSearch);
+            $sSearch = trim($sSearch);
+            $findAndFirst = strpos($sSearch, "and");
+            if($findAndFirst === 0)
+                $sSearch = substr($sSearch, 4, strlen($sSearch) - 4);
+            $sSearch = trim($sSearch);
+            if(substr($sSearch, strlen($sSearch) - 3, strlen($sSearch)) == "and")
+                $sSearch = substr($sSearch, 0, strlen($sSearch) - 4);
+            $sSearch = trim($sSearch);
+        // .handle raw sql
+
+        if($sSearch != ""){
+            $courses = Course::with("user")
+                ->where("deleted", false)
+                ->where("publish", true)
+                ->whereRaw($sSearch)
+                ->paginate(12);
+            return view("front.search", [
+                "courses" => $courses, "partners" => $partners,
+                "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,
+                "couseType" => $couseType, "districts" => $districts,
+                "teacherTypes" => $teacherTypes, "learnTime" => $learnTime,
+                "pCouseType" => $pCouseType, "pDistricts" => $pDistricts,
+                "pTuition" => $pTuition, "pStudentPerClass" => $pStudentPerClass,
+                "pTeacherType" => $pTeacherType, "pLearnTime" => $pLearnTime,
+                "coursesWithCat" => $coursesWithCat
+            ]);
+        }
+        else{
+            $courses = Course::with("user")
+                ->where("deleted", false)
+                ->where("publish", true)
+                ->paginate(12);
+
+            return view("front.main", [
+                "courses" => $courses, "partners" => $partners,
+                "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,
+                "couseType" => $couseType, "districts" => $districts,
+                "teacherTypes" => $teacherTypes, "learnTime" => $learnTime,
+                "pCouseType" => $pCouseType, "pDistricts" => $pDistricts,
+                "pTuition" => $pTuition, "pStudentPerClass" => $pStudentPerClass,
+                "pTeacherType" => $pTeacherType, "pLearnTime" => $pLearnTime,
+                "coursesWithCat" => $coursesWithCat
+            ]);
+
+        }
     }
 
     public function course(Request $request) {
@@ -227,6 +333,9 @@ class FrontController extends Controller
             if(substr($sSearch, strlen($sSearch) - 3, strlen($sSearch)) == "and")
                 $sSearch = substr($sSearch, 0, strlen($sSearch) - 4);
             $sSearch = trim($sSearch);
+
+
+        $partners = User::where("group", "partner")->where("deleted", false)->get();
         // .handle raw sql
         if($sSearch != "")
             $courses = Course::with("user")
@@ -239,7 +348,7 @@ class FrontController extends Controller
                 ->where("deleted", false)
                 ->where("publish", true)
                 ->paginate(12);
-        $partners = User::where("group", "partner")->where("deleted", false)->get();
+
         return view("front.search", [
             "courses" => $courses, "partners" => $partners,
             "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,

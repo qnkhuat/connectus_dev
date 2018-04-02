@@ -7,6 +7,21 @@
   background-position: center;
   position: relative;
   z-index: 100;
+  .banner-slogan{
+    .search-bar-container{
+      form{
+        .search-bar{
+          border: none;
+          .button-group{
+            button{
+              background: rgba(0,0,0,0.73) !important;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
   .category{
     position: absolute;
     right: 70px;
