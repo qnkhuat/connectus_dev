@@ -5,7 +5,7 @@
 
   <div class="banner-slogan">
     <h1>CONNECTUS</h1>
-    <h3>Học nhiều hơn - Tiết kiệm hơn</h3>
+    <!-- <h3>Tìm kiếm đơn giản</h3> -->
     <!-- <button type="button" class="search-button" name="button"><a href="/search">Lọc khoá học <i class="fa fa-search" aria-hidden="true"></i> </a></button> -->
     <div class="search-bar-container">
       <form class="" action="" method="get">
@@ -81,7 +81,7 @@
             </ul>
           </div>
 
-          <div class="button-group">
+          <div class="button-group last">
             <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Thời gian học <span class="caret"></span></button>
             <ul class="dropdown-menu">
               @foreach($learnTime as $key => $time)
@@ -89,16 +89,12 @@
               @endforeach
             </ul>
           </div>
-
-         <button type="submit" class="submit-button">Lọc</button>
+          <div class="line-brake"></div>
+          <button type="submit" class="submit-button">Lọc</button>
 
       </div>
        </form>
 
-
-       <ul class="checked-box">
-
-       </ul>
     </div>
   </div>
 
