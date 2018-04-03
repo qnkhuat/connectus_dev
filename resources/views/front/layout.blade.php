@@ -254,8 +254,7 @@
         </div>
 
         <div class="col-sm-6 col-xs-12">
-          <p class="email"><i class="fa fa-envelope" aria-hidden="true"></i> info@connectus.vn</p>
-          <div class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> Địa chỉ: Số 5, ngõ 100, Cù Chính Lan, Hà Nội </div>
+          <p class="email"><i class="fa fa-envelope" aria-hidden="true"></i> contact@connectus.vn</p>
           <p class="phone"><i class="fa fa-phone" aria-hidden="true"></i> Mr Ngọc: 01647843999</p>
         </div>
 

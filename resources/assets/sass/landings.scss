@@ -185,7 +185,16 @@
       }
   }
 
+}
+@media only screen and (max-width: 380px) {
 
+  #info-display{
+    .container{
+      .tab{
+        padding: 15px 0;
+      }
+    }
+  }
 
 }
 

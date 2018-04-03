@@ -200,8 +200,7 @@ class FrontController extends Controller
                 "pTeacherType" => $pTeacherType, "pLearnTime" => $pLearnTime,
                 "coursesWithCat" => $coursesWithCat
             ]);
-        }
-        else{
+        }else{
             $courses = Course::with("user")
                 ->where("deleted", false)
                 ->where("publish", true)
@@ -351,18 +350,21 @@ class FrontController extends Controller
 
         return view("front.search", [
             "courses" => $courses, "partners" => $partners,
-            "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,
-            "couseType" => $couseType, "districts" => $districts,
-            "teacherTypes" => $teacherTypes, "learnTime" => $learnTime,
-            "pCouseType" => $pCouseType, "pDistricts" => $pDistricts,
-            "pTuition" => $pTuition, "pStudentPerClass" => $pStudentPerClass,
-            "pTeacherType" => $pTeacherType, "pLearnTime" => $pLearnTime
+            "courseFollows" => $courseFollows,
+            "totalCourseFollows" => $totalCourseFollows,
+            "couseType" => $couseType,
+            "districts" => $districts,
+            "teacherTypes" => $teacherTypes,
+            "learnTime" => $learnTime,
+            "pCouseType" => $pCouseType,
+            "pDistricts" => $pDistricts,
+            "pTuition" => $pTuition,
+            "pStudentPerClass" => $pStudentPerClass,
+            "pTeacherType" => $pTeacherType,
+            "pLearnTime" => $pLearnTime
         ]);
     }
 
-    public function psearch(Request $request) {
-        dd($request->all());
-    }
 
     public function business() {
         $courseFollows = [];

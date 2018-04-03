@@ -30,7 +30,6 @@ Route::get('/checkout', function () {
 });
 
 Route::get('/search', 'FrontController@search');
-Route::post('/search', 'FrontController@psearch');
 Route::post('/course-follow', 'CourseFollowsController@create');
 Route::post('/course-unfollow', 'CourseFollowsController@destroy');
 

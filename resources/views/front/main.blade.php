@@ -2,13 +2,12 @@
 
 @section('banner')
 <div id="banner">
-
   <div class="banner-slogan">
     <h1>CONNECTUS</h1>
     <!-- <h3>Tìm kiếm đơn giản</h3> -->
     <!-- <button type="button" class="search-button" name="button"><a href="/search">Lọc khoá học <i class="fa fa-search" aria-hidden="true"></i> </a></button> -->
     <div class="search-bar-container">
-      <form class="" action="" method="get">
+      <form class="" action="/search" method="get">
         <div class="search-bar">
           <div class="button-group">
             <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Khoá học <span class="caret"></span></button>
