@@ -35,7 +35,7 @@
       <a href=""></a>
     </div>
 
-  </div> --> 
+  </div> -->
 
 </div>
 <div id="banner-features">
