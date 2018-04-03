@@ -20,6 +20,7 @@ Route::get('/landing/tn', 'FrontController@tn');
 
 
 Route::get('/', 'FrontController@mainPage');
+Route::post('/', 'FrontController@psearch');
 
 Route::get('/business', 'FrontController@business');
 Route::post('/business', 'FrontController@postBusiness');
@@ -29,7 +30,6 @@ Route::get('/checkout', function () {
 });
 
 Route::get('/search', 'FrontController@search');
-Route::post('/search', 'FrontController@psearch');
 Route::post('/course-follow', 'CourseFollowsController@create');
 Route::post('/course-unfollow', 'CourseFollowsController@destroy');
 
