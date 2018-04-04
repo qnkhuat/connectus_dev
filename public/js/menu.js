@@ -36,17 +36,3 @@ jQuery(document).ready(function($) {
 //change when click interest-butotn
 
 });
-
-var w = $(document).width();
-function coursePopup(content){
-  if(w<=600){
-    $('#course-popup-mobile').find(".course-popup-mobile-content").html(content[0].outerHTML);
-  }
-}
-
-
-function expandCourse(div){
-  if(w<=600){
-    div.addClass('expand-course')
-  }
-}

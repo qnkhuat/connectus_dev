@@ -90,7 +90,7 @@
             <span class="course-price-sale">{{number_format(floor($course->old_price*0.95/1000)*1000)}}</span>
             @endif
           </div>
-          <div class="choose-class-box"><p class="lightbox-button choose-class choose-class-button ">Chọn lớp</p><p class="interest-button" onclick='interest( $(".course-details-info-left").html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p></div>
+          <div class="choose-class-box"><p class="lightbox-button choose-class choose-class-button ">Nhận voucher</p><p class="interest-button" onclick='interest( $(".course-details-info-left").html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p></div>
 
           <div class="course-details-addition-info">
             <ul>
@@ -250,7 +250,7 @@
             <div class="course-info-learning-time">Thứ {{$branch->day_of_week}} ({{$branch->time_from}} - {{$branch->time_to}})</div>
           </div>
           <div class="choose-course-box">
-            <p class="choose-course-button" data-branch="{{$branch->id}}">Tham gia</p>
+            <p class="choose-course-button" data-branch="{{$branch->id}}">Nhận voucher</p>
             <!-- <p class="interest-button" onclick='interest( $(".course-popup").html(),$(this).hasClass("interested"),$(this).addClass("interested") )'>Quan tâm</p> -->
           </div>
         </div>
@@ -285,10 +285,10 @@
                 <input type="email" name="email" value="{{$user->email}}" placeholder="E-mail">
               </div>
 
-              <p>Bạn có thể nộp học phí vào:</p>
-              <!-- <div class="checkout-input-pay-day">
+              <p>Bạn sẽ đến trung tâm vào ngày:</p>
+              <div class="checkout-input-pay-day">
                 <input type="date" name="payment_schedule" data-date-inline-picker="true" >
-              </div> -->
+              </div>
 
               <div class="input-group">
                   <span class="input-group-addon bg-custom b-0"><i class="md md-event-note text-white"></i></span>
@@ -318,10 +318,10 @@
               </div>
 
               <div class="addcart-box">
-                <button type="submit" class="addcart-button">Tham gia khoá học</button>
+                <button type="submit" class="addcart-button">Đặt lịch</button>
               </div>
             </div>
-            <div class="back-button"><i class="fa fa-undo" aria-hidden="true"></i> Chọn lớp</div>
+            <div class="back-button"><i class="fa fa-undo" aria-hidden="true"></i> Đặt lịch</div>
           </div>
         </form>
         @endif

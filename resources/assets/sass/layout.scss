@@ -254,7 +254,31 @@ html,body{
     font-size: 16px;
   }
 }
-
+#announce{
+  height: 50px;
+  text-align: center;
+  display: none;
+  .announce-wrap{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100001;
+    p.message{
+      line-height: 50px;
+      font-size: 16px;
+      background: #576574;
+      color: white;
+    }
+    p.turn-off{
+      position: absolute;
+      top: 0;
+      right: 15px;
+      color: white;
+      cursor: pointer;
+      font-size: 17px;
+    }
+  }
+}
 #menu{
   z-index: 100000;
   position: relative;
@@ -647,3 +671,14 @@ footer{
     }
   }//.facebook-icon
 }//footer
+
+
+@media only screen and (max-width: 600px) {
+  #announce{
+    .announce-wrap{
+      p.message{
+        font-size: 14px;
+      }
+    }
+  }
+}

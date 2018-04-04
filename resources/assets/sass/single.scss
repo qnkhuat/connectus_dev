@@ -116,6 +116,7 @@ body{
       }
       .course-details-info-left-content{
         text-align: justify;
+        overflow: hidden;
       }
       .course-details-info-left-slider{
         .swiper-container {
@@ -212,8 +213,9 @@ body{
 #checkout{
   .choose-class{
     .modal-dialogs{
-      position: absolute;
+      // position: absolute;
       overflow: scroll;
+      margin-top: 100px;
     }
   }
   .course-option-general{

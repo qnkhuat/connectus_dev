@@ -173,30 +173,55 @@
 
 
 @section('partners')
+
+
 <div id="partners">
-  <h3>Tìm hiểu về đối tác của chúng tôi</h3>
-  <div class="partners-box">
-    <!-- @foreach($partners as $partner)
-    <div class="partners-item">
-      <img src="img/avatar/{{$partner->avatar}}" alt="">
+  <h2 class="text-center">Đối tác của chúng tôi</h2>
+  <a href="/landing/tn">
+    <div class="centre-item">
+      <div class="centre-logo">
+        <img src="images/partners/ieltstrangnguyen.jpg" alt="">
+      </div>
+      <div class="centre-info">
+        <p class="centre-name  two-line-text">Ielts Trang nguyen</p>
+      </div>
     </div>
-    @endforeach -->
-    <div class="partners-item">
-      <img src="images/partners/if.jpg" alt="">
-    </div>
+  </a>
 
-    <div class="partners-item">
-      <a href="/landing/tn"><img src="images/partners/ieltstrangnguyen.jpg" alt=""></a>
+  <a href="/landing/kos">
+    <div class="centre-item">
+        <div class="centre-logo">
+          <img src="images/partners/kos.jpg" alt="">
+        </div>
+        <div class="centre-info">
+          <p class="centre-name  two-line-text">KOS English Center</p>
+        </div>
     </div>
+  </a>
 
-    <div class="partners-item">
-      <a href="/landing/kos"><img src="images/partners/kos.jpg" alt=""></a>
+  <a href="/landing/tiw">
+    <div class="centre-item">
+      <div class="centre-logo">
+        <img src="images/partners/tiw.jpg" alt="">
+      </div>
+      <div class="centre-info">
+        <p class="centre-name  two-line-text">The IELTS workshop</p>
+      </div>
     </div>
+  </a>
 
-    <div class="partners-item">
-      <a href="/landing/tiw"><img src="images/partners/tiw.jpg" alt=""></a>
+
+  <a href="/landing/if">
+    <div class="centre-item">
+      <div class="centre-logo">
+        <img src="images/partners/if.jpg" alt="">
+      </div>
+      <div class="centre-info">
+        <p class="centre-name  two-line-text">IELTS fighter</p>
+      </div>
     </div>
-  </div>
+  </a>
+
 
 </div>
 @endsection
@@ -222,4 +247,7 @@
 
 @section('latter_js')
   <script src="js/checkbox.js"></script>
+  <script>
+    timeout(3)
+  </script>
 @endsection

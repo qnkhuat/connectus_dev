@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="/css/layout.css" media="screen" >
     <link rel="stylesheet" href="/css/common.css" media="screen" >
     <link rel="stylesheet" href="/css/responsive.css" media="screen" >
-    <link rel="stylesheet" href="/css/courses.css">
-    <link rel="stylesheet" href="/css/temporary.css">
+    <link rel="stylesheet" href="/css/courses.css" media="screen">
+    <link rel="stylesheet" href="/css/temporary.css" media="screen">
     @yield('latter_css')
   </head>
   <body>
@@ -67,123 +67,131 @@
     <div id="search-mobile">
       <a href="/search" class="blog"><i class="fa fa-search" aria-hidden="true"></i></a>
     </div>
+  </div>
+
+  <div id="announce">
+    <div class="announce-wrap">
+      <p class="message">Nhận voucher khi đăng ký tại ConnectUs!</p>
+      <p class="turn-off" onclick="hide($(this).parent().parent())"><i class="fa fa-times" aria-hidden="true"></i></p>
+    </div>
+  </div>
+
     <!-- #menu -->
-    <div id="menu">
-      <div id="login-popup" class="lightbox_self login-popup">
-        <div class="modal-background"></div>
-        <div class="modal-dialogs">
-          @include('front.components.login')
-        </div>
+  <div id="menu">
+    <div id="login-popup" class="lightbox_self login-popup">
+      <div class="modal-background"></div>
+      <div class="modal-dialogs">
+        @include('front.components.login')
       </div>
-      <!-- //#login-popup -->
+    </div>
+    <!-- //#login-popup -->
 
-      <!-- #menu -->
-      <div id="menu-desktop" class="padding-0-15 df fixed-top">
-        <div class="menu-left">
-          <a href="/search" class="blog"><i class="fa fa-search" aria-hidden="true"></i></a>
+    <!-- #menu -->
+    <div id="menu-desktop" class="padding-0-15 df">
+      <div class="menu-left">
+        <a href="/search" class="blog"><i class="fa fa-search" aria-hidden="true"></i></a>
 
-        </div>
-        <div class="middle">
-          <a href="/" class="logoBrand"><img src="/images/logo/logo_rectangle.png" class="full" alt="logo"></a>
-        </div>
-
-        <div class="menu-right">
-
-          @if(auth()->user())
-            <a href="/profile">
-              <p class="lightbox-button personal-site">Trang cá nhân</p>
-            </a>
-            <a href="/logout"><p class="lightbox-button logout-button">Đăng xuất</p></a>
-          @else
-            <p class="lightbox-button login-popup login-button">Đăng nhập</p>
-          @endif
-          <!-- <p class="lightbox-button test-online-button">Test online</p> -->
-
-          <div class="interest-button-top">
-            <i class="fa fa-heart-o cart-icon"></i>
-            <span class="interest-count"><span class="interest-count-items">{{ count($courseFollows) }}</span></span>
-            <div class="cart-popup">
-            @foreach($courseFollows as $course)
-            <div class="interested-item">
-                <div class="interested-item-content">
-                    <div class="course-info-title"><a href="/khoahoc/{{$course->id}}">{{$course->name}}</a></div>
-                    <div class="course-price-box"><span class="course-price-origin">{{ number_format($course->old_price) }}</span>
-                    <span class="course-price-sale">{{ number_format($course->new_price) }}</span></div>
-                    <div class="course-info-centre">{{$course->user->name}}</div>
-                </div>
-                <div class="interested-item-control-button">
-                    <div class="details-button"><a href="/khoahoc/{{$course->id}}"/>Chi tiết</a></div>
-                    <div class="delete-button"><i class="fa fa-times" onclick='unInterested($(this).closest(".interested-item"), {{$course->id}})' aria-hidden="true"></i></div>
-                </div>
-            </div>
-            @endforeach
-            </div>
-
-          </div>
-        </div>
       </div>
-      <!-- //#menu-desktop -->
+      <div class="middle">
+        <a href="/" class="logoBrand"><img src="/images/logo/logo_rectangle.png" class="full" alt="logo"></a>
+      </div>
 
-      <!-- #menu-mobile -->
-      <div id="menu-mobile">
+      <div class="menu-right">
 
-        <div class="menu-logo df fixed-bottom">
-          <img src="/images/logo/logo_small.png" alt="logo" class="lightbox-button menu-mobile-popup-box full menu-logo-button" title=".menu-mobile-popup">
-          <div class="lightbox_self menu-mobile-popup-box">
-            <div class="modal-background"></div>
-            <div class="modal-dialogs">
-              <div class="menu-mobile-popup text-center">
-              <div class="menu-mobile-popup-wrap">
-                <div class="menu-mobile-popup-pages">
-                  <a href="" class="menu-follw-popup-blog">BLOG</a>
-                  <a href="" class="menu-mobile-popup-catigories">Khoá học Tiếng Anh</a>
-                  <a href="https://www.facebook.com/connectus.vn/" class="menu-mobile-popup-fanpage">Fanpage</a>
-                </div>
-                <div class="menu-mobile-popup-login-tab">
-                <div class="login-tab">
-                  @if(auth()->user())
-                    <a href="/logout"><p class="logout-button">Đăng xuất</p></a>
-                  @else
-                  <div class="login-facebook login-tab-button">
-                    <a href="/redirect/facebook" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng Facebook</a>
-                  </div>
-                  @endif
+        @if(auth()->user())
+          <a href="/profile">
+            <p class="lightbox-button personal-site">Trang cá nhân</p>
+          </a>
+          <a href="/logout"><p class="lightbox-button logout-button">Đăng xuất</p></a>
+        @else
+          <p class="lightbox-button login-popup login-button">Đăng nhập</p>
+        @endif
+        <!-- <p class="lightbox-button test-online-button">Test online</p> -->
 
-
-
-                </div><!-- //.login-tab -->
-              </div><!-- //.menu-mobile-popup-second-sence -->
-              </div>
-            </div><!--// .menu-mobile-popup -->
-            </div>
-          </div>
-
-        </div>
         <div class="interest-button-top">
-          <a href="" class="fa fa-heart-o cart-icon "></a>
-
-          <h1 class="interest-count"><p class="interest-count-items">{{ count($courseFollows) }}</p></h1>
+          <i class="fa fa-heart-o cart-icon"></i>
+          <span class="interest-count"><span class="interest-count-items">{{ count($courseFollows) }}</span></span>
           <div class="cart-popup">
-            @foreach($courseFollows as $course)
-            <div class="interested-item">
-                <div class="interested-item-content">
-                    <div class="course-info-title"><a href="/khoahoc/{{$course->id}}">{{$course->name}}</a></div>
-                    <div class="course-price-box"><span class="course-price-origin">{{ number_format($course->old_price) }}</span>
-                    <span class="course-price-sale">{{ number_format($course->new_price) }}</span></div>
-                    <div class="course-info-centre">{{$course->user->name}}</div>
+          @foreach($courseFollows as $course)
+          <div class="interested-item">
+              <div class="interested-item-content">
+                  <div class="course-info-title"><a href="/khoahoc/{{$course->id}}">{{$course->name}}</a></div>
+                  <div class="course-price-box"><span class="course-price-origin">{{ number_format($course->old_price) }}</span>
+                  <span class="course-price-sale">{{ number_format($course->new_price) }}</span></div>
+                  <div class="course-info-centre">{{$course->user->name}}</div>
+              </div>
+              <div class="interested-item-control-button">
+                  <div class="details-button"><a href="/khoahoc/{{$course->id}}"/>Chi tiết</a></div>
+                  <div class="delete-button"><i class="fa fa-times" onclick='unInterested($(this).closest(".interested-item"), {{$course->id}})' aria-hidden="true"></i></div>
+              </div>
+          </div>
+          @endforeach
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- //#menu-desktop -->
+
+    <!-- #menu-mobile -->
+    <div id="menu-mobile">
+
+      <div class="menu-logo df fixed-bottom">
+        <img src="/images/logo/logo_small.png" alt="logo" class="lightbox-button menu-mobile-popup-box full menu-logo-button" title=".menu-mobile-popup">
+        <div class="lightbox_self menu-mobile-popup-box">
+          <div class="modal-background"></div>
+          <div class="modal-dialogs">
+            <div class="menu-mobile-popup text-center">
+            <div class="menu-mobile-popup-wrap">
+              <div class="menu-mobile-popup-pages">
+                <a href="" class="menu-follw-popup-blog">BLOG</a>
+                <a href="" class="menu-mobile-popup-catigories">Khoá học Tiếng Anh</a>
+                <a href="https://www.facebook.com/connectus.vn/" class="menu-mobile-popup-fanpage">Fanpage</a>
+              </div>
+              <div class="menu-mobile-popup-login-tab">
+              <div class="login-tab">
+                @if(auth()->user())
+                  <a href="/logout"><p class="logout-button">Đăng xuất</p></a>
+                @else
+                <div class="login-facebook login-tab-button">
+                  <a href="/redirect/facebook" class="df"><i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng Facebook</a>
                 </div>
-                <div class="interested-item-control-button">
-                    <div class="details-button"><a href="/khoahoc/{{$course->id}}"/>Chi tiết</a></div>
-                    <div class="delete-button"><i class="fa fa-times" onclick='unInterested($(this).closest(".interested-item"), {{$course->id}})' aria-hidden="true"></i></div>
-                </div>
+                @endif
+
+
+
+              </div><!-- //.login-tab -->
+            </div><!-- //.menu-mobile-popup-second-sence -->
             </div>
-            @endforeach
+          </div><!--// .menu-mobile-popup -->
           </div>
         </div>
-      </div><!-- #menu-mobile -->
 
-    </div><!-- //#menu -->
+      </div>
+      <div class="interest-button-top">
+        <a href="" class="fa fa-heart-o cart-icon "></a>
 
+        <h1 class="interest-count"><p class="interest-count-items">{{ count($courseFollows) }}</p></h1>
+        <div class="cart-popup">
+          @foreach($courseFollows as $course)
+          <div class="interested-item">
+              <div class="interested-item-content">
+                  <div class="course-info-title"><a href="/khoahoc/{{$course->id}}">{{$course->name}}</a></div>
+                  <div class="course-price-box"><span class="course-price-origin">{{ number_format($course->old_price) }}</span>
+                  <span class="course-price-sale">{{ number_format($course->new_price) }}</span></div>
+                  <div class="course-info-centre">{{$course->user->name}}</div>
+              </div>
+              <div class="interested-item-control-button">
+                  <div class="details-button"><a href="/khoahoc/{{$course->id}}"/>Chi tiết</a></div>
+                  <div class="delete-button"><i class="fa fa-times" onclick='unInterested($(this).closest(".interested-item"), {{$course->id}})' aria-hidden="true"></i></div>
+              </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+    </div><!-- #menu-mobile -->
+
+  </div><!-- //#menu -->
 
 
 <!-- main Page -->
@@ -274,6 +282,7 @@
     <script src="/js/lightbox.js"></script>
     <script src="/js/interest-button.js"></script>
     <script src="/js/scroll.js"></script>
+    <script src="/js/functions.js"></script>
     <!-- <script src="/js/facebook.js"></script> -->
     <!-- <script src="/js/facebook_message_plugin.js"></script> -->
     <script src="/backend/assets/plugins/timepicker/bootstrap-timepicker.js"></script>
