@@ -17,6 +17,11 @@
 Route::get('/landing/kos', 'FrontController@kos');
 Route::get('/landing/tiw', 'FrontController@tiw');
 Route::get('/landing/tn', 'FrontController@tn');
+Route::get('/landing/jaxtina', 'FrontController@jaxtina');
+Route::get('/landing/itd', 'FrontController@itd');
+Route::get('/landing/aten', 'FrontController@aten');
+Route::get('/landing/jolo', 'FrontController@jolo');
+Route::get('/landing/langmaster', 'FrontController@langmaster');
 
 
 Route::get('/', 'FrontController@mainPage');

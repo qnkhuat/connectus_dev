@@ -211,13 +211,13 @@
   </a>
 
 
-  <a href="/landing/if">
+  <a href="/landing/jaxtina">
     <div class="centre-item">
       <div class="centre-logo">
-        <img src="images/partners/if.jpg" alt="">
+        <img src="images/partners/jaxtina.png" alt="">
       </div>
       <div class="centre-info">
-        <p class="centre-name  two-line-text">IELTS fighter</p>
+        <p class="centre-name  two-line-text">Jaxtina</p>
       </div>
     </div>
   </a>

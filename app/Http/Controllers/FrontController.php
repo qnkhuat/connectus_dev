@@ -50,6 +50,65 @@ class FrontController extends Controller
     }
 
 
+    public function aten(){
+      $courseFollows = [];
+      $totalCourseFollows = 0;
+      $categories = CourseType::where("publish", true)->where("deleted", false)->get();
+      $coursesWithCat = [];
+      foreach($categories as $cat)
+          array_push($coursesWithCat, [ "category" => $cat, "courses" => Course::with("user")->where("user_id",2)->where("course_type_id", $cat->id)->where("deleted", false)->where("publish", true)->orderBy("created_at", "desc")->get()]);
+      if(auth()->user()) {
+          $user = auth()->user();
+          $courseFollowIds = $user->courseFollows()->pluck("course_id")->toArray();
+          $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
+          $totalCourseFollows = count($courseFollows);
+      }
+      return view('front.landings.aten', [
+          "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,"coursesWithCat" => $coursesWithCat,
+      ]);
+
+    }
+
+
+    public function jaxtina(){
+      $courseFollows = [];
+      $totalCourseFollows = 0;
+      $categories = CourseType::where("publish", true)->where("deleted", false)->get();
+      $coursesWithCat = [];
+      foreach($categories as $cat)
+          array_push($coursesWithCat, [ "category" => $cat, "courses" => Course::with("user")->where("user_id",2)->where("course_type_id", $cat->id)->where("deleted", false)->where("publish", true)->orderBy("created_at", "desc")->get()]);
+      if(auth()->user()) {
+          $user = auth()->user();
+          $courseFollowIds = $user->courseFollows()->pluck("course_id")->toArray();
+          $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
+          $totalCourseFollows = count($courseFollows);
+      }
+      return view('front.landings.jaxtina', [
+          "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,"coursesWithCat" => $coursesWithCat,
+      ]);
+
+    }
+
+    public function itd(){
+      $courseFollows = [];
+      $totalCourseFollows = 0;
+      $categories = CourseType::where("publish", true)->where("deleted", false)->get();
+      $coursesWithCat = [];
+      foreach($categories as $cat)
+          array_push($coursesWithCat, [ "category" => $cat, "courses" => Course::with("user")->where("user_id",2)->where("course_type_id", $cat->id)->where("deleted", false)->where("publish", true)->orderBy("created_at", "desc")->get()]);
+      if(auth()->user()) {
+          $user = auth()->user();
+          $courseFollowIds = $user->courseFollows()->pluck("course_id")->toArray();
+          $courseFollows = Course::whereIn('id', $courseFollowIds)->with("user")->get();
+          $totalCourseFollows = count($courseFollows);
+      }
+      return view('front.landings.itd', [
+          "courseFollows" => $courseFollows, "totalCourseFollows" => $totalCourseFollows,"coursesWithCat" => $coursesWithCat,
+      ]);
+
+    }
+
+
 
     public function tn(){
       $courseFollows = [];
