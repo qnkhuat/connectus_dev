@@ -13,7 +13,7 @@
 
 @section('user_portfolio')
 
-<div id="profile" style="background-image: url('../images/landing/jaxtina.png');">
+<div id="profile" style="background-image: url('../images/landing/jaxtina.jpg');">
   <div class="avatar">
     <img src="../images/partners/jaxtina.png" alt="" class="full">
   </div>
