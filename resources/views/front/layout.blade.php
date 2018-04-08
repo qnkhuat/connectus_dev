@@ -11,9 +11,9 @@
     <!-- file js nay tao rat nhieu class o html -->
     <script src="/backend/assets/js/modernizr.min.js"></script>
     <!------------FONTS -->
-    <link href='/fonts/Roboto.css' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
 
-    <!-- LIBARIES -->
+    <!------------ LIBARIES -->
     <link rel="stylesheet" href="/css/drooltip.css" media="screen" >
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" >
     <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" >

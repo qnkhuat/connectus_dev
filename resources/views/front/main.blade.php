@@ -3,7 +3,7 @@
 @section('banner')
 <div id="banner">
   <div class="banner-slogan">
-    <h1>CONNECTUS</h1>
+    <h1>ConnectUs</h1>
     <!-- <h3>Tìm kiếm đơn giản</h3> -->
     <!-- <button type="button" class="search-button" name="button"><a href="/search">Lọc khoá học <i class="fa fa-search" aria-hidden="true"></i> </a></button> -->
     <div class="search-bar-container">
@@ -177,35 +177,14 @@
 
 <div id="partners">
   <h2 class="text-center">Đối tác của chúng tôi</h2>
-  <a href="/landing/tn">
+
+  <a href="/landing/aten">
     <div class="centre-item">
       <div class="centre-logo">
-        <img src="images/partners/ieltstrangnguyen.jpg" alt="">
+        <img src="images/partners/aten.jpg" alt="">
       </div>
       <div class="centre-info">
-        <p class="centre-name  two-line-text">Ielts Trang nguyen</p>
-      </div>
-    </div>
-  </a>
-
-  <a href="/landing/kos">
-    <div class="centre-item">
-        <div class="centre-logo">
-          <img src="images/partners/kos.jpg" alt="">
-        </div>
-        <div class="centre-info">
-          <p class="centre-name  two-line-text">KOS English Center</p>
-        </div>
-    </div>
-  </a>
-
-  <a href="/landing/tiw">
-    <div class="centre-item">
-      <div class="centre-logo">
-        <img src="images/partners/tiw.jpg" alt="">
-      </div>
-      <div class="centre-info">
-        <p class="centre-name  two-line-text">The IELTS workshop</p>
+        <p class="centre-name  two-line-text">Aten</p>
       </div>
     </div>
   </a>
@@ -219,6 +198,63 @@
       <div class="centre-info">
         <p class="centre-name  two-line-text">Jaxtina</p>
       </div>
+    </div>
+  </a>
+
+
+  <a href="/landing/itd">
+    <div class="centre-item">
+      <div class="centre-logo">
+        <img src="images/partners/itd.jpg" alt="">
+      </div>
+      <div class="centre-info">
+        <p class="centre-name  two-line-text">IETLS Thầy Diễn</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="/landing/jolo">
+    <div class="centre-item">
+      <div class="centre-logo">
+        <img src="images/partners/jolo.jpg" alt="">
+      </div>
+      <div class="centre-info">
+        <p class="centre-name  two-line-text">JOLO</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="/landing/tiw">
+    <div class="centre-item">
+        <div class="centre-logo">
+          <img src="images/partners/tiw.jpg" alt="">
+        </div>
+        <div class="centre-info">
+          <p class="centre-name  two-line-text">The IELTS workshop</p>
+        </div>
+    </div>
+  </a>
+
+
+  <a href="/landing/tn">
+    <div class="centre-item">
+      <div class="centre-logo">
+        <img src="images/partners/ieltstrangnguyen.jpg" alt="">
+      </div>
+      <div class="centre-info">
+        <p class="centre-name  two-line-text">IETLS Trang Nguyên</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="/landing/kos">
+    <div class="centre-item">
+        <div class="centre-logo">
+          <img src="images/partners/kos.jpg" alt="">
+        </div>
+        <div class="centre-info">
+          <p class="centre-name  two-line-text">KOS English Center</p>
+        </div>
     </div>
   </a>
 
@@ -242,6 +278,10 @@
 <link rel="stylesheet" href="css/main.css" media="screen" >
 <link rel="stylesheet" href="css/search.css" media="screen" >
 <link rel="stylesheet" href="css/courses.css" media="screen" >
+<!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css?family=Yeon+Sung" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:700" rel="stylesheet">
 @endsection
 
 
