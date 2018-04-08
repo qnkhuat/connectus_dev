@@ -20,7 +20,7 @@ class CoursesController extends Controller
     public function _list(Request $request) {
       $user = auth()->user();
       $perpage = (int) $request->perpage;
-      $perpage < 5 ? $perpage = 5 : $perpage;
+      $perpage < 5 ? $perpage = 50 : $perpage;
       $perpage > 50 ? $perpage = 50 : $perpage;
       $teacherType = $request->teacherType;
       $name = $request->name;
@@ -59,7 +59,7 @@ class CoursesController extends Controller
 
     public function _listAll(Request $request) {
       $perpage = (int) $request->perpage;
-      $perpage < 5 ? $perpage = 5 : $perpage;
+      $perpage < 5 ? $perpage = 50 : $perpage;
       $perpage > 50 ? $perpage = 50 : $perpage;
       $name = $request->name;
       $teacherType = $request->teacherType;

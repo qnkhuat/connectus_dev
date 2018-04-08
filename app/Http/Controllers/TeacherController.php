@@ -20,7 +20,7 @@ class TeacherController extends Controller
 
   public function _list(Request $request) {
     $perpage = (int) $request->perpage;
-    $perpage < 5 ? $perpage = 5 : $perpage;
+    $perpage < 5 ? $perpage = 50 : $perpage;
     $perpage > 50 ? $perpage = 50 : $perpage;
     $user = auth()->user();
     $teachers = $user->teachers()->where('deleted', false)->paginate($perpage);
@@ -29,7 +29,7 @@ class TeacherController extends Controller
 
   public function _listAll(Request $request) {
     $perpage = (int) $request->perpage;
-    $perpage < 5 ? $perpage = 5 : $perpage;
+    $perpage < 5 ? $perpage = 50 : $perpage;
     $perpage > 50 ? $perpage = 50 : $perpage;
     $partner = (int) $request->partner;
 

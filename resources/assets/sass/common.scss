@@ -266,7 +266,7 @@
     width: 100%;
   }
   .modal-dialogs{
-    position: static;
+    position: absolute;//if set is static : can't scoll
     margin: 50px auto;
     top: 50px;
     left: 0;

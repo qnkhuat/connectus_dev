@@ -28,7 +28,7 @@ class DistrictController extends Controller
     public function _list(Request $request) {
         $labels = ["success", "warning","info", "danger", "primary", "default", "purple", "inverse", "pink"];
         $perpage = (int) $request->perpage;
-        $perpage < 5 ? $perpage = 5 : $perpage;
+        $perpage < 5 ? $perpage = 50 : $perpage;
         $perpage > 50 ? $perpage = 50 : $perpage;
         $name = $request->name;
         $districts = District::where("name", "like", "%$name%")->where("deleted", false)->paginate($perpage);

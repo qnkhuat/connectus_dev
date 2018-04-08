@@ -44,7 +44,7 @@ class CourseBranchsController extends Controller
         if($course) {
             $address = $user->address;
             $perpage = (int) $request->perpage;
-            $perpage < 5 ? $perpage = 5 : $perpage;
+            $perpage < 5 ? $perpage = 50 : $perpage;
             $perpage > 50 ? $perpage = 50 : $perpage;
             $branchs = CourseBranch::where("course_id", $course->id)->paginate($perpage);
             return view("ad.course_branchs.list", ["course" => $course, "branchs" => $branchs, "address" => $address]);

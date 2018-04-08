@@ -28,7 +28,7 @@ class OrdersController extends Controller
             $order->email = $request->email;
             $order->phone = $request->phone;
             $order->payment_schedule = $request->payment_schedule;
-            
+
             $order->message = $request->message;
             $order->know = $request->know;
             $order->price = $course->new_price;
@@ -46,7 +46,7 @@ class OrdersController extends Controller
 
     public function _list(Request $request) {
         $perpage = (int) $request->perpage;
-        $perpage < 5 ? $perpage = 5 : $perpage;
+        $perpage < 5 ? $perpage = 50 : $perpage;
         $perpage > 50 ? $perpage = 50 : $perpage;
         $name = $request->name;
 
@@ -61,7 +61,7 @@ class OrdersController extends Controller
 
     public function _listAll(Request $request) {
         $perpage = (int) $request->perpage;
-        $perpage < 5 ? $perpage = 5 : $perpage;
+        $perpage < 5 ? $perpage = 50 : $perpage;
         $perpage > 50 ? $perpage = 50 : $perpage;
         $name = $request->name;
 

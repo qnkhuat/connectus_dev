@@ -20,7 +20,7 @@ class AddressController extends Controller
 
     public function _listAll(Request $request) {
         $perpage = (int) $request->perpage;
-        $perpage < 5 ? $perpage = 5 : $perpage;
+        $perpage < 5 ? $perpage = 50 : $perpage;
         $perpage > 50 ? $perpage = 50 : $perpage;
         $partner = (int) $request->partner;
 
@@ -37,7 +37,7 @@ class AddressController extends Controller
 
     public function _list(Request $request) {
         $perpage = (int) $request->perpage;
-        $perpage < 5 ? $perpage = 5 : $perpage;
+        $perpage < 5 ? $perpage = 50 : $perpage;
         $perpage > 50 ? $perpage = 50 : $perpage;
 
         $address = Address::where('user_id', auth()->user()->id)

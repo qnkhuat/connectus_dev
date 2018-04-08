@@ -20,7 +20,7 @@ class UserController extends Controller
     // use Searchable;
     public function _list(Request $request) {
       $perpage = (int) $request->perpage;
-      $perpage < 5 ? $perpage = 5 : $perpage;
+      $perpage < 5 ? $perpage = 50 : $perpage;
       $perpage > 50 ? $perpage = 50 : $perpage;
       $group = $request->group;
       $gender = $request->gender;
