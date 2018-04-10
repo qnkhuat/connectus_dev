@@ -390,7 +390,12 @@ class FrontController extends Controller
             }
 
             $sTeacher = $pTeacherType != "" ? "teacher_type='" . $pTeacherType ."' " : "";
-            $sLearnTime = $pLearnTime != "" ? "time_in_date='" . $pLearnTime . "'" : "";
+            if($pLearnTime!='both'){
+                $sLearnTime = $pLearnTime != "" ? "time_in_date='" . $pLearnTime . "'" : "";
+            }else{
+                $sLearnTime = '';
+            }
+            // $sLearnTime = $pLearnTime != "" ? "time_in_date='" . $pLearnTime . "'" : "";
             $sSearch = $sCouseType . " and " . $sDistricts . " and " .
                 $sTuition . " and " . $sStudent_per_class . " and " .
                 $sTeacher . " and " . $sLearnTime;
