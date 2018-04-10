@@ -29,7 +29,7 @@
         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Khoá học <span class="caret"></span></button>
         <ul class="dropdown-menu">
         @foreach($couseType as $type)
-        <li><a href="#" class="small" data-value="{{$type->id}}" tabIndex="-1"><input name="courseTypes[]" {{ in_array($type->id, $pCouseType) ? "checked" : "" }} value="{{$type->id}}" type="radio"/>{{$type->name}}</a></li>
+        <li><a href="#" class="small" data-value="{{$type->id}}" tabIndex="-1"><input name="courseTypes[]" {{ in_array($type->id, $pCouseType) ? "checked" : "" }} value="{{$type->id}}" type="checkbox"/>{{$type->name}}</a></li>
         @endforeach
         </ul>
       </div>
