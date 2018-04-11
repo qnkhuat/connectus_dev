@@ -241,11 +241,19 @@
         @foreach($branches as $branch)
         <?php
           $opening = new Carbon($branch->opening,"Asia/Ho_Chi_Minh");
+
+          $now = Carbon::now("Asia/Ho_Chi_Minh");
+          $are_over= $opening->gt($now);//check if the date loaded has over the current date.
           $opening = $opening->diffForHumans();
+
+
         ?>
+
         <div class="course-option">
           <div class="course-option-info">
-            <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{date('d-m-Y', strtotime($branch->opening))}}</span></p>
+            <?php if( $are_over ) { ?>
+              <p class="course-info-start">Khai giảng : <span class="course-info-start-day">{{date('d-m-Y', strtotime($branch->opening))}}</span></p>
+            <?php } ?>
             <div class="course-info-agent">{{$branch->address->address}}</div>
             <div class="course-info-learning-time">Thứ {{$branch->day_of_week}} ({{$branch->time_from}} - {{$branch->time_to}})</div>
           </div>
