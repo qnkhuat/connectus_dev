@@ -44,7 +44,7 @@
       <li>Cơ sở vật chất: phòng học được thiết kế theo mô hình Coworking mini, với chất lượng bàn ghế, TV, máy chiếu xịn xò và tất nhiên điều hòa là thứ không thể thiếu được rồi</li>
       <li>Giáo viên, giảng viên trẻ chất lượng, tận tình quan tâm tới học viên.</li>
       <ul>
-        <li>Update: thầy giáo tên Diễn mà mình đề cấp ở đầu post chính là thầy Nguyễn Tài Diễn, tốt nghiệp thạc sĩ tiếng Anh trường southern New hamshire, USA nhé. Thầy là giảng viên dạy chính các khóa chứng chỉ ở trung tâm, và có hơn 16 năm kinh nghiệm trong nghề, rất đáng để tin cậy gửi gắm.</li>
+        <li>Update: thầy giáo tên Diễn mà ConnectUs đề cấp ở đầu post chính là thầy Nguyễn Tài Diễn, tốt nghiệp thạc sĩ tiếng Anh trường southern New hamshire, USA nhé. Thầy là giảng viên dạy chính các khóa chứng chỉ ở trung tâm, và có hơn 16 năm kinh nghiệm trong nghề, rất đáng để tin cậy gửi gắm.</li>
       </ul>
       <li>Chương trình học bài bản: có tặng thêm khóa học, test đầy đủ cho học viên, cung cấp dầy đủ slides, tư liệu học cho học viên mà không ngại bị ăn cắp bản quyền</li>
       <li>Có đầu ra vô cùng đảm bảo: bằng chứng là rất nhiều các bạn học viên sau khi tốt nghiệp các khóa IELTS, TOEIC ở đây thì đều nhận chứng chỉ với số điểm rất cao, trung tâm cũng chăm chỉ khoe thành tích học viên trên fanpage lắm, các bạn có thể xem và kiểm chứng nha, riêng mình thì tin lắm vì bạn mình học ở đây rồi :D</li>

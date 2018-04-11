@@ -41,7 +41,7 @@
       <li>Vẫn là mô hình lớp học: 04 thầy một trò là những gì mà Aten mang lại cho học viên, với 01 giảng viên, 02 trợ giảng, 03 chăm sóc học viên và 04 quản lí chất lượng cho mỗi lớp, thật không ngoa ngoắt khi nói rằng Aten chăm học viên tới tận kẽ răng luôn ý (tuy nhiên không dành cho các mem ghét bị để ý và không thích nuông chiều nha :D)</li>
       <li>Khóa học - Bài giảng:  Aten tập trung vào việc hoàn thiện những kĩ năng giao tiếp cho học viên, với việc xây dựng các phương pháp học mới mẻ như phương pháp phản xạ 2s, phương pháp học phát âm nâng cao này…</li>
       <li>Giảng viên - trợ giảng: các giảng viên được feedback vô cùng tích cực về sự đáng iu và nhiệt tình của mình đấy, có thể kể đến cô giáo NiNa, cô giáo Dương thùy này</li>
-      <li>Có quỹ từ thiện: đây là một nét đẹp rất riêng của Aten mà mình cảm thấy rất thích thú, khoan hãy đặt câu hỏi nghi vấn xem dòng tiền từ thiện đổ đi đâu, bởi vì tấm lòng nhân hậu, biết cho đi là điều rất đáng quý rồi phải không nào ^^</li>
+      <li>Có quỹ từ thiện: đây là một nét đẹp rất riêng của Aten mà ConnectUs cảm thấy rất thích thú, khoan hãy đặt câu hỏi nghi vấn xem dòng tiền từ thiện đổ đi đâu, bởi vì tấm lòng nhân hậu, biết cho đi là điều rất đáng quý rồi phải không nào ^^</li>
     </ol>
 
     <p>Khen thì rất nhiều rồi, nhưng chúng ta vẫn phải kể xấu Aten chút thôi:</p>

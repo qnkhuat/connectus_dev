@@ -13,7 +13,7 @@
 
 @section('user_portfolio')
 
-<div id="profile" style="background-image: url('../images/landing/langmaster.png');">
+<div id="profile" style="background-image: url('../images/landing/langmaster.jpg');">
   <div class="avatar">
     <img src="../images/partners/langmaster.png" alt="" class="full">
   </div>
@@ -35,22 +35,36 @@
 <div id="info-display">
   <div class="container">
     <div class="info tab">
-    <p>Chỉ vọn vẹn 6 - 8 học viên cho một lớp học, và dạy chủ yếu về kĩ năng nghe nói thay vì các chứng chỉ chuyên sâu,  Langmaster cũng có thể được xem là ngôi nhà nhỏ xinh của các bạn trẻ yêu thích tiếng Anh và muốn bắt đầu học tiếng Anh như một thói quen vậy đó:</p>
-    <ol>
-      <li>Mô hình lớp học mini: không như nhiều lò luyện tiếng Anh khác thì ở Langmaster chỉ có các lớp nhỏ xinh cho từ 6-8 người thôi, và dĩ nhiên là học viên sẽ được giáo viên quan tâm tận tình hơn rồi!</li>
-      <li>Vẫn là mô hình lớp học: 04 thầy một trò là những gì mà Langmaster mang lại cho học viên, với 01 giảng viên, 02 trợ giảng, 03 chăm sóc học viên và 04 quản lí chất lượng cho mỗi lớp, thật không ngoa ngoắt khi nói rằng Langmaster chăm học viên tới tận kẽ răng luôn ý (tuy nhiên không dành cho các mem ghét bị để ý và không thích nuông chiều nha :D)</li>
-      <li>Khóa học - Bài giảng:  Langmaster tập trung vào việc hoàn thiện những kĩ năng giao tiếp cho học viên, với việc xây dựng các phương pháp học mới mẻ như phương pháp phản xạ 2s, phương pháp học phát âm nâng cao này…</li>
-      <li>Giảng viên - trợ giảng: các giảng viên được feedback vô cùng tích cực về sự đáng iu và nhiệt tình của mình đấy, có thể kể đến cô giáo NiNa, cô giáo Dương thùy này</li>
-      <li>Có quỹ từ thiện: đây là một nét đẹp rất riêng của Langmaster mà mình cảm thấy rất thích thú, khoan hãy đặt câu hỏi nghi vấn xem dòng tiền từ thiện đổ đi đâu, bởi vì tấm lòng nhân hậu, biết cho đi là điều rất đáng quý rồi phải không nào ^^</li>
-    </ol>
+      <p>Giữa hàng trăm trung tâm tiếng Anh lớn nhỏ có cả ở Hà Nội, Langmaster vẫn mang một vẻ vô cùng đặc biệt, một màu sắc riêng mà ít cơ sở đào tạo nào có thể có...</p>
+      <p>Nói văn vẻ là vậy còn tất nhiên chúng ta sẽ tiến hành đánh giá trung tâm này luôn nhé:</p>
+      <p>Những điểm cộng hấp dẫn của Langmaster:</p>
+      <ol>
+        <li>Khóa học thiết kế chuẩn chỉnh: như mô tả: Trung tâm tiếng Anh Langmaster - tiếng Anh giao tiếp cho người mất gốc, những khóa học của Langmaster sẽ có hai đặc điểm nổi trội:</li>
+        <li>
+          <ul>
+            <li>Dành cho những ai mất gốc tiếng Anh và muốn “trồng” lại từ đầu</li>
+            <li>Học chủ yếu về giao tiếp, các kĩ năng tiếng Anh để ứng dụng vào thực tiễn</li>
+          </ul>
+        </li>
+        <li>Lộ trình học rõ ràng, bài bản, đi từ khơi gợi đam mê đến phát triển thành thói quen học tiếng Anh, qua 06 bước rèn luyện mà theo ConnectUs là rất kĩ càng</li>
+        <li>Phương pháp giảng dạy mới mẻ, khoa học:nghe có vẻ rất kì cục nhưng Effortless English (tiếng Anh khỏi cần nỗ lực) lại là một phương pháp mang lại hiệu quả rất cao, đã được kiểm chứng trên thế giới và nay được Langmaster “bê” vào những bài giảng của mình, kết quả thu được là học viên tiến bộ một cách vượt bậc luôn đấy!</li>
+        <li>Đội ngũ giảng viên xịn, chuyên gia tiếng tăm lẫy lừng: bên cạnh cô Liesel - người vốn rất có tiếng trên các kênh truyền thông như youtube, Facebook hay chiếm sóng truyền hình VTV7, đội ngũ chuyên gia của trung tâm này cũng sẽ khiến các bạn choáng ngợp không kém khi quy tụ những nhân vật “đình đám” như:</li>
+        <li>
+          <ul>
+            <li>GS. Paul Gruber: chuyên gia ngôn ngữ hàng đầu thế giới</li>
+            <li>TS AJ.Hoge: cha đẻ phương pháp Effortless English đình đám</li>
+            <li>TS Lê Thẩm Dương ( chắc các bạn đều nghe qua)</li>
+          </ul>
+        </li>
+        <li>Cơ sở vật chất xịn:  không cần phải bàn cãi gì thêm nữa bởi nhìn vào hàng ngũ chuyên gia của trung tâm này đã có thể suy ra ngay rằng Langmaster đầu tư “không phải dạng vừa đâu” nhỉ</li>
+        <li>Kênh thông tin bổ ích, nội dung hấp dẫn: điểm này thì các trung tâm tiếng Anh khác hẳn phải chạy dài theo Langmaster rồi, bởi chỉ cần điểm qua các video dạy giao tiếp với chủ đề từ Anh sang Mỹ sang  u của Langmaster là đã đủ hiểu nơi này chất lượng ra sao rồi đấy!</li>
+        <li>Và cuối cùng, những gì bạn sẽ được nhận còn nhiều hơn một khóa học: đó còn là những buổi Talkshow thú vị đến từ những chuyên gia hàng đầu như TS AJ.Hoge, TS Lê Thẩm Dương hay TS Phan Quốc Việt ( chủ tịch HĐQT Tâm Việt Group) - những người mà hiếm hoi lắm bạn mới được nghe họ chia sẻ một lần (mình cũng thế :<)</li>
+      </ol>
 
-    <p>Khen thì rất nhiều rồi, nhưng chúng ta vẫn phải kể xấu Langmaster chút thôi:</p>
-    <ul>
-      <li>Điểm trừ mà cũng không biết có phải trừ không: khi mà Langmaster chỉ có vỏn vẹn 03 khóa học: khóa học phát âm chuẩn, khóa giao tiếp trọn đời và khóa tiếng anh giao tiếp cho doanh nghiệp, chấm hết.</li>
-    </ul>
-
-    <p>Vì vậy, nếu các bạn muốn học thêm các kĩ năng đọc, viết tiếng Anh thì sẽ phải tìm thêm các khóa học của trung tâm khác nhé. còn nếu chỉ cần cải thiện  speaking skills thì mình rất recommend trung tâm anh ngữ ATEN English school này nha.</p>
-
+      <p>“Xấu tính” mode lại được bật lên rồi, chúng ta sẽ thử vạch lá tìm sâu ra vài khuyết điểm của Langmaster nha:</p>
+      <ul>
+        <li>Langmaster có lớp học khá đông đúc, với 36 học viên cho một lớp Basic, điều này đòi hỏi các bạn phải thật tập trung và giáo viên cũng phải kiên nhẫn vô cùng đó nha :<</li>
+      </ul>
     </div>
     <div class="courses tab">
       @include('front.components.course_row_replace')
@@ -88,7 +102,7 @@
           <div class="course-details-comment">
             <div class="course-details-comment-left">
               <div class="course-details-comment-avatar">
-                <img src="../images/landings/langmaster/students/hue.jpg" alt="" class="full">
+                <img src="../images/landings/langmaster/students/hoang.jpg" alt="" class="full">
               </div>
               <div class="course-details-comment-date-username">
                 <div class="course-details-comment-username"><a href="">Nguyễn Hà Phương</a></div>
@@ -119,7 +133,7 @@
           <div class="course-details-comment">
             <div class="course-details-comment-left">
               <div class="course-details-comment-avatar">
-                <img src="../images/landings/langmaster/students/hue.jpg" alt="" class="full">
+                <img src="../images/landings/langmaster/students/huong1.jpg" alt="" class="full">
               </div>
               <div class="course-details-comment-date-username">
                 <div class="course-details-comment-username"><a href="">Nguyen Thị Phương</a></div>
@@ -150,7 +164,7 @@
           <div class="course-details-comment">
             <div class="course-details-comment-left">
               <div class="course-details-comment-avatar">
-                <img src="../images/landings/langmaster/students/hue.jpg" alt="" class="full">
+                <img src="../images/landings/langmaster/students/oanhha.jpg" alt="" class="full">
               </div>
               <div class="course-details-comment-date-username">
                 <div class="course-details-comment-username"><a href="">Nguyễn thị mỹ duyên</a></div>
@@ -181,7 +195,7 @@
           <div class="course-details-comment">
             <div class="course-details-comment-left">
               <div class="course-details-comment-avatar">
-                <img src="../images/landings/langmaster/students/hue.jpg" alt="" class="full">
+                <img src="../images/landings/langmaster/students/thu.jpg" alt="" class="full">
               </div>
               <div class="course-details-comment-date-username">
                 <div class="course-details-comment-username"><a href="">Phạm Thị Hồng Điệp</a></div>
@@ -211,7 +225,7 @@
           <div class="course-details-comment">
             <div class="course-details-comment-left">
               <div class="course-details-comment-avatar">
-                <img src="../images/landings/langmaster/students/hue.jpg" alt="" class="full">
+                <img src="../images/landings/langmaster/students/lenanh.jpg" alt="" class="full">
               </div>
               <div class="course-details-comment-date-username">
                 <div class="course-details-comment-username"><a href="">Nguyễn Quang Hà</a></div>
@@ -241,7 +255,7 @@
           <div class="course-details-comment">
             <div class="course-details-comment-left">
               <div class="course-details-comment-avatar">
-                <img src="../images/landings/langmaster/students/hue.jpg" alt="" class="full">
+                <img src="../images/landings/langmaster/students/minhthanh.jpg" alt="" class="full">
               </div>
               <div class="course-details-comment-date-username">
                 <div class="course-details-comment-username"><a href="">Đoàn Minh Tâm</a></div>
@@ -271,7 +285,7 @@
           <div class="course-details-comment">
             <div class="course-details-comment-left">
               <div class="course-details-comment-avatar">
-                <img src="../images/landings/langmaster/students/hue.jpg" alt="" class="full">
+                <img src="../images/landings/langmaster/students/thu.jpg" alt="" class="full">
               </div>
               <div class="course-details-comment-date-username">
                 <div class="course-details-comment-username"><a href="">Lê Thị Thảo</a></div>
@@ -301,7 +315,7 @@
           <div class="course-details-comment">
             <div class="course-details-comment-left">
               <div class="course-details-comment-avatar">
-                <img src="../images/landings/langmaster/students/hue.jpg" alt="" class="full">
+                <img src="../images/landings/langmaster/students/nhat.jpg" alt="" class="full">
               </div>
               <div class="course-details-comment-date-username">
                 <div class="course-details-comment-username"><a href="">Phạm Thảo Trang</a></div>
@@ -331,7 +345,7 @@
           <div class="course-details-comment">
             <div class="course-details-comment-left">
               <div class="course-details-comment-avatar">
-                <img src="../images/landings/langmaster/students/hue.jpg" alt="" class="full">
+                <img src="../images/landings/langmaster/students/thach.jpg" alt="" class="full">
               </div>
               <div class="course-details-comment-date-username">
                 <div class="course-details-comment-username"><a href="">Trịnh Văn Minh</a></div>
