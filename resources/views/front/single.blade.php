@@ -234,7 +234,7 @@
           <div class="course-info-short">
             <span class="course-info-total-hours"><i class="fa fa-play-circle" aria-hidden="true"></i><span class="course-info-total-hours-number"> {{$course->hour_total}} </span> giờ</span>
             <span class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i><span class="course-info-total-periods-number"> {{$course->session_total}} </span> buổi</span>
-            <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ {{$course->day_in_week}} </span>
+            <span class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Số lớp : {{$course->branchs()->count()}} </span>
           </div>
         </div>
 
