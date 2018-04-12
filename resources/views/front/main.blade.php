@@ -190,7 +190,7 @@
   </a>
 
 
-  <a href="/landing/langmaster">
+  <a href="/landing/jaxtina">
     <div class="centre-item">
       <div class="centre-logo">
         <img src="images/partners/jaxtina.png" alt="">
@@ -201,7 +201,7 @@
     </div>
   </a>
 
-  <a href="/landing/jaxtina">
+  <a href="/landing/langmaster">
     <div class="centre-item">
       <div class="centre-logo">
         <img src="images/partners/langmaster.png" alt="">
