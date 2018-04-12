@@ -17,7 +17,7 @@ class OrderEdit
     {
         $user = $user = auth()->user();
         if(!$user->role->update_order)
-            return redirect("/admin");
+            return redirect("/hi");
         return $next($request);
     }
 }

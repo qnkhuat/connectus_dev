@@ -17,7 +17,7 @@ class CourseView
     {
         $user = $user = auth()->user();
         if(!$user->role->view_course)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

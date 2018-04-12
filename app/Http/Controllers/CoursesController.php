@@ -237,10 +237,10 @@ class CoursesController extends Controller
           return view("ad.courses.edit", ["course" => $course, "types" => $types, "teachers" => $teachers, "teachersChecked" => $teachersChecked, "videos" => $videos,
             "learnTime" => $learnTime, "teacherTypes" => $teacherTypes, "districts" => $districts, "districtsChoosen" => $districtsChoosen]);
         } else {
-          return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
+          return redirect("/hi")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
         }
       } else
-      return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
+      return redirect("/hi")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
     }
 
     public function update(CourseUpdateRequest $request) {

@@ -17,7 +17,7 @@ class CourseDestroy
     {
         $user = $user = auth()->user();
         if(!$user->role->destroy_course)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

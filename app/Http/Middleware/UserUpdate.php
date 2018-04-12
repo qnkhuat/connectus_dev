@@ -17,7 +17,7 @@ class UserUpdate
     {
         $user = $user = auth()->user();
         if(!$user->role->update_user)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

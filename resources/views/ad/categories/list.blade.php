@@ -87,7 +87,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/categories">Reset</a>
+        <a href="/hi/categories">Reset</a>
       </div>
     </div>
     </form>
@@ -110,7 +110,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
         <tr>
           <td>{{ $key + 1 }}</td>
           <td>
-            <a href="/admin/users/profile/{{$category->user_id}}">
+            <a href="/hi/users/profile/{{$category->user_id}}">
               {{$category->user->name}}
             </a>
           </td>
@@ -122,7 +122,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <td>{{$category->created_at}}</td>
           <td>{{$category->updated_at}}</td>
           <td>
-            <a href="/admin/categories/edit/{{$category->id}}">
+            <a href="/hi/categories/edit/{{$category->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
             <button type="button" onclick="destroyUser({{$category->id}}, '{{$category->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
@@ -178,7 +178,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
-        url : "{{ url('/admin/categories/destroy') }}",
+        url : "{{ url('/hi/categories/destroy') }}",
         type : "post",
         dataType:"text",
         data : {

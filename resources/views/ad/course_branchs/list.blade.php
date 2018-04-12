@@ -73,12 +73,12 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/courses/branchs/{{$course->id}}">Reset</a>
+        <a href="/hi/courses/branchs/{{$course->id}}">Reset</a>
       </div>
       <div class="col-sm-3"></div>
       <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
-        <a href="/admin/courses/branchs/{{$course->id}}/create" class="btn btn-info waves-effect waves-light">Create</a>
+        <a href="/hi/courses/branchs/{{$course->id}}/create" class="btn btn-info waves-effect waves-light">Create</a>
       </div>
     </div>
     </form>
@@ -86,7 +86,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
   <div class="col-md-12">
     <div class="mr-t-20"></div>
     <p>Course: 
-      <a href="/admin/courses/edit/{{$course->id}}">
+      <a href="/hi/courses/edit/{{$course->id}}">
         {{$course->name}}
       </a>
     </p>
@@ -109,7 +109,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <td>{{$branch->day_of_week}}</td>
           <td>{{$branch->opening}}</td>
           <td>
-            <a href="/admin/address/edit/{{$branch->address_id}}">
+            <a href="/hi/address/edit/{{$branch->address_id}}">
             {{$address->where("id", $branch->address_id)->first()->sort_description}}
             </a>
           </td>
@@ -117,7 +117,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             {{$branch->time_from}} - {{$branch->time_to}}
           </td>
           <td>
-            <a href="/admin/courses/branchs/{{$course->id}}/edit/{{$branch->id}}">
+            <a href="/hi/courses/branchs/{{$course->id}}/edit/{{$branch->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
             <button type="button" onclick="destroyUser({{$course->id}}, {{$branch->id}}, '{{$branch->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
@@ -172,7 +172,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       <?php
-        $url = "/admin/courses/branchs/$course->id/destroy";
+        $url = "/hi/courses/branchs/$course->id/destroy";
       ?>
       $.ajax({
         url : "{{ url($url) }}",

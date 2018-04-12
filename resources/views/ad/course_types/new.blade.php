@@ -51,7 +51,7 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/course-types/create" method="post">
+      <form action="/hi/course-types/create" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <div class="row">

@@ -17,7 +17,7 @@ class TeacherViewAll
     {
         $user = $user = auth()->user();
         if(!$user->role->view_all_teacher)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

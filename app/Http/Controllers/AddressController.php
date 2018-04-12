@@ -67,7 +67,7 @@ class AddressController extends Controller
             $address = Address::where("user_id", auth()->user()->id)->where("id", $request->id)->first();
             return view("ad.address.edit", ["address" => $address, "districts" => $districts]);
         } else
-            return redirect("/admin");
+            return redirect("/hi");
     }
 
     public function update(AddressUpdateRequest $request) {
@@ -86,7 +86,7 @@ class AddressController extends Controller
             else
                 return redirect("/hi/address")->with(["messages" => ["type" => "success", "content" => "Address updated!"]]);
         } else
-            return redirect("/admin");
+            return redirect("/hi");
     }
 
     public function destroy(AddressIdRequest $request) {
@@ -101,6 +101,6 @@ class AddressController extends Controller
             else
                 return redirect("/hi/address")->with(["messages" => ["type" => "success", "content" => "Address destroyed!"]]);
         } else
-            return redirect("/admin");
+            return redirect("/hi");
     }
 }

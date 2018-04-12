@@ -82,7 +82,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <div class="col-sm-2">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/teachers/list-all">Reset</a>
+        <a href="/hi/teachers/list-all">Reset</a>
       </div>
     </div>
     </form>
@@ -109,7 +109,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <img src="/img/avatar/{{ $teacher->avatar }}" alt="" class="width-60">
           </td>
           <td>
-            <a href="/admin/users/profile/{{$teacher->user->id}}">{{$teacher->user->name}}</a>
+            <a href="/hi/users/profile/{{$teacher->user->id}}">{{$teacher->user->name}}</a>
           </td>
           <td>{{$teacher->name}}</td>
           <td>{{$teacher->facebook}}</td>
@@ -120,7 +120,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <a href="">
               <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">View</button>
             </a>
-            <a href="/admin/teachers/edit/{{$teacher->id}}">
+            <a href="/hi/teachers/edit/{{$teacher->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
             <button type="button" onclick="destroyTeacher({{$teacher->id}}, '{{$teacher->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
@@ -176,7 +176,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
-        url : "{{ url('/admin/teachers/destroy') }}",
+        url : "{{ url('/hi/teachers/destroy') }}",
         type : "post",
         dataType:"text",
         data : {

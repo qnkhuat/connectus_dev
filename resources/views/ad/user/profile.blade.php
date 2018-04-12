@@ -38,7 +38,7 @@
                         <p class="text-muted">Bài đăng</p>
                     </li>
                 </ul>
-                <a href="/admin/users/edit/{{$user->id}}">
+                <a href="/hi/users/edit/{{$user->id}}">
                   <button type="button" class="btn btn-success waves-effect waves-light">Chỉnh sửa hồ sơ</button>
                 </a>
                 <hr>

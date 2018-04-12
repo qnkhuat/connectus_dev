@@ -17,7 +17,7 @@ class DistrictDestroy
     {
         $user = $user = auth()->user();
         if(!$user->role->destroy_district)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

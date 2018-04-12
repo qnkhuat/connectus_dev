@@ -65,7 +65,7 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/orders/update" method="post">
+      <form action="/hi/orders/update" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <input type="hidden" name="id" value="{{$order->id}}">
 

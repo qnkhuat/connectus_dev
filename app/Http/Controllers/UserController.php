@@ -96,9 +96,9 @@ class UserController extends Controller
           $user->avatar = $avatarName;
           $user->save();
         }
-        return redirect("/admin/users")->with(["messages" => ["type" => "success", "content" => "Đã tạo thành công tài khoản: $user->email ($user->name), với mật khẩu: $password, lưu ý: mật khẩu chỉ cấp 1 lần duy nhất, hãy đổi mật khẩu ngay lần đăng nhập đầu tiên!"]]);
+        return redirect("/hi/users")->with(["messages" => ["type" => "success", "content" => "Đã tạo thành công tài khoản: $user->email ($user->name), với mật khẩu: $password, lưu ý: mật khẩu chỉ cấp 1 lần duy nhất, hãy đổi mật khẩu ngay lần đăng nhập đầu tiên!"]]);
       } else
-        return redirect("/admin/users/create")->with(["result" => "save fail"]);
+        return redirect("/hi/users/create")->with(["result" => "save fail"]);
     }
 
     public function edit($id) {
@@ -146,7 +146,7 @@ class UserController extends Controller
           $user->avatar = $avatarName;
           $user->save();
         }
-        return redirect("/admin/users")->with(["messages" => ["type" => "success", "content" => "User updated!"]]);
+        return redirect("/hi/users")->with(["messages" => ["type" => "success", "content" => "User updated!"]]);
       } else
         return redirect()->back();
     }

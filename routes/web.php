@@ -66,7 +66,7 @@ Route::group(['middleware' => ['auth', 'allowGoToAdmin']], function () {
 
 Route::post('/order', 'OrdersController@order')->middleware("auth");
 
-Route::group(['prefix' => '/admin', 'middleware' => 'allowGoToAdmin'], function () {
+Route::group(['prefix' => '/hi', 'middleware' => 'allowGoToAdmin'], function () {
 	Route::get('/', function () {
 		return view("ad.dashboard.dashboard");
   });

@@ -108,7 +108,7 @@
                                     <h5 class="text-overflow"><small>Welcome ! {{$currenUser->name}}</small> </h5>
                                 </div>
                                 <!-- item-->
-                                <a href="/admin/users/profile" class="dropdown-item notify-item">
+                                <a href="/hi/users/profile" class="dropdown-item notify-item">
                                 <i class="zmdi zmdi-account-circle"></i> <span>Profile</span>
                                 </a>
                                 <!-- item-->
@@ -120,7 +120,7 @@
                                 <i class="zmdi zmdi-lock-open"></i> <span>Lock Screen</span>
                                 </a> -->
                                 <!-- item -->
-                                <a href="/admin/password-changing" class="dropdown-item notify-item">
+                                <a href="/hi/password-changing" class="dropdown-item notify-item">
                                 <i class="zmdi zmdi-lock-open"></i> <span>Đổi mật khẩu</span>
                                 </a>
                                 <!-- item-->
@@ -154,18 +154,18 @@
                         <ul>
                             <li class="text-muted menu-title">Navigation</li>
                             <li class="has_sub">
-                                <a href="/admin" class="waves-effect"><i class="fa fa-home"></i><span class="badge badge-success pull-right">3</span><span> Dashboard </span></a>
+                                <a href="/hi" class="waves-effect"><i class="fa fa-home"></i><span class="badge badge-success pull-right">3</span><span> Dashboard </span></a>
                             </li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> Users </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_user)
-                                    <li><a href="/admin/users">List</a></li>
+                                    <li><a href="/hi/users">List</a></li>
                                     @endif
-                                    <li><a href="/admin/users/profile">Profile</a></li>
+                                    <li><a href="/hi/users/profile">Profile</a></li>
                                     @if($currenUserRoles->create_user)
-                                    <li><a href="/admin/users/create">Create</a></li>
+                                    <li><a href="/hi/users/create">Create</a></li>
                                     @endif
                                 </ul>
                             </li>
@@ -174,10 +174,10 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-location-arrow"></i> <span> Districts </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_district)
-                                    <li><a href="/admin/districts">List</a></li>
+                                    <li><a href="/hi/districts">List</a></li>
                                     @endif
                                     @if($currenUserRoles->create_district)
-                                    <li><a href="/admin/districts/create">Create</a></li>
+                                    <li><a href="/hi/districts/create">Create</a></li>
                                     @endif
                                 </ul>
                             </li>
@@ -186,10 +186,10 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-address-book-o"></i> <span> Address </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_all_user_address)
-                                    <li><a href="/admin/address/list-all">List all</a></li>
+                                    <li><a href="/hi/address/list-all">List all</a></li>
                                     @endif
-                                    <li><a href="/admin/address">List</a></li>
-                                    <li><a href="/admin/address/create">Create</a></li>
+                                    <li><a href="/hi/address">List</a></li>
+                                    <li><a href="/hi/address/create">Create</a></li>
                                 </ul>
                             </li>
 
@@ -197,11 +197,11 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-list-ol"></i> <span> Categories </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_category)
-                                    <li><a href="/admin/categories">List</a></li>
+                                    <li><a href="/hi/categories">List</a></li>
                                     @endif
 
                                     @if($currenUserRoles->create_category)
-                                    <li><a href="/admin/categories/create">Create</a></li>
+                                    <li><a href="/hi/categories/create">Create</a></li>
                                     @endif
                                 </ul>
                             </li>
@@ -210,13 +210,13 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> Teachers </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_all_teacher)
-                                    <li><a href="/admin/teachers/list-all">List all</a></li>
+                                    <li><a href="/hi/teachers/list-all">List all</a></li>
                                     @endif
                                     @if($currenUserRoles->view_teacher)
-                                    <li><a href="/admin/teachers">List</a></li>
+                                    <li><a href="/hi/teachers">List</a></li>
                                     @endif
                                     @if($currenUserRoles->create_course_type)
-                                    <li><a href="/admin/teachers/create">Create</a></li>
+                                    <li><a href="/hi/teachers/create">Create</a></li>
                                     @endif
                                 </ul>
                             </li>
@@ -225,10 +225,10 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-list-ul"></i> <span> Course types </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->create_course_type)
-                                    <li><a href="/admin/course-types">List</a></li>
+                                    <li><a href="/hi/course-types">List</a></li>
                                     @endif
                                     @if($currenUserRoles->create_course_type)
-                                    <li><a href="/admin/course-types/create">Create</a></li>
+                                    <li><a href="/hi/course-types/create">Create</a></li>
                                     @endif
                                 </ul>
                             </li>
@@ -237,13 +237,13 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-graduation-cap"></i> <span> Courses </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_all_course)
-                                    <li><a href="/admin/courses/list-all">List all</a></li>
+                                    <li><a href="/hi/courses/list-all">List all</a></li>
                                     @endif
                                     @if($currenUserRoles->view_course)
-                                    <li><a href="/admin/courses">List</a></li>
+                                    <li><a href="/hi/courses">List</a></li>
                                     @endif
                                     @if($currenUserRoles->create_course)
-                                    <li><a href="/admin/courses/create">Create</a></li>
+                                    <li><a href="/hi/courses/create">Create</a></li>
                                     @endif
                                 </ul>
                             </li>
@@ -252,10 +252,10 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="md md-my-library-books"></i> <span> Orders </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     @if($currenUserRoles->view_order)
-                                    <li><a href="/admin/orders/list-all">List all</a></li>
+                                    <li><a href="/hi/orders/list-all">List all</a></li>
                                     @endif
-                                    <li><a href="/admin/orders">List</a></li>
-                                    <li><a href="/admin/orders/request">Request</a></li>
+                                    <li><a href="/hi/orders">List</a></li>
+                                    <li><a href="/hi/orders/request">Request</a></li>
                                 </ul>
                             </li>
 
@@ -263,7 +263,7 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-handshake-o"></i> <span> Business </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="/admin/business">List</a></li>
+                                    <li><a href="/hi/business">List</a></li>
                                 </ul>
                             </li>
                             @endif
@@ -271,16 +271,16 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="md md-my-library-books"></i> <span> Pages </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="/admin/pages">List</a></li>
-                                    <li><a href="/admin/pages/create">Create</a></li>
-                                    <li><a href="/admin/pages/blank">Blank page</a></li>
+                                    <li><a href="/hi/pages">List</a></li>
+                                    <li><a href="/hi/pages/create">Create</a></li>
+                                    <li><a href="/hi/pages/blank">Blank page</a></li>
                                 </ul>
                             </li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-file-image-o"></i> <span> Files </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="/admin/files">List</a></li>
+                                    <li><a href="/hi/files">List</a></li>
                                 </ul>
                             </li>
                         </ul>

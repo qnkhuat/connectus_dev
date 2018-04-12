@@ -23,9 +23,9 @@ form {width: 100%;}
 
 @section('breadcrumb')
 <ol class="breadcrumb pull-right mb-0">
-    <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-    <li class="breadcrumb-item active"><a href="/admin/users">Users</a></li>
-    <li class="breadcrumb-item active"><a href="/admin/users/create">Update</a></li>
+    <li class="breadcrumb-item"><a href="/hi">Dashboard</a></li>
+    <li class="breadcrumb-item active"><a href="/hi/users">Users</a></li>
+    <li class="breadcrumb-item active"><a href="/hi/users/create">Update</a></li>
 </ol>
 @endsection
 
@@ -35,7 +35,7 @@ form {width: 100%;}
 
 @section('content')
 <div class="row">
-  <form action="/admin/users/update" method="post" enctype="multipart/form-data">
+  <form action="/hi/users/update" method="post" enctype="multipart/form-data">
   <input type="hidden" name="_token" value="{{csrf_token()}}">
   <input type="hidden" name="id" value="{{$user->id}}">
   <div class="col-md-12">

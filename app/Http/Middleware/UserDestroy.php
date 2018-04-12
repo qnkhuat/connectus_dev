@@ -17,7 +17,7 @@ class UserDestroy
     {
         $user = $user = auth()->user();
         if(!$user->role->destroy_user)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

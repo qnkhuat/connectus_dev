@@ -17,7 +17,7 @@ class CourseCreate
     {
         $user = $user = auth()->user();
         if(!$user->role->create_course)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

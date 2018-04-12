@@ -333,7 +333,7 @@
     		<p><strong>Type</strong></p>
     		<p>image/jpeg</p>
     		<p><strong>Auth</strong></p>
-    		<p><a href="/admin/user/1">Trung Hồ Ngọc</a></p>
+    		<p><a href="/hi/user/1">Trung Hồ Ngọc</a></p>
     		<p><strong>Created at</strong></p>
     		<p>2017-05-30 02:41:33</p>
     		<p><strong>Updated at</strong></p>
@@ -401,7 +401,7 @@
         </div>
         <div class="modal-content">
             <div class="modal-body">
-                <div action="/admin/files/upload" class="dropzone dz-clickable" id="dropzone-upload">
+                <div action="/hi/files/upload" class="dropzone dz-clickable" id="dropzone-upload">
 		        	{{ csrf_field() }}
 				    <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
 				</div>
@@ -489,7 +489,7 @@ $(document).ready(function(){
 	})
 	// Dropzone (add file vào)
 	$("div#dropzone-upload").dropzone({
-		url: "/admin/files/upload",
+		url: "/hi/files/upload",
 		timeout: 3000,
 		maxFilesize: 2048,
 		params: {

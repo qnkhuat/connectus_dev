@@ -17,7 +17,7 @@ class UserView
     {
         $user = $user = auth()->user();
         if(!$user->role->view_user)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

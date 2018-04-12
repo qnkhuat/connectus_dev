@@ -82,7 +82,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/address/list-all">Reset</a>
+        <a href="/hi/address/list-all">Reset</a>
       </div>
     </div>
     </form>
@@ -103,13 +103,13 @@ ul.pagination li.active span {background: transparent; color: #fff;}
         <tr>
             <td>{{ $key + 1 }}</td>
             <td>
-                <a href="/admin/users/profile/{{$a->user_id}}">{{$a->user->name}}</a>
+                <a href="/hi/users/profile/{{$a->user_id}}">{{$a->user->name}}</a>
             </td>
             <td>{{$a->district->name}}</td>
             <td>{{$a->sort_description}}</td>
             <td>{{$a->address}}</td>
             <td>
-                <a href="/admin/address/edit/{{$a->id}}">
+                <a href="/hi/address/edit/{{$a->id}}">
                 <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
                 </a>
                 <button type="button" onclick="destroyUser({{$a->id}}, '{{$a->sort_description}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
@@ -165,7 +165,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
-        url : "{{ url('/admin/address/destroy') }}",
+        url : "{{ url('/hi/address/destroy') }}",
         type : "post",
         dataType:"text",
         data : {

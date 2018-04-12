@@ -50,7 +50,7 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/categories/update" method="post">
+      <form action="/hi/categories/update" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <input type="hidden" name="id" value="{{$category->id}}">
 

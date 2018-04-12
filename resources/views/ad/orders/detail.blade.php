@@ -319,7 +319,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="mr-t-10 text-center">
-                <a href="/admin/orders/confirm/{{$order->id}}">
+                <a href="/hi/orders/confirm/{{$order->id}}">
                     <button class="btn btn-warning btn-rounded waves-effect waves-light">Xác nhận đã tiếp nhận</button>
                 </a>
             </div>

@@ -17,7 +17,7 @@ class CourseUpdateAll
     {
         $user = $user = auth()->user();
         if(!$user->role->update_all_course)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

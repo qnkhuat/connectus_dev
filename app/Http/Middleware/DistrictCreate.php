@@ -17,7 +17,7 @@ class DistrictCreate
     {
         $user = $user = auth()->user();
         if(!$user->role->create_district)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

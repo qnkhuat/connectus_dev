@@ -109,7 +109,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/courses/list-all">Reset</a>
+        <a href="/hi/courses/list-all">Reset</a>
       </div>
     </div>
     </form>
@@ -136,7 +136,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <img src="/img/courses/{{ $course->avatar }}" alt="" class="width-60">
           </td>
           <td>
-            <a href="/admin/users/profile/{{$course->user_id}}">
+            <a href="/hi/users/profile/{{$course->user_id}}">
               {{$course->user->name}}
             </a>
           </td>
@@ -151,10 +151,10 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <a href="/khoahoc/{{$course->id}}">
               <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">View</button>
             </a>
-            <a href="/admin/courses/branchs/{{$course->id}}">
+            <a href="/hi/courses/branchs/{{$course->id}}">
               <button type="button" class="btn btn-xs btn-inverse btn-rounded waves-effect waves-light">Branch</button>
             </a>
-            <a href="/admin/courses/edit/{{$course->id}}">
+            <a href="/hi/courses/edit/{{$course->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
             <button type="button" onclick="destroyUser({{$course->id}}, '{{$course->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
@@ -213,7 +213,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
-        url : "{{ url('/admin/courses/destroy') }}",
+        url : "{{ url('/hi/courses/destroy') }}",
         type : "post",
         dataType:"text",
         data : {

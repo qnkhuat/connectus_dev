@@ -46,7 +46,7 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/address/create" method="post">
+      <form action="/hi/address/create" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <div class="row">

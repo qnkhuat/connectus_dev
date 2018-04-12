@@ -106,7 +106,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <div class="col-sm-2">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/users">Reset</a>
+        <a href="/hi/users">Reset</a>
       </div>
     </div>
     </form>
@@ -165,16 +165,16 @@ ul.pagination li.active span {background: transparent; color: #fff;}
             <a href="{{$user->fb_page}}">{{$user->fb_page}}</a>
           </td>
           <td>
-            <a href="/admin/address/list-all?partner={{$user->id}}">view</a>
+            <a href="/hi/address/list-all?partner={{$user->id}}">view</a>
           </td>
           <td>
-            <a href="/admin/users/profile/{{$user->id}}">
+            <a href="/hi/users/profile/{{$user->id}}">
               <button type="button" class="btn btn-xs btn-default btn-rounded waves-effect waves-light">Profile</button>
             </a>
-            <a href="/admin/users/edit/{{$user->id}}">
+            <a href="/hi/users/edit/{{$user->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
-            <a href="/admin/users/password-reset/{{$user->id}}">
+            <a href="/hi/users/password-reset/{{$user->id}}">
               <button type="button" class="btn btn-xs btn-info btn-rounded waves-effect waves-light">Reset password</button>
             </a>
             <button type="button" onclick="destroyUser({{$user->id}}, '{{$user->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
@@ -233,7 +233,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
-        url : "{{ url('/admin/users/destroy') }}",
+        url : "{{ url('/hi/users/destroy') }}",
         type : "post",
         dataType:"text",
         data : {

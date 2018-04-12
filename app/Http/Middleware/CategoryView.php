@@ -17,7 +17,7 @@ class CategoryView
     {
         $user = $user = auth()->user();
         if(!$user->role->view_category)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

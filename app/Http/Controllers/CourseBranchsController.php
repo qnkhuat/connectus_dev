@@ -18,7 +18,7 @@ class CourseBranchsController extends Controller
             $address = $user->address;
             return view("ad.course_branchs.new", ["course" => $course, "address" => $address]);
         } else
-        return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
+        return redirect("/hi")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
     }
 
     public function create(CourseBranchCreateRequest $request) {
@@ -49,7 +49,7 @@ class CourseBranchsController extends Controller
             $branchs = CourseBranch::where("course_id", $course->id)->paginate($perpage);
             return view("ad.course_branchs.list", ["course" => $course, "branchs" => $branchs, "address" => $address]);
         } else
-        return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
+        return redirect("/hi")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
     }
 
     public function edit(Request $request) {
@@ -61,9 +61,9 @@ class CourseBranchsController extends Controller
                 $address = $user->address;
                 return view("ad.course_branchs.edit", ["course" => $course, "courseBranch" => $courseBranch, "address" => $address]);
             } else
-                return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
+                return redirect("/hi")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
         } //else
-        // return redirect("/admin")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
+        // return redirect("/hi")->with(["messages" => ["type" => "danger", "content" => "Not auth!"]]);
     }
 
     public function update(CourseBranchUpdateRequest $request) {

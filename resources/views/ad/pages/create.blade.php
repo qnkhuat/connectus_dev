@@ -11,8 +11,8 @@
 
 @section('breadcrumb')
 <ol class="breadcrumb pull-right mb-0">
-    <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="/admin/pages">Pages</a></li>
+    <li class="breadcrumb-item"><a href="/hi">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="/hi/pages">Pages</a></li>
     <li class="breadcrumb-item active"><a href="#">Create</a></li>
 </ol>
 @endsection

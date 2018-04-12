@@ -17,7 +17,7 @@ class AddressUpdate
     {
         $user = $user = auth()->user();
         if(!$user->role->create_category)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

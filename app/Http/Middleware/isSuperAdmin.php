@@ -17,7 +17,7 @@ class isSuperAdmin
     {
         $user = $user = auth()->user();
         if($user->group != "admin")
-            return redirect("/admin");
+            return redirect("/hi");
         return $next($request);
     }
 }

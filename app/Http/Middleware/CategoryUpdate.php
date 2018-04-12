@@ -17,7 +17,7 @@ class CategoryUpdate
     {
         $user = $user = auth()->user();
         if(!$user->role->update_category)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

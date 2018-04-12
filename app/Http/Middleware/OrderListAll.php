@@ -17,7 +17,7 @@ class OrderListAll
     {
         $user = $user = auth()->user();
         if(!$user->role->view_order)
-            return redirect("/admin");
+            return redirect("/hi");
         return $next($request);
     }
 }

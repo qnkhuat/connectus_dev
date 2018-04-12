@@ -28,7 +28,7 @@ class LoginController extends Controller
           return redirect("/login")->with(["messages" => ["type" => "danger", "content" => "email or password incorrect!"]]);
         else {
           auth()->login($user);
-          return redirect("/admin");
+          return redirect("/hi");
         }
       }
     }

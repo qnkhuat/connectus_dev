@@ -17,7 +17,7 @@ class UserCreate
     {
         $user = $user = auth()->user();
         if(!$user->role->create_user)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

@@ -17,7 +17,7 @@ class ViewListAllAddress
     {
         $user = $user = auth()->user();
         if(!$user->role->view_all_user_address)
-            return redirect("/admin");
+            return redirect("/hi");
         else
             return $next($request);
     }

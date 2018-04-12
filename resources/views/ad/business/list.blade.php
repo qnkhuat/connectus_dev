@@ -69,7 +69,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <div class="col-sm-3">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/address">Reset</a>
+        <a href="/hi/address">Reset</a>
       </div>
     </div>
     </form>
@@ -149,7 +149,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
-        url : "{{ url('/admin/business/destroy') }}",
+        url : "{{ url('/hi/business/destroy') }}",
         type : "post",
         dataType:"text",
         data : {

@@ -17,7 +17,7 @@ class TeacherCreate
     {
         $user = $user = auth()->user();
         if(!$user->role->create_teacher)
-            return redirect("/admin");
+            return redirect("/hi");
         else
             return $next($request);
     }

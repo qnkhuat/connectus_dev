@@ -17,7 +17,7 @@ class TeacherUpdate
     {
         $user = $user = auth()->user();
         if(!$user->role->update_teacher)
-            return redirect("/admin");
+            return redirect("/hi");
         else
         return $next($request);
     }

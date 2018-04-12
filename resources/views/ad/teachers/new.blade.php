@@ -46,7 +46,7 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form action="/admin/teachers/create" method="post" enctype="multipart/form-data">
+      <form action="/hi/teachers/create" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <div class="row">

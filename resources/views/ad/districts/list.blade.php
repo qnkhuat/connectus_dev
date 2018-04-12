@@ -77,7 +77,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
       <div class="col-sm-2">
         <div style="margin-top: 22px;"></div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Filter</button>
-        <a href="/admin/teachers/list-all">Reset</a>
+        <a href="/hi/teachers/list-all">Reset</a>
       </div>
     </div>
     </form>
@@ -98,7 +98,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
           <td><span class="label label-table label-{{$labels[rand(0, 8)]}}">{{$district->key}}</span></td>
           <td>{{$district->name}}</td>
           <td>
-            <a href="/admin/districts/edit/{{$district->id}}">
+            <a href="/hi/districts/edit/{{$district->id}}">
               <button type="button" class="btn btn-xs btn-warning btn-rounded waves-effect waves-light">Edit</button>
             </a>
             <button type="button" onclick="destroyTeacher({{$district->id}}, '{{$district->name}}')" class="btn btn-xs btn-danger btn-rounded waves-effect waves-light">Delete</button>
@@ -154,7 +154,7 @@ ul.pagination li.active span {background: transparent; color: #fff;}
     let deleteConfirm = confirm("Do you want delete " + name + "?")
     if(deleteConfirm) {
       $.ajax({
-        url : "{{ url('/admin/districts/destroy') }}",
+        url : "{{ url('/hi/districts/destroy') }}",
         type : "post",
         dataType:"text",
         data : {
