@@ -216,7 +216,7 @@ class CoursesController extends Controller
       $course->slide = json_encode($slide, JSON_UNESCAPED_UNICODE);
       $course->save();
 
-      return redirect("/admin/courses")->with(["messages" => ["type" => "success", "content" => "Course created!"]]);
+      return redirect("/hi/courses")->with(["messages" => ["type" => "success", "content" => "Course created!"]]);
     }
 
     public function edit(Request $request) {
@@ -335,7 +335,7 @@ class CoursesController extends Controller
           $course->slide = json_encode($slide, JSON_UNESCAPED_UNICODE);
         }
         if($course->save())
-          return redirect("/admin/courses")->with(["messages" => ["type" => "success", "content" => "Course was updated!"]]);
+          return redirect("/hi/courses")->with(["messages" => ["type" => "success", "content" => "Course was updated!"]]);
         else
           return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Save fail!"]]);
       } else

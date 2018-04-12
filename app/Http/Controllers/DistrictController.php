@@ -22,7 +22,7 @@ class DistrictController extends Controller
         $district->key = $request->key;
         $district->name = $request->name;
         $district->save();
-        return redirect("/admin/districts")->with(["messages" => ["type" => "success", "content" => "District created!"]]);
+        return redirect("/hi/districts")->with(["messages" => ["type" => "success", "content" => "District created!"]]);
     }
 
     public function _list(Request $request) {
@@ -48,7 +48,7 @@ class DistrictController extends Controller
         $district->key = $request->key;
         $district->name = $request->name;
         $district->save();
-        return redirect("/admin/districts")->with(["messages" => ["type" => "success", "content" => "District saved!"]]);
+        return redirect("/hi/districts")->with(["messages" => ["type" => "success", "content" => "District saved!"]]);
     }
 
     public function destroy(DistrictIdRequest $request) {

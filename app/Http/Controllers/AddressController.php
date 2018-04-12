@@ -54,9 +54,9 @@ class AddressController extends Controller
         $address->address = $request->address;
         $address->save();
         if($user->role->view_all_user_address)
-            return redirect("/admin/address/list-all")->with(["messages" => ["type" => "success", "content" => "Address created!"]]);
+            return redirect("/hi/address/list-all")->with(["messages" => ["type" => "success", "content" => "Address created!"]]);
         else
-            return redirect("/admin/address")->with(["messages" => ["type" => "success", "content" => "Address created!"]]);
+            return redirect("/hi/address")->with(["messages" => ["type" => "success", "content" => "Address created!"]]);
 
     }
 
@@ -82,9 +82,9 @@ class AddressController extends Controller
             $address->address = $request->address;
             $address->save();
             if($role->view_all_user_address)
-                return redirect("/admin/address/list-all")->with(["messages" => ["type" => "success", "content" => "Address updated!"]]);
+                return redirect("/hi/address/list-all")->with(["messages" => ["type" => "success", "content" => "Address updated!"]]);
             else
-                return redirect("/admin/address")->with(["messages" => ["type" => "success", "content" => "Address updated!"]]);
+                return redirect("/hi/address")->with(["messages" => ["type" => "success", "content" => "Address updated!"]]);
         } else
             return redirect("/admin");
     }
@@ -97,9 +97,9 @@ class AddressController extends Controller
             $address = Address::where("user_id", auth()->user()->id)->where("id", $request->id)->first();
             $address->delete();
             if($role->view_all_user_address)
-                return redirect("/admin/address/list-all")->with(["messages" => ["type" => "success", "content" => "Address destroyed!"]]);
+                return redirect("/hi/address/list-all")->with(["messages" => ["type" => "success", "content" => "Address destroyed!"]]);
             else
-                return redirect("/admin/address")->with(["messages" => ["type" => "success", "content" => "Address destroyed!"]]);
+                return redirect("/hi/address")->with(["messages" => ["type" => "success", "content" => "Address destroyed!"]]);
         } else
             return redirect("/admin");
     }

@@ -33,7 +33,7 @@ class CourseBranchsController extends Controller
             $courseBranch->time_from = $request->time_from;
             $courseBranch->time_to = $request->time_to;
             $courseBranch->save();
-            return redirect("/admin/courses/branchs/$courseBranch->course_id")->with(["messages" => ["type" => "success", "content" => "Saved!"]]);
+            return redirect("/hi/courses/branchs/$courseBranch->course_id")->with(["messages" => ["type" => "success", "content" => "Saved!"]]);
         } else
         return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Not Auth!"]]);
     }
@@ -78,7 +78,7 @@ class CourseBranchsController extends Controller
             $courseBranch->time_from = $request->time_from;
             $courseBranch->time_to = $request->time_to;
             $courseBranch->save();
-            return redirect("/admin/courses/branchs/$courseBranch->course_id")->with(["messages" => ["type" => "success", "content" => "Saved!"]]);
+            return redirect("/hi/courses/branchs/$courseBranch->course_id")->with(["messages" => ["type" => "success", "content" => "Saved!"]]);
         } else
         return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Not Auth!"]]);
     }

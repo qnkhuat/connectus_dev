@@ -67,13 +67,13 @@ class TeacherController extends Controller
           $teacher->save();
         }
         if($user->role->view_all_teacher)
-            return redirect("/admin/teachers/list-all")->with(["messages" => ["type" => "success", "content" => "Teachers created!"]]);
+            return redirect("/hi/teachers/list-all")->with(["messages" => ["type" => "success", "content" => "Teachers created!"]]);
         else
-            return redirect("/admin/teachers")->with(["messages" => ["type" => "success", "content" => "Teachers created!"]]);
+            return redirect("/hi/teachers")->with(["messages" => ["type" => "success", "content" => "Teachers created!"]]);
       } else
-        return redirect("/admin/teachers")->with(["messages" => ["type" => "warning", "content" => "Save fail!"]]);
+        return redirect("/hi/teachers")->with(["messages" => ["type" => "warning", "content" => "Save fail!"]]);
     } else
-      return redirect("/admin/teachers")->with(["messages" => ["type" => "success", "content" => "Not auth!"]]);
+      return redirect("/hi/teachers")->with(["messages" => ["type" => "success", "content" => "Not auth!"]]);
   }
 
   public function edit(Request $request) {
@@ -106,9 +106,9 @@ class TeacherController extends Controller
         $teacher->avatar = $avatarName;
       }
       $teacher->save();
-      return redirect("/admin/teachers")->with(["messages" => ["type" => "success", "content" => "Teacher Updated!"]]);
+      return redirect("/hi/teachers")->with(["messages" => ["type" => "success", "content" => "Teacher Updated!"]]);
     } else
-      return redirect("/admin/teachers")->with(["messages" => ["type" => "warning", "content" => "Update fail!"]]);
+      return redirect("/hi/teachers")->with(["messages" => ["type" => "warning", "content" => "Update fail!"]]);
   }
 
   public function destroy(TeacherIdRequest $request) {

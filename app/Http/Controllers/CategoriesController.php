@@ -45,9 +45,9 @@ class CategoriesController extends Controller
       $category->description = $request->description;
       $category->publish = $request->publish;
       if($category->save())
-        return redirect("/admin/categories")->with(["messages" => ["type" => "success", "content" => "Category created!"]]);
+        return redirect("/hi/categories")->with(["messages" => ["type" => "success", "content" => "Category created!"]]);
       else
-        return redirect("/admin/categories/create")->with(["messages" => ["type" => "danger", "content" => "Save fail!"]]);
+        return redirect("/hi/categories/create")->with(["messages" => ["type" => "danger", "content" => "Save fail!"]]);
     }
 
     public function edit($id) {
@@ -67,7 +67,7 @@ class CategoriesController extends Controller
       $category->description = $request->description;
       $category->publish = $request->publish;
       if($category->save())
-        return redirect("/admin/categories")->with(["messages" => ["type" => "success", "content" => "Category updated!"]]);
+        return redirect("/hi/categories")->with(["messages" => ["type" => "success", "content" => "Category updated!"]]);
       else
         return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Save fail!"]]);
     }
@@ -76,6 +76,6 @@ class CategoriesController extends Controller
       $category = Category::find($request->id);
       $category->deleted = true;
       $category->save();
-      return redirect("/admin/categories")->with(["messages" => ["type" => "success", "content" => "Category deleted!"]]);
+      return redirect("/hi/categories")->with(["messages" => ["type" => "success", "content" => "Category deleted!"]]);
     }
 }

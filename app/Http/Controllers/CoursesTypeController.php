@@ -45,18 +45,18 @@ class CoursesTypeController extends Controller
       $slug = str_slug($type->name, '-');
       $isExits = CourseType::where("slug", $slug)->count() > 0;
       if($isExits)
-        return redirect("/admin/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Course type is exits!"]]);
+        return redirect("/hi/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Course type is exits!"]]);
       else {
         $type->publish = $request->publish;
         $type->slug = $slug;
         $slugLengthValid = strlen($slug) <= 191;
         if($slugLengthValid) {
           if($type->save())
-            return redirect("/admin/course-types")->with(["messages" => ["type" => "success", "content" => "Course type created!"]]);
+            return redirect("/hi/course-types")->with(["messages" => ["type" => "success", "content" => "Course type created!"]]);
           else
-            return redirect("/admin/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Save fail!"]]);
+            return redirect("/hi/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Save fail!"]]);
         } else
-            return redirect("/admin/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Course type max length is 191 char!"]]);
+            return redirect("/hi/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Course type max length is 191 char!"]]);
       }
     }
 
@@ -90,11 +90,11 @@ class CoursesTypeController extends Controller
           $slugLengthValid = strlen($slug) <= 191;
           if($slugLengthValid) {
             if($type->save())
-              return redirect("/admin/course-types")->with(["messages" => ["type" => "success", "content" => "course type updated!"]]);
+              return redirect("/hi/course-types")->with(["messages" => ["type" => "success", "content" => "course type updated!"]]);
             else
               return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Save fail!"]]);
           } else
-              return redirect("/admin/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Course type max length is 191 char!"]]);
+              return redirect("/hi/course-types/create")->with(["messages" => ["type" => "danger", "content" => "Course type max length is 191 char!"]]);
         }
       } else
       return redirect()->back()->with(["messages" => ["type" => "danger", "content" => "Not Auth!"]]);
@@ -107,7 +107,7 @@ class CoursesTypeController extends Controller
         $type = CourseType::find($request->id);
         $type->deleted = true;
         $type->save();
-        return redirect("/admin/course-types")->with(["messages" => ["type" => "success", "content" => "Course type deleted!"]]);
+        return redirect("/hi/course-types")->with(["messages" => ["type" => "success", "content" => "Course type deleted!"]]);
       }
     }
 }

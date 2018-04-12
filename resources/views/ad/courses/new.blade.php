@@ -176,7 +176,7 @@
             </div>
           </div>
         </div>
-        
+
 
         <div class="form-group">
             <p class="mr-t-10"><strong>Opening:<span class="color-red">*</span></strong></p>
