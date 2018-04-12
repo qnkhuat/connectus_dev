@@ -64,7 +64,7 @@
         <a class="example-image" href="../images/landings/aten/class 2.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/aten/class 2.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/aten/class 4.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/aten/class 4.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/aten/class 5.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/aten/class 5.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/aten/class 6.png" data-lightbox="example-set"><img class="example-image" src="../images/landings/aten/class 6.png" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/aten/class 6.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/aten/class 6.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/aten/class 7.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/aten/class 7.jpg" alt="image-1" /></a>
         <a class="example-image" href="../images/landings/aten/class 8.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/aten/class 8.jpg" alt="image-1" /></a>
         <h3>Học viên xuất sắc tại Aten</h3>
