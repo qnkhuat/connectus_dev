@@ -1,0 +1,34 @@
+.succeed{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top:0;
+  object-fit: cover;
+}
+.overlay{
+  position: absolute;;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.32941176470588235);
+}
+
+.content{
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 20px;
+  height: 100%;
+  flex-direction: column;
+  p,h3{
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+}

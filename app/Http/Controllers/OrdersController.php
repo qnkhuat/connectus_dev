@@ -37,7 +37,8 @@ class OrdersController extends Controller
             $order->gift = $course->gift;
 
             if($order->save())
-                return redirect()->back()->with(["messages" => ["type" => "success", "content" => "Đơn hàng đã được ghi nhận, chúng tôi sẽ liên hệ với bạn sớm!"]]);
+                // return redirect()->back()->with(["messages" => ["type" => "success", "content" => "Đơn hàng đã được ghi nhận, chúng tôi sẽ liên hệ với bạn sớm!"]]);
+                return view("ad.orders.succeed");
             else
                 return redirect()->back()->with(["messages" => ["type" => "warning", "content" => "Tạo đơn hàng không thành công!"]]);
         } else
