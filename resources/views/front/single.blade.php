@@ -73,7 +73,7 @@
             <div class="course-info-enrolled-student"><span class="course-info-enrolled-student-count">100</span> Học viên đã đăng ký khoá học này</div>
           </div>
 
-          <div class="course-info-centre">Trung tâm : <span class="course-info-centre-name">{{$course->user->name}}</span></div>
+          <div class="course-info-centre">Trung tâm : <span class="course-info-centre-name"><a href="{{$course->user->website}}">{{$course->user->name}}</a></span></div>
         </div>
       </div><!-- //.course-details-info-left -->
 

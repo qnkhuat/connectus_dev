@@ -45,6 +45,11 @@ body{
       .details-box{
         display: none;
       }
+      .course-info-centre-name{
+        a{
+          color: #d61e2b;
+        }
+      }
       #courses{
         display: grid;
         .courses-row{
