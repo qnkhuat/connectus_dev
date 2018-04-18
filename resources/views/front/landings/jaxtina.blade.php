@@ -55,6 +55,15 @@
         <li>Thêm một điều nữa là Jaxtina không public thông tin giảng viên các khóa học lên website hay Fanpage, vậy nên nếu các bạn muốn chọn mặt gửi vàng một chuyên gia nào đó thì cũng không có đâu.</li>
       </ul>
 
+      <h4>Địa chỉ:</h4>
+      <ul>
+        <li>Số 397 Bạch Mai, Hai Bà Trưng, Hà Nội</li>
+        <li>Số 10 Nguyễn Khả Trạc, Mai Dịch, Cầu Giấy, Hà Nội</li>
+        <li>Số 45 ngõ 82 chùa Láng, Đống Đa, Hà Nội</li>
+        <li>Số 112 Chiến Thắng, Hà Đông, Hà Nội</li>
+        <li>Số 69 ngõ 40 Tạ Quang Bửu, Hai Bà Trưng, Hà Nội</li>
+      </ul>
+
     </div>
     <div class="courses tab">
       @include('front.components.course_row_replace')

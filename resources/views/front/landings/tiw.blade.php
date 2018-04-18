@@ -44,6 +44,12 @@
       <p>Ngoài ra, The IELTS Workshop là trung tâm duy nhất học viên có thể chủ động đặt lịch hẹn với giáo viên và trợ giảng để được bổ trợ kiến thức ngoài giờ học. Chúng tôi cam kết sẽ mang đến kết quả tốt nhất trong lớp học, và hỗ trợ nhiều nhất ngoài lớp học, tất cả nhằm giúp bạn đạt được điểm số IELTS mà bạn xứng đáng nhận được.</p>
       <p>Ngoài giờ lên lớp và học ở nhà, học viên hoàn toàn có thể vào thư viện và học hỏi, luyện Speaking với các bạn trợ giảng tại The IELTS Workshop bất kỳ lúc nào trong giờ hành chính. Đội ngũ trợ giảng trẻ, tận tụy với trình độ chuyên môn trên 7.0 IELTS sẽ là người bạn đồng hành không thể thiếu được trong chặng đường ôn luyện của học viên.</p>
 
+      <h4>Địa chỉ:</h4>
+      <ul>
+        <li>55A Võ Văn Dũng, Đống Đa, Hà Nội</li>
+        <li>141 Lý Chính Thắng, phường 7, quận 3, TP.HCM</li>
+      </ul>
+
     </div>
     <div class="courses tab">
       @include('front.components.course_row_replace')

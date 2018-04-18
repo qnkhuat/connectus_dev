@@ -51,6 +51,14 @@
 
     <p>Vì vậy, nếu các bạn muốn học thêm các kĩ năng đọc, viết tiếng Anh thì sẽ phải tìm thêm các khóa học của trung tâm khác nhé. còn nếu chỉ cần cải thiện  speaking skills thì mình rất recommend trung tâm anh ngữ ATEN English school này nha.</p>
 
+    <h4>Địa chỉ:</h4>
+    <ul>
+      <li>Số 135, Chùa Láng, Đống Đa, Hà Nội</li>
+      <li>Số 10 Nguyễn Khả Trạc, Mai Dịch, Cầu Giấy, Hà Nội</li>
+      <li>Số 18 Nguyễn Hoàng, Mỹ Đình, Nam Từ Liêm, Hà Nội</li>
+      <li> Số 43A ngõ 10, Tôn Thất Tùng, Đống Đa, Hà Nội</li>
+    </ul>
+
     </div>
     <div class="courses tab">
       @include('front.components.course_row_replace')

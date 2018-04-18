@@ -40,6 +40,10 @@
       <p>- Đội ngũ giáo viên 100% có chứng chỉ TESOL và CELTA với nhiều năm kinh nghiệm và tâm huyết trong giảng dạy, luôn cố gắng tạo động lực và niềm đam mê với Tiếng Anh cho học viên.</p>
       <p>- Giáo trình được xây dựng và biên soạn khoa học theo các chủ điểm mang tính ứng dụng thực tiễn cao.</p>
       <p>- Có tới 3 cơ sở trên địa bàn hà nội.</p>
+
+
+
+      <h4>Địa chỉ:</h4>
       <ul>
         <li>  Cơ Sở 1: Số 72E Ngõ 283 Trần Khát Chân Hoàn Kiếm. Tel: (024) 637 0047 - (024) 637 0052 </li>
         <li>  Cơ Sở  2: Số 8 Ngõ 20 Nguyễn Công Hoan, Ba Đình. Tel: (024) 724 7269 - (024) 724 7270 </li>

@@ -65,6 +65,20 @@
       <ul>
         <li>Langmaster có lớp học khá đông đúc, với 36 học viên cho một lớp Basic, điều này đòi hỏi các bạn phải thật tập trung và giáo viên cũng phải kiên nhẫn vô cùng đó nha :<</li>
       </ul>
+
+      <h4>Địa chỉ:</h4>
+      <ul>
+        <li>Số 17, Ngõ 27, Đại Cồ Việt, Hai Bà Trưng, HN</li>
+        <li>Số 76 Trần Đại Nghĩa, Hai Bà Trưng, HN</li>
+        <li>Số 144 Trần Vĩ, Mai Dịch, Cầu Giấy, HN</li>
+        <li>140 Nguyễn Lương Bằng, Đống Đa, HN</li>
+        <li>Số 32, Ngõ 168, Nguyễn Xiển, Thanh Xuân, HN</li>
+        <li>Tầng 15 Tòa Nhà CTM, Số 139 Cầu Giấy, HN</li>
+        <li>Số 485 Hoàng Quốc Việt, Cầu Giấy, Hà Nội</li>
+        <li>14 Nam Đồng, Đống Đa, Hà Nội</li>
+        <li>Số 3 Ngõ 130 Hồ Tùng Mậu, Cầu Giấy, Hà Nội</li>
+        <li>297 Bạch Mai, Hai Bà Trưng, HN</li>
+      </ul>
     </div>
     <div class="courses tab">
       @include('front.components.course_row_replace')

@@ -41,6 +41,10 @@
       <p> - Giáo viên nhiệt tình nhất: Trước khi học 2 tuần, giáo viên sẽ lập group để học sinh làm quen nhau, đồng thời trao đổi trước những khó khăn vướng mắc khi học Tiếng Anh. </p>
       <p> - Cam kết chuẩn đầu ra 6.5 sau 6 tháng ngoài ra cam kết học sinh đạt mục tiêu đầu ra khi học sinh đến test trình độ đầu vào. Nếu không đạt mục tiêu có thể học lại hoàn toàn Free</p>
     </div>
+    <h4>Địa chỉ:</h4>
+    <ul>
+      <li>	P204, Toà N08, Ngõ 123 Trần Đăng Ninh, Cầu Giấy, Hà Nội</li>
+    </ul>
     <div class="courses tab">
       @include('front.components.course_row_replace')
 

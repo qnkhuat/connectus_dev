@@ -52,7 +52,11 @@
 
     <p>Góc tối: rất “buồn” là hiện tại ConnectUs chưa tìm thấy điểm gì để chê IELTS Thầy Diễn cả, vậy nên hi vọng các bạn có thể giúp ConnectUs có thêm những feedback chất lượng sau khi đăng kí học nha!</p>
 
-
+    <h4>Địa chỉ:</h4>
+    <ul>
+      <li>474 Xã Đàn, Hà Nội</li>
+      <li>Số 2 ngõ 27 Huỳnh Thúc Kháng, Đống Đa, Hà Nội</li>
+    </ul>
 
     </div>
     <div class="courses tab">
