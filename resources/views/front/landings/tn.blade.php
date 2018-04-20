@@ -40,11 +40,12 @@
       <p> - Học phí rẻ nhất : Đăng kí cả Advance Speaking + Advance Writing còn được tặng luôn 2 khoá: Tips Listening +Reading và khoá Phản xạ học Speaking đến tận lúc thi</p>
       <p> - Giáo viên nhiệt tình nhất: Trước khi học 2 tuần, giáo viên sẽ lập group để học sinh làm quen nhau, đồng thời trao đổi trước những khó khăn vướng mắc khi học Tiếng Anh. </p>
       <p> - Cam kết chuẩn đầu ra 6.5 sau 6 tháng ngoài ra cam kết học sinh đạt mục tiêu đầu ra khi học sinh đến test trình độ đầu vào. Nếu không đạt mục tiêu có thể học lại hoàn toàn Free</p>
+      <h4>Địa chỉ:</h4>
+      <ul>
+        <li>	P204, Toà N08, Ngõ 123 Trần Đăng Ninh, Cầu Giấy, Hà Nội</li>
+      </ul>
     </div>
-    <h4>Địa chỉ:</h4>
-    <ul>
-      <li>	P204, Toà N08, Ngõ 123 Trần Đăng Ninh, Cầu Giấy, Hà Nội</li>
-    </ul>
+
     <div class="courses tab">
       @include('front.components.course_row_replace')
 
@@ -52,19 +53,20 @@
     <div class="images tab">
       <div class="wrap">
         <h3>Lớp học tại IELTS Trang Nguyễn</h3>
-        <a class="example-image" href="../images/landings/tn/tn_classes1.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes1.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes2.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes2.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes3.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes3.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes4.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes4.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes5.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes5.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes6.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes6.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes7.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes7.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes8.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes8.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes9.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes9.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes10.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes10.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes11.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes11.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes12.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes12.jpg" alt="image-1" /></a>
-        <a class="example-image" href="../images/landings/tn/tn_classes13.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/tn_classes13.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/class 1.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/class 1.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/class 2.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/class 2.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/class 3.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/class 3.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/class 4.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/class 4.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/class 5.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/class 5.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/class 6.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/class 6.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/class 7.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/class 7.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/class 8.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/class 8.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/class 9.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/class 9.jpg" alt="image-1" /></a>
+        <h3>Học viên nói gì về IELTS Trang Nguyễn?</h3>
+        <a class="example-image" href="../images/landings/tn/feedback 1.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/feedback 1.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/feedback 2.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/feedback 2.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/feedback 3.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/feedback 3.jpg" alt="image-1" /></a>
+        <a class="example-image" href="../images/landings/tn/feedback 4.jpg" data-lightbox="example-set"><img class="example-image" src="../images/landings/tn/feedback 4.jpg" alt="image-1" /></a>
 
       </div>
     </div>
