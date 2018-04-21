@@ -98,8 +98,7 @@
             <ul>
               <li class="student-per-class-bar"><i class="fa fa-users" aria-hidden="true"></i> Số lượng học viên/lớp: <span class="student-per-class-number">{{$course->student_total}}</span></li>
               <li class="course-info-total-hours-bar"><i class="fa fa-play-circle" aria-hidden="true"></i> Số giờ: <span class="course-info-total-hours-number">{{$course->hour_total}}</span></li>
-              <li class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i> Số buổi: <span class="course-info-total-periods-number">{{$course->session_total}}</span></li>
-              <li class="course-info-day"><i class="fa fa-calendar" aria-hidden="true"></i> Thứ <span class="course-info-day-number-1">{{$course->day_in_week}}</span></li>
+              <li class="course-info-total-periods"><i class="fa fa-book" aria-hidden="true"></i> Số buổi: <span class="course-info-total-periods-number">{{$course->session_total}}</span></li> 
               <li class="course-info-braches"><i class="fa fa-building-o" aria-hidden="true"></i> Có <span class="course-info-braches-number">{{$course->branchs()->count()}}</span> lớp học</li>
             </ul>
           </div>
